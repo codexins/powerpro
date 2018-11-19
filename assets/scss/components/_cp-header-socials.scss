@@ -1,0 +1,27 @@
+/**
+ * Components Header Socials
+ *
+ */
+
+.header-social {
+	margin-top: 20px;
+
+	a {
+		margin-right: 7px;
+		@extend .circle;
+		@include box(30px);
+		line-height: 32px;
+		@extend %bgc-white;
+		@extend %color-dark;
+	}
+
+	&:hover {
+		a {
+			opacity: 0.5;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}

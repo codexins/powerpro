@@ -152,9 +152,6 @@
 %vhcenter {
 	@extend %display-flex ;
 	align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -164,11 +161,6 @@
 %vcenter {
 	@extend %display-flex ;
 	align-items: center;	
-}
-
-%flex_end {
-	@extend %display-flex ;
-	justify-content:  flex-end ;
 }
 
 

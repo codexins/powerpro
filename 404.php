@@ -11,7 +11,7 @@
 
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 get_header(); ?>
 
@@ -22,8 +22,8 @@ get_header(); ?>
 			<div class="col-12 col-sm-12 col-md-12">
 				<main id="primary" class="site-main text-center">
 					<article>
-						<h2><?php esc_html_e( 'The page you are trying to access does not exist.', 'TEXT_DOMAIN' ) ?></h2>
-						<p><?php esc_html_e( 'Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'TEXT_DOMAIN' ) ?></p>
+						<h2><?php esc_html_e( 'The page you are trying to access does not exist.', 'powerpro' ) ?></h2>
+						<p><?php esc_html_e( 'Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'powerpro' ) ?></p>
 						<?php get_search_form(); ?>
 					</article>
 				</main> <!-- end of #primary -->

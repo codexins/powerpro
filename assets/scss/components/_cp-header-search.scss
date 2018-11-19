@@ -1,0 +1,50 @@
+/**
+ * Components Header Search
+ *
+ */
+
+.header-search {
+	form {
+		max-width: 250px;
+
+		input[type="search"] {
+			border: 0;
+			border-bottom: 1px solid lighten($cx-text-color, 100%);
+		    text-transform: uppercase;
+		    padding: 0;
+		    padding-right: 15px;
+		    font-size: 14px;
+		    letter-spacing: 1px;
+		    color: #eee;
+			@extend %bgc-transparent;
+		}
+
+		input[type="submit"] {
+		    text-indent: -99999px;
+		    line-height: 0;
+		    border: 0;
+		    background-image: url(assets/images/icons/search.svg);
+		    background-repeat: no-repeat;
+		    background-size: 26px;
+		    background-position: 16px 8px;
+		    @extend %bgc-transparent;
+		}
+	}
+
+	::-webkit-input-placeholder{
+	  color: #eee;
+	  font-size: 14px;
+	}
+	::-moz-placeholder{
+	  color: #eee;
+	  font-size: 14px;
+	}
+	:-ms-input-placeholder{
+	  color: #eee;
+	  font-size: 14px;
+	}
+	:-moz-placeholder {
+	  color: #eee;
+	  font-size: 14px;
+	}
+}

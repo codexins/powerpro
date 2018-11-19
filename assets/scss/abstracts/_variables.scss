@@ -1,18 +1,19 @@
 
 //-------------------- Base Typography --------------------//
 
-$cx-body-font: 					'Rubik',sans-serif !default;
+$cx-body-font: 					'Source Sans Pro',sans-serif !default;
+$cx-heading-font: 				'Oswald', sans-serif !default;
 
 
 //-------------------- Font Sizes --------------------//
 
-$cx-body-font-size: 			13px !default;
-$cx-h1-font-size: 				22px !default;
-$cx-h2-font-size: 				20px !default;
-$cx-h3-font-size: 				18px !default;
-$cx-h4-font-size: 				15px !default;
-$cx-h5-font-size: 				12px !default;
-$cx-h6-font-size: 				10.2px !default;
+$cx-body-font-size: 			15px !default;
+$cx-h1-font-size: 				32px !default;
+$cx-h2-font-size: 				28px !default;
+$cx-h3-font-size: 				24px !default;
+$cx-h4-font-size: 				21px !default;
+$cx-h5-font-size: 				19px !default;
+$cx-h6-font-size: 				16px !default;
 $cx-icon-font-size: 			14px !default;
 
 
@@ -20,9 +21,9 @@ $cx-icon-font-size: 			14px !default;
 
 $cx-text-color: 				#000 !default;
 $cx-body-bg-color: 				#fff !default;
-$cx-primary-color:  			#2e6ed5 !default;
-$cx-secondary-color: 			#242424 !default;
-$cx-tertiary-color: 			#363f4d !default;
+$cx-primary-color:  			#063879 !default;
+$cx-secondary-color: 			#ffc845 !default;
+$cx-tertiary-color: 			#60732b !default;
 $cx-offset-color:				#f6f6f6 !default;
 $cx-border-color:				#ebebeb !default;
 
@@ -35,7 +36,7 @@ $cx-body-font-weight : 			400 !default;
 
 //-------------------- Default Spacing --------------------//
 
-$cx-heading-margin-bottom: 		10px !default;
+$cx-heading-margin-bottom: 		20px !default;
 $cx-section-spacing:	 		80px !default;
 $cx-col-spacing:				0.5 * $cx-section-spacing !default; // will be used as bottom margin/padding
 
@@ -57,7 +58,7 @@ $cx-transition: 				 all 0.7s cubic-bezier(0.2, 1, 0.22, 1) !default;
 $cx-lg-screen:					1200px !default;
 $cx-md-screen: 					992px !default;
 $cx-sm-screen:					768px !default;
-$cx-vsm-screen:					480px !default;
+$cx-vsm-screen:					576px !default;
 
 $cx-breakpoints: (
     "wide":    					$cx-lg-screen,

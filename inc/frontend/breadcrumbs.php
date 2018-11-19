@@ -11,7 +11,7 @@
 
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 
 if( ! function_exists( 'codexin_breadcrumbs' ) ) {
@@ -24,7 +24,7 @@ if( ! function_exists( 'codexin_breadcrumbs' ) ) {
 
         // Set variables for later use
         $home_link        = home_url('/');
-        $home_text        = esc_html__( 'Home' , 'TEXT_DOMAIN');
+        $home_text        = esc_html__( 'Home' , 'powerpro');
         $link_before      = '<span typeof="v:Breadcrumb">';
         $link_after       = '</span>';
         $link_attr        = ' rel="v:url" property="v:title"';
@@ -163,7 +163,7 @@ if( ! function_exists( 'codexin_breadcrumbs' ) ) {
 
             } elseif ( is_author() ) {
 
-                $breadcrumb_trail = esc_html__( 'Articles Posted by&nbsp;', 'TEXT_DOMAIN') .  $before . $queried_object->data->display_name . $after;
+                $breadcrumb_trail = esc_html__( 'Articles Posted by&nbsp;', 'powerpro') .  $before . $queried_object->data->display_name . $after;
 
             } elseif ( is_date() ) {
                 // Set default variables
@@ -207,18 +207,18 @@ if( ! function_exists( 'codexin_breadcrumbs' ) ) {
 
         // Handle the search page
         if ( is_search() ) {
-            $breadcrumb_trail = esc_html__( 'Search query for: ', 'TEXT_DOMAIN' ) . $before . get_search_query() . $after;
+            $breadcrumb_trail = esc_html__( 'Search query for: ', 'powerpro' ) . $before . get_search_query() . $after;
         }
 
         // Handle 404's
         if ( is_404() ) {
-            $breadcrumb_trail = $before . esc_html__( 'Error 404', 'TEXT_DOMAIN' ) . $after;
+            $breadcrumb_trail = $before . esc_html__( 'Error 404', 'powerpro' ) . $after;
         }
 
         // Handle paged pages
         if ( is_paged() ) {
             $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' );
-            $page_addon   = $before . sprintf( esc_html__( ' ( Page %s )', 'TEXT_DOMAIN' ), number_format_i18n( $current_page ) ) . $after;
+            $page_addon   = $before . sprintf( esc_html__( ' ( Page %s )', 'powerpro' ), number_format_i18n( $current_page ) ) . $after;
         }
 
         $breadcrumb_output_link  = '';

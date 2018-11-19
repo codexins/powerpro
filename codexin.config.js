@@ -10,8 +10,8 @@
 module.exports = {
 
 	// Project options.
-	projectName: 'power-theme',
-	projectURL: 'localhost/powertheme', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
+	projectName: 'powerpro',
+	projectURL: 'localhost/powerpro', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
 	productURL: './', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 	browserAutoOpen: false,
 	injectChanges: true,
@@ -80,8 +80,8 @@ module.exports = {
 	watchPhp: './**/*.php', // Path to all PHP files.
 
 	// Translation options.
-	textDomain: 'power-theme', // Your textdomain here.
-	translationFile: 'power-theme.pot', // Name of the translation file.
+	textDomain: 'powerpro', // Your textdomain here.
+	translationFile: 'powerpro.pot', // Name of the translation file.
 	translationDestination: './languages', // Where to save the translation files.
 	packageName: 'Power Theme', // Package name.
 	bugReport: 'https://themeitems.com/contact-us/', // Where can users report bugs.

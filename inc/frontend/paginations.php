@@ -9,7 +9,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 if ( ! function_exists( 'codexin_posts_nav' ) ) {
     /**
@@ -22,8 +22,8 @@ if ( ! function_exists( 'codexin_posts_nav' ) ) {
     * @since    v1.0.0
     */
     function codexin_posts_nav( $prev = NULL, $next = NULL, $custom = NULL ) {
-        $prev = ! empty( $prev ) ? $prev : esc_html__( 'Newer Posts', 'TEXT_DOMAIN' );
-        $next = ! empty( $next ) ? $next : esc_html__( 'Older Posts', 'TEXT_DOMAIN' );
+        $prev = ! empty( $prev ) ? $prev : esc_html__( 'Newer Posts', 'powerpro' );
+        $next = ! empty( $next ) ? $next : esc_html__( 'Older Posts', 'powerpro' );
 
         $prev_link = get_previous_posts_link( '&laquo; '. $prev );
         $next_link = ( $custom !== NULL ) ? get_next_posts_link( $next . ' &raquo; ', $custom->max_num_pages ) : get_next_posts_link( $next . ' &raquo; ' );
@@ -58,15 +58,15 @@ if ( ! function_exists( 'codexin_post_nav' ) ) {
     * @since    v1.0.0
     */
     function codexin_post_nav( $prev = NULL, $next = NULL ) {
-        $prev = ! empty( $prev ) ? $prev : esc_html__( 'Previous Post', 'TEXT_DOMAIN' );
-        $next = ! empty( $next ) ? $next : esc_html__( 'Next Post', 'TEXT_DOMAIN' );
+        $prev = ! empty( $prev ) ? $prev : esc_html__( 'Previous Post', 'powerpro' );
+        $next = ! empty( $next ) ? $next : esc_html__( 'Next Post', 'powerpro' );
 
         if( ( codexin_get_option( 'cx_post_pagination' ) == 'button' ) ) {
             $prev_link = get_previous_post_link( '%link', esc_html( $prev . ' &raquo;' ) );
             $next_link = get_next_post_link( '%link', esc_html( '&laquo; ' . $next ) );
         } elseif( codexin_get_option( 'cx_post_pagination' ) == 'text' ) {
-            $prev_link = get_previous_post_link( '%link', esc_html__( '%title &raquo;', 'TEXT_DOMAIN' ) );
-            $next_link = get_next_post_link( '%link', esc_html__( '&laquo; %title', 'TEXT_DOMAIN' ) );
+            $prev_link = get_previous_post_link( '%link', esc_html__( '%title &raquo;', 'powerpro' ) );
+            $next_link = get_next_post_link( '%link', esc_html__( '&laquo; %title', 'powerpro' ) );
         }
 
         $nav = '';
@@ -143,10 +143,10 @@ if ( ! function_exists( 'codexin_comments_nav' ) ) {
         if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
             ?>
             <nav id="comment-nav-below" class="navigation comment-navigation">
-                <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'TEXT_DOMAIN' ); ?></h2>
+                <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'powerpro' ); ?></h2>
                 <div class="nav-links">
-                    <div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'TEXT_DOMAIN' ) ); ?></div>
-                    <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'TEXT_DOMAIN' ) ); ?></div>
+                    <div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'powerpro' ) ); ?></div>
+                    <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'powerpro' ) ); ?></div>
                 </div><!-- end of nav-links -->
             </nav><!-- end of #comment-nav-below -->
         <?php

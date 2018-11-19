@@ -10,7 +10,7 @@
 
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 get_header(); ?>
 
@@ -33,9 +33,9 @@ get_header(); ?>
 							}
 						} else { ?>
 							<h2 class="search-title text-center">
-								<?php printf( '%1$s"'. get_search_query() .'"', esc_html__( 'Nothing found for the search keyword ', 'TEXT_DOMAIN' ) ); ?>
+								<?php printf( '%1$s"'. get_search_query() .'"', esc_html__( 'Nothing found for the search keyword ', 'powerpro' ) ); ?>
 							</h2>
-							<p><?php esc_html_e( 'Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'TEXT_DOMAIN' ) ?></p>
+							<p><?php esc_html_e( 'Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'powerpro' ) ?></p>
 							<?php get_search_form();
 						}
 						?>

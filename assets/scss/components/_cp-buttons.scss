@@ -1,0 +1,25 @@
+/**
+ * Components Buttons
+ *
+ */
+
+.default-btn {
+	min-width: 150px;
+	font-size: 14px;
+	font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    @extend %bgc-secondary;
+    @extend %color-dark;
+    @extend %cx-transition;
+
+    &:hover {
+    	// @extend %color-dark;
+    	// background: darken($cx-secondary-color, 10%);
+    	@extend %bgc-tertiary;
+    	@extend %color-white;
+    }
+}

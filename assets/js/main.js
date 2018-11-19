@@ -35,7 +35,7 @@ INDEX:
       $elCarousel = $(".element-carousel"),
       $testimonial = $(".testimonial-container"),
       $toTop = $("#to_top"),
-      $intelHeader = $(".header-area"),
+      $intelHeader = $(".header-top"),
       $footer = $("#colophon"); // Check if element exists
 
   $.fn.elExists = function () {
@@ -120,7 +120,39 @@ INDEX:
 
 
   CODEXIN.ElementsSpacingClasses = function () {
-    $('.sidebar-widget p:empty').remove();
+    $('.sidebar-widget p:empty').remove(); // Fixed Navigation Menu Height
+
+    var headerHeight = $intelHeader[0].getBoundingClientRect().height; // var topBarHeight = $('header .top-header')[0].getBoundingClientRect().height : 0;
+    // var headerMainHeight = $('header .header-area')[0].getBoundingClientRect().height;
+    // var headerTotalHeight = topBarHeight + headerMainHeight;
+    // For header to float over Main Content
+
+    if ($headerfl.elExists()) {
+      var navHeight = $window.width() > 991 ? $headerfl[0].getBoundingClientRect().height : 0;
+      $("#primary_slider, #page_title").css("margin-top", -navHeight);
+    } // Sticky header
+
+
+    $window.on('scroll', function () {
+      var height = $window.scrollTop();
+
+      if (height < 500) {
+        $intelHeader.addClass("top");
+        $intelHeader.removeClass("not-top");
+      } else if (height < 600 && height > 500) {
+        $intelHeader.addClass("not-top");
+      } else {
+        $intelHeader.removeClass("top");
+      }
+
+      if (height < 400) {
+        $(".fixed-header-space").height(0);
+        $intelHeader.removeClass("pinned");
+      } else {
+        $(".fixed-header-space").height(headerHeight);
+        $intelHeader.addClass("pinned");
+      }
+    });
   };
   /************************************************************
       s06 - Elements Carousel

@@ -9,7 +9,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__(  'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__(  'This script cannot be accessed directly.', 'powerpro' ) );
 
 if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 	/**
@@ -23,25 +23,25 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 		public static function codexin_sidebar_widgets_init() {
 		
 			register_sidebar( array(
-				'name'				=> esc_html__( 'Sidebar (General)', 'TEXT_DOMAIN' ),
+				'name'				=> esc_html__( 'Sidebar (General)', 'powerpro' ),
 				'id'				=> 'codexin-sidebar-general',
-				'description'		=> esc_html__( 'This sidebar will show everywhere the sidebar is enabled, both Posts and Pages.', 'TEXT_DOMAIN' ),
+				'description'		=> esc_html__( 'This sidebar will show everywhere the sidebar is enabled, both Posts and Pages.', 'powerpro' ),
 				'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget">',
 				'after_widget'  	=> '</div>',			
 			) );
 
 			register_sidebar( array(
-				'name'				=> esc_html__( 'Sidebar (Pages)', 'TEXT_DOMAIN' ),
+				'name'				=> esc_html__( 'Sidebar (Pages)', 'powerpro' ),
 				'id'				=> 'codexin-sidebar-page',
-				'description'		=> esc_html__( 'This sidebar will show on all Pages.', 'TEXT_DOMAIN' ),
+				'description'		=> esc_html__( 'This sidebar will show on all Pages.', 'powerpro' ),
 				'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget">',
 				'after_widget'  	=> '</div>',		
 			) );
 			
 			register_sidebar( array(
-				'name' 				=> esc_html__( 'Sidebar (Blog)', 'TEXT_DOMAIN' ),
+				'name' 				=> esc_html__( 'Sidebar (Blog)', 'powerpro' ),
 				'id'				=> 'codexin-sidebar-blog',
-				'description'		=> esc_html__( 'This sidebar will show on all blog Posts.', 'TEXT_DOMAIN' ), 
+				'description'		=> esc_html__( 'This sidebar will show on all blog Posts.', 'powerpro' ), 
 				'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget">',
 				'after_widget'  	=> '</div>',		
 			) );
@@ -53,9 +53,9 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 			$widget_count = 4;
 			for( $i = 1; $i <= $widget_count ; $i++ ) { 
 				register_sidebar( array(
-					'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'TEXT_DOMAIN' ), $i ),
+					'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'powerpro' ), $i ),
 					'id'				=> 'codexin-footer-col-'. $i .'',
-					'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'TEXT_DOMAIN'), $i ),
+					'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'powerpro'), $i ),
 				    'before_title'		=> '<h4 class="widgettitle">',
 				    'after_title'		=> '</h4>',
 					'before_widget' 	=> '<aside id="%1$s" class="%2$s footer-widget">',

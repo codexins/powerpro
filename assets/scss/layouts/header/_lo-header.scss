@@ -1,0 +1,48 @@
+/**
+ * Layout Header - Header
+ *
+ */
+
+.header {
+	.header-top {
+		padding: 15px 45px;
+	}
+
+	.navbar-brand {
+		@extend %margin-0;
+	}
+
+	.logo {
+		text-align: center;
+
+		img {
+			width: 174px;
+		}
+	}
+
+	.header-right {
+		text-align: right;
+
+		.default-btn {
+			&:last-child {
+				margin-left: 15px;
+			}
+		}
+	}
+
+	
+	.site-title,
+	.site-description {
+		@extend %mb0;
+	}
+
+	.custom-logo-link + .site-title {
+		margin-top: 15px;
+	}
+
+	.floating-header {
+		z-index: 10;
+		@extend %bgc-transparent;
+		@extend .pos-r;
+	}
+}

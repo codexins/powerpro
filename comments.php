@@ -13,7 +13,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 /*
  * If the current post is protected by a password and
@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
  * return early without loading the comments.
  */
 if ( post_password_required() ) {
-	echo '<div class="nopassword">'. esc_html__( 'This post is password protected. Enter the password to view any comments.', 'TEXT_DOMAIN' ) .'</div>';
+	echo '<div class="nopassword">'. esc_html__( 'This post is password protected. Enter the password to view any comments.', 'powerpro' ) .'</div>';
     return;
 }
 
@@ -36,9 +36,9 @@ if ( post_password_required() ) {
 				<?php
 					// Diplaying the comment number
 					comments_number(
-					esc_html__( 'This post has no comments', 'TEXT_DOMAIN' ), 
-					esc_html__( 'This post has One Comment', 'TEXT_DOMAIN' ), 
-					wp_kses_post( 'This post has <span>%</span> Comments', 'TEXT_DOMAIN' )
+					esc_html__( 'This post has no comments', 'powerpro' ), 
+					esc_html__( 'This post has One Comment', 'powerpro' ), 
+					wp_kses_post( 'This post has <span>%</span> Comments', 'powerpro' )
 					); 
 				?>
 			</h3>
@@ -55,7 +55,7 @@ if ( post_password_required() ) {
 
 	// If comments are closed and there are comments, let's leave a little note
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) { ?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'TEXT_DOMAIN' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'powerpro' ); ?></p>
 	<?php
 	} // Check for comments closed
 
@@ -74,7 +74,7 @@ if ( post_password_required() ) {
 						<div class="col-12 col-sm-12 col-md-4">
 							<div class="comment-form-author">
 								<fieldset>
-									<input id="author" name="author" type="text" placeholder="'.esc_html__( 'Name', 'TEXT_DOMAIN' ). ( $req ? ' *' : '' ).'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />
+									<input id="author" name="author" type="text" placeholder="'.esc_html__( 'Name', 'powerpro' ). ( $req ? ' *' : '' ).'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />
 								</fieldset>
 							</div>
 						</div>',
@@ -82,7 +82,7 @@ if ( post_password_required() ) {
 					'<div class="col-12 col-sm-12 col-md-4">
 						<div class="comment-form-email">
 							<fieldset>
-								<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="'. esc_html__( 'Email', 'TEXT_DOMAIN' ) . ( $req ? ' *' : '' ) .'" ' . $aria_req . ' />
+								<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="'. esc_html__( 'Email', 'powerpro' ) . ( $req ? ' *' : '' ) .'" ' . $aria_req . ' />
 							</fieldset>
 						</div>
 					</div>',
@@ -90,7 +90,7 @@ if ( post_password_required() ) {
 					'<div class="col-12 col-sm-12 col-md-4">
 						<div class="comment-form-url">
 							<fieldset>
-								<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'.esc_html__( 'Website', 'TEXT_DOMAIN' ).'" size="30" />
+								<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'.esc_html__( 'Website', 'powerpro' ).'" size="30" />
 							</fieldset>
 						</div>
 					</div>
@@ -99,15 +99,15 @@ if ( post_password_required() ) {
 		),
 		'comment_notes_before' 			=> '',
 		'comment_notes_after' 			=> '',
-		'title_reply' 					=> esc_html__( 'Leave a Comment', 'TEXT_DOMAIN' ),
-		'title_reply_to' 				=> esc_html__( 'Leave a  Comment', 'TEXT_DOMAIN' ),
-		'cancel_reply_link' 			=> esc_html__( 'Cancel Comment', 'TEXT_DOMAIN' ),	
+		'title_reply' 					=> esc_html__( 'Leave a Comment', 'powerpro' ),
+		'title_reply_to' 				=> esc_html__( 'Leave a  Comment', 'powerpro' ),
+		'cancel_reply_link' 			=> esc_html__( 'Cancel Comment', 'powerpro' ),	
 		'comment_field' 				=> 
 			'<div class="comment-form-comment">
-				<fieldset>' . '<textarea id="comment" placeholder="' . esc_html__( 'Your Comment', 'TEXT_DOMAIN' ) . ( $req ? ' *' : '' ) . '" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+				<fieldset>' . '<textarea id="comment" placeholder="' . esc_html__( 'Your Comment', 'powerpro' ) . ( $req ? ' *' : '' ) . '" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 				</fieldset>
 			</div>',
-		'label_submit' 					=> esc_html__( 'Submit Comment', 'TEXT_DOMAIN' ),
+		'label_submit' 					=> esc_html__( 'Submit Comment', 'powerpro' ),
 		'id_submit' 					=> 'submit_my_comment'
 		
 	));

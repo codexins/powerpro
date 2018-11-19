@@ -9,7 +9,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 $color_selectors = codexin_color_selectors();
 
@@ -20,8 +20,8 @@ $color_selectors = codexin_color_selectors();
 Kirki::add_field( $config_id, array(
     'type'        => 'text',
     'settings'    => 'cx_google_map_api',
-    'label'       => esc_html__( 'Google Map API Key', 'TEXT_DOMAIN' ),
-    'description' => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Get Your Google Map API Key from ', 'TEXT_DOMAIN'), esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ), esc_html__( 'here', 'TEXT_DOMAIN' ) ),
+    'label'       => esc_html__( 'Google Map API Key', 'powerpro' ),
+    'description' => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Get Your Google Map API Key from ', 'powerpro'), esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ), esc_html__( 'here', 'powerpro' ) ),
     'section'     => 'cx_google_map_settings',
     'default'     => '',
     'priority'    => 10,
@@ -31,13 +31,13 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_totop',
-	'label'       => esc_html__( 'Enable Scroll To-Top Button?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Enable Scroll To-Top Button?', 'powerpro' ),
 	'section'     => 'cx_extra_settings',
 	'default'     => 1,
 	'priority'    => 10,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
@@ -45,24 +45,47 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_pageloader',
-	'label'       => esc_html__( 'Enable Page Loader?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Enable Page Loader?', 'powerpro' ),
 	'section'     => 'cx_extra_settings',
 	'default'     => 1,
 	'priority'    => 15,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
-    'settings'    => 'cx_logo_top_spacing',
-    'label'       => esc_html__('Logo Top Spacing', 'TEXT_DOMAIN'),
+    'settings'    => 'cx_logo_size',
+    'label'       => esc_html__('Logo Size', 'powerpro'),
     'section'     => 'title_tagline',
     'type'        => 'slider',
     'priority'    => 50,
-    'default'     => 5,
+    'default'     => 175,
+    'choices'     => array(
+        'max'  => 300,
+        'min'  => 0,
+        'step' => 1,
+    ),
+    'transport'   => 'auto',
+    'output'      => array(
+        array(
+            'element'  => 'header .logo .navbar-brand img',
+            'property' => 'width',
+            'units'    => 'px',
+        ),
+    ),
+    'sanitize_callback' => 'codexin_sanitize_number',
+));
+
+Kirki::add_field( $config_id, array(
+    'settings'    => 'cx_logo_top_spacing',
+    'label'       => esc_html__('Logo Top Spacing', 'powerpro'),
+    'section'     => 'title_tagline',
+    'type'        => 'slider',
+    'priority'    => 51,
+    'default'     => 0,
     'choices'     => array(
         'max'  => 100,
         'min'  => 0,
@@ -81,11 +104,11 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'    => 'cx_logo_bottom_spacing',
-    'label'       => esc_html__('Logo Bottom Spacing', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('Logo Bottom Spacing', 'powerpro'),
     'section'     => 'title_tagline',
     'type'        => 'slider',
-    'priority'    => 51,
-    'default'     => 5,
+    'priority'    => 52,
+    'default'     => 0,
     'choices'     => array(
         'max'  => 100,
         'min'  => 0,
@@ -109,11 +132,11 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
     'type'        => 'typography',
     'settings'    => 'cx_body_font',
-    'label'       => esc_html__('Body Font Style', 'TEXT_DOMAIN'),
-    'description' => esc_html__('Change Body font family and font style.', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('Body Font Style', 'powerpro'),
+    'description' => esc_html__('Change Body font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_body',
 	'default'     => array(
-		'font-family'    => 'Roboto',
+		'font-family'    => 'Source Sans Pro',
 		'font-weight'    => 'regular',
 		'font-size'      => '14px',
 		'line-height'    => '1.5'
@@ -136,15 +159,75 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'type'        => 'typography',
+    'settings'    => 'cx_header_text_font',
+    'label'       => esc_html__('Header Text Font Style', 'powerpro'),
+    'description' => esc_html__('Change Header Text font family and font style.', 'powerpro'),
+    'section'     => 'cx_typography_header',
+    'default'     => array(
+        'font-size'         => '20px',
+        'line-height'       => '33px',
+        'font-family'       => 'Source Sans Pro',
+        'font-weight'       => '400',
+        'text-transform'    => 'uppercase',
+    ),
+    'priority'    => 10,
+    'choices'     => array(
+        'font-style'        => true,
+        'font-family'       => true,
+        'font-size'         => true,
+        'line-height'       => true,
+        'font-weight'       => true,
+        'font-transform'    => true,
+    ),
+    'transport'   => 'auto',
+    'output'      => array(
+        array(
+            'element' => 'header .site-title',
+        ),
+    ),
+));
+
+Kirki::add_field( $config_id, array(
+    'type'        => 'typography',
+    'settings'    => 'cx_header_desc_font',
+    'label'       => esc_html__('Header Description Font Style', 'powerpro'),
+    'description' => esc_html__('Change Header Description font family and font style.', 'powerpro'),
+    'section'     => 'cx_typography_header',
+    'default'     => array(
+        'font-size'         => '16px',
+        'line-height'       => '33px',
+        'font-family'       => 'Source Sans Pro',
+        'font-weight'       => '400',
+        'text-transform'    => 'capitalize',
+    ),
+    'priority'    => 20,
+    'choices'     => array(
+        'font-style'        => true,
+        'font-family'       => true,
+        'font-size'         => true,
+        'line-height'       => true,
+        'font-weight'       => true,
+        'font-transform'    => true,
+    ),
+    'transport'   => 'auto',
+    'output'      => array(
+        array(
+            'element' => 'header .site-description',
+        ),
+    ),
+));
+
+Kirki::add_field( $config_id, array(
+    'type'        => 'typography',
     'settings'    => 'cx_nav_font',
-    'label'       => esc_html__('Navigation Menu Font Style', 'TEXT_DOMAIN'),
-    'description' => esc_html__('Change Navigation Menu font family and font style.', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('Navigation Menu Font Style', 'powerpro'),
+    'description' => esc_html__('Change Navigation Menu font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_nav',
 	'default'     => array(
-        'font-size'         => '14px',
-        'line-height'       => '33px',
-        'font-family'       => 'Montserrat',
-        'font-weight'       => '400',
+        'font-size'         => '18px',
+        'line-height'       => '22px',
+        'font-family'       => 'Source Sans Pro',
+        'font-weight'       => '600',
         'text-transform'    => 'uppercase',
 	),
     'priority'    => 20,
@@ -167,13 +250,13 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
     'type'        => 'typography',
     'settings'    => 'cx_h1_font',
-    'label'       => esc_html__('\'h1\' Font Style', 'TEXT_DOMAIN'),
-    'description' => esc_html__('Change h1 font family and font style.', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('\'h1\' Font Style', 'powerpro'),
+    'description' => esc_html__('Change h1 font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_h1',
 	'default'     => array(
         'font-size'   		=> '32px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'Oswald',
+        'font-weight' 		=> '400',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -197,13 +280,13 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
     'type'        => 'typography',
     'settings'    => 'cx_h2_font',
-    'label'       => esc_html__('\'h2\' Font Style', 'TEXT_DOMAIN'),
-    'description' => esc_html__('Change h2 font family and font style.', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('\'h2\' Font Style', 'powerpro'),
+    'description' => esc_html__('Change h2 font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_h2',
 	'default'     => array(
         'font-size'   		=> '28px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'Oswald',
+        'font-weight' 		=> '400',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -227,13 +310,13 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
     'type'        => 'typography',
     'settings'    => 'cx_h3_font',
-    'label'       => esc_html__('\'h3\' Font Style', 'TEXT_DOMAIN'),
-    'description' => esc_html__('Change h3 font family and font style.', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('\'h3\' Font Style', 'powerpro'),
+    'description' => esc_html__('Change h3 font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_h3',
 	'default'     => array(
         'font-size'   		=> '24px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'Oswald',
+        'font-weight' 		=> '400',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -257,13 +340,13 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
     'type'        => 'typography',
     'settings'    => 'cx_h4_font',
-    'label'       => esc_html__('\'h4\' Font Style', 'TEXT_DOMAIN'),
-    'description' => esc_html__('Change h4 font family and font style.', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('\'h4\' Font Style', 'powerpro'),
+    'description' => esc_html__('Change h4 font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_h4',
 	'default'     => array(
         'font-size'   		=> '21px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'Oswald',
+        'font-weight' 		=> '400',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -287,13 +370,13 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
     'type'        => 'typography',
     'settings'    => 'cx_h5_font',
-    'label'       => esc_html__('\'h5\' Font Style', 'TEXT_DOMAIN'),
-    'description' => esc_html__('Change h5 font family and font style.', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('\'h5\' Font Style', 'powerpro'),
+    'description' => esc_html__('Change h5 font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_h5',
 	'default'     => array(
-        'font-size'   		=> '18px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-size'   		=> '16px',
+        'font-family' 		=> 'Oswald',
+        'font-weight' 		=> '400',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -317,13 +400,13 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
     'type'        => 'typography',
     'settings'    => 'cx_h6_font',
-    'label'       => esc_html__('\'h6\' Font Style', 'TEXT_DOMAIN'),
-    'description' => esc_html__('Change h6 font family and font style.', 'TEXT_DOMAIN'),
+    'label'       => esc_html__('\'h6\' Font Style', 'powerpro'),
+    'description' => esc_html__('Change h6 font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_h6',
 	'default'     => array(
-        'font-size'   		=> '15px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-size'   		=> '14px',
+        'font-family' 		=> 'Oswald',
+        'font-weight' 		=> '400',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -350,8 +433,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_text_color',
-    'label'             => esc_html__('Body Text Color:', 'TEXT_DOMAIN'),
-    'description'       => esc_html__('Please Choose the Body Text Color', 'TEXT_DOMAIN'),
+    'label'             => esc_html__('Body Text Color:', 'powerpro'),
+    'description'       => esc_html__('Please Choose the Body Text Color', 'powerpro'),
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 20,
@@ -368,8 +451,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_main_menu_color',
-    'label'             => esc_html__('Main Menu Color:', 'TEXT_DOMAIN'),
-    'description'       => esc_html__('Please Choose the Main Menu Color', 'TEXT_DOMAIN'),
+    'label'             => esc_html__('Main Menu Color:', 'powerpro'),
+    'description'       => esc_html__('Please Choose the Main Menu Color', 'powerpro'),
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 20,
@@ -386,8 +469,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_primary_color',
-    'label'             => esc_html__('Primary Color:', 'TEXT_DOMAIN'),
-    'description'       => esc_html__('Please Choose the Primary Color', 'TEXT_DOMAIN'),
+    'label'             => esc_html__('Primary Color:', 'powerpro'),
+    'description'       => esc_html__('Please Choose the Primary Color', 'powerpro'),
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 30,
@@ -414,8 +497,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_secondary_color',
-    'label'             => esc_html__('Secondary Color:', 'TEXT_DOMAIN'),
-    'description'       => esc_html__('Please Choose the Secondary Color', 'TEXT_DOMAIN'),
+    'label'             => esc_html__('Secondary Color:', 'powerpro'),
+    'description'       => esc_html__('Please Choose the Secondary Color', 'powerpro'),
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 40,
@@ -442,8 +525,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_tertiary_color',
-    'label'             => esc_html__('Tertiary Color:', 'TEXT_DOMAIN'),
-    'description'       => esc_html__('Please Choose the Tertiary Color', 'TEXT_DOMAIN'),
+    'label'             => esc_html__('Tertiary Color:', 'powerpro'),
+    'description'       => esc_html__('Please Choose the Tertiary Color', 'powerpro'),
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 50,
@@ -470,8 +553,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_border_color',
-    'label'             => esc_html__('Border Color:', 'TEXT_DOMAIN'),
-    'description'       => esc_html__('Please Choose the Border Color', 'TEXT_DOMAIN'),
+    'label'             => esc_html__('Border Color:', 'powerpro'),
+    'description'       => esc_html__('Please Choose the Border Color', 'powerpro'),
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 60,
@@ -488,8 +571,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_offset_color',
-    'label'             => esc_html__('Offset Color:', 'TEXT_DOMAIN'),
-    'description'       => esc_html__('Please Choose the Offset Color', 'TEXT_DOMAIN'),
+    'label'             => esc_html__('Offset Color:', 'powerpro'),
+    'description'       => esc_html__('Please Choose the Offset Color', 'powerpro'),
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 70,
@@ -510,15 +593,15 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'header_background_color',
-    'label'             => esc_html__('Header Background Color', 'TEXT_DOMAIN'),
-    'description'       => esc_html__('Change Header Background Color', 'TEXT_DOMAIN'),
+    'label'             => esc_html__('Header Background Color', 'powerpro'),
+    'description'       => esc_html__('Change Header Background Color', 'powerpro'),
     'section'           => 'header_image',
     'type'              => 'color',
     'priority'          => 100,
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
         array(
-            'element'  => 'header',
+            'element'  => 'header .header-top',
             'property' => 'background',
         ),
     ),
@@ -526,31 +609,45 @@ Kirki::add_field( $config_id, array(
 ));
 
 Kirki::add_field( $config_id, array(
-	'type'        => 'switch',
-	'settings'    => 'cx_enable_fixed_header',
-	'label'       => esc_html__( 'Enable Fixed Header?', 'TEXT_DOMAIN' ),
-	'section'     => 'header_image',
-	'default'     => 1,
-	'priority'    => 110,
-	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
-	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+    'type'        => 'switch',
+    'settings'    => 'cx_enable_fixed_header',
+    'label'       => esc_html__( 'Enable Fixed Header?', 'powerpro' ),
+    'section'     => 'header_image',
+    'default'     => 1,
+    'priority'    => 110,
+    'choices'     => array(
+        'on'  => esc_html__( 'On', 'powerpro' ),
+        'off' => esc_html__( 'Off', 'powerpro' ),
+    ),
+    'sanitize_callback' => 'codexin_sanitize_checkbox'
+) );
+
+Kirki::add_field( $config_id, array(
+    'type'        => 'switch',
+    'settings'    => 'cx_enable_floating_header',
+    'label'       => esc_html__( 'Enable Floating Header?', 'powerpro' ),
+    'section'     => 'header_image',
+    'default'     => 1,
+    'priority'    => 111,
+    'choices'     => array(
+        'on'  => esc_html__( 'On', 'powerpro' ),
+        'off' => esc_html__( 'Off', 'powerpro' ),
+    ),
+    'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
     'settings' 		=> 'cx_page_title_position',
-    'label'         => esc_html__('Page Title Position', 'TEXT_DOMAIN'),
-    'description'   => esc_html__('Please Select Page Title Position', 'TEXT_DOMAIN'),
+    'label'         => esc_html__('Page Title Position', 'powerpro'),
+    'description'   => esc_html__('Please Select Page Title Position', 'powerpro'),
     'type'     		=> 'radio-buttonset',
     'section'  		=> 'cx_page_title_section',
     'default'  		=> 'left',
     'priority' 		=> 10,
     'choices'  		=> array(
-        'left' 		=> esc_html__( 'Left', 'TEXT_DOMAIN' ),
-        'center' 	=> esc_html__( 'Center', 'TEXT_DOMAIN' ),
-        'right'		=> esc_html__( 'Right', 'TEXT_DOMAIN' ),
+        'left' 		=> esc_html__( 'Left', 'powerpro' ),
+        'center' 	=> esc_html__( 'Center', 'powerpro' ),
+        'right'		=> esc_html__( 'Right', 'powerpro' ),
     ),
     'transport'     => 'auto',
     'output'        => array(
@@ -563,8 +660,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'title_background_setting',
-	'label'       	=> esc_html__( 'Page Title Background', 'TEXT_DOMAIN' ),
-	'description' 	=> esc_html__( 'Page header with image, color, etc.', 'TEXT_DOMAIN' ),
+	'label'       	=> esc_html__( 'Page Title Background', 'powerpro' ),
+	'description' 	=> esc_html__( 'Page header with image, color, etc.', 'powerpro' ),
 	'type'        	=> 'background',
 	'section'     	=> 'cx_page_title_section',
 	'priority' 		=> 15,
@@ -587,7 +684,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'      => 'cx_pt_top_spacing',
-    'label'         => esc_html__( 'Page Title Top Spacing', 'TEXT_DOMAIN' ),
+    'label'         => esc_html__( 'Page Title Top Spacing', 'powerpro' ),
     'section'       => 'cx_page_title_section',
     'type'          => 'slider',
     'priority'      => 20,
@@ -610,7 +707,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'      => 'cx_pt_bottom_spacing',
-    'label'         => esc_html__( 'Page Title Bottom Spacing', 'TEXT_DOMAIN' ),
+    'label'         => esc_html__( 'Page Title Bottom Spacing', 'powerpro' ),
     'section'       => 'cx_page_title_section',
     'type'          => 'slider',
     'priority'      => 25,
@@ -634,29 +731,29 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_breadcrumb',
-	'label'       => esc_html__( 'Enable Breadcrumb?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Enable Breadcrumb?', 'powerpro' ),
 	'section'     => 'cx_page_bcrumb_section',
 	'default'     => 1,
 	'priority'    => 10,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
     'settings' 		=> 'cx_breadcrumb_position',
-    'label'         => esc_html__('Breadcrumb Position', 'TEXT_DOMAIN'),
-    'description'   => esc_html__('Please Select Breadcrumb Position', 'TEXT_DOMAIN'),
+    'label'         => esc_html__('Breadcrumb Position', 'powerpro'),
+    'description'   => esc_html__('Please Select Breadcrumb Position', 'powerpro'),
     'type'     		=> 'radio-buttonset',
     'section'  		=> 'cx_page_bcrumb_section',
     'default'  		=> 'flex-start',
     'priority' 		=> 20,
     'choices'  		=> array(
-        'flex-start' 	=> esc_html__( 'Left', 'TEXT_DOMAIN' ),
-        'center' 		=> esc_html__( 'Center', 'TEXT_DOMAIN' ),
-        'flex-end'		=> esc_html__( 'Right', 'TEXT_DOMAIN' ),
+        'flex-start' 	=> esc_html__( 'Left', 'powerpro' ),
+        'center' 		=> esc_html__( 'Center', 'powerpro' ),
+        'flex-end'		=> esc_html__( 'Right', 'powerpro' ),
     ),
     'transport'     => 'auto',
     'output'        => array(
@@ -680,19 +777,19 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'cx_blog_title',
-	'label'       	=> esc_html__( 'Blog Page Custom Title', 'TEXT_DOMAIN' ),
-	'description'   => esc_html__( 'Enter Custom Title for Blog Page', 'TEXT_DOMAIN' ),
+	'label'       	=> esc_html__( 'Blog Page Custom Title', 'powerpro' ),
+	'description'   => esc_html__( 'Enter Custom Title for Blog Page', 'powerpro' ),
 	'type'        	=> 'text',
 	'section'     	=> 'cx_blog_section',
-	'default'     	=> esc_html__( 'Blog', 'TEXT_DOMAIN' ),
+	'default'     	=> esc_html__( 'Blog', 'powerpro' ),
 	'priority'    	=> 10,
 	'sanitize_callback' => 'codexin_sanitize_text'
 ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'cx_blog_arc_layout',
-	'label'       	=> esc_html__( 'Select Blog & Archive Page Layout', 'TEXT_DOMAIN' ),
-	'description'   => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'TEXT_DOMAIN' ),
+	'label'       	=> esc_html__( 'Select Blog & Archive Page Layout', 'powerpro' ),
+	'description'   => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'powerpro' ),
 	'type'        	=> 'radio-image',
 	'section'     	=> 'cx_blog_section',
 	'default'     	=> 'right',
@@ -706,21 +803,21 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_blog_title_excerpt',
-	'label'       => esc_html__( 'Limit Blog Title & Excerpt Length by Character?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Limit Blog Title & Excerpt Length by Character?', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_blog_section',
 	'default'     => 0,
 	'priority'    => 30,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
     'settings'      => 'cx_post_title_length',
-    'label'         => esc_html__( 'Title Length for Posts (In Character)', 'TEXT_DOMAIN' ),
+    'label'         => esc_html__( 'Title Length for Posts (In Character)', 'powerpro' ),
     'section'       => 'cx_blog_section',
     'type'          => 'slider',
     'priority'      => 40,
@@ -742,7 +839,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'      => 'cx_post_excerpt_length',
-    'label'         => esc_html__( 'Excerpt Length for Posts (In Character)', 'TEXT_DOMAIN' ),
+    'label'         => esc_html__( 'Excerpt Length for Posts (In Character)', 'powerpro' ),
     'section'       => 'cx_blog_section',
     'type'          => 'slider',
     'priority'      => 50,
@@ -764,35 +861,35 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_readmore',
-	'label'       => esc_html__( 'Enable Read More Button?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Enable Read More Button?', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_blog_section',
 	'default'     => 1,
 	'priority'    => 60,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_blog_pagination',
-	'label'       => esc_html__( 'Pagination Type', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Pagination Type', 'powerpro' ),
 	'type'        => 'select',
 	'section'     => 'cx_blog_section',
 	'default'     => 'button',
 	'priority'    => 70,
 	'choices'     => array(
-		'button'  	=> esc_html__( 'Next - Previous Button', 'TEXT_DOMAIN' ),
-		'numbered' 	=> esc_html__( 'Numbered pagination', 'TEXT_DOMAIN' ),
+		'button'  	=> esc_html__( 'Next - Previous Button', 'powerpro' ),
+		'numbered' 	=> esc_html__( 'Numbered pagination', 'powerpro' ),
 	),
 ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'cx_blog_single_layout',
-	'label'       	=> esc_html__( 'Select Single Post Layout', 'TEXT_DOMAIN' ),
-	'description'   => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'TEXT_DOMAIN' ),
+	'label'       	=> esc_html__( 'Select Single Post Layout', 'powerpro' ),
+	'description'   => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'powerpro' ),
 	'type'        	=> 'radio-image',
 	'section'     	=> 'cx_blog_single_section',
 	'default'     	=> 'right',
@@ -806,56 +903,56 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_share_link',
-	'label'       => esc_html__( 'Enable Share Links?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Enable Share Links?', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_blog_single_section',
 	'default'     => 1,
 	'priority'    => 20,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_comments',
-	'label'       => esc_html__( 'Enable Comments?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Enable Comments?', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_blog_single_section',
 	'default'     => 1,
 	'priority'    => 30,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_post_nav',
-	'label'       => esc_html__( 'Enable Post Navigation?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Enable Post Navigation?', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_blog_single_section',
 	'default'     => 1,
 	'priority'    => 40,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_post_pagination',
-	'label'       => esc_html__( 'Pagination Type', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Pagination Type', 'powerpro' ),
 	'type'        => 'select',
 	'section'     => 'cx_blog_single_section',
 	'default'     => 'button',
 	'priority'    => 70,
 	'choices'     => array(
-		'button'  	=> esc_html__( 'Next - Previous Button', 'TEXT_DOMAIN' ),
-		'text' 		=> esc_html__( 'Button with Post Title text', 'TEXT_DOMAIN' ),
+		'button'  	=> esc_html__( 'Next - Previous Button', 'powerpro' ),
+		'text' 		=> esc_html__( 'Button with Post Title text', 'powerpro' ),
 	),
     'required' => array(
         array(
@@ -872,7 +969,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_facebook_link',
-    'label'             => esc_html__( 'Facebook URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Facebook URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 10,
@@ -881,7 +978,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_twitter_link',
-    'label'             => esc_html__( 'Twiter URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Twiter URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 15,
@@ -890,7 +987,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_instagram_link',
-    'label'             => esc_html__( 'Instagram URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Instagram URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 20,
@@ -899,7 +996,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_pinterest_link',
-    'label'             => esc_html__( 'Pinterest URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Pinterest URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 25,
@@ -908,7 +1005,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_behance_link',
-    'label'             => esc_html__( 'Behance URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Behance URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 30,
@@ -917,7 +1014,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_gplus_link',
-    'label'             => esc_html__( 'Google Plus URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Google Plus URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 35,
@@ -926,7 +1023,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_linkedin_link',
-    'label'             => esc_html__( 'Linked In URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Linked In URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 40,
@@ -935,7 +1032,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_youtube_link',
-    'label'             => esc_html__( 'Youtube URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Youtube URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 45,
@@ -944,7 +1041,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_vimeoyoutube_link',
-    'label'             => esc_html__( 'Vimeo URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Vimeo URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 50,
@@ -953,7 +1050,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'          => 'cx_skype_link',
-    'label'             => esc_html__( 'Skype URL', 'TEXT_DOMAIN' ),
+    'label'             => esc_html__( 'Skype URL', 'powerpro' ),
     'section'           => 'cx_social_profiles',
     'type'              => 'url',
     'priority'          => 55,
@@ -966,8 +1063,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'footer_background_setting',
-	'label'       	=> esc_html__( 'Footer Background', 'TEXT_DOMAIN' ),
-	'description' 	=> esc_html__( 'Footer with image, color, etc.', 'TEXT_DOMAIN' ),
+	'label'       	=> esc_html__( 'Footer Background', 'powerpro' ),
+	'description' 	=> esc_html__( 'Footer with image, color, etc.', 'powerpro' ),
 	'type'        	=> 'background',
 	'section'     	=> 'cx_footer_section',
 	'priority' 		=> 10,
@@ -990,7 +1087,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'      => 'cx_footer_top_spacing',
-    'label'         => esc_html__( 'Footer Top Spacing', 'TEXT_DOMAIN' ),
+    'label'         => esc_html__( 'Footer Top Spacing', 'powerpro' ),
     'section'       => 'cx_footer_section',
     'type'          => 'slider',
     'priority'      => 20,
@@ -1013,7 +1110,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
     'settings'      => 'cx_footer_bottom_spacing',
-    'label'         => esc_html__( 'Footer Bottom Spacing', 'TEXT_DOMAIN' ),
+    'label'         => esc_html__( 'Footer Bottom Spacing', 'powerpro' ),
     'section'       => 'cx_footer_section',
     'type'          => 'slider',
     'priority'      => 25,
@@ -1036,22 +1133,22 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_copyright',
-	'label'       => esc_html__( 'Enable Footer Copyright?', 'TEXT_DOMAIN' ),
+	'label'       => esc_html__( 'Enable Footer Copyright?', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_footer_copy_section',
 	'default'     => 1,
 	'priority'    => 10,
 	'choices'     => array(
-		'on'  => esc_html__( 'On', 'TEXT_DOMAIN' ),
-		'off' => esc_html__( 'Off', 'TEXT_DOMAIN' ),
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
 	'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'footer_copy_background',
-	'label'       	=> esc_html__( 'Footer Copyright Background', 'TEXT_DOMAIN' ),
-	'description' 	=> esc_html__( 'Footer Copyright Background Color', 'TEXT_DOMAIN' ),
+	'label'       	=> esc_html__( 'Footer Copyright Background', 'powerpro' ),
+	'description' 	=> esc_html__( 'Footer Copyright Background Color', 'powerpro' ),
 	'type'        	=> 'color-alpha',
 	'section'     	=> 'cx_footer_copy_section',
 	'priority' 		=> 10,
@@ -1075,8 +1172,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'footer_copy_text_color',
-	'label'       	=> esc_html__( 'Footer Copyright Text Color', 'TEXT_DOMAIN' ),
-	'description' 	=> esc_html__( 'Footer Copyright text Color', 'TEXT_DOMAIN' ),
+	'label'       	=> esc_html__( 'Footer Copyright Text Color', 'powerpro' ),
+	'description' 	=> esc_html__( 'Footer Copyright text Color', 'powerpro' ),
 	'type'        	=> 'color',
 	'section'     	=> 'cx_footer_copy_section',
 	'priority' 		=> 10,
@@ -1100,12 +1197,12 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'footer_copy_text',
-	'label'       	=> esc_html__( 'Footer Copyright Text', 'TEXT_DOMAIN' ),
-	'description' 	=> esc_html__( 'Please Add Your Copyright Text', 'TEXT_DOMAIN' ),
+	'label'       	=> esc_html__( 'Footer Copyright Text', 'powerpro' ),
+	'description' 	=> esc_html__( 'Please Add Your Copyright Text', 'powerpro' ),
 	'type'        	=> 'textarea',
 	'section'     	=> 'cx_footer_copy_section',
 	'priority' 		=> 10,
-	'default'     	=> esc_html__( 'Copyright &copy; 2018. All Right Reserved.', 'TEXT_DOMAIN' ),
+	'default'     	=> esc_html__( 'Copyright &copy; 2018. All Right Reserved.', 'powerpro' ),
     'sanitize_callback' => 'codexin_sanitize_text',
     'required' => array(
         array(
@@ -1118,8 +1215,8 @@ Kirki::add_field( $config_id, array(
 
 // Kirki::add_field( $config_id, array(
 // 	'settings'    	=> 'cx_advanced_custom_js',
-// 	'label'       	=> esc_html__( 'Custom JS', 'TEXT_DOMAIN' ),
-// 	'description' 	=> esc_html__( 'Please Add Your Custom JS', 'TEXT_DOMAIN' ),
+// 	'label'       	=> esc_html__( 'Custom JS', 'powerpro' ),
+// 	'description' 	=> esc_html__( 'Please Add Your Custom JS', 'powerpro' ),
 // 	'type'        	=> 'code',
 // 	'section'     	=> 'cx_custom_js',
 // 	'priority' 		=> 10,

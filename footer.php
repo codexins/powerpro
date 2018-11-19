@@ -13,7 +13,7 @@
 
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 $codexin_cpr    = codexin_get_option( 'cx_enable_copyright' );
 $copyright_text = codexin_get_option( 'footer_copy_text' );

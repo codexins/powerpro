@@ -9,7 +9,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 $length_switch   = codexin_get_option( 'cx_enable_blog_title_excerpt' );
 $title_length    = codexin_get_option( 'cx_post_title_length' );
@@ -77,11 +77,11 @@ $video 			 = codexin_meta( 'codexin_video' );
 
 					// This section is for pagination purpose for a long large page that is seperated using nextpage tags
 		            $args = array(
-		                'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'TEXT_DOMAIN' ) . '</span>',
+		                'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'powerpro' ) . '</span>',
 		                'after'       => '</div>',
 		                'link_before' => '<span>',
 		                'link_after'  => '</span>',
-		                'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'TEXT_DOMAIN' ) . ' </span>%',
+		                'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'powerpro' ) . ' </span>%',
 		                'separator'   => '<span class="screen-reader-text">, </span>',
 		            );                 
 		            wp_link_pages( $args );
@@ -95,7 +95,7 @@ $video 			 = codexin_meta( 'codexin_video' );
 			if( ! is_single() ) { 
 				if( $read_more ) {  ?>				
 					<div class="read-more">
-						<a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'TEXT_DOMAIN' ); ?></a>
+						<a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'powerpro' ); ?></a>
 					</div>
 				<?php 
 				}
@@ -109,7 +109,7 @@ $video 			 = codexin_meta( 'codexin_video' );
 
 				if( $social_share ) { ?>
 				    <div class="share socials">            
-				        <div class="caption"><span class="fa fa-share-alt"></span> <?php esc_html_e('Share: ', 'TEXT_DOMAIN'); ?></div>    
+				        <div class="caption"><span class="fa fa-share-alt"></span> <?php esc_html_e('Share: ', 'powerpro'); ?></div>    
 				        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-facebook"></i></a>
 				        <a target="_blank" href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-twitter"></i></a>
 				        <a target="_blank" href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-google-plus"></i></a>

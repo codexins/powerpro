@@ -12,7 +12,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 // Declaring constant for Theme Options
 define( 'CODEXIN_THEME_OPTIONS', 'codexin_get_option' );
@@ -136,9 +136,9 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 * Make theme available for translation.
 			 * Translations can be filed in the /languages/ directory.
 			 * If you're building a theme based on TEXT_DOMAIN, use a find and replace
-			 * to change 'TEXT_DOMAIN' to the name of your theme in all the template files.
+			 * to change 'powerpro' to the name of your theme in all the template files.
 			 */
-			load_theme_textdomain( 'TEXT_DOMAIN', trailingslashit( get_template_directory() ) . 'languages' );
+			load_theme_textdomain( 'powerpro', trailingslashit( get_template_directory() ) . 'languages' );
 
 			/**
 			 * Add default posts and comments RSS feed links to head.
@@ -222,8 +222,8 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 *
 			 */	
 			$logo_args = array(
-				'width'       => 250,
-				'height'      => 60,
+				'width'       => 175,
+				'height'      => 175,
 				'flex-width'  => true,
 				'flex-height' => true
 			);

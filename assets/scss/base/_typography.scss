@@ -36,13 +36,14 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $cx-body-font;
+    font-family: $cx-heading-font;
     font-weight: 500;
     @extend %color-secondary;
     @extend %default-heading;    
 }
 
-.fa {
+.fa,
+.ion {
     font-size: $cx-icon-font-size;
 }
 
@@ -86,13 +87,12 @@ a {
 }
 
 a:hover, a:focus {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:focus, a:active, a:hover {
     outline: 0 none;
     text-decoration: none;
-    // @include cx-color(primary, color);
     @extend %color-primary;
 }
 
@@ -101,7 +101,6 @@ a:focus, a:active, a:hover {
     &:hover,
     &:focus,
     &:active {
-        // @include cx-color(primary, color);
         @extend %color-primary;
     }
 }
@@ -131,12 +130,11 @@ input[type="tel"] {
     box-shadow: none;
     border-radius: 0;
     height: 40px;
-    border-color: #ddd;
     @extend %cx-transition;
+    @extend %border-default;
 
     &:focus {
         box-shadow: none;
-        // @include cx-color(primary, border);
         @extend %border-primary;
     }
 }
@@ -145,7 +143,6 @@ input[type="tel"] {
     border-radius: 0;
     &:focus {
         box-shadow: none;
-        // @include cx-color(primary, border);
         @extend %border-primary;
     }
 }
@@ -167,13 +164,10 @@ button,
 input[type="reset"],
 input[type="button"],
 input[type="submit"] {
-    background: #f4f4f4;
-    color: #444;
     border: 0;
     padding: 0 30px;
     text-transform: uppercase;
     font-size: 14px;
-    color: #444;
     line-height: 43px;
     height: 40px;
     display: inline-block;
@@ -188,15 +182,13 @@ select:focus,
 button:focus,
 input:focus,
 textarea:focus {
-    border-color: $cx-secondary-color;
     outline: 0;
+    @extend %border-secondary;
 }
 
 button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
-    // @include cx-color(primary, border);
-    // @include cx-color(primary, bg);
     @extend %border-primary;
     @extend %bgc-primary;
 }
@@ -216,63 +208,6 @@ input[type="button"]:hover {
 :-moz-placeholder {
   color: #292929;
   font-size: 13px;
-}
-
-.nice-select {
-    width: 100%;
-    padding: 0 .75rem;
-    font-size: 12px;
-    height: 40px;
-    line-height: 40px;
-    border-color: #ddd;
-
-    &:not(.open) {
-        .list {
-            max-height: 0;
-        }
-    }
-
-    .list {
-        max-height: 280px;
-        height: auto;
-        overflow-y: auto;
-        width: 100%;
-
-        .selected {
-            font-weight: 500;
-        }
-
-        .option {
-            @extend %color-black;
-        }
-    }
-
-    span {
-        &.current {
-            // @include cx-default-color(color, black);
-            @extend %color-black;
-        }
-    }
-
-    &::after {
-        content: "\f107";
-        font-family: FontAwesome;
-        border: 0;
-        width: auto;
-        transform-origin: initial;
-        height: 40px;
-        line-height: 40px;
-        transform: rotate(0);
-        top: 4px;
-        right: 15px;
-        font-size: 12px;
-    }
-    
-    &.open {
-        &::after {
-            transform: rotate(180deg);
-        }
-    }
 }
 
 ::-webkit-selection {

@@ -10,7 +10,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -38,7 +38,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 	<!-- Start of Mobile Navigation -->
 	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left d-block d-sm-block d-md-none">
-	    <button class="c-menu__close"><?php echo esc_html__( '&larr; Back', 'TEXT_DOMAIN' ); ?></button>
+	    <button class="c-menu__close"><?php echo esc_html__( '&larr; Back', 'powerpro' ); ?></button>
 	    <?php codexin_menu( 'mobile_menu' ); ?>
 	</div>
 	<!-- End of Mobile Navigation -->
@@ -52,11 +52,24 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 		<!-- Start of Header -->
 		<header class="header<?php echo is_front_page() ? esc_attr(' front-header') : esc_attr(' inner-header'); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
-			<div class="header-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 col-sm-12 col-md-3 col-lg-3">
+			<div class="header-top<?php echo ( codexin_get_option( 'cx_enable_floating_header' ) ? ' floating-header' : '' ); ?>">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+							<div class="header-left">
+								<div class="header-search">
+									<?php get_search_form(); ?>
+								</div>
+								<div class="header-social">
+									<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+									<a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+									<a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+									<a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+								</div>
+							</div>
+						</div>
 
+						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
 							<!-- Logo -->
 							<div class="logo">
 								<div class="navbar-brand">
@@ -70,8 +83,8 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 		                                    	<a id="header_text" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 		                                    		<?php echo esc_html( get_bloginfo('name') ); ?>
 		                                    	</a>
-		                                    	<p class="site-description"><?php echo esc_html( get_bloginfo('description') ); ?></p>
-											</h1>
+	                                    	</h1>
+	                                    	<p class="site-description"><?php echo esc_html( get_bloginfo('description') ); ?></p>
 										<?php }
 									 ?>
 								</div>
@@ -81,13 +94,20 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 							<div id="o-wrapper" class="mobile-nav o-wrapper d-block d-sm-block d-md-none">
 								<div class="primary-nav">
 									<button id="c-button--slide-left" class="primary-nav-details">
-										<?php echo esc_html__( 'Menu', 'TEXT_DOMAIN' ); ?> <i class="fa fa-bars"></i>
+										<?php echo esc_html__( 'Menu', 'powerpro' ); ?> <i class="fa fa-bars"></i>
 									</button>
 								</div>
 							</div>
 						</div>
 
-						<div class="col-12 col-sm-12 col-md-9 col-lg-9">
+						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+							<div class="header-right">
+								<a class="default-btn" href="#">707.528.7652</a>
+								<a class="default-btn" href="#">GET A QUOTE</a>
+							</div>
+						</div>
+
+						<div class="col-12 col-sm-12 col-md-12 col-lg-12 d-none d-sm-none d-md-block">
 
 							<!-- Start of main Navigation -->
 							<div id="main_nav">						
@@ -99,10 +119,14 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 				</div> <!-- end of container -->
 			</div> <!-- end of header-top -->
 
+			<div class="fixed-header-space"></div> <!-- empty placeholder div for Fixed Menu bar height-->
+
 			<?php 
 			if( is_page_template( 'page-templates/page-home.php' ) ) {
-				// Get the Slider
-				get_header( 'home' ); 
+				if ( class_exists( 'SmartSlider3' ) ) {
+					// Get the Slider
+					! empty( codexin_meta( 'codexin_page_slider' ) ) ? get_header( 'home' ) : '';
+				}
 			} else {
 				if( codexin_meta( 'codexin_disable_page_title' ) == 0 ) {
 					// Get the Page Title

@@ -9,7 +9,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
 
 if (!function_exists('codexin_get_option')){
     /**
@@ -80,10 +80,10 @@ if ( ! function_exists( 'codexin_comment_function' ) ) {
                         <div class="comment-meta">
                             <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
                                 <time datetime="<?php echo get_the_time('c'); ?>" itemprop="datePublished">
-                                    <?php printf( esc_html__('%1$s at %2$s', 'TEXT_DOMAIN'), get_comment_date(), get_comment_time() ); ?>
+                                    <?php printf( esc_html__('%1$s at %2$s', 'powerpro'), get_comment_date(), get_comment_time() ); ?>
                                 </time>
                             </a>
-                            <?php edit_comment_link( esc_html__( '(Edit)', 'TEXT_DOMAIN' ),'  ','' ) ?>
+                            <?php edit_comment_link( esc_html__( '(Edit)', 'powerpro' ),'  ','' ) ?>
                             <span class="comment-reply">
                                 <?php 
                                 comment_reply_link( array_merge( $args, 
@@ -98,7 +98,7 @@ if ( ! function_exists( 'codexin_comment_function' ) ) {
                         </div>
 
                         <?php if ($comment->comment_approved == '0') { ?>
-                            <div class="moderation-notice"><em><?php echo esc_html__('Your comment is awaiting moderation.', 'TEXT_DOMAIN') ?></em></div>
+                            <div class="moderation-notice"><em><?php echo esc_html__('Your comment is awaiting moderation.', 'powerpro') ?></em></div>
                         <?php } ?>
 
                     </div>
@@ -325,13 +325,11 @@ if ( ! function_exists( 'codexin_get_smart_slider' ) ) {
         if( is_page_template( 'page-templates/page-home.php' ) ) {
             if ( class_exists( 'SmartSlider3' ) ) {
 
-                $slider_id = codexin_meta( 'codexin_page_slider' ); 
+                $slider_id = codexin_meta( 'codexin_page_slider' );
 
                 $result .= '<div class="slider-wrapper">';
                     if( ! empty( $slider_id ) ){
                         $result .= do_shortcode('[smartslider3 slider='. $slider_id .']');
-                    } else {
-                        $result .= sprintf( '<div class="no-slider text-center"><h3>%1$s</h3></div>', esc_html__( 'Please select a \'Slider Name\' from \'Page Edit\' section and click on \'Update\'', 'TEXT_DOMAIN' ) );
                     }
                 $result .= '</div> <!-- end of slider-wrapper -->';
 

@@ -1,0 +1,36 @@
+/**
+ * Components Main Menu
+ *
+ */
+
+#main_menu {
+    float: none;
+    clear: both;
+    display: flex;
+    margin: 15px 0 0;
+    justify-content: center;
+
+    > li {
+    	float: none;
+    	clear: both;
+    	flex: 0;
+    	@extend %bgc-transparent;
+
+    	> a {
+    		border: 0;
+		    letter-spacing: 0.5px;
+		    padding: 10px 15px;
+    		@extend %color-white;
+
+    		&:hover {
+    			@extend %color-secondary;
+    		}
+    	}
+
+    	&.current_page_item {
+    		> a {
+    			@extend %color-secondary;
+    		}
+    	}
+    }
+}

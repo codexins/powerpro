@@ -1,0 +1,72 @@
+/**
+ * Layout Header - Fixed Header
+ *
+ */
+
+.header-top {
+	&.pinned {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    z-index: 9950;
+	    padding: 10px 45px;
+	    background: rgba(#fff, 0.95);
+	    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15);
+	    @extend %cx-transition;
+
+	    &:hover {
+	    	@extend %bgc-white;
+	    }
+
+	    &.top {
+	    	top:-100%;
+			transition: top 0.3s ease-in-out;
+	    }
+
+	    .container-fluid {
+	    	> .row {
+	    		> div {
+	    			&:nth-child(1),
+	    			&:nth-child(3) {
+	    				@extend %visuallyhidden;
+	    			}
+	    		}
+
+	    		> .col-lg-12 {
+	    			flex: 0 0 66.66%;
+	    			max-width: 66.66%
+	    		}
+	    	}
+	    }
+
+	    .logo {
+	    	text-align: left;
+
+	    	img {
+	    		width: 80px;
+	    	}
+	    }
+
+	    #main_menu {
+	    	margin-top: 0;
+	    	justify-content: flex-end;
+
+	    	.current_page_item {
+	    		a {
+	    			@extend %color-tertiary;
+	    		}
+	    	}
+
+	    	> li:not(.current_page_item) {
+	    		> a {
+	    			@extend %color-dark;
+
+	    			&:hover {
+	    				@extend %color-tertiary;
+	    			}
+	    		}
+	    	}
+	    }
+	}
+}
