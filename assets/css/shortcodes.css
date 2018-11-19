@@ -1,0 +1,113 @@
+/*
+This file is used to contain all shortcodes imports.
+Files inside this folder should contain all styles relating
+to a reusable shortcodes.
+*/
+
+/******************************
+
+INDEX:
+
+	s00 - Shortcode - Common Helpers
+	s01 - Shortcode - Section Title
+
+
+	s50 - Shortcode - Responsive CSS
+
+
+******************************/
+
+/**************************************
+s00 - Shortcode - Common Helpers
+**************************************/
+
+.codexin-title-wrapper,
+.codexin-sec-title-2,
+.codexin-title-wrapper.right,
+.codexin-title-wrapper.right .codexin-sec-title-2 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/**************************************
+s00 - Shortcode - Section Title
+**************************************/
+
+.codexin-title-wrapper {
+    background-image: url(../images/title-background.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center;
+    -webkit-background-size: 100% 100%;
+    background-size: 100%;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: -o-inline-flex;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.codexin-sec-title-2 {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: #002D87;
+    display: inline-block;
+    background: #fff;
+    padding: 30px 15px 30px 0;
+    margin-bottom: 0 !important;
+    overflow: hidden;
+    text-transform: initial;
+}
+
+.codexin-title-wrapper.right {
+    text-align: right;
+}
+
+.codexin-title-wrapper.right .codexin-sec-title-2 {
+    padding: 30px 0 30px 15px;
+}
+
+.codexin-title-wrapper.center {
+    text-align: center;
+}
+
+.codexin-title-wrapper.center .codexin-sec-title-2 {
+    padding: 30px 15px 30px 15px;
+}
+
+.codexin-sec-title-1 {
+    font-size: 28px;
+    line-height: 1.3em;
+    letter-spacing: 1px;
+    text-transform: initial;
+}
+
+.codexin-primary-title {
+    font-size: 28px;
+    line-height: 1.3em;
+    letter-spacing: 1px;
+    text-transform: initial;
+}
+
+/**************************************
+s50 - Shortcode - Responsive CSS
+**************************************/
+
+@media only screen and (max-width: 767px) {
+
+    .codexin-title-wrapper,
+.codexin-sec-title-2,
+.codexin-title-wrapper.right,
+.codexin-title-wrapper.right .codexin-sec-title-2 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNob3J0Y29kZXMuc2NzcyIsImJhc2UvX3BsYWNlaG9sZGVyLnNjc3MiLCJhYnN0cmFjdHMvX3ZhcmlhYmxlcy5zY3NzIiwiYWJzdHJhY3RzL19taXhpbnMuc2NzcyIsInNob3J0Y29kZXMuY3NzIiwic2hvcnRjb2Rlcy9fc2Mtc2VjLXRpdGxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7RUFJRTtBQUVGOzs7Ozs7Ozs7OzsrQkFXK0I7QUFPL0I7O3VDQUV1QztBQ3hCdkM7RUFDQyxrQkNtQzJCO0VEbEMzQixxQkNrQzJCO0NEN0IzQjs7QUVrYU87RUZ6YVI7SUFJRSxrQkN3QzREO0lEdkM1RCxxQkN1QzREO0dEckM3RDtDR3FCQTs7QUM5QkQ7O3VDQUV1QztBQUV2QztFQUNJLHNEQUFxRDtFQUNyRCw2QkFBNEI7RUFDNUIsaUJBQWdCO0VBQ2hCLDRCQUEyQjtFQUMzQixtQ0FBcUI7VUFBckIsc0JBQXFCO0VGNEJyQiw2QkFBUztFQUNULDBCQUFTO0VBQ1QseUJBQVM7RUFDVCx3QkFBUztFQUNULDRCQUFTO0VBQVQsNEJBQVM7RUFBVCxxQkFBUztDRTdCWjs7QUFFRDtFQUNDLGdCQUFlO0VBQ1osaUJBQWdCO0VBQ2hCLHFCQUFvQjtFQUNwQixlQUFjO0VBQ2Qsc0JBQXFCO0VBQ3JCLGlCQUFnQjtFQUNoQiwwQkFBeUI7RUFDekIsNEJBQTJCO0VBQzNCLGlCQUFnQjtFQUNoQix3QkFBdUI7Q0FFMUI7O0FBRUQ7RUFDSSxrQkFBaUI7Q0FFcEI7O0FBRUQ7RUFDSSwwQkFBeUI7Q0FFNUI7O0FBRUQ7RUFDSSxtQkFBa0I7Q0FDckI7O0FBRUQ7RUFDSSw2QkFBNEI7Q0FDL0I7O0FBRUQ7RUFDQyxnQkFBZTtFQUNaLG1CQUFrQjtFQUNsQixvQkFBbUI7RUFDbkIsd0JBQXVCO0NBQzFCOztBQUVEO0VBQ0MsZ0JBQWU7RUFDWixtQkFBa0I7RUFDbEIsb0JBQW1CO0VBQ25CLHdCQUF1QjtDQUMxQjs7QUx6QkQ7O3VDQUV1QyIsImZpbGUiOiJzaG9ydGNvZGVzLmNzcyJ9 */
+
+/*# sourceMappingURL=shortcodes.css.map */

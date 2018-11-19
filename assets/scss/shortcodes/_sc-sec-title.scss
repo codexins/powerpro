@@ -1,0 +1,59 @@
+/**************************************
+s00 - Shortcode - Section Title
+**************************************/
+
+.codexin-title-wrapper {
+    background-image: url(../images/title-background.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center;
+    background-size: 100%;
+    @include flex(inline-flex);
+    @extend %vpadding;
+}
+
+.codexin-sec-title-2 {
+	font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: #002D87;
+    display: inline-block;
+    background: #fff;
+    padding: 30px 15px 30px 0;
+    margin-bottom: 0 !important;
+    overflow: hidden;
+    text-transform: initial;
+    @extend %vpadding;
+}
+
+.codexin-title-wrapper.right {
+    text-align: right;
+    @extend %vpadding;
+}
+
+.codexin-title-wrapper.right .codexin-sec-title-2 {
+    padding: 30px 0 30px 15px;
+    @extend %vpadding;
+}
+
+.codexin-title-wrapper.center {
+    text-align: center;
+}
+
+.codexin-title-wrapper.center .codexin-sec-title-2 {
+    padding: 30px 15px 30px 15px;
+}
+
+.codexin-sec-title-1 {
+	font-size: 28px;
+    line-height: 1.3em;
+    letter-spacing: 1px;
+    text-transform: initial;
+}
+
+.codexin-primary-title {
+	font-size: 28px;
+    line-height: 1.3em;
+    letter-spacing: 1px;
+    text-transform: initial;
+}
