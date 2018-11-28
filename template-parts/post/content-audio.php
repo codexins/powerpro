@@ -22,16 +22,33 @@ $audio 			 = codexin_meta( 'codexin_audio' );
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-item' ); ?>>
 	<div class="post-content-wrapper">
-		<?php 
-		if ( ! post_password_required() ) {
-			if( ! empty( $audio ) ) {		    
-			    echo '<div class="fluid-wrapper">';
-			        echo sprintf( '%s', $audio );
-			    echo '</div> <!-- end of fluid-wrapper -->';
-			}
-		} // end of password check condition
-		?>
-		<div class="post-content">
+		<header class="entry-header">
+			<div class="entry-meta">
+				<div class="media meta-container">
+					<div class="author-media">
+						<?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?>
+					</div>
+
+					<div class="meta-details media-body">
+						<div class="post-author">
+							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a>
+						</div>
+
+						<ul class="list-inline">
+							<li class=" list-inline-item post-time">
+								<a href="<?php echo esc_url( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) );  ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
+							</li>
+							<?php if( is_single() ) { ?>
+								<li class="list-inline-item like-count"> <?php echo function_exists( 'codexin_likes_button' ) ? codexin_likes_button( get_the_ID(), 0 ) : '' ?></li>
+							<?php } ?>
+							<li class=" list-inline-item post-categories">
+								<?php the_category( ', ' ); ?>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
 			<h2 class="post-title">
 				<?php if( ! is_single() ) { ?>
 					<a href="<?php the_permalink(); ?>">
@@ -49,17 +66,19 @@ $audio 			 = codexin_meta( 'codexin_audio' );
 				}
 				?>
 			</h2>
-			<div class="post-meta">	
-				<ul class="list-inline meta-details">
-					<li class="list-inline-item post-author"><i class="fa fa-pencil"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></li>
-					<li class="list-inline-item post-cats"><i class="fa fa-tag"></i> <?php the_category( ', ' ); ?></li>
-					<li class="list-inline-item post-time"><i class="fa fa-calendar"></i> <a href="<?php echo get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) );  ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></li>
-					<li class="list-inline-item post-comments"><i class="fa fa-comment"></i> <a href="<?php comments_link(); ?>"><?php comments_number( 'No Comments', 'One Comment', '% Comments' ); ?></a></li>
-					<li class="list-inline-item"> <?php echo function_exists( 'codexin_likes_button' ) ? codexin_likes_button( get_the_ID(), 0 ) : '' ?></li>
-				</ul>
-			</div>
-			
-			<?php if( ! is_single() ) { ?>
+		</header> <!-- end of entry-header -->
+
+		<div class="entry-content">
+			<?php 
+			if ( ! post_password_required() ) {
+				if( ! empty( $audio ) ) {		    
+				    echo '<div class="embed">';
+				        echo sprintf( '%s', $audio );
+				    echo '</div> <!-- end of embed -->';
+				}
+			} // end of password check condition
+
+			if( ! is_single() ) { ?>
 				<div class="post-excerpt">
 					<?php 
 	                if( $length_switch ) {
@@ -72,7 +91,7 @@ $audio 			 = codexin_meta( 'codexin_audio' );
 					?>
 				</div>
 			<?php } else {
-				echo '<div class="post-details">';
+				echo '<div class="post-details clearfix">';
 					the_content();
 
 					// This section is for pagination purpose for a long large page that is seperated using nextpage tags
@@ -88,36 +107,42 @@ $audio 			 = codexin_meta( 'codexin_audio' );
 				echo '</div>';
 			}
 			?>
-		</div> <!-- end of post-content -->
+		</div> <!-- end of entry-content -->
 		
-		<div class="post-footer">
-			<?php 
-			if( ! is_single() ) { 
+		<footer class="entry-footer">
+			<?php if( ! is_single() ) { ?>
+				<ul class="list-inline">
+					<li class="list-inline-item post-comments"><i class="ion ion-md-chatbubbles"></i><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '% Comments' ); ?></a></li>
+					<li class="list-inline-item"> <?php echo function_exists( 'codexin_likes_button' ) ? codexin_likes_button( get_the_ID(), 0 ) : '' ?></li>
+				</ul>
+			<?php
 				if( $read_more ) {  ?>				
-					<div class="read-more">
+					<div class="read-more post-btn">
 						<a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'powerpro' ); ?></a>
 					</div>
 				<?php 
 				}
 			} else{
 		        if( has_tag() ) { ?>
-		    		<div class="post-tag">
-			 			<?php the_tags('Tags: &nbsp;',' ',''); ?>
+		    		<div class="tagcloud">
+			 			<?php the_tags('',' ',''); ?>
 		    		</div>
 		        <?php 
 		    	}
 
 				if( $social_share ) { ?>
-				    <div class="share socials">            
-				        <div class="caption"><span class="fa fa-share-alt"></span> <?php esc_html_e('Share: ', 'powerpro'); ?></div>    
-				        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-facebook"></i></a>
-				        <a target="_blank" href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-twitter"></i></a>
-				        <a target="_blank" href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-google-plus"></i></a>
-				        <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-linkedin"></i></a>        
+				    <div class="share socials share-links">
+						<ul class="list-inline">
+							<li class="list-inline-item caption"><?php esc_html_e('Share this post: ', 'powerpro'); ?></li>
+                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
+                            <li class="list-inline-item"><a href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-google-plus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-linkedin" data-toggle="tooltip" data-position="top" data-original-title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
+                        </ul>
 				    </div>
 				<?php }
 			}
 			?>
-		</div> <!-- end of post-footer -->
+		</footer> <!-- end of entry-footer -->
 	 </div> <!-- end of post-content-wrapper -->
 </article> <!-- end of #post-## -->

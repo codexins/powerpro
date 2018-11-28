@@ -120,7 +120,10 @@ INDEX:
 
 
   CODEXIN.ElementsSpacingClasses = function () {
-    $('.sidebar-widget p:empty').remove(); // Fixed Navigation Menu Height
+    $('.sidebar-widget p:empty').remove();
+    $('.tagcloud').find('a').removeAttr('style');
+    $('.post_format-post-format-video, .post_format-post-format-audio').find('.embed').removeClass('embed');
+    $('.post_format-post-format-video, .post_format-post-format-audio').find('iframe').parent().addClass('embed'); // Fixed Navigation Menu Height
 
     var headerHeight = $intelHeader[0].getBoundingClientRect().height; // var topBarHeight = $('header .top-header')[0].getBoundingClientRect().height : 0;
     // var headerMainHeight = $('header .header-area')[0].getBoundingClientRect().height;
@@ -131,28 +134,25 @@ INDEX:
       var navHeight = $window.width() > 991 ? $headerfl[0].getBoundingClientRect().height : 0;
       $("#primary_slider, #page_title").css("margin-top", -navHeight);
     } // Sticky header
+    // $window.on('scroll', function() {
+    //     var height = $window.scrollTop();
+    //     if(height < 500) {
+    //         $intelHeader.addClass("top");
+    //         $intelHeader.removeClass("not-top");
+    //     } else if((height < 600) && (height > 500)) {
+    //         $intelHeader.addClass("not-top");
+    //     } else {
+    //         $intelHeader.removeClass("top");
+    //     }
+    //     if (height < 400) {
+    //         $(".fixed-header-space").height(0);
+    //         $intelHeader.removeClass("pinned");
+    //     } else {
+    //         $(".fixed-header-space").height(headerHeight);
+    //         $intelHeader.addClass("pinned");
+    //     }
+    // });
 
-
-    $window.on('scroll', function () {
-      var height = $window.scrollTop();
-
-      if (height < 500) {
-        $intelHeader.addClass("top");
-        $intelHeader.removeClass("not-top");
-      } else if (height < 600 && height > 500) {
-        $intelHeader.addClass("not-top");
-      } else {
-        $intelHeader.removeClass("top");
-      }
-
-      if (height < 400) {
-        $(".fixed-header-space").height(0);
-        $intelHeader.removeClass("pinned");
-      } else {
-        $(".fixed-header-space").height(headerHeight);
-        $intelHeader.addClass("pinned");
-      }
-    });
   };
   /************************************************************
       s06 - Elements Carousel

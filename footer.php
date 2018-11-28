@@ -25,16 +25,16 @@ $to_top 		= codexin_get_option( 'cx_enable_totop' );
 			<div class="footer-widgets-area">
 				<div class="container">
 					<div class="row">
-						<div id="footer_col_1" class="col-12 col-sm-12 col-md-6 col-lg-3">
+						<div id="footer_col_1" class="col-12 col-sm-12 col-md-6 col-lg-4">
 							<?php ( is_active_sidebar('codexin-footer-col-1') ) ? dynamic_sidebar('codexin-footer-col-1') : ''; ?>
 						</div>
-						<div id="footer_col_2" class="col-12 col-sm-12 col-md-6 col-lg-3">
+						<div id="footer_col_2" class="col-12 col-sm-12 col-md-6 col-lg-2">
 							<?php ( is_active_sidebar('codexin-footer-col-2') ) ? dynamic_sidebar('codexin-footer-col-2') : ''; ?>
 						</div>
-						<div id="footer_col_3" class="col-12 col-sm-12 col-md-6 col-lg-3">
+						<div id="footer_col_3" class="col-12 col-sm-12 col-md-6 col-lg-2">
 							<?php ( is_active_sidebar('codexin-footer-col-3') ) ? dynamic_sidebar('codexin-footer-col-3') : ''; ?>
 						</div>
-						<div id="footer_col_4" class="col-12 col-sm-12 col-md-6 col-lg-3">
+						<div id="footer_col_4" class="col-12 col-sm-12 col-md-6 col-lg-4">
 							<?php ( is_active_sidebar('codexin-footer-col-4') ) ? dynamic_sidebar('codexin-footer-col-4') : ''; ?>
 						</div>
 					</div>
@@ -45,9 +45,9 @@ $to_top 		= codexin_get_option( 'cx_enable_totop' );
 				<div class="footer-copyright">
 					<div class="container">
 						<div class="row">
-							<div class="col-xs-12">
+							<div class="col-12 col-sm-12 col-md-12">
 								<p class="copyright-legal">
-									<?php echo html_entity_decode( $copyright_text ); ?>
+									<?php echo wp_kses_post( $copyright_text ); ?>
 								</p>
 							</div>
 						</div>
@@ -61,7 +61,7 @@ $to_top 		= codexin_get_option( 'cx_enable_totop' );
 	    if( $to_top ) { ?>
 	    	<!-- Go to Top Button at right bottom of the window screen -->
 	        <div id="to_top">
-		        <i class="fa fa-chevron-up"></i>
+		        <i class="fa fa-angle-up"></i><i class="fa fa-angle-double-up"></i>
 		    </div>
 		    <!-- Go to Top Button finished-->
 	    <?php } ?>

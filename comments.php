@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 
 		// Checking if there is any comments
 		if ( have_comments() ) { ?>
-			<h3>
+			<h3 class="comments-title">
 				<?php
 					// Diplaying the comment number
 					comments_number(
@@ -108,7 +108,8 @@ if ( post_password_required() ) {
 				</fieldset>
 			</div>',
 		'label_submit' 					=> esc_html__( 'Submit Comment', 'powerpro' ),
-		'id_submit' 					=> 'submit_my_comment'
+		'id_submit' 					=> 'submit_my_comment',
+		'class_submit' 					=> 'default-btn'
 		
 	));
 	?>

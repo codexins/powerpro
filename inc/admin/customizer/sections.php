@@ -46,6 +46,13 @@ Kirki::add_section( 'cx_typography_nav', array(
     'priority'       => 20
 ) );
 
+Kirki::add_section( 'cx_typography_page_title', array(
+    'title'          => esc_html__( 'Page Title Font', 'powerpro' ),
+    'description'    => esc_html__( 'Specify the Page Title font properties.', 'powerpro' ),
+    'panel'          => 'typography_settings',
+    'priority'       => 25
+) );
+
 Kirki::add_section( 'cx_typography_h1', array(
     'title'          => esc_html__( 'Heading 1 Font', 'powerpro' ),
     'description'    => esc_html__( 'Specify h1 font properties.', 'powerpro' ),

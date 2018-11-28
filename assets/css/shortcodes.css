@@ -21,93 +21,120 @@ INDEX:
 s00 - Shortcode - Common Helpers
 **************************************/
 
-.codexin-title-wrapper,
-.codexin-sec-title-2,
-.codexin-title-wrapper.right,
-.codexin-title-wrapper.right .codexin-sec-title-2 {
-    padding-top: 80px;
-    padding-bottom: 80px;
+/**
+ * Placeholders
+ *
+ */
+
+.cx-contacts .contact-item {
+    position: relative;
+}
+
+.cx-contacts .contact-item::before {
+    position: absolute;
+}
+
+/**
+ * Colors
+ *
+ */
+
+.cx-contacts .contact-item::before,
+.cx-contacts .contact-item a:hover {
+    color: #42ad61;
+}
+
+#colophon .cx-contacts .contact-item::before,
+#cx_socials > ul > li > a {
+    color: white;
+}
+
+.cx-contacts .contact-item a {
+    color: #000;
 }
 
 /**************************************
-s00 - Shortcode - Section Title
+s01 - Shortcode - CX Contacts
 **************************************/
 
-.codexin-title-wrapper {
-    background-image: url(../images/title-background.jpg);
-    background-repeat: no-repeat;
-    overflow: hidden;
-    background-position: center;
-    -webkit-background-size: 100% 100%;
-    background-size: 100%;
-    display: -webkit-inline-flex;
-    display: -moz-inline-flex;
-    display: -ms-inline-flex;
-    display: -o-inline-flex;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
+.cx-contacts .contact-item {
+    padding: 5px 0 5px 35px;
 }
 
-.codexin-sec-title-2 {
-    font-size: 26px;
-    font-weight: 500;
-    letter-spacing: -1px;
-    color: #002D87;
-    display: inline-block;
-    background: #fff;
-    padding: 30px 15px 30px 0;
-    margin-bottom: 0 !important;
-    overflow: hidden;
-    text-transform: initial;
+.cx-contacts .contact-item::before {
+    font-family: Ionicons;
+    top: 3px;
+    left: 0;
+    font-size: 20px;
 }
 
-.codexin-title-wrapper.right {
-    text-align: right;
+.cx-contacts .contact-item span {
+    padding-right: 15px;
 }
 
-.codexin-title-wrapper.right .codexin-sec-title-2 {
-    padding: 30px 0 30px 15px;
+.cx-contacts .contact-item:first-child {
+    padding-top: 0;
 }
 
-.codexin-title-wrapper.center {
-    text-align: center;
+.cx-contacts .contact-item:first-child::before {
+    top: 0;
 }
 
-.codexin-title-wrapper.center .codexin-sec-title-2 {
-    padding: 30px 15px 30px 15px;
+.cx-contacts .contact-item:last-child {
+    padding-bottom: 0;
 }
 
-.codexin-sec-title-1 {
-    font-size: 28px;
-    line-height: 1.3em;
-    letter-spacing: 1px;
-    text-transform: initial;
+.cx-contacts .contact-address::before {
+    content: "\f325";
 }
 
-.codexin-primary-title {
-    font-size: 28px;
-    line-height: 1.3em;
-    letter-spacing: 1px;
-    text-transform: initial;
+.cx-contacts .contact-phone::before {
+    content: "\f13e";
+}
+
+.cx-contacts .contact-fax::before {
+    content: "\f31a";
+}
+
+.cx-contacts .contact-email::before {
+    content: "\f322";
+}
+
+.cx-contacts .contact-website::before {
+    content: "\f301";
+}
+
+p + .cx-contacts {
+    padding-top: 15px;
+    margin-top: -5px;
+    border-top: 1px dashed #939393;
+}
+
+#colophon .cx-contacts .contact-address {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/**************************************
+s02 - Shortcode - CX Socials
+**************************************/
+
+#cx_socials > ul > li {
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+#cx_socials > ul > li > a::before {
+    content: none;
 }
 
 /**************************************
 s50 - Shortcode - Responsive CSS
 **************************************/
 
-@media only screen and (max-width: 767px) {
 
-    .codexin-title-wrapper,
-.codexin-sec-title-2,
-.codexin-title-wrapper.right,
-.codexin-title-wrapper.right .codexin-sec-title-2 {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-}
-
-
-/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNob3J0Y29kZXMuc2NzcyIsImJhc2UvX3BsYWNlaG9sZGVyLnNjc3MiLCJhYnN0cmFjdHMvX3ZhcmlhYmxlcy5zY3NzIiwiYWJzdHJhY3RzL19taXhpbnMuc2NzcyIsInNob3J0Y29kZXMuY3NzIiwic2hvcnRjb2Rlcy9fc2Mtc2VjLXRpdGxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7RUFJRTtBQUVGOzs7Ozs7Ozs7OzsrQkFXK0I7QUFPL0I7O3VDQUV1QztBQ3hCdkM7RUFDQyxrQkNvQzJCO0VEbkMzQixxQkNtQzJCO0NEOUIzQjs7QUVrYU87RUZ6YVI7SUFJRSxrQkN5QzREO0lEeEM1RCxxQkN3QzREO0dEdEM3RDtDR3FCQTs7QUM5QkQ7O3VDQUV1QztBQUV2QztFQUNJLHNEQUFxRDtFQUNyRCw2QkFBNEI7RUFDNUIsaUJBQWdCO0VBQ2hCLDRCQUEyQjtFQUMzQixtQ0FBcUI7VUFBckIsc0JBQXFCO0VGNEJyQiw2QkFBUztFQUNULDBCQUFTO0VBQ1QseUJBQVM7RUFDVCx3QkFBUztFQUNULDRCQUFTO0VBQVQsNEJBQVM7RUFBVCxxQkFBUztDRTdCWjs7QUFFRDtFQUNDLGdCQUFlO0VBQ1osaUJBQWdCO0VBQ2hCLHFCQUFvQjtFQUNwQixlQUFjO0VBQ2Qsc0JBQXFCO0VBQ3JCLGlCQUFnQjtFQUNoQiwwQkFBeUI7RUFDekIsNEJBQTJCO0VBQzNCLGlCQUFnQjtFQUNoQix3QkFBdUI7Q0FFMUI7O0FBRUQ7RUFDSSxrQkFBaUI7Q0FFcEI7O0FBRUQ7RUFDSSwwQkFBeUI7Q0FFNUI7O0FBRUQ7RUFDSSxtQkFBa0I7Q0FDckI7O0FBRUQ7RUFDSSw2QkFBNEI7Q0FDL0I7O0FBRUQ7RUFDQyxnQkFBZTtFQUNaLG1CQUFrQjtFQUNsQixvQkFBbUI7RUFDbkIsd0JBQXVCO0NBQzFCOztBQUVEO0VBQ0MsZ0JBQWU7RUFDWixtQkFBa0I7RUFDbEIsb0JBQW1CO0VBQ25CLHdCQUF1QjtDQUMxQjs7QUx6QkQ7O3VDQUV1QyIsImZpbGUiOiJzaG9ydGNvZGVzLmNzcyJ9 */
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNob3J0Y29kZXMuc2NzcyIsImJhc2UvX3BsYWNlaG9sZGVyLnNjc3MiLCJiYXNlL19jb2xvcnMtc2hvcnRjb2Rlcy5zY3NzIiwiYWJzdHJhY3RzL192YXJpYWJsZXMuc2NzcyIsInNob3J0Y29kZXMvX3NjLWN4LWNvbnRhY3RzLnNjc3MiLCJzaG9ydGNvZGVzL19zYy1jeC1zb2NpYWxzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7RUFJRTtBQUVGOzs7Ozs7Ozs7OzsrQkFXK0I7QUFPL0I7O3VDQUV1QztBQUN2Qzs7O0dBR0c7QUM2TEg7RUFDQyxtQkFBa0I7Q0FDbEI7O0FBRUQ7RUFDQyxtQkFBa0I7Q0FDbEI7O0FEaE1EOzs7R0FHRztBRWxDSDtFQUNDLGVDb0I2QjtDRG5CN0I7O0FBa0JEO0VBQ0MsYUFBb0M7Q0FDcEM7O0FBVUQ7RUFDQyxZQ2R1QjtDRGV2Qjs7QUVwQ0Q7O3VDQUV1QztBQUV2QztFQUVRLHdCQUF1QjtDQW1DMUI7O0FBckNMO0VBTVksc0JBQXFCO0VBQ3JCLFNBQVE7RUFDUixRQUFPO0VBQ1AsZ0JBQWU7Q0FHbEI7O0FBWlQ7RUFlWSxvQkFBbUI7Q0FDdEI7O0FBaEJUO0VBbUJZLGVBQWM7Q0FLakI7O0FBeEJUO0VBc0JnQixPQUFNO0NBQ1Q7O0FBdkJiO0VBMkJZLGtCQUFpQjtDQUNwQjs7QUE1QlQ7RUF5Q1ksaUJBQWdCO0NBQ25COztBQTFDVDtFQStDWSxpQkFBZ0I7Q0FDbkI7O0FBaERUO0VBcURZLGlCQUFnQjtDQUNuQjs7QUF0RFQ7RUEyRFksaUJBQWdCO0NBQ25COztBQTVEVDtFQWlFWSxpQkFBZ0I7Q0FDbkI7O0FBSVQ7RUFDSSxrQkFBaUI7RUFDakIsaUJBQWdCO0VBQ2hCLCtCQUE4QjtDQUNqQzs7QUFFRDtFQVNZLHFCQUFvQjtFQUNwQixvQkFBbUI7RUFDbkIsbURBQWtEO0NBQ3JEOztBQzVGVDs7dUNBRXVDO0FBRXZDO0VBR0csaUJBQWdCO0VBQ2hCLGdCQUFlO0VBQ2Ysa0JBQWlCO0NBUWpCOztBQWJIO0VBVUssY0FBYTtDQUNiOztBTDJCTDs7dUNBRXVDIiwiZmlsZSI6InNob3J0Y29kZXMuY3NzIn0= */
 
 /*# sourceMappingURL=shortcodes.css.map */

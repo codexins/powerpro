@@ -7,7 +7,7 @@
     float: none;
     clear: both;
     display: flex;
-    margin: 15px 0 0;
+    margin: 25px 0 0;
     justify-content: center;
 
     > li {
@@ -21,15 +21,40 @@
 		    letter-spacing: 0.5px;
 		    padding: 10px 15px;
     		@extend %color-white;
+            @extend .pos-r;
+
+            &::after {
+                content: "";
+                right: 15px;
+                left: auto;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                @extend %bgc-white;
+                @extend .pos-a;
+                @extend %cx-transition;
+            }
 
     		&:hover {
-    			@extend %color-secondary;
+    			@extend %color-primary;
+
+                &::after {
+                    left: 15px;
+                    width: calc(100% - 30px);
+                    @extend %bgc-primary;
+                }
     		}
     	}
 
     	&.current_page_item {
     		> a {
-    			@extend %color-secondary;
+    			@extend %color-primary;
+
+                &::after {
+                    left: 15px;
+                    width: calc(100% - 30px);
+                    @extend %bgc-primary;
+                }
     		}
     	}
     }

@@ -1,0 +1,65 @@
+/**
+ * Layout Blog
+ *
+ */
+
+.post-item:not(.sticky) {
+	.post-content-wrapper {
+		border-bottom-width: 1px;
+		border-bottom-style: dashed;
+		@extend %border-default;
+		@extend %pb-half;
+		@extend %mb-half;
+	}
+
+	&:last-child {
+		.post-content-wrapper {
+			border-bottom: 0;
+			@extend %pb0;
+			@extend %mb0;
+		}
+	}
+}
+
+.sticky {
+	&.post-item {
+		border-bottom-width: 1px;
+		border-bottom-style: dashed;
+		@extend %border-default;
+		@extend %mb-half;
+	}
+
+	.post-content-wrapper {
+		padding: 20px;
+		@extend %bgc-offset;
+	}
+
+	.post-title {
+		padding-top: 30px;
+		@extend .pos-r;
+
+		&::before,
+		&::after {
+			content: "";
+			@extend %pos-a;
+		}
+
+		&::before {
+			top: 0;
+			left: 0;
+			height: 20px;
+			width: 40px;
+			@extend %bgc-primary;
+			@extend %slight-rounded;
+		}
+
+		&::after {
+			content: "\f17e";
+		    font-family: Ionicons;
+		    top: 1px;
+		    left: 15px;
+		    font-size: 15px;
+		    @extend %color-white;
+		}
+	}
+}

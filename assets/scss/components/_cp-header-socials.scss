@@ -10,7 +10,7 @@
 		margin-right: 7px;
 		@extend .circle;
 		@include box(30px);
-		line-height: 32px;
+		// line-height: 32px;
 		@extend %bgc-white;
 		@extend %color-dark;
 	}

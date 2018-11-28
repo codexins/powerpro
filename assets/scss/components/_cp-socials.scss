@@ -1,0 +1,47 @@
+/**
+ * Components Socials
+ *
+ */
+
+.socials {
+	&.social-icons-round {
+		.list-inline {
+			a {
+				display: block;
+			    width: 40px;
+			    height: 40px;
+			    line-height: 40px;
+			    text-align: center;
+			    @extend .circle;
+			}
+		}
+
+		.list-inline-item:not(:last-child) {
+		    margin-right: 3px;
+		    margin-bottom: 5px;
+		}
+	}
+}
+
+.share-links {
+	.list-inline {
+		.list-inline-item {
+			a {
+			    text-align: center;
+			    font-size: 13px;
+			    padding: 7px 15px;
+			    line-height: 30px;
+
+			    &:hover {
+			    	@extend %color-white;
+			    }
+			}
+
+			i {
+			    font-size: 16px;
+			    margin-right: 7px;
+			    top: 1px;
+			}
+		}
+	}
+}

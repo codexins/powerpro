@@ -11,35 +11,40 @@ body {
     background: $cx-body-bg-color;
 }
 
-h1 { 
+h1 {
     font-size: $cx-h1-font-size;
 }
 
-h2 { 
+h2 {
     font-size: $cx-h2-font-size;
 }
 
-h3 { 
+h3 {
     font-size: $cx-h3-font-size;
 }
 
-h4 { 
-    font-size: $cx-h4-font-size; 
+h4 {
+    font-size: $cx-h4-font-size;
 }
 
-h5 { 
-    font-size: $cx-h5-font-size; 
+h5 {
+    font-size: $cx-h5-font-size;
 }
 
-h6 { 
-    font-size: $cx-h6-font-size; 
+h6 {
+    font-size: $cx-h6-font-size;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $cx-heading-font;
     font-weight: 500;
-    @extend %color-secondary;
-    @extend %default-heading;    
+    @extend %color-primary;
+    @extend %default-heading;
 }
 
 .fa,
@@ -54,20 +59,61 @@ p {
     margin-bottom: $cx-heading-margin-bottom;
 }
 
-ul, ol, table, dl, dd {
+ul,
+ol,
+table,
+dl,
+dd,
+pre {
     margin-bottom: $cx-heading-margin-bottom;
 }
 
-address, blockquote {
+address,
+blockquote {
     font-style: italic;
 }
 
 blockquote {
     font-size: $cx-body-font-size;
+    margin: 20px 0;
+    padding: 30px;
+    border-left-width: 4px;
+    border-left-style: solid;
+    @extend %border-primary;
+    @extend %bgc-offset;
+
+    p {
+        &:last-of-type {
+            @extend %mb0;
+        }
+    }
 }
 
-td, th {
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+thead {
+    background: #eee;
+}
+
+td,
+th {
     padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 90%;
+    @extend %border-default;
+}
+
+table tbody tr:nth-child(even) {
+    @extend %bgc-offset;
+}
+
+table tbody tr:nth-child(odd) {
+    @extend %bgc-white;
 }
 
 img {
@@ -76,32 +122,154 @@ img {
     backface-visibility: hidden;
 }
 
-*:focus{
+dl:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+dl {
+    width: 100%;
+}
+
+dt,
+dd {
+    display: inline-block;
+    width: 25%;
+}
+
+dt {
+    font-weight: bold;
+    clear: left;
+    float: left;
+}
+
+dd {
+    width: 70%;
+    padding-left: 1em;
+    clear: right;
+}
+
+dd+dd {
+    float: right;
+    clear: both;
+}
+
+dd:last-of-type {
+    @extend %mb0;
+}
+
+dd+dt {
+    clear: both;
+}
+
+dt+dt {
+    width: 100%;
+    float: none;
+    padding: 0 70% 0 0;
+}
+
+dt+dt+dd {
+    margin-top: -2em;
+}
+
+dt+dt+dd+dt {
+    margin-top: 2em;
+}
+
+ul:not(.list-inline):not(.sf-menu):not(.pagination) {
+    list-style: none;
+}
+
+ol,
+ul:not(.list-inline):not(.sf-menu):not(.pagination) {
+    @extend %margin-0;
+    @extend %padding-0;
+
+    li {
+        padding-left: 18px;
+        padding-bottom: 8px;
+        line-height: 1.5;
+        min-height: 22px;
+        word-break: break-word;
+        @extend .pos-r;
+
+        &::before {
+            content: "\f284";
+            font-family: Ionicons;
+            left: 0;
+            top: 0;
+            font-size: 20px;
+            line-height: 1.3;
+            @extend .pos-a;
+        }
+
+        &:last-child {
+            @extend %pb0;
+        }
+    }
+    
+    ol,
+    ul {
+        padding-top: 8px;
+    }
+}
+
+ol {
+    list-style-position: inside;
+    >li {
+        padding-left: 0;
+        &::before {
+            content: none;
+        }
+    }
+    ol li,
+    ul li {
+        padding-left: 18px;
+    }
+}
+
+ul, ol {
+    + h1, + h2, + h3, + h4, + h5, + h6 {
+        margin-top: 20px;
+    }
+}
+
+pre {
+    padding: 30px;
+    display: block;
+    clear: both;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    @extend %bgc-offset;
+}
+
+*:focus {
     outline: none;
 }
 
 a {
     @extend %cx-transition;
     text-decoration: none;
-    @extend %color-secondary;
-}
-
-a:hover, a:focus {
-    text-decoration: none;
-}
-
-a:focus, a:active, a:hover {
-    outline: 0 none;
-    text-decoration: none;
     @extend %color-primary;
 }
 
-.btn-link {
+a:focus,
+a:active,
+a:hover {
+    outline: 0 none;
+    text-decoration: none;
     @extend %color-secondary;
+}
+
+.btn-link {
+    @extend %color-primary;
+
     &:hover,
     &:focus,
     &:active {
-        @extend %color-primary;
+        @extend %color-secondary;
     }
 }
 
@@ -130,6 +298,8 @@ input[type="tel"] {
     box-shadow: none;
     border-radius: 0;
     height: 40px;
+    border-width: 1px;
+    border-style: solid;
     @extend %cx-transition;
     @extend %border-default;
 
@@ -139,8 +309,40 @@ input[type="tel"] {
     }
 }
 
+select {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.post-date {
+    display: block;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.rsswidget {
+    font-weight: 600;
+}
+
+.rss-date {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.rssSummary {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.rssSummary+cite {
+    font-size: 14px;
+}
+
 .form-control {
     border-radius: 0;
+
     &:focus {
         box-shadow: none;
         @extend %border-primary;
@@ -152,10 +354,9 @@ textarea {
 }
 
 .input-group,
-.input-group input, 
-.input-group select, 
-.input-group 
-.dropdown-menu, 
+.input-group input,
+.input-group select,
+.input-group .dropdown-menu,
 .input-group .popover {
     font-size: 12px;
 }
@@ -168,46 +369,50 @@ input[type="submit"] {
     padding: 0 30px;
     text-transform: uppercase;
     font-size: 14px;
-    line-height: 43px;
+    line-height: 40px;
     height: 40px;
     display: inline-block;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.05em;
     box-shadow: none;
     cursor: pointer;
-    @extend %slight-rounded;
     @extend %cx-transition;
+    @extend %bgc-primary;
+    @extend %color-white;
 }
 
 select:focus,
 button:focus,
-input:focus,
-textarea:focus {
+input:focus {
     outline: 0;
-    @extend %border-secondary;
+    @extend %border-primary;
 }
 
 button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
-    @extend %border-primary;
-    @extend %bgc-primary;
+    @extend %border-secondary;
+    @extend %bgc-secondary;
 }
 
-::-webkit-input-placeholder{
-  color: #292929;
-  font-size: 13px;
+::-webkit-input-placeholder {
+    color: #000;
+    font-size: 13px;
 }
-::-moz-placeholder{
-  color: #292929;
-  font-size: 13px;
+
+::-moz-placeholder {
+    color: #000;
+    font-size: 13px;
 }
-:-ms-input-placeholder{
-  color: #292929;
-  font-size: 13px;
+
+:-ms-input-placeholder {
+    color: #000;
+    font-size: 13px;
 }
+
 :-moz-placeholder {
-  color: #292929;
-  font-size: 13px;
+    color: #000;
+    font-size: 13px;
 }
 
 ::-webkit-selection {

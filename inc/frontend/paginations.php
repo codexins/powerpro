@@ -36,11 +36,11 @@ if ( ! function_exists( 'codexin_posts_nav' ) ) {
 
         $nav .= '<div class="posts-nav clearfix">';
             if( $next_link ) { 
-                $nav .= '<div class="nav-next alignright">'. $next_link .'</div>';
+                $nav .= '<div class="nav-next alignright post-btn">'. $next_link .'</div>';
             }
             
             if( $prev_link ) {
-                $nav .= '<div class="nav-previous alignleft">'. $prev_link .'</div>';
+                $nav .= '<div class="nav-previous alignleft post-btn">'. $prev_link .'</div>';
             }
         $nav .= '</div> <!-- end of posts-nav -->';
         return apply_filters( 'codexin_posts_nav', $nav );
@@ -73,11 +73,11 @@ if ( ! function_exists( 'codexin_post_nav' ) ) {
 
         $nav .= '<div class="posts-nav clearfix">';
             if( $next_link ) { 
-                $nav .= '<div class="nav-next alignleft">'. $next_link .'</div>';
+                $nav .= '<div class="nav-next alignleft post-btn">'. $next_link .'</div>';
             }
             
             if( $prev_link ) {
-                $nav .= '<div class="nav-previous alignright">'. $prev_link .'</div>';
+                $nav .= '<div class="nav-previous alignright post-btn">'. $prev_link .'</div>';
             }
         $nav .= '</div> <!-- end of posts-nav -->';
         return apply_filters( 'codexin_post_nav', $nav );
@@ -144,9 +144,9 @@ if ( ! function_exists( 'codexin_comments_nav' ) ) {
             ?>
             <nav id="comment-nav-below" class="navigation comment-navigation">
                 <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'powerpro' ); ?></h2>
-                <div class="nav-links">
-                    <div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'powerpro' ) ); ?></div>
-                    <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'powerpro' ) ); ?></div>
+                <div class="nav-links clearfix">
+                    <div class="nav-previous alignleft post-btn"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'powerpro' ) ); ?></div>
+                    <div class="nav-next alignright post-btn"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'powerpro' ) ); ?></div>
                 </div><!-- end of nav-links -->
             </nav><!-- end of #comment-nav-below -->
         <?php

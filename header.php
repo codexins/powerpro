@@ -102,8 +102,8 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
 							<div class="header-right">
-								<a class="default-btn" href="#">707.528.7652</a>
-								<a class="default-btn" href="#">GET A QUOTE</a>
+								<a class="default-btn white-scheme" href="#">707.528.7652</a>
+								<a class="default-btn white-scheme" href="#">GET A QUOTE</a>
 							</div>
 						</div>
 

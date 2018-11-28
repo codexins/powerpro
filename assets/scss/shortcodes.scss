@@ -25,8 +25,17 @@ INDEX:
 /**************************************
 s00 - Shortcode - Common Helpers
 **************************************/
-// Placeholders
+/**
+ * Placeholders
+ *
+ */
 @import 'base/placeholder';
+
+/**
+ * Colors
+ *
+ */
+@import 'base/colors-shortcodes';
 
 // Shortcodes Styles
 @import "shortcodes/__shortcodes-dir";

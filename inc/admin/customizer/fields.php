@@ -138,7 +138,7 @@ Kirki::add_field( $config_id, array(
 	'default'     => array(
 		'font-family'    => 'Source Sans Pro',
 		'font-weight'    => 'regular',
-		'font-size'      => '14px',
+		'font-size'      => '16px',
 		'line-height'    => '1.5'
 	),
     'priority'    => 10,
@@ -224,7 +224,7 @@ Kirki::add_field( $config_id, array(
     'description' => esc_html__('Change Navigation Menu font family and font style.', 'powerpro'),
     'section'     => 'cx_typography_nav',
 	'default'     => array(
-        'font-size'         => '18px',
+        'font-size'         => '16px',
         'line-height'       => '22px',
         'font-family'       => 'Source Sans Pro',
         'font-weight'       => '600',
@@ -243,6 +243,36 @@ Kirki::add_field( $config_id, array(
     'output'      => array(
         array(
             'element' => '#main_menu li a',
+        ),
+    ),
+));
+
+Kirki::add_field( $config_id, array(
+    'type'        => 'typography',
+    'settings'    => 'cx_page_title_font',
+    'label'       => esc_html__('page Title Font Style', 'powerpro'),
+    'description' => esc_html__('Change page Title font family and font style.', 'powerpro'),
+    'section'     => 'cx_typography_page_title',
+    'default'     => array(
+        'font-size'         => '34px',
+        'line-height'       => '40px',
+        'font-family'       => 'Oswald',
+        'font-weight'       => '400',
+        'text-transform'    => 'uppercase',
+    ),
+    'priority'    => 25,
+    'choices'     => array(
+        'font-style'        => true,
+        'font-family'       => true,
+        'font-size'         => true,
+        'line-height'       => true,
+        'font-weight'       => true,
+        'font-transform'    => true,
+    ),
+    'transport'   => 'auto',
+    'output'      => array(
+        array(
+            'element' => '#page_title.page-title h1',
         ),
     ),
 ));
@@ -438,7 +468,7 @@ Kirki::add_field( $config_id, array(
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 20,
-    'default'           => '#333',
+    'default'           => '#000',
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
         array(
@@ -486,11 +516,6 @@ Kirki::add_field( $config_id, array(
             'element'  => $color_selectors['primary_color_in_bg_selectors'],
             'property' => 'background-color'
         ),
-
-        // array(
-        //     'element'  => 'h2',
-        //     'property' => 'border-color',
-        // ),
     ),
     'transport'         => 'auto',
 ));
@@ -642,7 +667,7 @@ Kirki::add_field( $config_id, array(
     'description'   => esc_html__('Please Select Page Title Position', 'powerpro'),
     'type'     		=> 'radio-buttonset',
     'section'  		=> 'cx_page_title_section',
-    'default'  		=> 'left',
+    'default'  		=> 'center',
     'priority' 		=> 10,
     'choices'  		=> array(
         'left' 		=> esc_html__( 'Left', 'powerpro' ),
@@ -683,14 +708,34 @@ Kirki::add_field( $config_id, array(
 ) );
 
 Kirki::add_field( $config_id, array(
+    'settings'      => 'title_background_overlay_setting',
+    'label'         => esc_html__( 'Page Title Background Overlay', 'powerpro' ),
+    'description'   => esc_html__( 'Page header background overlay', 'powerpro' ),
+    'type'          => 'color',
+    'section'       => 'cx_page_title_section',
+    'priority'      => 16,
+    'default'       => 'rgba(0,0,0,.6)',
+    'choices'     => array(
+        'alpha' => true,
+    ),
+    'transport'     => 'auto',
+    'output'        => array(
+        array(
+            'element'  => '#page_title.page-title::before',
+            'property' => 'background-color',
+        ),
+    ),
+) );
+
+Kirki::add_field( $config_id, array(
     'settings'      => 'cx_pt_top_spacing',
     'label'         => esc_html__( 'Page Title Top Spacing', 'powerpro' ),
     'section'       => 'cx_page_title_section',
     'type'          => 'slider',
     'priority'      => 20,
-    'default'       => 40,
+    'default'       => 320,
     'choices'       => array(
-        'max'  => 100,
+        'max'  => 500,
         'min'  => 0,
         'step' => 1,
     ),
@@ -711,9 +756,9 @@ Kirki::add_field( $config_id, array(
     'section'       => 'cx_page_title_section',
     'type'          => 'slider',
     'priority'      => 25,
-    'default'       => 40,
+    'default'       => 70,
     'choices'       => array(
-        'max'  => 100,
+        'max'  => 500,
         'min'  => 0,
         'step' => 1,
     ),
@@ -748,7 +793,7 @@ Kirki::add_field( $config_id, array(
     'description'   => esc_html__('Please Select Breadcrumb Position', 'powerpro'),
     'type'     		=> 'radio-buttonset',
     'section'  		=> 'cx_page_bcrumb_section',
-    'default'  		=> 'flex-start',
+    'default'  		=> 'center',
     'priority' 		=> 20,
     'choices'  		=> array(
         'flex-start' 	=> esc_html__( 'Left', 'powerpro' ),
@@ -1069,9 +1114,9 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_footer_section',
 	'priority' 		=> 10,
 	'default'     	=> array(
-		'background-color'      => '#333',
+		'background-color'      => '#212331',
 		'background-image'      => '',
-		'background-repeat'     => 'repeat',
+		'background-repeat'     => 'no-repeat',
 		'background-position'   => 'center center',
 		'background-size'       => 'cover',
 		'background-attachment' => 'scroll',
@@ -1091,16 +1136,16 @@ Kirki::add_field( $config_id, array(
     'section'       => 'cx_footer_section',
     'type'          => 'slider',
     'priority'      => 20,
-    'default'       => 40,
+    'default'       => 80,
     'choices'       => array(
-        'max'  => 100,
+        'max'  => 500,
         'min'  => 0,
         'step' => 1,
     ),
     'transport'     => 'auto',
     'output'        => array(
         array(
-            'element'  => '.footer-widgets-area',
+            'element'  => '#colophon .footer-widgets-area',
             'property' => 'padding-top',
             'units'    => 'px',
         ),
@@ -1114,16 +1159,16 @@ Kirki::add_field( $config_id, array(
     'section'       => 'cx_footer_section',
     'type'          => 'slider',
     'priority'      => 25,
-    'default'       => 40,
+    'default'       => 80,
     'choices'       => array(
-        'max'  => 100,
+        'max'  => 500,
         'min'  => 0,
         'step' => 1,
     ),
     'transport'     => 'auto',
     'output'        => array(
         array(
-            'element'  => '.footer-widgets-area',
+            'element'  => '#colophon .footer-widgets-area',
             'property' => 'padding-bottom',
             'units'    => 'px',
         ),
@@ -1149,16 +1194,19 @@ Kirki::add_field( $config_id, array(
 	'settings'    	=> 'footer_copy_background',
 	'label'       	=> esc_html__( 'Footer Copyright Background', 'powerpro' ),
 	'description' 	=> esc_html__( 'Footer Copyright Background Color', 'powerpro' ),
-	'type'        	=> 'color-alpha',
+	'type'        	=> 'color',
 	'section'     	=> 'cx_footer_copy_section',
 	'priority' 		=> 10,
-    'default'       => '#333',
+    'default'       => 'rgba(0, 0, 0, 0.3)',
 	'transport'     => 'auto',
     'output'        => array(
         array(
-            'element'  => '.footer-copyright',
+            'element'  => '#colophon .footer-copyright',
             'property' => 'background-color',
         ),
+    ),
+    'choices'     => array(
+        'alpha' => true,
     ),
     'required' => array(
         array(

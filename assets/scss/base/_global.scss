@@ -40,9 +40,9 @@ section {
 	}
 }
 
-#secondary {
-	@extend %overflow-hidden;
-}
+// #secondary {
+// 	@extend %overflow-hidden;
+// }
 
 .pswp {
 	z-index: 9999;
@@ -219,11 +219,11 @@ section {
 /* Position */
 
 .pos-r {
-	position: relative;
+	@extend %pos-r;
 }
 
 .pos-a {
-	position: absolute;
+	@extend %pos-a;
 }
 
 /* Tooltips */
@@ -232,12 +232,13 @@ section {
 	z-index: 9950;
 	.arrow{
 		&::before {
-			border-top-color: $cx-secondary-color;
+			border-top-color: $cx-tertiary-color;
 		}
 	}
 
 	.tooltip-inner {
-		@extend %bgc-secondary;
+		border-radius: 0;
+		@extend %bgc-tertiary;
 	}
 
 	.modal-open & {

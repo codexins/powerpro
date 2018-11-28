@@ -124,6 +124,9 @@ INDEX:
     CODEXIN.ElementsSpacingClasses = function() {
 
         $('.sidebar-widget p:empty').remove();
+        $('.tagcloud').find('a').removeAttr('style');
+        $('.post_format-post-format-video, .post_format-post-format-audio').find('.embed').removeClass('embed');
+        $('.post_format-post-format-video, .post_format-post-format-audio').find('iframe').parent().addClass('embed');
 
         // Fixed Navigation Menu Height
         var headerHeight = $intelHeader[0].getBoundingClientRect().height;
@@ -138,24 +141,24 @@ INDEX:
         }
 
         // Sticky header
-        $window.on('scroll', function() {
-            var height = $window.scrollTop();
-            if(height < 500) {
-                $intelHeader.addClass("top");
-                $intelHeader.removeClass("not-top");
-            } else if((height < 600) && (height > 500)) {
-                $intelHeader.addClass("not-top");
-            } else {
-                $intelHeader.removeClass("top");
-            }
-            if (height < 400) {
-                $(".fixed-header-space").height(0);
-                $intelHeader.removeClass("pinned");
-            } else {
-                $(".fixed-header-space").height(headerHeight);
-                $intelHeader.addClass("pinned");
-            }
-        });
+        // $window.on('scroll', function() {
+        //     var height = $window.scrollTop();
+        //     if(height < 500) {
+        //         $intelHeader.addClass("top");
+        //         $intelHeader.removeClass("not-top");
+        //     } else if((height < 600) && (height > 500)) {
+        //         $intelHeader.addClass("not-top");
+        //     } else {
+        //         $intelHeader.removeClass("top");
+        //     }
+        //     if (height < 400) {
+        //         $(".fixed-header-space").height(0);
+        //         $intelHeader.removeClass("pinned");
+        //     } else {
+        //         $(".fixed-header-space").height(headerHeight);
+        //         $intelHeader.addClass("pinned");
+        //     }
+        // });
     };
 
 

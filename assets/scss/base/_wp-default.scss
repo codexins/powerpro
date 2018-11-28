@@ -46,18 +46,21 @@ a img.aligncenter {
 
 .wp-caption {
     max-width: 100%;
-    padding: 0;
+    padding: 10px 10px 0;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    border-width: 1px;
+    border-style: solid;
+    @extend %border-default;
 }
 
 .wp-caption-text {
-    padding: 5px 10px;
+    padding: 7px 10px;
     font-size: 85%;
 }
 
 .wp-caption.alignnone {
-    margin: 0 0 30px;
+    margin: 0 0 20px;
 }
 
 .wp-caption.alignleft {
@@ -78,10 +81,10 @@ a img.aligncenter {
 }
 
 .wp-caption p.wp-caption-text {
-    font-size: 11px;
     line-height: 17px;
     margin: 0;
     padding: 8px;
+    font-size: 14px;
 }
 
 .page-links {
@@ -95,25 +98,17 @@ a img.aligncenter {
 
 
 .page-links span {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    margin: 5px;
+    margin: 5px 0;
     display: inline-block;
     width: 30px;
     height: 30px;
     text-align: center;
     line-height: 28px;
+    @extend .circle;
 }
 
 .page-links a span {
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
+    text-decoration: underline;
 }
 
 span.page-links-title {
@@ -128,7 +123,7 @@ span.page-links-title {
 
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
+    position: absolute;
     white-space: nowrap;
     height: 1px;
     width: 1px;
@@ -137,7 +132,7 @@ span.page-links-title {
 
 .screen-reader-text:focus {
     border-radius: 3px;
-    clip: auto !important;
+    clip: auto;
     display: block;
     font-size: 14px;
     font-size: 0.875rem;
@@ -167,6 +162,8 @@ select {
 
 .gallery-caption {
     /* gallery-caption css */
+    word-wrap: break-word;
+    @extend %bgc-offset;
 }
 
 .bypostauthor {
@@ -179,9 +176,7 @@ select {
 
 .sticky.post-item,
 .category-sticky.post-item {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 15px !important;
+    @extend %pb-half;
 }
 
 .single .sticky.post-item,
@@ -198,23 +193,25 @@ select {
 .post-password-form input[type="password"] {
     margin-left: 20px;
     margin-bottom: 20px;
+    padding: 8px 12px;
+    min-width: 300px;
 }
 
 .site-content {
     overflow-wrap: break-word;
 }
 
+.no-comments,
+.nopassword {
+    padding: 15px;
+    @extend %bgc-offset;
+    @extend %mt-half;
+}
 
-.post-password-form input[type="submit"] {
-    width: auto;
+.no-comments {
+    font-size: 20px;
     text-align: center;
-    text-transform: uppercase;
-    font-size: 18px;
-    border: 0;
-    outline: none;
-    padding: 10px 15px;
-    height: 40px;
-    line-height: 18px;
+    font-weight: 600;
 }
 
 
@@ -224,23 +221,23 @@ select {
  */
 
 #comments {
-    margin-top: 60px;
-}
-
-.posts-nav+#comments {
-    margin-top: 40px;
+    @extend %mt-half;
 }
 
 #comments .comment-author.vcard img {
-    border-radius: 50%;
-    min-width: 100%;
-    max-width: 100%;
-    height: auto;
+    max-width: 80px;
+    padding: 3px;
+    border-width: 1px;
+    border-style: solid;
+    @extend %border-default;
+    @extend .circle;
 }
 
 #comments .comment-info {
-    padding: 15px 20px;
+    padding: 20px;
     position: relative;
+    @extend %bgc-offset;
+    @extend %mb0;
 }
 
 .comment-list {
@@ -252,32 +249,62 @@ select {
 }
 
 .comment-list .media {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .comment-info .fn {
     font-weight: bold;
+    text-transform: capitalize;
+    display: block;
+
+    > a {
+        @extend %color-text;
+
+        &:hover {
+            @extend %color-primary;
+        }
+    }
+}
+
+.comment-text {
+    font-size: 15px;
+
+    p {
+        &:last-of-type {
+            @extend %mb0;
+        }
+    }
 }
 
 .comment-meta {
-    font-size: 85%;
-    text-align: right;
+    font-size: 90%;
+    margin-bottom: 10px;
+
+    > a {
+        @extend %color-text;
+
+        &:hover {
+            @extend %color-primary;
+        }
+    }
 }
 
 .comment-single-left {
-    display: block;
-    width: 90px;
-    float: left;
     margin-right: 25px;
-    height: 90px;
 }
 
 .comment-single-right {
     width: 80%;
-    width: calc(100% - 115px);
-    float: right;
-    display: block;
+    width: calc(100% - 105px);
     margin-bottom: 35px;
+}
+
+#comments .comment-reply i {
+    @extend %color-primary;
+}
+
+.comment-respond {
+    @extend %mt-half;
 }
 
 #commentform {
@@ -337,14 +364,23 @@ p.form-submit {
 
 #comments .comment-info:before {
     content: "";
+    display: block;
+    position: absolute;
     width: 0;
     height: 0;
-    border-style: solid;
-    border-width: 15px 14px 15px 0;
-    position: absolute;
-    left: -13px;
-    top: 30px;
-    z-index: -1;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid $cx-offset-color;
+    margin-left: -12px;
+    left: 0;
+    top: 28px;
+}
+
+#comments .comments-title {
+    padding: 15px;
+    text-transform: initial;
+    @extend %bgc-offset;
+    @extend %mb-half;
 }
 
 /**
@@ -423,4 +459,13 @@ p.form-submit {
 .gallery-item a:hover img,
 .gallery-item a:focus img {
     opacity: .6;
+}
+
+#whole .mejs-controls .mejs-time-rail .mejs-time-current {
+    @extend %bgc-primary;
+}
+
+#whole .mejs-time-handle-content {
+    border-radius: 100%;
+    border: 4px solid #444;
 }

@@ -1,11 +1,11 @@
 /**
- * Layout Header - Header
+ * Layout Header
  *
  */
 
 .header {
 	.header-top {
-		padding: 15px 45px;
+		padding: 25px 45px;
 	}
 
 	.navbar-brand {
@@ -30,7 +30,6 @@
 		}
 	}
 
-	
 	.site-title,
 	.site-description {
 		@extend %mb0;
@@ -44,5 +43,9 @@
 		z-index: 10;
 		@extend %bgc-transparent;
 		@extend .pos-r;
+	}
+
+	&.inner-header {
+		@extend %mb-full;
 	}
 }

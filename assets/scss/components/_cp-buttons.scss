@@ -11,15 +11,135 @@
     letter-spacing: .1em;
     text-align: center;
     display: inline-block;
-    padding: 10px 20px;
-    @extend %bgc-secondary;
-    @extend %color-dark;
+    padding: 8px 20px;
+    border-width: 2px;
+    border-style: solid;
+    @extend %bgc-primary;
+    @extend %border-primary;
+    @extend %color-white;
     @extend %cx-transition;
 
-    &:hover {
-    	// @extend %color-dark;
-    	// background: darken($cx-secondary-color, 10%);
-    	@extend %bgc-tertiary;
+    &:hover,
+    &:focus {
+    	@extend %bgc-secondary;
+        @extend %border-secondary;
     	@extend %color-white;
+    }
+
+    &.white-scheme {
+        border-color: white;
+        @extend %bgc-transparent;
+        @extend %color-white;
+
+        &:hover,
+        &:focus {
+            @extend %border-primary;
+            @extend %color-primary;
+        }
+    }
+}
+
+// .post-btn {
+//     display: inline-block;
+//     text-transform: uppercase;
+//     font-weight: 600;
+//     padding: 10px 12px;
+//     line-height: 1;
+//     @extend .pos-r;
+
+//     &::before,
+//     &::after {
+//         content: "";
+//         left: 0;
+//         right: 0;
+//         width: 100%;
+//         height: 2px;
+//         @extend %bgc-primary;
+//         @extend .pos-a;
+//     }
+
+//     &::before {
+//         top: 0;
+//     }
+
+//     &::after {
+//         bottom: 0;
+//     }
+
+//     span {
+//         &::before,
+//         &::after {
+//             content: "";
+//             width: 2px;
+//             height: 0;
+//             @extend %bgc-primary;
+//             @extend .pos-a;
+//             @extend %cx-transition;
+//         }
+
+//         &::before {
+//             left: 0;
+//             bottom: 0;
+//         }
+
+//         &::after {
+//             right: 0;
+//             top: 0;
+//         }
+//     }
+
+//     &:hover {
+//         &::before,
+//         &::after {
+//             @extend %bgc-secondary;
+//         }
+//         span {
+//             &::before,
+//             &::after {
+//                 height: 100%;
+//                 @extend %bgc-secondary;
+//             }
+
+//             &::before {
+                
+//             }
+//         }
+//     }
+// }
+
+.post-btn {
+    line-height: 1;
+        a {
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: 600;
+            line-height: 1;
+            // text-transform: uppercase;
+            @extend .pos-r;
+            &::after {
+                content: "";
+                right: 0;
+                left: auto;
+                bottom: 0;
+                width: 0;
+                height: 1px;
+                @extend %bgc-primary;
+                @extend .pos-a;
+                @extend %cx-transition;
+            }
+
+            i {
+                padding-left: 5px;
+                font-size: 20px;
+                line-height: 1;
+            }
+
+            &:hover {
+                &::after {
+                    left: 0;
+                    width: 100%;
+                    @extend %bgc-secondary;
+                }
+            }
     }
 }
