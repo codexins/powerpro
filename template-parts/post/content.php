@@ -34,13 +34,13 @@ $social_share 	 = codexin_get_option( 'cx_enable_share_link' );
 						</div>
 
 						<ul class="list-inline">
-							<li class=" list-inline-item post-time">
+							<li class="list-inline-item post-time">
 								<a href="<?php echo esc_url( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) );  ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
 							</li>
 							<?php if( is_single() ) { ?>
 								<li class="list-inline-item like-count"> <?php echo function_exists( 'codexin_likes_button' ) ? codexin_likes_button( get_the_ID(), 0 ) : '' ?></li>
 							<?php } ?>
-							<li class=" list-inline-item post-categories">
+							<li class="list-inline-item post-categories">
 								<?php the_category( ', ' ); ?>
 							</li>
 						</ul>
@@ -50,6 +50,7 @@ $social_share 	 = codexin_get_option( 'cx_enable_share_link' );
 
 			<h2 class="post-title">
 				<?php if( ! is_single() ) { ?>
+					<?php echo ( ( is_sticky() && is_home() && ! is_paged() ) ) ? '<span>' . esc_html__( 'Featured', 'powerpro' ) . '</span>' : ''; ?>
 					<a href="<?php the_permalink(); ?>">
 	                    <?php
 	                    if( $length_switch ) {                            
@@ -127,24 +128,26 @@ $social_share 	 = codexin_get_option( 'cx_enable_share_link' );
 				<?php 
 				}
 			} else{
-		        if( has_tag() ) { ?>
-		    		<div class="tagcloud">
-			 			<?php the_tags('',' ',''); ?>
-		    		</div>
-		        <?php 
-		    	}
+				if( ! post_password_required() ) {
+			        if( has_tag() ) { ?>
+			    		<div class="tagcloud">
+				 			<?php the_tags('',' ',''); ?>
+			    		</div>
+			        <?php 
+			    	}
 
-				if( $social_share ) { ?>
-				    <div class="share socials share-links">
-						<ul class="list-inline">
-							<li class="list-inline-item caption"><?php esc_html_e('Share this post: ', 'powerpro'); ?></li>
-                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
-                            <li class="list-inline-item"><a href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-google-plus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
-                            <li class="list-inline-item"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-linkedin" data-toggle="tooltip" data-position="top" data-original-title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
-                        </ul>
-				    </div>
-				<?php }
+					if( $social_share ) { ?>
+					    <div class="share socials share-links">
+							<ul class="list-inline">
+								<li class="list-inline-item caption"><?php esc_html_e('Share this post: ', 'powerpro'); ?></li>
+	                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
+	                            <li class="list-inline-item"><a href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
+	                            <li class="list-inline-item"><a href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-google-plus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
+	                            <li class="list-inline-item"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-linkedin" data-toggle="tooltip" data-position="top" data-original-title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
+	                        </ul>
+					    </div>
+					<?php }
+				}
 			}
 			?>
 		</footer> <!-- end of entry-footer -->

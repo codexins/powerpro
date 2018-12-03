@@ -7,6 +7,7 @@
     float: none;
     clear: both;
     display: flex;
+    flex-wrap: wrap;
     margin: 25px 0 0;
     justify-content: center;
 
@@ -19,13 +20,13 @@
     	> a {
     		border: 0;
 		    letter-spacing: 0.5px;
-		    padding: 10px 15px;
+		    padding: 10px 20px;
     		@extend %color-white;
             @extend .pos-r;
 
-            &::after {
+            &::before {
                 content: "";
-                right: 15px;
+                right: 20px;
                 left: auto;
                 bottom: 0;
                 width: 0;
@@ -34,28 +35,149 @@
                 @extend .pos-a;
                 @extend %cx-transition;
             }
+        }
 
-    		&:hover {
+		&:hover {
+            > a {
     			@extend %color-primary;
 
-                &::after {
-                    left: 15px;
-                    width: calc(100% - 30px);
+                &::before {
+                    left: 20px;
+                    width: calc(100% - 40px);
                     @extend %bgc-primary;
                 }
-    		}
-    	}
+            }
+		}
+    }
 
-    	&.current_page_item {
-    		> a {
-    			@extend %color-primary;
+    .menu-item-has-children {
+        > a {
+            &::after {
+                right: 2px;
+                border-top-color: white;
+                @extend %cx-transition;
+            }
+        }
+
+        &:hover {
+            > a {
+                &::after {
+                    border-top-color: $cx-primary-color;
+                }
+            }
+        }
+
+        .sub-menu {
+            width: 220px;
+            background: #3e3e3e;
+            box-shadow: 0 13px 42px 11px rgba(0,0,0,.05);
+            border-width: 1px;
+            border-style: solid;
+            @extend %border-tertiary;
+
+            ul {
+                top: -1px;
+                left: 218px;
+            }
+
+            .menu-item {
+                white-space: normal;
+                background: none;
+                padding: 0 5px;
+
+                > a {
+                    &::after {
+                        right: 1em;
+                        border-left-color: white;
+                        border-top-color: transparent;
+                    }
+                }
+
+                a {
+                    border: 0;
+                    font-size: 15px;
+                    text-transform: initial;
+                    font-weight: 400;
+                }
+
+                &:hover {
+                    &.menu-item {
+                        background: rgba(0, 0, 0, 0.2);
+                    }
+                    > a {
+                        padding-left: 18px;
+                        &::after {
+                            border-left-color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-item {
+        .pinned #main_nav & {
+            a {
+                &::before {
+                    content: none;
+                }
 
                 &::after {
-                    left: 15px;
-                    width: calc(100% - 30px);
-                    @extend %bgc-primary;
+                    border-top-color: $cx-text-color;
                 }
-    		}
-    	}
+            }
+
+            &:hover {
+                > a {
+                    @extend %color-primary;
+                    &::after {
+                        border-top-color: $cx-primary-color;
+                    }
+                }
+
+                .sub-menu {
+                    a {
+                        @extend %color-white;
+                        &::after {
+                            border-top-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    > .current-menu-parent,
+    > .current-menu-item,
+    > .current-page-parent {
+        > a {
+            @extend %color-primary;
+
+            &::before {
+                left: 20px;
+                width: calc(100% - 40px);
+                @extend %bgc-primary;
+            }
+
+            &::after {
+                border-top-color: $cx-primary-color;
+            }
+        }
+
+        .pinned #main_nav & {
+            > a {
+                @extend %color-primary;
+                &::after {
+                    border-top-color: $cx-primary-color;
+                }
+            }
+        }
+    }
+
+    .sub-menu {
+        .current-menu-parent.menu-item,
+        .current-menu-item.menu-item {
+            background: rgba(0, 0, 0, 0.2);
+        }
     }
 }

@@ -62,7 +62,7 @@ Kirki::add_field( $config_id, array(
     'section'     => 'title_tagline',
     'type'        => 'slider',
     'priority'    => 50,
-    'default'     => 175,
+    'default'     => 120,
     'choices'     => array(
         'max'  => 300,
         'min'  => 0,
@@ -124,6 +124,16 @@ Kirki::add_field( $config_id, array(
     ),
     'sanitize_callback' => 'codexin_sanitize_number',
 ));
+
+Kirki::add_field( $config_id, array(
+    'settings'      => 'sticky_logo_setting',
+    'label'         => esc_html__( 'Sticky Logo', 'powerpro' ),
+    'description'   => esc_html__( 'Upload sticky logo', 'powerpro' ),
+    'type'          => 'image',
+    'section'       => 'title_tagline',
+    'priority'      => 53,
+    'transport'     => 'auto',
+) );
 
 /************************************************************
 	Typography Settings
@@ -1107,12 +1117,28 @@ Kirki::add_field( $config_id, array(
 *************************************************************/
 
 Kirki::add_field( $config_id, array(
+    'settings'      => 'footer_layout_setting',
+    'label'         => esc_html__( 'Select Footer Layout', 'powerpro' ),
+    'description'   => esc_html__( 'Choose footer columns', 'powerpro' ),
+    'type'          => 'radio-image',
+    'section'       => 'cx_footer_section',
+    'default'       => 'four',
+    'priority'      => 10,
+    'choices'       => array(
+        'two'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-2.jpg',
+        'three'     => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-3.jpg',
+        'four'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-4.jpg',
+        'five'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-5.jpg',
+    ),
+) );
+
+Kirki::add_field( $config_id, array(
 	'settings'    	=> 'footer_background_setting',
 	'label'       	=> esc_html__( 'Footer Background', 'powerpro' ),
 	'description' 	=> esc_html__( 'Footer with image, color, etc.', 'powerpro' ),
 	'type'        	=> 'background',
 	'section'     	=> 'cx_footer_section',
-	'priority' 		=> 10,
+	'priority' 		=> 15,
 	'default'     	=> array(
 		'background-color'      => '#212331',
 		'background-image'      => '',

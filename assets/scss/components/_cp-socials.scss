@@ -32,7 +32,8 @@
 			    padding: 7px 15px;
 			    line-height: 30px;
 
-			    &:hover {
+			    &:hover,
+			    &:focus {
 			    	@extend %color-white;
 			    }
 			}

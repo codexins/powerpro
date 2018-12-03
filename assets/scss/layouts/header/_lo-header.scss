@@ -16,7 +16,7 @@
 		text-align: center;
 
 		img {
-			width: 174px;
+			width: 120px;
 		}
 	}
 
@@ -43,9 +43,5 @@
 		z-index: 10;
 		@extend %bgc-transparent;
 		@extend .pos-r;
-	}
-
-	&.inner-header {
-		@extend %mb-full;
 	}
 }

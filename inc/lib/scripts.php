@@ -29,7 +29,7 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		// Bootstrap
 		wp_enqueue_style( 'bootstrap', trailingslashit( get_template_directory_uri() ) . 'assets/css/bootstrap.min.css', false, '4.1.3', 'all' );
 
-	    $typography_body = codexin_get_option( 'cx_typography_body' );
+	    $typography_body = codexin_get_option( 'cx_body_font' );
 
 	    // Register Google fonts fallback if not set from theme options.
 	    if( ! isset( $typography_body['font-family'] ) || $typography_body['font-family'] == '' ) {

@@ -72,9 +72,9 @@ $audio 			 = codexin_meta( 'codexin_audio' );
 			<?php 
 			if ( ! post_password_required() ) {
 				if( ! empty( $audio ) ) {		    
-				    echo '<div class="embed">';
+				    echo '<div class="cx-fluid-wrapper">';
 				        echo sprintf( '%s', $audio );
-				    echo '</div> <!-- end of embed -->';
+				    echo '</div> <!-- end of cx-fluid-wrapper -->';
 				}
 			} // end of password check condition
 
@@ -123,24 +123,26 @@ $audio 			 = codexin_meta( 'codexin_audio' );
 				<?php 
 				}
 			} else{
-		        if( has_tag() ) { ?>
-		    		<div class="tagcloud">
-			 			<?php the_tags('',' ',''); ?>
-		    		</div>
-		        <?php 
-		    	}
+				if( ! post_password_required() ) {
+			        if( has_tag() ) { ?>
+			    		<div class="tagcloud">
+				 			<?php the_tags('',' ',''); ?>
+			    		</div>
+			        <?php 
+			    	}
 
-				if( $social_share ) { ?>
-				    <div class="share socials share-links">
-						<ul class="list-inline">
-							<li class="list-inline-item caption"><?php esc_html_e('Share this post: ', 'powerpro'); ?></li>
-                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
-                            <li class="list-inline-item"><a href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-google-plus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
-                            <li class="list-inline-item"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-linkedin" data-toggle="tooltip" data-position="top" data-original-title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
-                        </ul>
-				    </div>
-				<?php }
+					if( $social_share ) { ?>
+					    <div class="share socials share-links">
+							<ul class="list-inline">
+								<li class="list-inline-item caption"><?php esc_html_e('Share this post: ', 'powerpro'); ?></li>
+	                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
+	                            <li class="list-inline-item"><a href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
+	                            <li class="list-inline-item"><a href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-google-plus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
+	                            <li class="list-inline-item"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-linkedin" data-toggle="tooltip" data-position="top" data-original-title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
+	                        </ul>
+					    </div>
+					<?php }
+				}
 			}
 			?>
 		</footer> <!-- end of entry-footer -->

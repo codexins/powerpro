@@ -22,6 +22,24 @@
 		}
 	}
 
+	.footer-column {
+		@include respond-to(tablet) {
+			margin-bottom: $cx-col-spacing;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@include respond-to(mobile) {
+			margin-bottom: $cx-col-spacing-mob;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
 	.widgettitle {
 		font-family: $cx-body-font;
 		font-size: 20px;
@@ -64,7 +82,7 @@
 				padding: 5px 0 5px 18px;
 
 				&::before {
-					top: 5px;
+					top: 7.5px;
 				}
 
 				a {
@@ -75,7 +93,7 @@
 					padding-top: 0;
 
 					&::before {
-						top: 0;
+						top: 2.5px;
 					}
 				}
 

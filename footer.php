@@ -18,6 +18,23 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 $codexin_cpr    = codexin_get_option( 'cx_enable_copyright' );
 $copyright_text = codexin_get_option( 'footer_copy_text' );
 $to_top 		= codexin_get_option( 'cx_enable_totop' );
+$footer_layout	= codexin_get_option( 'footer_layout_setting' );
+
+$column_count = 4;
+
+if( $footer_layout == 'two' ) {
+	$column_count = 2;
+	$footer_column = 12 / $column_count;
+} elseif( $footer_layout == 'three' ) {
+	$column_count = 3;
+	$footer_column = 12 / $column_count;
+} elseif( $footer_layout == 'four' ) {
+	$column_count = 4;
+	$footer_column = 2;
+} elseif( $footer_layout == 'five' ) {
+	$column_count = 5;
+	$footer_column = 2;
+} // end of footer layout conditional check
 
 ?>
 		<!-- Start of Footer -->
@@ -25,18 +42,29 @@ $to_top 		= codexin_get_option( 'cx_enable_totop' );
 			<div class="footer-widgets-area">
 				<div class="container">
 					<div class="row">
-						<div id="footer_col_1" class="col-12 col-sm-12 col-md-6 col-lg-4">
-							<?php ( is_active_sidebar('codexin-footer-col-1') ) ? dynamic_sidebar('codexin-footer-col-1') : ''; ?>
-						</div>
-						<div id="footer_col_2" class="col-12 col-sm-12 col-md-6 col-lg-2">
-							<?php ( is_active_sidebar('codexin-footer-col-2') ) ? dynamic_sidebar('codexin-footer-col-2') : ''; ?>
-						</div>
-						<div id="footer_col_3" class="col-12 col-sm-12 col-md-6 col-lg-2">
-							<?php ( is_active_sidebar('codexin-footer-col-3') ) ? dynamic_sidebar('codexin-footer-col-3') : ''; ?>
-						</div>
-						<div id="footer_col_4" class="col-12 col-sm-12 col-md-6 col-lg-4">
-							<?php ( is_active_sidebar('codexin-footer-col-4') ) ? dynamic_sidebar('codexin-footer-col-4') : ''; ?>
-						</div>
+						<?php 
+						for( $i = 1; $i <= $column_count ; $i++ ) {
+							if( $i == 1 ) {
+								if( ( $column_count == 4 ) || ( $column_count == 5 ) ) {
+									$footer_column = 4;
+								}
+							} else {
+								if( ( $column_count == 4 ) || ( $column_count == 5 ) ) {
+									$footer_column = 2;
+								}
+							}
+
+							if( $i == 4 ) {
+								if( $column_count == 4 ) {
+									$footer_column = 4;
+								}
+							}
+							echo '<div id="footer_col_' . esc_attr( $i ) . '" class="footer-column col-12 col-sm-12 col-md-6 col-lg-' . esc_attr( $footer_column ) . '">';
+								dynamic_sidebar( 'codexin-footer-col-'. esc_attr( $i ) );
+							echo '</div>';
+
+						}
+						?>
 					</div>
 				</div>
 			</div> <!-- end of footer-widgets-area -->

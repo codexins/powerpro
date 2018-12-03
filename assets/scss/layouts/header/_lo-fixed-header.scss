@@ -4,23 +4,41 @@
  */
 
 .header-top {
+	.sticky-logo {
+		display: none;
+	}
+
 	&.pinned {
 	    position: fixed;
 	    top: 0;
 	    left: 0;
 	    width: 100%;
 	    z-index: 9950;
-	    padding: 10px 45px;
+	    padding: 0 45px;
 	    background: rgba(#fff, 0.95);
 	    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15);
 	    @extend %cx-transition;
+
+	    .admin-bar & {
+	    	top: 32px;
+	    }
 
 	    &:hover {
 	    	@extend %bgc-white;
 	    }
 
+		.navbar-brand {
+			> a {
+				display: none;
+			}
+		}
+
+		.sticky-logo {
+			display: block;
+		}
+
 	    &.top {
-	    	top:-100%;
+	    	top: -100%;
 			transition: top 0.3s ease-in-out;
 	    }
 
@@ -29,7 +47,7 @@
 	    		> div {
 	    			&:nth-child(1),
 	    			&:nth-child(3) {
-	    				@extend %visuallyhidden;
+	    				display: none;
 	    			}
 	    		}
 
@@ -42,9 +60,10 @@
 
 	    .logo {
 	    	text-align: left;
+	    	padding: 8px 0;
 
 	    	img {
-	    		width: 80px;
+	    		width: 150px;
 	    	}
 	    }
 
@@ -52,11 +71,12 @@
 	    	margin-top: 0;
 	    	justify-content: flex-end;
 
-	    	.current_page_item {
-	    		a {
-	    			@extend %color-tertiary;
-	    		}
-	    	}
+			> li {
+				> a {
+					font-size: 15px;
+		    		padding: 25px 20px;
+		    	}
+			}
 
 	    	> li:not(.current_page_item) {
 	    		> a {

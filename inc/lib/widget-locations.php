@@ -50,7 +50,19 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 		// Registering Footer Widget Locations
 		public static function codexin_footer_widgets() {
 
+			$footer_layout = ! empty( codexin_get_option( 'footer_layout_setting' ) ) ? codexin_get_option( 'footer_layout_setting' ) : 'four';
 			$widget_count = 4;
+
+			if( $footer_layout == 'two' ) {
+				$widget_count = 2;
+			} elseif( $footer_layout == 'three' ) {
+				$widget_count = 3;
+			} elseif( $footer_layout == 'five' ) {
+				$widget_count = 5;
+			} else {
+				$widget_count = 4;
+			}
+
 			for( $i = 1; $i <= $widget_count ; $i++ ) { 
 				register_sidebar( array(
 					'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'powerpro' ), $i ),

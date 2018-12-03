@@ -4,8 +4,25 @@
  */
 
 .single {
+	.entry-header {
+		.post-title {
+			@extend %mb-half;
+		}
+	}
+
+	.has-post-thumbnail {
+		.post-title {
+			margin-bottom: $cx-heading-margin-bottom;
+		}
+
+		.post-media {
+			@extend %mb-half;
+		}
+	}
+
 	.entry-content {
 		.post-media {
+			.image-placeholder,
 		    img {
 		    	transform: scale(1);
 		    }
@@ -34,24 +51,5 @@
 
 	.rwmb-oembed-not-available {
 		@extend %visuallyhidden;
-	}
-
-	.post_format-post-format-video {
-		.embed {
-		    padding: 0px;
-		    padding-bottom: 56.25%;
-		    height: 0;
-		    overflow: hidden;
-		    margin-bottom: 20px;
-		    @extend .pos-r;
-
-			iframe {
-			    top: 0;
-			    left: 0;
-			    width: 100%;
-			    height: 100%;
-			    @extend .pos-a;
-			}
-		}
 	}
 }

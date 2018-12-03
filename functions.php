@@ -55,53 +55,27 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 		 * @since v1.0.0
 		 */
 		public function codexin_includes() {
-			/**
-			 * Registering Navigation Menus
-			 *
-			 */
-			require_once trailingslashit( get_template_directory() ) . 'inc/lib/menus.php';
 
-			/**
-			 * Register widgets locations
-			 *
-			 */
-			require_once trailingslashit( get_template_directory() ) . 'inc/lib/widget-locations.php';
+			// Framework files
+			$codexin_includes = array(
+				'/lib/menus.php',                  					// Registering Navigation Menus
+				'/lib/widget-locations.php',                        // Registering widgets locations
+				'/lib/scripts.php',                         		// Adding the function to enqueue styles and javascripts
+				'/admin/customizer-init.php',                  		// Initializing the customizer
+				'/admin/required-plugins.php' ,                     // Including required plugins to run framework
+				'/frontend/breadcrumbs.php',                 		// Adding the function to show breadcrumbs
+				'/frontend/helpers.php',                       		// Adding the helper functions
+				'/frontend/paginations.php'                      	// Adding the functions for various paginations
+			);
 
-			/**
-			 * Adding the function to enqueue styles and javascripts
-			 *
-			 */
-			require trailingslashit( get_template_directory() ) . 'inc/lib/scripts.php';
-
-			/**
-			 * Adding the customizer
-			 *
-			 */
-			require_once trailingslashit( get_template_directory() ) . 'inc/admin/customizer-init.php';
-
-			/**
-			 * Include required plugins to run framework
-			 *
-			 */
-			require trailingslashit( get_template_directory() ) . 'inc/admin/required-plugins.php';
-
-			/**
-			 * Adding the function to show breadcrumbs
-			 *
-			 */
-			require_once trailingslashit( get_template_directory() ) . 'inc/frontend/breadcrumbs.php';
-
-			/**
-			 * Adding the helper functions
-			 *
-			 */
-			require_once trailingslashit( get_template_directory() ) . 'inc/frontend/helpers.php';
-
-			/**
-			 * Adding the functions for various paginations
-			 *
-			 */
-			require_once trailingslashit( get_template_directory() ) . 'inc/frontend/paginations.php';
+			// Requiring the framwork files
+			foreach ( $codexin_includes as $file ) {
+				$filepath = locate_template( 'inc' . $file );
+				if ( ! $filepath ) {
+					trigger_error( sprintf( 'Error locating /inc%s for inclusion', $file ), E_USER_ERROR );
+				}
+				require_once $filepath;
+			}
 		}
 
 		/**
@@ -122,7 +96,7 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 *
 			 */
 			if( ! isset( $content_width ) ) {
-				$content_width = 1140;
+				$content_width = 640;
 			}
 		}
 
@@ -192,7 +166,7 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 */
 			if( function_exists( 'add_image_size' ) ) {
 				add_image_size('codexin-fr-rect-one', 600, 375, true);
-				add_image_size('codexin-fr-rect-two', 800, 354, true);
+				add_image_size('codexin-fr-rect-two', 825, 400, true);
 				add_image_size('codexin-fr-rect-three', 1170, 400, true);
 				add_image_size('codexin-fr-rect-four', 800, 450, true);
 			}
@@ -202,14 +176,22 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 *
 			 */
 			$theme_args = array(
-		        'default-image'         => '',
-		        'default-text-color'    => 'ee3733',
-			    'width'         		=> 1280,
-			    'height'        		=> 150,
+		        'default-image'         => get_parent_theme_file_uri( 'assets/images/default-header.jpg' ),
+		        'default-text-color'    => '',
+			    'width'         		=> 1920,
+			    'height'        		=> 1080,
 			    'flex-height'   		=> true,
 			    'wp-head-callback'      => 'codexin_header_style',
 			);
 			add_theme_support( 'custom-header', $theme_args );
+
+			register_default_headers( array(
+				'default-image' => array(
+					'url'           => '%s/assets/images/default-header.jpg',
+					'thumbnail_url' => '%s/assets/images/default-header.jpg',
+					'description'   => esc_html__( 'Default Header Image', 'powerpro' ),
+				),
+			) );
 
 			/**
 			 * Adding custom background support to the theme
@@ -236,12 +218,58 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			add_theme_support( 'customize-selective-refresh-widgets' );
 
 			/**
+			 * Add support for full and wide align images
+			 *
+			 */
+			add_theme_support( 'align-wide' );
+
+			/**
 			 * Declaring woocommerce support
 			 *
 			 */
 			add_action( 'after_setup_theme', 'codexin_woocommerce_support' );
 			function codexin_woocommerce_support() {
-			    add_theme_support( 'woocommerce' );
+			    	add_theme_support( 'woocommerce', array(
+						'thumbnail_image_width' => 150,
+						'single_image_width'    => 300,
+
+				        'product_grid'          => array(
+				            'default_rows'    => 3,
+				            'min_rows'        => 2,
+				            'max_rows'        => 8,
+				            'default_columns' => 4,
+				            'min_columns'     => 2,
+				            'max_columns'     => 5,
+				        ),
+					) );
+
+				// Add New Woocommerce 3.0.0 Product Gallery support
+				add_theme_support( 'wc-product-gallery-lightbox' );
+				add_theme_support( 'wc-product-gallery-zoom' );
+				add_theme_support( 'wc-product-gallery-slider' );
+			}
+
+			/**
+			 * Declaring Jetpack support
+			 *
+			 */
+			if ( ! function_exists ( 'codexin_jetpack_support' ) ) {
+				function codexin_jetpack_support() {
+					// Add theme support for Infinite Scroll.
+					add_theme_support( 'infinite-scroll', array(
+						'type'           	=> 'click',
+						'container' 		=> 'blog_area',
+						'footer_widgets' 	=> true,
+						'render'    		=> 'codexin_infinite_scroll_render',
+						'footer'    		=> 'whole',
+					) );
+
+					// Add theme support for Responsive Videos.
+					add_theme_support( 'jetpack-responsive-videos' );
+
+					// Add theme support for Social Menus
+					add_theme_support( 'jetpack-social-menu' );
+				}
 			}
 		}
 
@@ -313,27 +341,6 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 					}
 				}
 			}
-
-			/**
-			 * Adding woocommerce compitability to theme structure
-			 *
-			 * @uses 	add_action()
-			 * @uses 	remove_action()
-			 * @since 	v1.0
-			 */
-			remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-			remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-			add_action('woocommerce_before_main_content', 'codexin_wrapper_start', 10);
-			add_action('woocommerce_after_main_content', 'codexin_wrapper_end', 10);
-
-			function codexin_wrapper_start() {
-				echo '<div class="container">';
-			}
-
-			function codexin_wrapper_end() {
-				echo '</div>';
-			}
 		}
 
 		/**
@@ -362,7 +369,6 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 		}
 	}
 }
-
 
 // Instantiating framework
 $framework_init = new Codexin_Framework;

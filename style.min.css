@@ -2,108 +2,11 @@ html,body{margin:0;padding:0;height:100%;-webkit-box-sizing:border-box;-ms-box-s
 body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 section{margin-bottom:80px;display:block;width:100%;float:none;clear:both}
 @media only screen and (max-width:767px){section{margin-bottom:60px}
-}.lead{font-size:16px;line-height:1.65;margin-bottom:20px}
-.main-content-wrapper{overflow-x:hidden}
-#primary,#secondary{margin-bottom:80px}
-@media only screen and (max-width:767px){#primary,#secondary{margin-bottom:60px}
-}.pswp{z-index:9999}
-.pswp__caption__center{text-align:center}
-.modal-open .main-nav-area.sticky{overflow-y:scroll}
-.swiper-wrapper,.swiper-slide,.swiper-slide *{background:rgba(0,0,0,0);-webkit-font-smoothing:subpixel-antialiased}
-.browserupgrade{padding:50px;background:#dedede;font-size:20.5px;text-align:center}
-.mt-30{margin-top:30px}
-.mb-30{margin-bottom:30px}
-.pt-30{padding-top:30px}
-.pb-30{padding-bottom:30px}
-.circle,.page-links span,#comments .comment-author.vcard img,.header-social a,.socials.social-icons-round .list-inline a,.post-content-wrapper .entry-meta .author-media img,.post-content-wrapper .entry-meta .list-inline-item::before,.post-content-wrapper .post-media a::before,.widget_calendar #wp-calendar tbody td a::before{-webkit-border-radius:50%;border-radius:50%}
-.tooltip{z-index:9950}
-.tooltip .arrow::before{border-top-color:#212331}
-.tooltip .tooltip-inner{-webkit-border-radius:0;border-radius:0}
-.modal-open .tooltip{z-index:9990}
-.alignnone{margin:5px 20px 20px 0}
-.aligncenter,div.aligncenter{float:none;display:block;margin:0 auto 30px}
-img{max-width:100%;height:auto}
-.alignright{float:right;margin:5px 0 15px 15px}
-.alignleft{float:left;margin:5px 15px 15px 0}
-a img.alignright{float:right;margin:5px 0 15px 15px}
-a img.alignnone{margin:5px 20px 20px 0}
-a img.alignleft{float:left;margin:5px 15px 15px 0}
-a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
-.wp-caption{max-width:100%;padding:10px 10px 0;text-align:center;margin-bottom:20px;border-width:1px;border-style:solid}
-.wp-caption-text{padding:7px 10px;font-size:85%}
-.wp-caption.alignnone{margin:0 0 20px}
-.wp-caption.alignleft{margin:5px 20px 20px 0}
-.wp-caption.alignright{margin:5px 0 20px 20px}
-.wp-caption img{border:0 none;height:auto;margin:0;max-width:100%;padding:0;width:auto}
-.wp-caption p.wp-caption-text{line-height:17px;margin:0;padding:8px;font-size:14px}
-.page-links{margin-top:40px;display:block;width:100%;clear:both;padding-top:10px;padding-bottom:10px}
-.page-links span{margin:5px 0;display:inline-block;width:30px;height:30px;text-align:center;line-height:28px}
-.page-links a span{text-decoration:underline}
-span.page-links-title{border:0;margin-left:0;padding-left:0;width:auto}
-.screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute;white-space:nowrap;height:1px;width:1px;overflow:hidden}
-.screen-reader-text:focus{-webkit-border-radius:3px;border-radius:3px;clip:auto;display:block;font-size:14px;font-size:.875rem;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
-figure,iframe,embed,object,select{max-width:100%}
-select{outline:0}
-.gallery-caption{word-wrap:break-word}
-.single .sticky.post-item,.single .category-sticky.post-item{border:0;padding:0}
-.post-password-form label{float:left;margin-right:15px}
-.post-password-form input[type="password"]{margin-left:20px;margin-bottom:20px;padding:8px 12px;min-width:300px}
-.site-content{overflow-wrap:break-word}
-.no-comments,.nopassword{padding:15px}
-.no-comments{font-size:20px;text-align:center;font-weight:600}
-#comments .comment-author.vcard img{max-width:80px;padding:3px;border-width:1px;border-style:solid}
-#comments .comment-info{padding:20px;position:relative}
-.comment-list{padding:0}
-.comment-list li.comment{list-style-type:none}
-.comment-list .media{margin-bottom:20px}
-.comment-info .fn{font-weight:bold;text-transform:capitalize;display:block}
-.comment-text{font-size:15px}
-.comment-meta{font-size:90%;margin-bottom:10px}
-.comment-single-left{margin-right:25px}
-.comment-single-right{width:80%;width:calc(100% - 105px);margin-bottom:35px}
-#commentform{position:relative}
-#commentform fieldset{clear:both}
-#commentform textarea{height:150px;padding:10px;width:100%;display:block}
-.comment-form-comment{margin-bottom:20px}
-#commentform input[type="text"]{width:100%;padding:10px}
-p.form-submit{margin-bottom:30px}
-.comment-form-author,.comment-form-email,.comment-form-url{margin-bottom:20px}
-.moderation-notice{text-align:right}
-#commentform input[type="email"]{width:100%;padding:10px}
-#commentform fieldset{position:relative}
-#comment-error,#author-error,#email-error,#url-error{position:absolute;bottom:-10px}
-#comments .comment-info:before{content:"";display:block;position:absolute;width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-right:12px solid #f6f6f6;margin-left:-12px;left:0;top:28px}
-#comments .comments-title{padding:15px;text-transform:initial}
-.gallery-item{display:inline-block;text-align:left;vertical-align:top;margin:0 0 1.5em;padding:0 1em 0 0;width:100%}
-.gallery-columns-2 .gallery-item{max-width:50%}
-.gallery-columns-3 .gallery-item{max-width:33.33%}
-.gallery-columns-4 .gallery-item{max-width:25%}
-.gallery-columns-5 .gallery-item{max-width:20%}
-.gallery-columns-6 .gallery-item{max-width:16.66%}
-.gallery-columns-7 .gallery-item{max-width:14.28%}
-.gallery-columns-8 .gallery-item{max-width:12.5%}
-.gallery-columns-9 .gallery-item{max-width:11.11%}
-.gallery-columns-10 .gallery-item{max-width:10%}
-.gallery-columns-11 .gallery-item{max-width:9.09%}
-.gallery-columns-12 .gallery-item{max-width:8.33%}
-.gallery-item a,.gallery-item a:hover,.gallery-item a:focus{display:inline-block;width:100%}
-.gallery-item a img{display:block;width:100%;-webkit-transition:all .2s ease-in;-o-transition:all .2s ease-in;transition:all .2s ease-in;-webkit-backface-visibility:hidden;backface-visibility:hidden}
-.gallery-item a:hover img,.gallery-item a:focus img{opacity:.6}
-#whole .mejs-time-handle-content{-webkit-border-radius:100%;border-radius:100%;border:4px solid #444}
-html,body{font-size:16px}
-body{font-family:"Source Sans Pro",sans-serif;line-height:20px;color:#000;font-weight:400;background:#fff}
-h1{font-size:32px}
-h2{font-size:28px}
-h3{font-size:24px}
-h4{font-size:21px}
-h5{font-size:19px}
-h6{font-size:16px}
-h1,h2,h3,h4,h5,h6{font-family:"Oswald",sans-serif;font-weight:500}
-.fa,.ion{font-size:14px}
-p{margin-top:0;margin-left:0;margin-right:0;margin-bottom:20px}
-ul,ol,table,dl,dd,pre{margin-bottom:20px}
-address,blockquote{font-style:italic}
-blockquote{font-size:16px;margin:20px 0;padding:30px;border-left-width:4px;border-left-style:solid}
+}p{margin-top:0;margin-left:0;margin-right:0;margin-bottom:25px}
+ul,ol,table,dl,pre,address{margin-bottom:25px}
+dd{margin-bottom:20px}
+blockquote{margin:25px 0;padding:30px;border-left-width:4px;border-left-style:solid}
+cite{display:block;margin:20px 0 5px}
 table{border-collapse:collapse;border-spacing:0;width:100%}
 thead{background:#eee}
 td,th{padding:10px;border-width:1px;border-style:solid;font-size:90%}
@@ -118,35 +21,106 @@ dd+dt{clear:both}
 dt+dt{width:100%;float:none;padding:0 70% 0 0}
 dt+dt+dd{margin-top:-2em}
 dt+dt+dd+dt{margin-top:2em}
-ul:not(.list-inline):not(.sf-menu):not(.pagination){list-style:none}
-ol li,ul:not(.list-inline):not(.sf-menu):not(.pagination) li{padding-left:18px;padding-bottom:8px;line-height:1.5;min-height:22px;word-break:break-word}
-ol li::before,ul:not(.list-inline):not(.sf-menu):not(.pagination) li::before{content:"\f284";font-family:Ionicons;left:0;top:0;font-size:20px;line-height:1.3}
-ol ol,ol ul,ul:not(.list-inline):not(.sf-menu):not(.pagination) ol,ul:not(.list-inline):not(.sf-menu):not(.pagination) ul{padding-top:8px}
-ol{list-style-position:inside}
-ol>li{padding-left:0}
-ol>li::before{content:none}
-ol ol li,ol ul li{padding-left:18px}
-ul+h1,ul+h2,ul+h3,ul+h4,ul+h5,ul+h6,ol+h1,ol+h2,ol+h3,ol+h4,ol+h5,ol+h6{margin-top:20px}
-pre{padding:30px;display:block;clear:both;overflow:auto;white-space:pre-wrap;word-wrap:break-word}
+ul{list-style-type:disc}
+ul.list-inline{margin-left:0}
+ul,ol{margin-left:18px}
+ul li,ol li{padding-bottom:8px}
+ul ol,ul ul,ol ol,ol ul{padding-top:8px}
+pre{padding:30px;display:block;clear:both;overflow:auto;white-space:pre-wrap;word-wrap:break-word;border-width:1px;border-style:solid}
 *:focus{outline:0}
-a{text-decoration:none}
-a:focus,a:active,a:hover{outline:0 none;text-decoration:none}
-legend{font-size:18px;padding:7px 0}
-label{font-size:14px;font-weight:normal}
-textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="email"],input[type="button"],input[type="reset"],input[type="password"],input[type="search"],input[type="tel"]{font-size:12px;-webkit-box-shadow:none;box-shadow:none;-webkit-border-radius:0;border-radius:0;height:40px;border-width:1px;border-style:solid}
+a:focus,a:active,a:hover{outline:0 none}
+legend{padding:7px 0}
+textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="email"],input[type="button"],input[type="reset"],input[type="password"],input[type="search"],input[type="tel"]{-webkit-box-shadow:none;box-shadow:none;-webkit-border-radius:0;border-radius:0;height:40px;border-width:1px;border-style:solid;padding:10px}
 textarea:focus,select:focus,input[type="text"]:focus,input[type="url"]:focus,input[type="number"]:focus,input[type="email"]:focus,input[type="button"]:focus,input[type="reset"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus{-webkit-box-shadow:none;box-shadow:none}
 select{width:100%;padding:5px 10px}
-.post-date{display:block;font-size:14px;font-style:italic}
-.rsswidget{font-weight:600}
-.rss-date{display:block;margin-top:5px;font-size:14px;font-style:italic}
-.rssSummary{margin-bottom:5px;margin-top:5px}
-.rssSummary+cite{font-size:14px}
 .form-control{-webkit-border-radius:0;border-radius:0}
 .form-control:focus{-webkit-box-shadow:none;box-shadow:none}
 textarea{min-height:100px}
-.input-group,.input-group input,.input-group select,.input-group .dropdown-menu,.input-group .popover{font-size:12px}
-button,input[type="reset"],input[type="button"],input[type="submit"]{border:0;padding:0 30px;text-transform:uppercase;font-size:14px;line-height:40px;height:40px;display:inline-block;font-weight:600;letter-spacing:.05em;-webkit-box-shadow:none;box-shadow:none;cursor:pointer}
+button,input[type="reset"],input[type="button"],input[type="submit"]{border:0;padding:0 30px;display:inline-block;-webkit-box-shadow:none;box-shadow:none;cursor:pointer}
 select:focus,button:focus,input:focus{outline:0}
+.lead{font-size:16px;line-height:1.65;margin-bottom:25px}
+.whole-site-wrapper{overflow-wrap:break-word}
+.main-content-wrapper{overflow-x:hidden}
+figure,iframe,embed,object,select{max-width:100%}
+a.skip-link{position:fixed;z-index:1000;top:0;right:0}
+.cx-fluid-wrapper{padding:0;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:20px}
+.cx-fluid-wrapper iframe{top:0;left:0;width:100%;height:100%}
+.pswp{z-index:9999}
+.pswp__caption__center{text-align:center}
+.modal-open .main-nav-area.sticky{overflow-y:scroll}
+.swiper-wrapper,.swiper-slide,.swiper-slide *{background:rgba(0,0,0,0);-webkit-font-smoothing:subpixel-antialiased}
+.woocommerce-billing-fields .form-row,.woocommerce-shipping-fields .form-row,.woocommerce form .form-row{display:block}
+.woocommerce .col2-set .col-1,.woocommerce-page .col2-set .col-1,.woocommerce .col2-set .col-2,.woocommerce-page .col2-set .col-2{max-width:unset}
+.browserupgrade{padding:50px;background:#dedede;font-size:20.5px;text-align:center}
+.mt-30{margin-top:30px}
+.mb-30{margin-bottom:30px}
+.pt-30{padding-top:30px}
+.pb-30{padding-bottom:30px}
+.circle,.header-social a,.socials.social-icons-round .list-inline a,.post-content-wrapper .entry-meta .author-media img,.post-content-wrapper .entry-meta .list-inline-item::before,.post-content-wrapper .post-media a::before,.post-link .post-format-link>i,#comments .comment-author img,.widget_calendar #wp-calendar tbody td a::before{-webkit-border-radius:50%;border-radius:50%}
+.tooltip{z-index:9950}
+.tooltip .arrow::before{border-top-color:#212331}
+.tooltip .tooltip-inner{-webkit-border-radius:0;border-radius:0}
+.modal-open .tooltip{z-index:9990}
+.alignnone{margin:5px auto 25px 0}
+.aligncenter{float:none;display:block;margin:0 auto 25px}
+.alignright,.alignleft{display:inline;margin:5px 0 25px}
+.alignright{float:right;margin-left:25px}
+.alignleft{float:left;margin-right:25px}
+.wp-caption{max-width:100%;padding:10px 10px 0;text-align:center;margin-bottom:25px;border-width:1px;border-style:solid}
+.wp-caption-text{padding:10px;font-size:90%}
+.wp-caption img{border:0 none;margin:0;padding:0;width:100%}
+.page-links{display:block;width:100%;clear:both;padding-top:10px;padding-bottom:10px}
+.page-links span{display:inline-block;width:30px;height:30px;line-height:30px;margin:0 5px;text-align:center}
+.page-links .page-links-title{width:auto;height:auto;margin-left:0;margin-right:15px}
+.screen-reader-text{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.gallery{margin-bottom:17px;margin-left:-8px;margin-right:-8px}
+.gallery-caption{word-wrap:break-word}
+.gallery-item{display:inline-block;text-align:left;vertical-align:top;margin:0 0 1em;padding:0 .5em 0 .5em;width:100%}
+.gallery-columns-1 .gallery-item{max-width:100%}
+.gallery-columns-2 .gallery-item{max-width:50%}
+.gallery-columns-3 .gallery-item{max-width:33.3333333333%}
+.gallery-columns-4 .gallery-item{max-width:25%}
+.gallery-columns-5 .gallery-item{max-width:20%}
+.gallery-columns-6 .gallery-item{max-width:16.6666666667%}
+.gallery-columns-7 .gallery-item{max-width:14.2857142857%}
+.gallery-columns-8 .gallery-item{max-width:12.5%}
+.gallery-columns-9 .gallery-item{max-width:11.1111111111%}
+.gallery-columns-10 .gallery-item{max-width:10%}
+.gallery-columns-11 .gallery-item{max-width:9.0909090909%}
+.gallery-columns-12 .gallery-item{max-width:8.3333333333%}
+.gallery-item a,.gallery-item a:hover,.gallery-item a:focus{display:inline;width:100%}
+.gallery-item img{display:block;width:100%}
+.gallery-item img:hover,.gallery-item img:focus{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
+.post-password-form label{float:left;margin-right:15px}
+.post-password-form input[type="password"]{margin-left:20px;margin-bottom:20px;padding:8px 12px;min-width:300px}
+.site-content{overflow-wrap:break-word}
+#commentform fieldset{clear:both}
+#commentform textarea{height:150px;padding:10px;width:100%;display:block}
+#commentform input[type="text"],#commentform input[type="email"],#commentform input[type="url"]{width:100%;padding:10px}
+#commentform .comment-form-comment,#commentform .comment-form-author,#commentform .comment-form-email,#commentform .comment-form-url,#commentform .comment-form-cookies-consent{margin-bottom:25px}
+#commentform .moderation-notice{text-align:right}
+#commentform .comment-form-cookies-consent input{margin-right:10px}
+#whole .mejs-time-handle-content{-webkit-border-radius:100%;border-radius:100%;border:4px solid #444}
+html,body{font-size:16px}
+body{font-family:"Source Sans Pro",sans-serif;line-height:20px;color:#000;font-weight:400;background:#fff}
+h1{font-size:32px}
+h2{font-size:28px}
+h3{font-size:24px}
+h4{font-size:21px}
+h5{font-size:19px}
+h6{font-size:16px}
+h1,h2,h3,h4,h5,h6{font-family:"Oswald",sans-serif;font-weight:500}
+.fa,.ion{font-size:14px}
+address{font-style:italic}
+blockquote{font-size:16.8px}
+cite{font-size:15.2px}
+a,a:focus,a:active,a:hover{text-decoration:none}
+legend{font-size:18px}
+label{font-size:14px;font-weight:normal}
+textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="email"],input[type="button"],input[type="reset"],input[type="password"],input[type="search"],input[type="tel"]{font-size:12px}
+.post-date{display:block;font-size:14px;font-style:italic}
+.input-group,.input-group input,.input-group select,.input-group .dropdown-menu,.input-group .popover{font-size:12px}
+button,input[type="reset"],input[type="button"],input[type="submit"]{text-transform:uppercase;font-size:14px;line-height:40px;height:40px;font-weight:600;letter-spacing:.05em}
 ::-webkit-input-placeholder{color:#000;font-size:13px}
 ::-moz-placeholder{color:#000;font-size:13px}
 :-ms-input-placeholder{color:#000;font-size:13px}
@@ -160,29 +134,29 @@ select:focus,button:focus,input:focus{outline:0}
 @media only screen and (max-width:767px){.pb-full,#colophon .footer-widgets-area{padding-bottom:60px}
 }.pt-full,#colophon .footer-widgets-area{padding-top:80px}
 @media only screen and (max-width:767px){.pt-full,#colophon .footer-widgets-area{padding-top:60px}
-}.pb-half,.sticky.post-item,.category-sticky.post-item,.post-item:not(.sticky) .post-content-wrapper{padding-bottom:40px}
-@media only screen and (max-width:767px){.pb-half,.sticky.post-item,.category-sticky.post-item,.post-item:not(.sticky) .post-content-wrapper{padding-bottom:30px}
+}.pb-half,.sticky,.post-item:not(.sticky) .post-content-wrapper{padding-bottom:40px}
+@media only screen and (max-width:767px){.pb-half,.sticky,.post-item:not(.sticky) .post-content-wrapper{padding-bottom:30px}
 }.pt-half,.posts-nav,.nav-links,.number-pagination{padding-top:40px}
 @media only screen and (max-width:767px){.pt-half,.posts-nav,.nav-links,.number-pagination{padding-top:30px}
-}.nopadding,ol,ul:not(.list-inline):not(.sf-menu):not(.pagination),.breadcrumb{padding:0}
-.pt0,#comments .comment-text>ol,.sidebar-widget:first-child{padding-top:0}
-.pb0,ol li:last-child,ul:not(.list-inline):not(.sf-menu):not(.pagination) li:last-child,.sidebar-widget:last-child,.codexin-recent-posts-widget .posts-single:last-child,.codexin-popular-posts-widget .posts-single:last-child,#colophon .widgettitle,.post-item:not(.sticky):last-child .post-content-wrapper{padding-bottom:0}
+}ul,ol,.nopadding,.breadcrumb,.widget_nav_menu ul,.widget_rss ul,.widget_recent_entries ul,.widget_meta ul,.widget_pages ul,.widget_categories ul,.widget_archive ul,.widget_recent_comments ul,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul{padding:0}
+.pt0,.sidebar-widget:first-child{padding-top:0}
+ul li:last-child,ol li:last-child,.pb0,.sidebar-widget:last-child,.widget_nav_menu ul li:last-child,.widget_rss ul li:last-child,.widget_recent_entries ul li:last-child,.widget_meta ul li:last-child,.widget_pages ul li:last-child,.widget_categories ul li:last-child,.widget_archive ul li:last-child,.widget_recent_comments ul li:last-child,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li:last-child,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li:last-child,.codexin-recent-posts-widget .posts-single:last-child,.codexin-popular-posts-widget .posts-single:last-child,#colophon .widgettitle,.post-item:not(.sticky):last-child .post-content-wrapper{padding-bottom:0}
 .vmargin{margin-top:80px;margin-bottom:80px}
 @media only screen and (max-width:767px){.vmargin{margin-top:60px;margin-bottom:60px}
-}.mb-full,.header.inner-header{margin-bottom:80px}
-@media only screen and (max-width:767px){.mb-full,.header.inner-header{margin-bottom:60px}
-}.mt-full{margin-top:80px}
-@media only screen and (max-width:767px){.mt-full{margin-top:60px}
-}.mb-half,#comments .comments-title,#colophon .footer-widget,.post-item:not(.sticky) .post-content-wrapper,.sticky.post-item{margin-bottom:40px}
-@media only screen and (max-width:767px){.mb-half,#comments .comments-title,#colophon .footer-widget,.post-item:not(.sticky) .post-content-wrapper,.sticky.post-item{margin-bottom:30px}
-}.mt-half,.no-comments,.nopassword,#comments,.comment-respond,.posts-nav,.nav-links,.number-pagination,.single .entry-footer,.single .entry-footer .share{margin-top:40px}
-@media only screen and (max-width:767px){.mt-half,.no-comments,.nopassword,#comments,.comment-respond,.posts-nav,.nav-links,.number-pagination,.single .entry-footer,.single .entry-footer .share{margin-top:30px}
-}.nomargin,ol,ul:not(.list-inline):not(.sf-menu):not(.pagination),.breadcrumb,.post-content-wrapper .entry-meta .list-inline,.posts-nav .post-btn,.nav-links .post-btn,.header .navbar-brand{margin:0}
+}#primary,#secondary,.mb-full{margin-bottom:80px}
+@media only screen and (max-width:767px){#primary,#secondary,.mb-full{margin-bottom:60px}
+}#content,.mt-full{margin-top:80px}
+@media only screen and (max-width:767px){#content,.mt-full{margin-top:60px}
+}.mb-half,#comments .comments-title,#colophon .footer-widget,.post-item:not(.sticky) .post-content-wrapper,.sticky.post-item,.single .entry-header .post-title,.single .has-post-thumbnail .post-media{margin-bottom:40px}
+@media only screen and (max-width:767px){.mb-half,#comments .comments-title,#colophon .footer-widget,.post-item:not(.sticky) .post-content-wrapper,.sticky.post-item,.single .entry-header .post-title,.single .has-post-thumbnail .post-media{margin-bottom:30px}
+}.mt-half,.page-links,.posts-nav,.nav-links,.number-pagination,#comments,#comments .comment-respond,.no-comments,.nopassword,.single .entry-footer,.single .entry-footer .share{margin-top:40px}
+@media only screen and (max-width:767px){.mt-half,.page-links,.posts-nav,.nav-links,.number-pagination,#comments,#comments .comment-respond,.no-comments,.nopassword,.single .entry-footer,.single .entry-footer .share{margin-top:30px}
+}.nomargin,.breadcrumb,.post-content-wrapper .entry-meta .list-inline,.posts-nav .post-btn,.nav-links .post-btn,.widget_nav_menu ul,.widget_rss ul,.widget_recent_entries ul,.widget_meta ul,.widget_pages ul,.widget_categories ul,.widget_archive ul,.widget_recent_comments ul,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul,.header .navbar-brand{margin:0}
 .mt0{margin-top:0}
-.mb0,#comments .comment-info,.comment-text p:last-of-type,blockquote p:last-of-type,dd:last-of-type,.post-content-wrapper .post-excerpt p:last-of-type,.post-content-wrapper .entry-footer .list-inline,#comments .comment-text img:last-child,.widget_calendar #wp-calendar,.codexin-recent-posts-widget .posts-single .post-content p,.codexin-popular-posts-widget .posts-single .post-content p,.codexin-recent-posts-widget .posts-single:last-child,.codexin-popular-posts-widget .posts-single:last-child,.mc4wp-form .mc4wp-error p,.mc4wp-form .mc4wp-success p,.mc4wp-form .mc4wp-notice p,.header .site-title,.header .site-description,#page_title h1,#colophon .footer-widget:last-child,#colophon .footer-copyright p:last-of-type,.post-item:not(.sticky):last-child .post-content-wrapper{margin-bottom:0}
-.pswp__counter,.visually-hidden,.modal-open #to_top,.post-content-wrapper .cx-loader,.post-content-wrapper .loader,.widget_calendar #wp-calendar tfoot .pad,.header-top.pinned .container-fluid>.row>div:nth-child(1),.header-top.pinned .container-fluid>.row>div:nth-child(3),.single .rwmb-oembed-not-available{margin:-1px;padding:0;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);position:absolute}
-h1,h2,h3,h4,h5,h6{line-height:1;text-transform:uppercase;margin-top:0;margin-bottom:20px}
-a,textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="email"],input[type="button"],input[type="reset"],input[type="password"],input[type="search"],input[type="tel"],button,input[type="submit"],#main_menu>li>a::after,.default-btn,.post-btn a::after,#to_top,#to_top i,.post-content-wrapper .post-media a::before,.post-content-wrapper .post-media a::after,.post-content-wrapper .post-media img,.number-pagination .pagination .dots,.widget_calendar #wp-calendar tbody td,.widget_calendar #wp-calendar tbody td a::before,.codexin-instagram-widget .instagram-images figure a::before,.codexin-recent-posts-widget .posts-single .post-thumbnail img,.codexin-popular-posts-widget .posts-single .post-thumbnail img,.codexin-recent-posts-widget .posts-single .post-thumbnail .overlay,.codexin-popular-posts-widget .posts-single .post-thumbnail .overlay,.header-top.pinned{-webkit-transition:all .7s cubic-bezier(0.2,1,0.22,1);-o-transition:all .7s cubic-bezier(0.2,1,0.22,1);transition:all .7s cubic-bezier(0.2,1,0.22,1)}
+blockquote p:last-of-type,dd:last-of-type,.mb0,p .alignnone,.wp-caption-text,#commentform .form-submit,cite:last-of-type,.post-content-wrapper .post-excerpt p:last-of-type,.post-content-wrapper .entry-footer .list-inline,#comments .comment-text p:last-of-type:last-child,#comments .comment-info,.widget_calendar #wp-calendar,.codexin-recent-posts-widget .posts-single .post-content p,.codexin-popular-posts-widget .posts-single .post-content p,.codexin-recent-posts-widget .posts-single:last-child,.codexin-popular-posts-widget .posts-single:last-child,.mc4wp-form .mc4wp-error p,.mc4wp-form .mc4wp-success p,.mc4wp-form .mc4wp-notice p,.header .site-title,.header .site-description,#page_title h1,#colophon .footer-widget:last-child,#colophon .footer-copyright p:last-of-type,.post-item:not(.sticky):last-child .post-content-wrapper{margin-bottom:0}
+.pswp__counter,.visually-hidden,.modal-open #to_top,.gallery-columns-6 .gallery-caption,.gallery-columns-7 .gallery-caption,.gallery-columns-8 .gallery-caption,.gallery-columns-9 .gallery-caption,.gallery-columns-10 .gallery-caption,.gallery-columns-11 .gallery-caption,.gallery-columns-12 .gallery-caption,.post-content-wrapper .cx-loader,.post-content-wrapper .loader,#comments .pingback .comment-single-left,.widget_calendar #wp-calendar tfoot .pad,.blog .format-status .post-title,.archive .format-status .post-title,.single .rwmb-oembed-not-available{margin:-1px;padding:0;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);position:absolute}
+h1,h2,h3,h4,h5,h6{line-height:1;text-transform:uppercase;margin-top:0;margin-bottom:25px}
+a,textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="email"],input[type="button"],input[type="reset"],input[type="password"],input[type="search"],input[type="tel"],button,input[type="submit"],.page-links span,.gallery-item img,#main_menu>li>a::before,#main_menu .menu-item-has-children>a::after,.default-btn,.post-btn a::after,#to_top,#to_top i,.post-content-wrapper .post-media a::before,.post-content-wrapper .post-media a::after,.post-content-wrapper .post-media .image-placeholder,.post-content-wrapper .post-media img,.number-pagination .pagination .dots,.element-carousel .swiper-arrow,.post-link .post-format-link>i,.widget_calendar #wp-calendar tbody td,.widget_calendar #wp-calendar tbody td a::before,.codexin-instagram-widget .instagram-images figure a::before,.codexin-recent-posts-widget .posts-single .post-thumbnail img,.codexin-popular-posts-widget .posts-single .post-thumbnail img,.codexin-recent-posts-widget .posts-single .post-thumbnail .overlay,.codexin-popular-posts-widget .posts-single .post-thumbnail .overlay,.header-top.pinned{-webkit-transition:all .7s cubic-bezier(0.2,1,0.22,1);-o-transition:all .7s cubic-bezier(0.2,1,0.22,1);transition:all .7s cubic-bezier(0.2,1,0.22,1)}
 .top-bordered{border-top:1px solid #ddd;border-right:0 solid #ddd;border-bottom:0 solid #ddd;border-left:0 solid #ddd}
 .right-bordered{border-top:0 solid #ddd;border-right:1px solid #ddd;border-bottom:0 solid #ddd;border-left:0 solid #ddd}
 .bottom-bordered{border-top:0 solid #ddd;border-right:0 solid #ddd;border-bottom:1px solid #ddd;border-left:0 solid #ddd}
@@ -191,32 +165,31 @@ a,textarea,select,input[type="text"],input[type="url"],input[type="number"],inpu
 .bl-bordered{border-top:0 solid #ddd;border-right:1px solid #ddd;border-bottom:1px solid #ddd;border-left:0 solid #ddd}
 .tr-bordered{border-top:1px solid #ddd;border-right:1px solid #ddd;border-bottom:0 solid #ddd;border-left:0 solid #ddd}
 .lt-bordered{border-top:1px solid #ddd;border-right:0 solid #ddd;border-bottom:0 solid #ddd;border-left:1px solid #ddd}
-.oflow-hidden,.post-content-wrapper .post-media,.widget_calendar #wp-calendar tfoot #next a,.widget_calendar #wp-calendar tfoot #prev a,.codexin-instagram-widget .instagram-images figure,.codexin-recent-posts-widget .posts-single .post-thumbnail a,.codexin-popular-posts-widget .posts-single .post-thumbnail a{overflow:hidden}
+.oflow-hidden,.gallery-item .gallery-icon,.post-content-wrapper .post-media,.widget_calendar #wp-calendar tfoot #next a,.widget_calendar #wp-calendar tfoot #prev a,.codexin-instagram-widget .instagram-images figure,.codexin-recent-posts-widget .posts-single .post-thumbnail a,.codexin-popular-posts-widget .posts-single .post-thumbnail a{overflow:hidden}
 .rounded-corners{-webkit-border-radius:22px;border-radius:22px}
-.sticky .post-title::before{-webkit-border-radius:3px;border-radius:3px}
-.pos-r,ol li,ul:not(.list-inline):not(.sf-menu):not(.pagination) li,#main_menu>li>a,.post-btn a,.post-content-wrapper .entry-meta .list-inline-item,.post-content-wrapper .entry-footer .list-inline i,.widgettitle,.widget_nav_menu ul>li>a,.widget_rss ul>li>a,.widget_recent_entries ul>li>a,.widget_meta ul>li>a,.widget_pages ul>li>a,.widget_categories ul>li>a,.widget_archive ul>li>a,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.widget_calendar #wp-calendar,.widget_calendar #wp-calendar tbody td a,.widget_calendar #wp-calendar tfoot #next a,.widget_calendar #wp-calendar tfoot #prev a,.codexin-instagram-widget .instagram-images figure a,.codexin-recent-posts-widget .posts-single .post-thumbnail a,.codexin-popular-posts-widget .posts-single .post-thumbnail a,.header .floating-header,#page_title,#colophon .widgettitle,#colophon .widgettitle::after,.sticky .post-title,.single .post_format-post-format-video .embed,.post-content-wrapper .post-media a,.mailchimp-wrapper .input-group{position:relative}
-.pos-a,ol li::before,ul:not(.list-inline):not(.sf-menu):not(.pagination) li::before,#main_menu>li>a::after,.post-btn a::after,.post-content-wrapper .entry-meta .list-inline-item::before,.widgettitle::before,.widgettitle::after,.widget_calendar #wp-calendar tbody td a::before,.widget_calendar #wp-calendar tfoot,.codexin-instagram-widget .instagram-images figure a::before,.codexin-recent-posts-widget .posts-single .post-thumbnail .overlay,.codexin-popular-posts-widget .posts-single .post-thumbnail .overlay,#page_title::before,.single .post_format-post-format-video .embed iframe,.post-content-wrapper .post-media a::before,.post-content-wrapper .post-media a::after,.mailchimp-wrapper input[type="submit"],.sticky .post-title::before,.sticky .post-title::after{position:absolute}
-.comment-info .fn>a:hover,.comment-meta>a:hover,#comments .comment-reply i,h1,h2,h3,h4,h5,h6,a,.btn-link,.color-primary,#main_menu>li>a:hover,#main_menu>li.current_page_item>a,.breadcrumb a,.default-btn.white-scheme:hover,.default-btn.white-scheme:focus,.post-content-wrapper .entry-meta a:hover,.post-content-wrapper .entry-meta .post-author a:hover,.post-content-wrapper .entry-footer .list-inline,.post-content-wrapper .entry-footer .list-inline a:focus,#comments .comment-edit-link,.widgettitle,.widget_nav_menu ul>li>a:hover,.widget_rss ul>li>a:hover,.widget_recent_entries ul>li>a:hover,.widget_meta ul>li>a:hover,.widget_pages ul>li>a:hover,.widget_categories ul>li>a:hover,.widget_archive ul>li>a:hover,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a:hover,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a:hover,.widget_recent_comments>ul>li a:hover,.widget_recent_comments>ul>li a:focus,.codexin-recent-posts-widget .posts-single .post-content h4 a:hover,.codexin-popular-posts-widget .posts-single .post-content h4 a:hover,#colophon a:hover,#colophon a:focus,#colophon .widgettitle::after,#colophon #wp-calendar td a{color:#42ad61}
+.pos-r,.cx-fluid-wrapper,#commentform,#main_menu>li>a,.post-btn a,.post-content-wrapper .entry-meta .list-inline-item,.post-content-wrapper .entry-footer .list-inline i,.element-carousel,.post-quote,.post-quote blockquote,#comments .comment-info,#comments .comment-info .fn,.widgettitle,.widget_nav_menu ul li,.widget_rss ul li,.widget_recent_entries ul li,.widget_meta ul li,.widget_pages ul li,.widget_categories ul li,.widget_archive ul li,.widget_recent_comments ul li,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li,.widget_nav_menu ul>li>a,.widget_rss ul>li>a,.widget_recent_entries ul>li>a,.widget_meta ul>li>a,.widget_pages ul>li>a,.widget_categories ul>li>a,.widget_archive ul>li>a,.widget_recent_comments ul>li>a,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.widget_calendar #wp-calendar,.widget_calendar #wp-calendar tbody td a,.widget_calendar #wp-calendar tfoot #next a,.widget_calendar #wp-calendar tfoot #prev a,.codexin-instagram-widget .instagram-images figure a,.codexin-recent-posts-widget .posts-single .post-thumbnail a,.codexin-popular-posts-widget .posts-single .post-thumbnail a,.header .floating-header,#page_title,#colophon .widgettitle,#colophon .widgettitle::after,.sticky .post-title,.post-content-wrapper .post-media a,.mailchimp-wrapper .input-group{position:relative}
+.pos-a,.cx-fluid-wrapper iframe,#main_menu>li>a::before,.post-btn a::after,.post-content-wrapper .entry-meta .list-inline-item::before,.element-carousel .swiper-arrow.prev,.element-carousel .swiper-arrow.next,.post-quote>i,.post-quote blockquote::before,#comments .comment-info::before,#comments .bypostauthor .fn::before,.widgettitle::before,.widgettitle::after,.widget_nav_menu ul li::before,.widget_rss ul li::before,.widget_recent_entries ul li::before,.widget_meta ul li::before,.widget_pages ul li::before,.widget_categories ul li::before,.widget_archive ul li::before,.widget_recent_comments ul li::before,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li::before,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li::before,.widget_calendar #wp-calendar tbody td a::before,.widget_calendar #wp-calendar tfoot,.codexin-instagram-widget .instagram-images figure a::before,.codexin-recent-posts-widget .posts-single .post-thumbnail .overlay,.codexin-popular-posts-widget .posts-single .post-thumbnail .overlay,#page_title::before,.sticky .post-title span,.post-content-wrapper .post-media a::before,.post-content-wrapper .post-media a::after,.mailchimp-wrapper input[type="submit"]{position:absolute}
+a,.btn-link,h1,h2,h3,h4,h5,h6,.color-primary,#main_menu>li:hover>a,.pinned #main_nav #main_menu .menu-item:hover>a,#main_menu>.current-menu-parent>a,#main_menu>.current-menu-item>a,#main_menu>.current-page-parent>a,.pinned #main_nav #main_menu>.current-menu-parent>a,.pinned #main_nav #main_menu>.current-menu-item>a,.pinned #main_nav #main_menu>.current-page-parent>a,.breadcrumb a,.default-btn.white-scheme:hover,.default-btn.white-scheme:focus,.post-content-wrapper .entry-meta a:hover,.post-content-wrapper .entry-meta .post-author a:hover,.post-content-wrapper .entry-footer .list-inline,.post-content-wrapper .entry-footer .list-inline a:focus,.post-quote .quote-source:hover,#comments .comment-meta>a:hover,#comments .comment-info .fn>a:hover,#comments .bypostauthor .fn::before,#comments .comment-edit-link,.widgettitle,.widget_nav_menu ul>li>a:hover,.widget_rss ul>li>a:hover,.widget_recent_entries ul>li>a:hover,.widget_meta ul>li>a:hover,.widget_pages ul>li>a:hover,.widget_categories ul>li>a:hover,.widget_archive ul>li>a:hover,.widget_recent_comments ul>li>a:hover,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a:hover,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a:hover,.widget_recent_comments>ul>li a:hover,.widget_recent_comments>ul>li a:focus,.codexin-recent-posts-widget .posts-single .post-content h4 a:hover,.codexin-popular-posts-widget .posts-single .post-content h4 a:hover,#colophon a:hover,#colophon a:focus,#colophon .widgettitle::after,#colophon #wp-calendar td a{color:#42ad61}
 a:focus,a:active,a:hover,.btn-link:hover,.btn-link:focus,.btn-link:active,.color-secondary,.breadcrumb a:hover,.post-content-wrapper .entry-footer .list-inline a:hover,#comments .comment-edit-link:hover{color:#f58025}
-.color-tertiary,.header-top.pinned #main_menu .current_page_item a,.header-top.pinned #main_menu>li:not(.current_page_item)>a:hover{color:#212331}
+.color-tertiary,.header-top.pinned #main_menu>li:not(.current_page_item)>a:hover{color:#212331}
 .color-transparent{color:transparent}
 .color-offset{color:#f6f6f6}
-button,input[type="reset"],input[type="button"],input[type="submit"],.color-white,.bg-facebook,.bg-facebook:hover,.bg-facebook:focus,.bg-twitter,.bg-twitter:hover,.bg-twitter:focus,.bg-google-plus,.bg-google-plus:hover,.bg-google-plus:focus,.bg-pinterest,.bg-pinterest:hover,.bg-pinterest:focus,.bg-instagram,.bg-instagram:hover,.bg-instagram:focus,.bg-linkedin,.bg-linkedin:hover,.bg-linkedin:focus,.bg-dribbble,.bg-dribbble:hover,.bg-dribbble:focus,.bg-flickr,.bg-flickr:hover,.bg-flickr:focus,.bg-medium,.bg-medium:hover,.bg-medium:focus,.bg-tumblr,.bg-tumblr:hover,.bg-tumblr:focus,.bg-vimeo,.bg-vimeo:hover,.bg-vimeo:focus,.bg-youtube,.bg-youtube:hover,.bg-youtube:focus,.bg-reddit,.bg-reddit:hover,.bg-reddit:focus,.bg-skype,.bg-skype:hover,.bg-skype:focus,.bg-quora,.bg-quora:hover,.bg-quora:focus,#main_menu>li>a,.breadcrumb,.default-btn,.default-btn:hover,.default-btn:focus,.default-btn.white-scheme,.share-links .list-inline .list-inline-item a:hover,.post-content-wrapper .post-media a::before,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,.widget_search form input[type="submit"],.tagcloud a:hover,.mailchimp-wrapper input[type="submit"],#colophon .mailchimp-wrapper input[type="email"],#page_title h1,#colophon h1,#colophon h2,#colophon h3,#colophon h4,#colophon h5,#colophon h6,#colophon p,#colophon a,#colophon span,#colophon ul,#colophon li,#colophon i,#colophon select,#colophon #wp-calendar td:hover,#colophon #wp-calendar td:hover a,#colophon .widget_recent_comments>ul>li::before,#colophon .widget_search input[type="search"],.sticky .post-title::after{color:white}
-.color-dark,.header-social a,.widget_calendar #wp-calendar tbody td,.codexin-recent-posts-widget .posts-single .post-content h4 a,.codexin-popular-posts-widget .posts-single .post-content h4 a,.codexin-recent-posts-widget .posts-single .post-content i,.codexin-popular-posts-widget .posts-single .post-content i,.header-top.pinned #main_menu>li:not(.current_page_item)>a{color:#252525}
+button,input[type="reset"],input[type="button"],input[type="submit"],.page-links>a:hover span,.page-links>span:not(.page-links-title),.color-white,.bg-facebook,.bg-facebook:hover,.bg-facebook:focus,.bg-twitter,.bg-twitter:hover,.bg-twitter:focus,.bg-google-plus,.bg-google-plus:hover,.bg-google-plus:focus,.bg-pinterest,.bg-pinterest:hover,.bg-pinterest:focus,.bg-instagram,.bg-instagram:hover,.bg-instagram:focus,.bg-linkedin,.bg-linkedin:hover,.bg-linkedin:focus,.bg-dribbble,.bg-dribbble:hover,.bg-dribbble:focus,.bg-flickr,.bg-flickr:hover,.bg-flickr:focus,.bg-medium,.bg-medium:hover,.bg-medium:focus,.bg-tumblr,.bg-tumblr:hover,.bg-tumblr:focus,.bg-vimeo,.bg-vimeo:hover,.bg-vimeo:focus,.bg-youtube,.bg-youtube:hover,.bg-youtube:focus,.bg-reddit,.bg-reddit:hover,.bg-reddit:focus,.bg-skype,.bg-skype:hover,.bg-skype:focus,.bg-quora,.bg-quora:hover,.bg-quora:focus,#main_menu>li>a,.pinned #main_nav #main_menu .menu-item:hover .sub-menu a,.breadcrumb,.default-btn,.default-btn:hover,.default-btn:focus,.default-btn.white-scheme,.share-links .list-inline .list-inline-item a:hover,.share-links .list-inline .list-inline-item a:focus,.post-content-wrapper .post-media a::before,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,.element-carousel .swiper-arrow,.post-quote,.post-quote>i,.post-quote .quote-source,.post-link .post-format-link>i,#comments .bypostauthor .fn::before,.widget_search form input[type="submit"],.tagcloud a:hover,.mailchimp-wrapper input[type="submit"],#colophon .mailchimp-wrapper input[type="email"],#page_title h1,#colophon h1,#colophon h2,#colophon h3,#colophon h4,#colophon h5,#colophon h6,#colophon p,#colophon a,#colophon span,#colophon ul,#colophon li,#colophon i,#colophon select,#colophon #wp-calendar td:hover,#colophon #wp-calendar td:hover a,#colophon .widget_recent_comments>ul>li::before,#colophon .widget_search input[type="search"],.sticky .post-title span,.sticky .post-title span::after{color:white}
+.color-dark,.header-social a,#comments .comment-meta>a,.widget_calendar #wp-calendar tbody td,.codexin-recent-posts-widget .posts-single .post-content h4 a,.codexin-popular-posts-widget .posts-single .post-content h4 a,.codexin-recent-posts-widget .posts-single .post-content i,.codexin-popular-posts-widget .posts-single .post-content i,.header-top.pinned #main_menu>li:not(.current_page_item)>a{color:#252525}
 .color-black,.widget_calendar #wp-calendar caption,.tagcloud a{color:#000}
-.comment-info .fn>a,.comment-meta>a,.post-content-wrapper .entry-meta a,.post-content-wrapper .entry-meta .post-author a,.number-pagination .pagination li a,.number-pagination .pagination li span,.widget_nav_menu ul>li>a,.widget_rss ul>li>a,.widget_recent_entries ul>li>a,.widget_meta ul>li>a,.widget_pages ul>li>a,.widget_categories ul>li>a,.widget_archive ul>li>a,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.widget_recent_comments>ul>li::before,.widget_recent_comments>ul>li a,.single .entry-footer .share .caption{color:#000}
-#whole .mejs-controls .mejs-time-rail .mejs-time-current,button,input[type="reset"],input[type="button"],input[type="submit"],.bgc-primary,#main_menu>li>a:hover::after,#main_menu>li.current_page_item>a::after,.default-btn,.post-btn a::after,#to_top,#to_top::after,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,.widgettitle::after,.widget_search form input[type="submit"],.widget_calendar #wp-calendar tbody td a::before,.tagcloud a:hover,.mailchimp-wrapper input[type="submit"],#colophon .mailchimp-wrapper input[type="submit"],#colophon .widget_search input[type="submit"],.sticky .post-title::before{background-color:#42ad61}
-button:hover,input[type="submit"]:hover,input[type="button"]:hover,.bgc-secondary,.default-btn:hover,.default-btn:focus,.post-btn a:hover::after,.widget_search form input[type="submit"]:hover,.widget_calendar #wp-calendar tbody td a:hover::before,.mailchimp-wrapper input[type="submit"]:hover,#colophon .mailchimp-wrapper input[type="submit"]:hover,#colophon .widget_search input[type="submit"]:hover{background-color:#f58025}
-.tooltip .tooltip-inner,.bgc-tertiary,.post-content-wrapper .post-media a::before,#colophon,#colophon select{background-color:#212331}
-.bgc-transparent,.header-search form input[type="search"],.header-search form input[type="submit"],#main_menu>li,.breadcrumb,.default-btn.white-scheme,.widget_calendar #wp-calendar tbody tr:nth-child(odd),.widget_calendar #wp-calendar tbody tr:nth-child(even),.widget_calendar #wp-calendar tbody td.pad,.widget_calendar #wp-calendar tbody td:hover,.header .floating-header,#colophon .widgettitle::after{background-color:transparent}
-.gallery-caption,.no-comments,.nopassword,#comments .comment-info,#comments .comments-title,blockquote,table tbody tr:nth-child(even),pre,.bgc-offset,.number-pagination .pagination li a,.number-pagination .pagination li span,.widget_calendar #wp-calendar thead,.widget_calendar #wp-calendar caption,.widget_calendar #wp-calendar tbody td,.tagcloud a,.widget_media_gallery .gallery-caption,.mc4wp-form .mc4wp-error,.mc4wp-form .mc4wp-success,.mc4wp-form .mc4wp-notice,.sticky .post-content-wrapper{background-color:#f6f6f6}
-table tbody tr:nth-child(odd),.bgc-white,.header-social a,#main_menu>li>a::after,.header-top.pinned:hover,#colophon #wp-calendar td:hover a::before{background-color:white}
+.page-links>a span,.post-content-wrapper .entry-meta a,.post-content-wrapper .entry-meta .post-author a,.number-pagination .pagination li a,.number-pagination .pagination li span,#comments .comment-info .fn>a,.widget_nav_menu ul>li>a,.widget_rss ul>li>a,.widget_recent_entries ul>li>a,.widget_meta ul>li>a,.widget_pages ul>li>a,.widget_categories ul>li>a,.widget_archive ul>li>a,.widget_recent_comments ul>li>a,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.widget_recent_comments>ul>li::before,.widget_recent_comments>ul>li a,.single .entry-footer .share .caption{color:#000}
+kbd,button,input[type="reset"],input[type="button"],input[type="submit"],.page-links>a:hover span,.page-links>span:not(.page-links-title),#whole .mejs-controls .mejs-time-rail .mejs-time-current,.bgc-primary,#main_menu>li:hover>a::before,#main_menu>.current-menu-parent>a::before,#main_menu>.current-menu-item>a::before,#main_menu>.current-page-parent>a::before,.default-btn,.post-btn a::after,#to_top,#to_top::after,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,.element-carousel .swiper-arrow,.post-link .post-format-link>i,#comments .bypostauthor .fn::before,.widgettitle::after,.widget_search form input[type="submit"],.widget_calendar #wp-calendar tbody td a::before,.tagcloud a:hover,.mailchimp-wrapper input[type="submit"],#colophon .mailchimp-wrapper input[type="submit"],#colophon .widget_search input[type="submit"],.sticky .post-title span{background-color:#42ad61}
+button:hover,input[type="submit"]:hover,input[type="button"]:hover,.bgc-secondary,.default-btn:hover,.default-btn:focus,.post-btn a:hover::after,.post-link a:hover i,.post-link a:focus i,.widget_search form input[type="submit"]:hover,.widget_calendar #wp-calendar tbody td a:hover::before,.mailchimp-wrapper input[type="submit"]:hover,#colophon .mailchimp-wrapper input[type="submit"]:hover,#colophon .widget_search input[type="submit"]:hover{background-color:#f58025}
+.tooltip .tooltip-inner,.bgc-tertiary,.post-content-wrapper .post-media a::before,.post-quote blockquote::before,#colophon,#colophon select{background-color:#212331}
+#colophon .wp-caption,.page-links .page-links-title,.bgc-transparent,.header-search form input[type="search"],.header-search form input[type="submit"],#main_menu>li,.breadcrumb,.default-btn.white-scheme,.widget_calendar #wp-calendar tbody tr:nth-child(odd),.widget_calendar #wp-calendar tbody tr:nth-child(even),.widget_calendar #wp-calendar tbody td.pad,.widget_calendar #wp-calendar tbody td:hover,.header .floating-header,#colophon .widgettitle::after{background-color:transparent}
+blockquote,table tbody tr:nth-child(even),pre,.wp-caption,.page-links span,.gallery-caption,.bgc-offset,.number-pagination .pagination li a,.number-pagination .pagination li span,.post-link .post-format-link,#comments .comment-info,#comments .comments-title,.no-comments,.nopassword,.widget_calendar #wp-calendar thead,.widget_calendar #wp-calendar caption,.widget_calendar #wp-calendar tbody td,.tagcloud a,.widget_media_gallery .gallery-caption,.mc4wp-form .mc4wp-error,.mc4wp-form .mc4wp-success,.mc4wp-form .mc4wp-notice,.sticky .post-content-wrapper{background-color:#f6f6f6}
+table tbody tr:nth-child(odd),.bgc-white,.header-social a,#main_menu>li>a::before,#comments .comment-reply .comment-reply-link,.header-top.pinned:hover,#colophon #wp-calendar td:hover a::before{background-color:white}
 .bgc-dark,.post-content-wrapper .entry-meta .list-inline-item::before{background-color:#252525}
 .bgc-black{background-color:#000}
-blockquote,textarea:focus,select:focus,input[type="text"]:focus,input[type="url"]:focus,input[type="number"]:focus,input[type="email"]:focus,input[type="button"]:focus,input[type="reset"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,.form-control:focus,button:focus,input:focus,.border-primary,.default-btn,.default-btn.white-scheme:hover,.default-btn.white-scheme:focus,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,.widget_search form input[type="submit"],.tagcloud a:hover,#colophon .mailchimp-wrapper input[type="submit"],#colophon .widget_search input[type="submit"],#colophon .tagcloud a:hover{border-color:#42ad61}
-button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secondary,.default-btn:hover,.default-btn:focus,.widget_search form input[type="submit"]:hover,#colophon .mailchimp-wrapper input[type="submit"]:hover,#colophon .widget_search input[type="submit"]:hover{border-color:#f58025}
-.border-tertiary,#colophon #wp-calendar thead,#colophon #wp-calendar caption{border-color:#212331}
-.wp-caption,#comments .comment-author.vcard img,td,th,textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="email"],input[type="button"],input[type="reset"],input[type="password"],input[type="search"],input[type="tel"],.border-default,.post-content-wrapper .entry-meta .author-media img,.posts-nav,.nav-links,.number-pagination,.tagcloud a,.widget_media_gallery .gallery-item img,.widget_media_gallery .gallery-caption,.codexin-recent-posts-widget .posts-single,.codexin-popular-posts-widget .posts-single,.post-item:not(.sticky) .post-content-wrapper,.sticky.post-item{border-color:#ddd}
+blockquote,textarea:focus,select:focus,input[type="text"]:focus,input[type="url"]:focus,input[type="number"]:focus,input[type="email"]:focus,input[type="button"]:focus,input[type="reset"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,.form-control:focus,button:focus,input:focus,.border-primary,.default-btn,.default-btn.white-scheme:hover,.default-btn.white-scheme:focus,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,#comments .comment-reply .comment-reply-link,.widget_search form input[type="submit"],.tagcloud a:hover,#colophon .mailchimp-wrapper input[type="submit"],#colophon .widget_search input[type="submit"],#colophon .tagcloud a:hover{border-color:#42ad61}
+button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secondary,.default-btn:hover,.default-btn:focus,#comments .comment-reply .comment-reply-link:hover,#comments .comment-reply .comment-reply-link:focus,.widget_search form input[type="submit"]:hover,#colophon .mailchimp-wrapper input[type="submit"]:hover,#colophon .widget_search input[type="submit"]:hover{border-color:#f58025}
+.border-tertiary,#main_menu .menu-item-has-children .sub-menu,#colophon #wp-calendar thead,#colophon #wp-calendar caption{border-color:#212331}
+td,th,pre,textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="email"],input[type="button"],input[type="reset"],input[type="password"],input[type="search"],input[type="tel"],.wp-caption,.border-default,.post-content-wrapper .entry-meta .author-media img,.posts-nav,.nav-links,.number-pagination,#comments .comment-author img,.tagcloud a,.widget_media_gallery .gallery-item img,.widget_media_gallery .gallery-caption,.codexin-recent-posts-widget .posts-single,.codexin-popular-posts-widget .posts-single,.post-item:not(.sticky) .post-content-wrapper,.sticky.post-item{border-color:#ddd}
 .border-offset{border-color:#f6f6f6}
 .border-black{border-color:#000}
 .bg-facebook{background:#3b5998}
@@ -260,12 +233,29 @@ button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secon
 .header-social a{margin-right:7px;width:30px;height:30px;text-align:center;line-height:30px;display:inline-block}
 .header-social:hover a{opacity:.5}
 .header-social:hover a:hover{opacity:1}
-#main_menu{float:none;clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:25px 0 0;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
+#main_menu{float:none;clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:25px 0 0;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 #main_menu>li{float:none;clear:both;-webkit-box-flex:0;-webkit-flex:0;-ms-flex:0;flex:0}
-#main_menu>li>a{border:0;letter-spacing:.5px;padding:10px 15px}
-#main_menu>li>a::after{content:"";right:15px;left:auto;bottom:0;width:0;height:2px}
-#main_menu>li>a:hover::after{left:15px;width:calc(100% - 30px)}
-#main_menu>li.current_page_item>a::after{left:15px;width:calc(100% - 30px)}
+#main_menu>li>a{border:0;letter-spacing:.5px;padding:10px 20px}
+#main_menu>li>a::before{content:"";right:20px;left:auto;bottom:0;width:0;height:2px}
+#main_menu>li:hover>a::before{left:20px;width:calc(100% - 40px)}
+#main_menu .menu-item-has-children>a::after{right:2px;border-top-color:white}
+#main_menu .menu-item-has-children:hover>a::after{border-top-color:#42ad61}
+#main_menu .menu-item-has-children .sub-menu{width:220px;background:#3e3e3e;-webkit-box-shadow:0 13px 42px 11px rgba(0,0,0,0.05);box-shadow:0 13px 42px 11px rgba(0,0,0,0.05);border-width:1px;border-style:solid}
+#main_menu .menu-item-has-children .sub-menu ul{top:-1px;left:218px}
+#main_menu .menu-item-has-children .sub-menu .menu-item{white-space:normal;background:0;padding:0 5px}
+#main_menu .menu-item-has-children .sub-menu .menu-item>a::after{right:1em;border-left-color:white;border-top-color:transparent}
+#main_menu .menu-item-has-children .sub-menu .menu-item a{border:0;font-size:15px;text-transform:initial;font-weight:400}
+#main_menu .menu-item-has-children .sub-menu .menu-item:hover.menu-item{background:rgba(0,0,0,0.2)}
+#main_menu .menu-item-has-children .sub-menu .menu-item:hover>a{padding-left:18px}
+#main_menu .menu-item-has-children .sub-menu .menu-item:hover>a::after{border-left-color:white}
+.pinned #main_nav #main_menu .menu-item a::before{content:none}
+.pinned #main_nav #main_menu .menu-item a::after{border-top-color:#000}
+.pinned #main_nav #main_menu .menu-item:hover>a::after{border-top-color:#42ad61}
+.pinned #main_nav #main_menu .menu-item:hover .sub-menu a::after{border-top-color:transparent}
+#main_menu>.current-menu-parent>a::before,#main_menu>.current-menu-item>a::before,#main_menu>.current-page-parent>a::before{left:20px;width:calc(100% - 40px)}
+#main_menu>.current-menu-parent>a::after,#main_menu>.current-menu-item>a::after,#main_menu>.current-page-parent>a::after{border-top-color:#42ad61}
+.pinned #main_nav #main_menu>.current-menu-parent>a::after,.pinned #main_nav #main_menu>.current-menu-item>a::after,.pinned #main_nav #main_menu>.current-page-parent>a::after{border-top-color:#42ad61}
+#main_menu .sub-menu .current-menu-parent.menu-item,#main_menu .sub-menu .current-menu-item.menu-item{background:rgba(0,0,0,0.2)}
 .breadcrumb{line-height:1;font-size:16px;margin:0;padding:0}
 .breadcrumb i{font-size:16px;margin-left:7px;margin-right:7px}
 .breadcrumb a{font-weight:600}
@@ -288,7 +278,7 @@ button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secon
 .socials.social-icons-round .list-inline-item:not(:last-child){margin-right:3px;margin-bottom:5px}
 .share-links .list-inline .list-inline-item a{text-align:center;font-size:13px;padding:7px 15px;line-height:30px}
 .share-links .list-inline .list-inline-item i{font-size:16px;margin-right:7px;top:1px}
-.post-content-wrapper .entry-meta{margin-bottom:20px}
+.post-content-wrapper .entry-meta{margin-bottom:25px}
 .post-content-wrapper .entry-meta .meta-container{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
 .post-content-wrapper .entry-meta .author-media{margin-right:20px}
 .post-content-wrapper .entry-meta .author-media img{max-width:60px;padding:3px;border-width:1px;border-style:solid}
@@ -299,18 +289,20 @@ button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secon
 .post-content-wrapper .entry-meta .list-inline-item:first-child{padding-left:0}
 .post-content-wrapper .entry-meta .list-inline-item:first-child::before{content:none}
 .post-content-wrapper .entry-meta .like-count i{margin-right:4px}
-.post-content-wrapper .post-media{margin-bottom:20px}
+.post-content-wrapper .post-media{margin-bottom:25px}
 .post-content-wrapper .post-media a{display:block}
-.post-content-wrapper .post-media a::before{content:"\f22e";font-family:ionicons;top:50%;left:50%;display:block;width:40px;height:40px;line-height:41px;margin-left:-15px;margin-top:-15px;z-index:2;font-size:25px;text-align:center;-webkit-transform:scale(0.3);-ms-transform:scale(0.3);transform:scale(0.3);opacity:0}
-.post-content-wrapper .post-media a::after{content:"";top:0;left:0;width:100%;height:100%;opacity:0;-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);background:rgba(0,0,0,0.5)}
-.post-content-wrapper .post-media img{width:100%;-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
+.post-content-wrapper .post-media a::before{content:"\f22e";font-family:ionicons;top:50%;left:50%;display:block;width:40px;height:40px;line-height:41px;margin-left:-15px;margin-top:-15px;z-index:3;font-size:25px;text-align:center;-webkit-transform:scale(0.3);-ms-transform:scale(0.3);transform:scale(0.3);opacity:0}
+.post-content-wrapper .post-media a::after{content:"";top:0;left:0;width:100%;height:100%;opacity:0;-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);background:rgba(0,0,0,0.5);z-index:2}
+.post-content-wrapper .post-media .image-placeholder,.post-content-wrapper .post-media img{width:100%;-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
+.post-content-wrapper .post-media .image-placeholder{height:400px}
 .post-content-wrapper .post-title{text-transform:initial;word-wrap:break-word;font-size:40px}
-.post-content-wrapper .post-excerpt{margin-bottom:30px}
+.post-content-wrapper .post-excerpt{margin-bottom:30px;word-wrap:break-word}
+.post-content-wrapper .post-details{word-wrap:break-word}
 .post-content-wrapper .entry-footer .list-inline{float:right;margin-top:-2px}
 .post-content-wrapper .entry-footer .list-inline li:not(:last-child){margin-right:10px}
 .post-content-wrapper .entry-footer .list-inline i{font-size:16px;margin-right:7px;top:1px}
 .post-content-wrapper:hover .post-media a::before,.post-content-wrapper:hover .post-media a::after{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
-.post-content-wrapper:hover .post-media img{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
+.post-content-wrapper:hover .post-media .image-placeholder,.post-content-wrapper:hover .post-media img{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .posts-nav,.nav-links{border-top-width:1px;border-top-style:dashed}
 .number-pagination{border-top-width:1px;border-top-style:dashed}
 .number-pagination .pagination{line-height:1;margin:0;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
@@ -318,20 +310,51 @@ button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secon
 .number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus{-webkit-box-shadow:none;box-shadow:none}
 @media only screen and (max-width:575px){.number-pagination .pagination li a,.number-pagination .pagination li span{width:26px;height:26px;line-height:27px;margin-right:2px}
 }.number-pagination .pagination li.active span{cursor:default}
-#comments .comment-text>ol>li{padding-left:0}
-#comments .comment-text>ol>li::before{content:none}
-#comments .comment-text>ol ol li,#comments .comment-text>ol ul li{padding-left:18px}
-#comments .comment-text img{margin-top:20px;margin-bottom:20px}
+.element-carousel .swiper-arrow{opacity:0;width:40px;height:40px;line-height:40px;z-index:3;opacity:.85;font-size:20px;text-align:center}
+@media only screen and (max-width:767px){.element-carousel .swiper-arrow{opacity:1}
+}.element-carousel .swiper-arrow.prev,.element-carousel .swiper-arrow.next{bottom:0;margin-top:-20px;cursor:pointer}
+.element-carousel .swiper-arrow.prev{right:42px}
+.element-carousel .swiper-arrow.prev::before{right:2px}
+.element-carousel .swiper-arrow.next{left:auto;right:0}
+.element-carousel .swiper-arrow.next::before{left:2px}
+.element-carousel .swiper-arrow:hover{opacity:1}
+.post-quote>i{bottom:0;right:15px;font-size:75px;line-height:0;opacity:.3;z-index:10}
+.post-quote blockquote{z-index:2}
+.post-quote blockquote::before{content:"";top:0;left:0;width:100%;height:100%;z-index:-1;background:-webkit-linear-gradient(45deg,rgba(62,62,62,0.99),rgba(80,80,80,0.8));background:-o-linear-gradient(45deg,rgba(62,62,62,0.99),rgba(80,80,80,0.8));background:linear-gradient(45deg,rgba(62,62,62,0.99),rgba(80,80,80,0.8))}
+.post-quote .quote-source{display:block;margin-top:25px;font-style:italic;font-weight:600;font-size:15px}
+.post-link .post-format-link{padding:30px;text-transform:uppercase;font-weight:600;margin-bottom:25px}
+.post-link .post-format-link>i,.post-link .post-format-link>span{display:inline-block}
+.post-link .post-format-link>i{margin-right:20px;width:30px;height:30px;line-height:30px;text-align:center;font-size:18px;vertical-align:top;-webkit-box-shadow:1px 1px 10px rgba(0,0,0,0.4);box-shadow:1px 1px 10px rgba(0,0,0,0.4)}
+.post-link .post-format-link>span{width:calc(100% - 50px);vertical-align:middle}
+#comments .comment-list{margin-left:0}
+#comments .comment-list .children{list-style:none}
+#comments .comment-author img{max-width:80px;padding:3px;border-width:1px;border-style:solid}
+#comments .comment-text{font-size:15px}
+#comments .comment-text>ol,#comments .comment-text>ul{margin-top:-8px}
+#comments .comment-text ol+h1,#comments .comment-text ol+h2,#comments .comment-text ol+h3,#comments .comment-text ol+h4,#comments .comment-text ol+h5,#comments .comment-text ol+h6,#comments .comment-text ol+p,#comments .comment-text ul+h1,#comments .comment-text ul+h2,#comments .comment-text ul+h3,#comments .comment-text ul+h4,#comments .comment-text ul+h5,#comments .comment-text ul+h6,#comments .comment-text ul+p{margin-top:25px}
+#comments .comment-meta{font-size:85%;margin-bottom:15px}
+#comments .comment-single-left{margin-right:25px}
+#comments .comment-single-right{width:80%;width:calc(100% - 105px);margin-bottom:25px}
+#comments .comment-info{padding:20px}
+#comments .comment-info::before{content:"";display:block;width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-right:12px solid #f6f6f6;margin-left:-12px;left:0;top:28px}
+#comments .comment-info .fn{font-weight:bold;text-transform:capitalize;display:block;margin-bottom:5px}
 #comments .comments-title{padding:15px;text-transform:initial}
-#comments .comment-list{list-style:none}
+#comments .comment-list{list-style:none;padding:0}
+#comments .comment-list li.comment{list-style-type:none;padding:0}
 #comments .comment-list>li{padding-left:0}
 #comments .comment-list>li::before{content:none}
 #comments .comment-list>li>ul li::before,#comments .comment-list>li>ol li::before{content:none}
 #comments .comment-reply-title small{margin-left:15px}
-#comments .comment-reply{margin-left:15px}
-#comments .comment-reply i{margin-right:7px}
+#comments .comment-reply{margin-top:15px;text-align:right}
+#comments .comment-reply .comment-reply-link{display:inline-block;font-size:14px;line-height:1;padding:4px 16px;border-width:1px;border-style:solid}
+#comments .bypostauthor .fn{padding-left:60px}
+#comments .bypostauthor .fn::before{content:"Author";display:block;top:2px;left:0;font-size:13px;line-height:1;padding:4px 8px;font-weight:normal}
 #comments .comment-edit-link{margin-left:7px}
-#comments .comment-edit-link,#comments .comment-reply-link{font-weight:600}
+#comments .comment-edit-link{font-weight:600}
+#comments .pingback .comment-single-right{width:100%}
+#comments .pingback .comment-single-right::before{content:none}
+.no-comments,.nopassword{padding:15px}
+.no-comments{font-size:20px;text-align:center;font-weight:600}
 .sidebar-widget{padding-top:20px;padding-bottom:20px}
 .sidebar-widget:last-child{border-bottom:0}
 .widgettitle{font-size:28px;font-weight:500;text-transform:capitalize;margin-bottom:30px;padding-bottom:15px}
@@ -343,7 +366,10 @@ button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secon
 .widget_search ::-moz-placeholder{color:#000}
 .widget_search :-ms-input-placeholder{color:#000}
 .widget_search :-moz-placeholder{color:#000}
-.widget_nav_menu ul.children,.widget_nav_menu ul.sub-menu,.widget_rss ul.children,.widget_rss ul.sub-menu,.widget_recent_entries ul.children,.widget_recent_entries ul.sub-menu,.widget_meta ul.children,.widget_meta ul.sub-menu,.widget_pages ul.children,.widget_pages ul.sub-menu,.widget_categories ul.children,.widget_categories ul.sub-menu,.widget_archive ul.children,.widget_archive ul.sub-menu,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul.children,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul.sub-menu,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul.children,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul.sub-menu{padding-top:8px}
+.widget_nav_menu ul,.widget_rss ul,.widget_recent_entries ul,.widget_meta ul,.widget_pages ul,.widget_categories ul,.widget_archive ul,.widget_recent_comments ul,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul{list-style:none}
+.widget_nav_menu ul.children,.widget_nav_menu ul.sub-menu,.widget_rss ul.children,.widget_rss ul.sub-menu,.widget_recent_entries ul.children,.widget_recent_entries ul.sub-menu,.widget_meta ul.children,.widget_meta ul.sub-menu,.widget_pages ul.children,.widget_pages ul.sub-menu,.widget_categories ul.children,.widget_categories ul.sub-menu,.widget_archive ul.children,.widget_recent_comments ul.children,.widget_archive ul.sub-menu,.widget_recent_comments ul.sub-menu,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul.children,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul.sub-menu,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul.children,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul.sub-menu{padding-top:8px}
+.widget_nav_menu ul li,.widget_rss ul li,.widget_recent_entries ul li,.widget_meta ul li,.widget_pages ul li,.widget_categories ul li,.widget_archive ul li,.widget_recent_comments ul li,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li{padding-left:18px;padding-bottom:8px;line-height:1.5;min-height:22px;word-break:break-word}
+.widget_nav_menu ul li::before,.widget_rss ul li::before,.widget_recent_entries ul li::before,.widget_meta ul li::before,.widget_pages ul li::before,.widget_categories ul li::before,.widget_archive ul li::before,.widget_recent_comments ul li::before,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li::before,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li::before{content:"\f284";font-family:Ionicons;left:0;top:2.5px;font-size:20px;line-height:1}
 .widget_recent_comments>ul>li .comment-author-link a{text-decoration:underline}
 .widget_calendar #wp-calendar{text-align:center;width:100%}
 .widget_calendar #wp-calendar th,.widget_calendar #wp-calendar td{border:0}
@@ -385,6 +411,10 @@ button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secon
 .codexin-recent-posts-widget .posts-single:last-child,.codexin-popular-posts-widget .posts-single:last-child{border-bottom:0}
 .codexin-recent-posts-widget .posts-single:hover img,.codexin-popular-posts-widget .posts-single:hover img{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .codexin-recent-posts-widget .posts-single:hover .overlay,.codexin-popular-posts-widget .posts-single:hover .overlay{opacity:1;visibility:visible;z-index:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
+.rsswidget{font-weight:600}
+.rss-date{display:block;margin-top:5px;font-size:14px;font-style:italic}
+.rssSummary{margin-bottom:5px;margin-top:5px}
+.rssSummary+cite{font-size:14px}
 .codexin-social-share-widget .list-inline{margin-bottom:-5px}
 .mailchimp-wrapper input[type="email"]{height:40px;padding:10px 120px 10px 15px;display:inline-block;width:100%;font-size:15px;border-width:1px;border-style:solid}
 .mailchimp-wrapper input[type="submit"]{height:40px;line-height:40px;top:0;right:0;-webkit-border-radius:0;border-radius:0;min-width:120px;font-weight:600;min-width:100px;padding:0 20px}
@@ -394,30 +424,40 @@ button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secon
 #colophon .mc4wp-form .mc4wp-error,#colophon .mc4wp-form .mc4wp-success,#colophon .mc4wp-form .mc4wp-notice{background:rgba(0,0,0,0.4)}
 .header .header-top{padding:25px 45px}
 .header .logo{text-align:center}
-.header .logo img{width:174px}
+.header .logo img{width:120px}
 .header .header-right{text-align:right}
 .header .header-right .default-btn:last-child{margin-left:15px}
 .header .custom-logo-link+.site-title{margin-top:15px}
 .header .floating-header{z-index:10}
-.header-top.pinned{position:fixed;top:0;left:0;width:100%;z-index:9950;padding:10px 45px;background:rgba(255,255,255,0.95);-webkit-box-shadow:0 8px 6px -6px rgba(0,0,0,0.15);box-shadow:0 8px 6px -6px rgba(0,0,0,0.15)}
+.header-top .sticky-logo{display:none}
+.header-top.pinned{position:fixed;top:0;left:0;width:100%;z-index:9950;padding:0 45px;background:rgba(255,255,255,0.95);-webkit-box-shadow:0 8px 6px -6px rgba(0,0,0,0.15);box-shadow:0 8px 6px -6px rgba(0,0,0,0.15)}
+.admin-bar .header-top.pinned{top:32px}
+.header-top.pinned .navbar-brand>a{display:none}
+.header-top.pinned .sticky-logo{display:block}
 .header-top.pinned.top{top:-100%;-webkit-transition:top .3s ease-in-out;-o-transition:top .3s ease-in-out;transition:top .3s ease-in-out}
+.header-top.pinned .container-fluid>.row>div:nth-child(1),.header-top.pinned .container-fluid>.row>div:nth-child(3){display:none}
 .header-top.pinned .container-fluid>.row>.col-lg-12{-webkit-box-flex:0;-webkit-flex:0 0 66.66%;-ms-flex:0 0 66.66%;flex:0 0 66.66%;max-width:66.66%}
-.header-top.pinned .logo{text-align:left}
-.header-top.pinned .logo img{width:80px}
+.header-top.pinned .logo{text-align:left;padding:8px 0}
+.header-top.pinned .logo img{width:150px}
 .header-top.pinned #main_menu{margin-top:0;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}
+.header-top.pinned #main_menu>li>a{font-size:15px;padding:25px 20px}
 #page_title{padding-top:100px;padding-bottom:100px}
 #page_title::before{content:"";top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6)}
 #page_title h1{font-size:34px;line-height:1.2;word-wrap:break-word}
 #page_title h1+.breadcrumb{margin-top:25px}
 .floating-header+#page_title{padding-top:320px;margin-bottom:70px}
-#colophon .widgettitle{font-family:"Source Sans Pro",sans-serif;font-size:20px;line-height:1.2;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:30px}
+@media only screen and (min-width:768px) and (max-width:991px){#colophon .footer-column{margin-bottom:40px}
+#colophon .footer-column:last-child{margin-bottom:0}
+}@media only screen and (max-width:767px){#colophon .footer-column{margin-bottom:30px}
+#colophon .footer-column:last-child{margin-bottom:0}
+}#colophon .widgettitle{font-family:"Source Sans Pro",sans-serif;font-size:20px;line-height:1.2;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:30px}
 #colophon .widgettitle::before{content:none}
 #colophon .widgettitle::after{content:"\f17e";font-family:Ionicons;top:-1px;right:0;font-size:16px;margin-left:15px}
 #colophon .widget_nav_menu ul li{padding:5px 0 5px 18px}
-#colophon .widget_nav_menu ul li::before{top:5px}
+#colophon .widget_nav_menu ul li::before{top:7.5px}
 #colophon .widget_nav_menu ul li a{display:block}
 #colophon .widget_nav_menu ul li:first-child{padding-top:0}
-#colophon .widget_nav_menu ul li:first-child::before{top:0}
+#colophon .widget_nav_menu ul li:first-child::before{top:2.5px}
 #colophon .widget_nav_menu ul li:last-child{padding-bottom:0;border-bottom:0}
 #colophon select{border-color:white}
 #colophon select:focus{border-color:white}
@@ -434,13 +474,11 @@ button:hover,input[type="submit"]:hover,input[type="button"]:hover,.border-secon
 .post-item:not(.sticky):last-child .post-content-wrapper{border-bottom:0}
 .sticky.post-item{border-bottom-width:1px;border-bottom-style:dashed}
 .sticky .post-content-wrapper{padding:20px}
-.sticky .post-title{padding-top:30px}
-.sticky .post-title::before,.sticky .post-title::after{content:""}
-.sticky .post-title::before{top:0;left:0;height:20px;width:40px}
-.sticky .post-title::after{content:"\f17e";font-family:Ionicons;top:1px;left:15px;font-size:15px}
-.single .entry-content .post-media img{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
+.sticky .post-title{padding-top:35px}
+.sticky .post-title span{top:0;left:0;font-family:"Source Sans Pro",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:4px 9px}
+.sticky .post-title span::after{content:"\f17e";font-family:Ionicons;top:1px;left:0;padding-left:10px;font-size:13px}
+.single .has-post-thumbnail .post-title{margin-bottom:25px}
+.single .entry-content .post-media .image-placeholder,.single .entry-content .post-media img{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .single .entry-footer .tagcloud{margin-bottom:-8px}
 .single .entry-footer .share .caption{font-size:20px}
 .single .entry-footer .share .list-inline{float:none}
-.single .post_format-post-format-video .embed{padding:0;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:25px}
-.single .post_format-post-format-video .embed iframe{top:0;left:0;width:100%;height:100%}

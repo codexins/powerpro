@@ -67,7 +67,7 @@ if( ! function_exists( 'codexin_breadcrumbs' ) ) {
             $post_object = sanitize_post( $queried_object );
 
             // Set variables 
-            $title          = apply_filters( 'the_title', $post_object->post_title );
+            $title          = apply_filters( 'the_title', $post_object->post_title, $post_object->ID );
             $parent         = $post_object->post_parent;
             $post_type      = $post_object->post_type;
             $post_id        = $post_object->ID;
@@ -230,7 +230,7 @@ if( ! function_exists( 'codexin_breadcrumbs' ) ) {
             } else {
                 $breadcrumb_output_link .= '<a href="' . $home_link . '">' . $home_text . '</a>'.$delimiter. esc_html( codexin_get_option( 'cx_blog_title' ) );
             }
-        } elseif( is_front_page() && is_home() ) {
+        } elseif( ( is_front_page() && is_home() ) || ( is_front_page() && !is_home() ) ) {
             // Do not show breadcrumbs on page one of home and frontpage
             $breadcrumb_output_link .= '';
         } else {

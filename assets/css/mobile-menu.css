@@ -4,7 +4,7 @@
  * https://github.com/callmenick/Slide-Push-Menus
  * Released under the MIT license
  */
-@media screen and ( max-width: 767px ) {
+@media screen and ( max-width: 991px ) {
 	.primary-nav-details {
 	    background: #999;
 	    border: 0;

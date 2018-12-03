@@ -62,14 +62,18 @@ if ( ! function_exists( 'codexin_comment_function' ) ) {
      */
     function codexin_comment_function( $comment, $args, $depth ) {
 
-        $GLOBALS['comment'] = $comment; ?>
+        $GLOBALS['comment'] = $comment; 
 
-        <li id="li-comment-<?php comment_ID(); ?>">
+        ?>
+
+        <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
             <div id="comment-<?php comment_ID(); ?>" class="comment-body">
                 <div class="comment-single media">
-                    <div class="comment-single-left comment-author vcard">
-                        <?php echo get_avatar( $comment, $size='90' ); ?>
-                    </div>
+                    <?php if( get_avatar( $comment ) == 0 ) { ?>
+                        <div class="comment-single-left comment-author vcard">
+                            <?php echo get_avatar( $comment, $size='90' ); ?>
+                        </div>
+                    <?php } ?>
 
                     <div class="comment-single-right comment-info media-body">
                     <?php printf( '<span class="fn" itemprop="name">%s</span>', get_comment_author_link() ); ?>
@@ -80,26 +84,25 @@ if ( ! function_exists( 'codexin_comment_function' ) ) {
                                 </time>
                             </a>
                             <?php edit_comment_link( esc_html__( '(Edit)', 'powerpro' ),'  ','' ) ?>
-                            <span class="comment-reply">
-                                <?php 
-                                comment_reply_link( array_merge( $args, 
-                                    array( 
-                                        'depth' => $depth, 
-                                        'max_depth' => $args['max_depth'], 
-                                        'before' => '<i class="fa fa-caret-right"></i>' 
-                                    ) 
-                                ) ); 
-                                ?>
-                            </span>
                         </div>
                         
                         <div class="comment-text" itemprop="text">
                             <?php comment_text(); ?>
                         </div>
 
-                        <?php if ($comment->comment_approved == '0') { ?>
+                        <?php if( $comment->comment_approved == '0' ) { ?>
                             <div class="moderation-notice"><em><?php echo esc_html__('Your comment is awaiting moderation.', 'powerpro') ?></em></div>
                         <?php } ?>
+                        <div class="comment-reply">
+                            <?php 
+                            comment_reply_link( array_merge( $args, 
+                                array( 
+                                    'depth' => $depth, 
+                                    'max_depth' => $args['max_depth'],  
+                                ) 
+                            ) ); 
+                            ?>
+                        </div>
 
                     </div>
                 </div>     
@@ -278,15 +281,15 @@ if ( ! function_exists( 'codexin_default_google_fonts' ) ) {
      */
     function codexin_default_google_fonts() {
         $fonts_url = '';
-        $fonts     =  apply_filters( 'codexin_default_google_fonts', array( 'Rubik:300,300i,400,400i,500,500i,700,700i,900,900i', 'Montserrat+Roboto:400,700' ) );
+        $fonts     =  apply_filters( 'codexin_default_google_fonts', array( 'Source+Sans+Pro:400,400i,600,700', 'Oswald:400,500' ) );
         if ( $fonts ) {
             $subsets   = apply_filters( 'codexin_default_google_fonts', 'latin' );
             $fonts_url = add_query_arg( array(
-                'family' => implode( '%7C', $fonts ),
+                'family' => urlencode( implode( '%7C', $fonts ) ),
                 'subset' => urlencode( $subsets ),
             ),  'https://fonts.googleapis.com/css' );
         }
-        return $fonts_url;
+        return esc_url_raw( $fonts_url );
     }
 }
 
@@ -342,32 +345,106 @@ if ( ! function_exists( 'codexin_get_smart_slider' ) ) {
     }
 }
 
-/**
- * Styles the header image and text displayed on the blog
- *
- * @since   v1.0
- */
 if ( ! function_exists( 'codexin_header_style' ) ) {
-function codexin_header_style() {
-    $header_text_color = get_header_textcolor(); ?>
-    <style type="text/css">
-    <?php
-        if ( ! display_header_text() ) {
+    /**
+     * Styles the header image and text displayed on the blog
+     *
+     * @since   v1.0
+     */
+    function codexin_header_style() {
+        $header_text_color = get_header_textcolor(); 
         ?>
-            .site-title a,
-            .site-description {
-                position: absolute;
-                clip: rect(1px, 1px, 1px, 1px);
+
+        <style type="text/css">
+            <?php
+            if ( ! display_header_text() ) {
+            ?>
+                .site-title a,
+                .site-description {
+                    position: absolute;
+                    clip: rect(1px, 1px, 1px, 1px);
+                }
+            <?php
+            } else {
+            ?>
+                .site-title a,
+                .site-description {
+                    color: #<?php echo esc_attr( $header_text_color ); ?>;
+                }
+            <?php
             }
+            ?>
+        </style>
+
         <?php
-        } else {
-        ?>
-            .site-title a,
-            .site-description {
-                color: #<?php echo esc_attr( $header_text_color ); ?>;
+    }
+}
+
+if ( ! function_exists( 'codexin_body_classes' ) ) {
+    /**
+     * Adds custom classes to the array of body classes.
+     *
+     * @param   array   $classes    Classes for the body element.
+     * @return  array
+     * @since   v1.0
+     */
+    function codexin_body_classes( $classes ) {
+        // Adds a class of group-blog to blogs with more than 1 published author.
+        if ( is_multi_author() ) {
+            $classes[] = 'group-blog';
+        }
+        // Adds a class of hfeed to non-singular pages.
+        if ( ! is_singular() ) {
+            $classes[] = 'hfeed';
+        }
+
+        return $classes;
+    }
+}
+add_filter( 'body_class', 'codexin_body_classes' );
+
+if ( ! function_exists( 'codexin_adjust_body_class' ) ) {
+    /**
+     * Removes tag class from the body_class array to avoid 
+     * Bootstrap markup styling issues.
+     *
+     * @param   string  $classes    CSS classes.
+     * @return  mixed
+     * @since   v1.0
+     */
+    function codexin_adjust_body_class( $classes ) {
+
+        foreach ( $classes as $key => $value ) {
+            if ( 'tag' == $value ) {
+                unset( $classes[ $key ] );
             }
-        <?php } ?>
-    </style>
-    <?php
+        }
+
+        return $classes;
+
+    }
+}
+add_filter( 'body_class', 'codexin_adjust_body_class' );
+
+/**
+ * Custom render function for Infinite Scroll.
+ *
+ */             
+if ( ! function_exists ( 'codexin_infinite_scroll_render' ) ) {
+    function codexin_infinite_scroll_render() {
+        while ( have_posts() ) {
+            the_post();
+            get_template_part( 'template-parts/post/content', get_post_format() );
+        }
+    }
+}
+
+if ( ! function_exists ( 'codexin_jectpack_social_menu' ) ) {
+    function codexin_jectpack_social_menu() {
+        if ( ! function_exists( 'jetpack_social_menu' ) ) {
+            return;
+        } else {
+            jetpack_social_menu();
+        }
     }
 }

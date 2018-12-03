@@ -34,12 +34,25 @@ if ( post_password_required() ) {
 		if ( have_comments() ) { ?>
 			<h3 class="comments-title">
 				<?php
-					// Diplaying the comment number
-					comments_number(
-					esc_html__( 'This post has no comments', 'powerpro' ), 
-					esc_html__( 'This post has One Comment', 'powerpro' ), 
-					wp_kses_post( 'This post has <span>%</span> Comments', 'powerpro' )
-					); 
+				$comments_number = get_comments_number();
+				if ( 1 === (int)$comments_number ) {
+					printf(
+						esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'powerpro' ),
+						'<span>' . get_the_title() . '</span>'
+					);
+				} else {
+					printf(
+						esc_html( _nx(
+							'%1$s thought on &ldquo;%2$s&rdquo;',
+							'%1$s thoughts on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'powerpro'
+						) ),
+						number_format_i18n( $comments_number ),
+						'<span>' . get_the_title() . '</span>'
+					);
+				}
 				?>
 			</h3>
 			<ol class="comment-list clearfix">
@@ -60,9 +73,11 @@ if ( post_password_required() ) {
 	} // Check for comments closed
 
 	// Getting parametes for Comment Form
-	$commenter = wp_get_current_commenter();
-	$req = get_option( 'require_name_email' );
-	$aria_req = ( $req ? " aria-required='true'" : '' );
+	$commenter 	= wp_get_current_commenter();
+	$req 		= get_option( 'require_name_email' );
+	$aria_req 	= ( $req ? " aria-required='true'" : '' );
+	$html5     	= current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
+	$consent  	= empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 
 	// Building Comment Form
 	comment_form(array(
@@ -82,7 +97,7 @@ if ( post_password_required() ) {
 					'<div class="col-12 col-sm-12 col-md-4">
 						<div class="comment-form-email">
 							<fieldset>
-								<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="'. esc_html__( 'Email', 'powerpro' ) . ( $req ? ' *' : '' ) .'" ' . $aria_req . ' />
+								<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="'. esc_html__( 'Email', 'powerpro' ) . ( $req ? ' *' : '' ) .'" ' . $aria_req . ' />
 							</fieldset>
 						</div>
 					</div>',
@@ -90,7 +105,16 @@ if ( post_password_required() ) {
 					'<div class="col-12 col-sm-12 col-md-4">
 						<div class="comment-form-url">
 							<fieldset>
-								<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'.esc_html__( 'Website', 'powerpro' ).'" size="30" />
+								<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'.esc_html__( 'Website', 'powerpro' ).'" size="30" />
+							</fieldset>
+						</div>
+					</div>',
+				'cookies' 				=>
+					'<div class="col-12 col-sm-12 col-md-12">
+						<div class="comment-form-cookies-consent">
+							<fieldset>
+								<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /> ' .
+				         		'<label class="form-check-label" for="wp-comment-cookies-consent">' . esc_html__( 'Save my name, email, and website in this browser for the next time I comment', 'powerpro' ) . '</label>
 							</fieldset>
 						</div>
 					</div>
@@ -100,11 +124,11 @@ if ( post_password_required() ) {
 		'comment_notes_before' 			=> '',
 		'comment_notes_after' 			=> '',
 		'title_reply' 					=> esc_html__( 'Leave a Comment', 'powerpro' ),
-		'title_reply_to' 				=> esc_html__( 'Leave a  Comment', 'powerpro' ),
+		'title_reply_to' 				=> esc_html__( 'Leave a Comment', 'powerpro' ),
 		'cancel_reply_link' 			=> esc_html__( 'Cancel Comment', 'powerpro' ),	
 		'comment_field' 				=> 
 			'<div class="comment-form-comment">
-				<fieldset>' . '<textarea id="comment" placeholder="' . esc_html__( 'Your Comment', 'powerpro' ) . ( $req ? ' *' : '' ) . '" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+				<fieldset>' . '<textarea id="comment" placeholder="' . esc_html_x( 'Comment', 'noun', 'powerpro' ) . ( $req ? ' *' : '' ) . '" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 				</fieldset>
 			</div>',
 		'label_submit' 					=> esc_html__( 'Submit Comment', 'powerpro' ),

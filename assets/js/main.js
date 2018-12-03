@@ -49,23 +49,18 @@ INDEX:
   CODEXIN.mainNav = function () {
     $mainMenu.superfish({
       delay: 0,
-      // one second delay on mouseout
-      //animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation
       animation: {
-        opacity: 'show',
-        height: 'show'
+        opacity: 'show'
       },
       animationOut: {
         opacity: 'hide'
       },
       speed: 'fast',
-      // faster animation speed
       autoArrows: false,
       disableHI: true
     });
     $mainMenu.on('hover', '.sub-menu', function () {
-      var menu = $(this); // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
-
+      var menu = $(this);
       var child_menu = $(this).find('ul');
 
       if ($(menu).offset().left + $(menu).width() + $(child_menu).width() > $window.width()) {
@@ -121,9 +116,10 @@ INDEX:
 
   CODEXIN.ElementsSpacingClasses = function () {
     $('.sidebar-widget p:empty').remove();
-    $('.tagcloud').find('a').removeAttr('style');
-    $('.post_format-post-format-video, .post_format-post-format-audio').find('.embed').removeClass('embed');
-    $('.post_format-post-format-video, .post_format-post-format-audio').find('iframe').parent().addClass('embed'); // Fixed Navigation Menu Height
+    $('.tagcloud').find('a').removeAttr('style'); // Fluid Wrapper for iframe
+
+    $('#whole').find('.cx-fluid-wrapper').removeClass('cx-fluid-wrapper');
+    $('#whole').find('iframe').parent().addClass('cx-fluid-wrapper'); // Fixed Navigation Menu Height
 
     var headerHeight = $intelHeader[0].getBoundingClientRect().height; // var topBarHeight = $('header .top-header')[0].getBoundingClientRect().height : 0;
     // var headerMainHeight = $('header .header-area')[0].getBoundingClientRect().height;

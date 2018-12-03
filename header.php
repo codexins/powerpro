@@ -17,7 +17,10 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11"/>
 	<?php wp_head(); ?>
 </head>
@@ -37,7 +40,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
     <?php } ?>
 
 	<!-- Start of Mobile Navigation -->
-	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left d-block d-sm-block d-md-none">
+	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left d-block d-sm-block d-md-block d-lg-none">
 	    <button class="c-menu__close"><?php echo esc_html__( '&larr; Back', 'powerpro' ); ?></button>
 	    <?php codexin_menu( 'mobile_menu' ); ?>
 	</div>
@@ -52,6 +55,9 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 		<!-- Start of Header -->
 		<header class="header<?php echo is_front_page() ? esc_attr(' front-header') : esc_attr(' inner-header'); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
+
+			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'powerpro' ); ?></a>
+
 			<div class="header-top<?php echo ( codexin_get_option( 'cx_enable_floating_header' ) ? ' floating-header' : '' ); ?>">
 				<div class="container-fluid">
 					<div class="row align-items-center">
@@ -74,24 +80,37 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 							<div class="logo">
 								<div class="navbar-brand">
 									<?php 
-										the_custom_logo();
+									the_custom_logo();
 
-										// Header Text
-										$header_text = display_header_text();
-										if( $header_text == true ) { ?>
-		                                    <h1 class="site-title">
-		                                    	<a id="header_text" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-		                                    		<?php echo esc_html( get_bloginfo('name') ); ?>
-		                                    	</a>
-	                                    	</h1>
-	                                    	<p class="site-description"><?php echo esc_html( get_bloginfo('description') ); ?></p>
-										<?php }
-									 ?>
+									if( ! empty( codexin_get_option( 'sticky_logo_setting' ) ) ) {
+										echo '<div class="sticky-logo">';
+											echo '<a href="'. esc_url( home_url( '/' ) ) .'">';
+												echo '<img src="'. codexin_get_option( 'sticky_logo_setting' ) .'" alt="Logo">';
+											echo '</a>';
+										echo '</div>';
+									} else {
+										echo '<div class="sticky-logo">';
+											the_custom_logo();
+										echo '</div>';
+									}
+
+									// Header Text
+									$header_text = display_header_text();
+									if( $header_text == true ) { ?>
+	                                    <h1 class="site-title">
+	                                    	<a id="header_text" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+	                                    		<?php echo esc_html( get_bloginfo('name') ); ?>
+	                                    	</a>
+                                    	</h1>
+                                    	<p class="site-description"><?php echo esc_html( get_bloginfo('description') ); ?></p>
+									<?php 
+									}
+									?>
 								</div>
 							</div>
 
 							<!-- Mobile Menu button -->
-							<div id="o-wrapper" class="mobile-nav o-wrapper d-block d-sm-block d-md-none">
+							<div id="o-wrapper" class="mobile-nav o-wrapper d-block d-sm-block d-md-block d-lg-none">
 								<div class="primary-nav">
 									<button id="c-button--slide-left" class="primary-nav-details">
 										<?php echo esc_html__( 'Menu', 'powerpro' ); ?> <i class="fa fa-bars"></i>
@@ -107,7 +126,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 							</div>
 						</div>
 
-						<div class="col-12 col-sm-12 col-md-12 col-lg-12 d-none d-sm-none d-md-block">
+						<div class="col-12 col-sm-12 col-md-12 col-lg-12 d-none d-sm-none d-md-none d-lg-block">
 
 							<!-- Start of main Navigation -->
 							<div id="main_nav">						

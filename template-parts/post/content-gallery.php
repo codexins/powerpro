@@ -72,23 +72,26 @@ $gallery 		 = codexin_meta( 'codexin_gallery', 'size=codexin-fr-rect-two' );
 			<?php
 			if ( ! post_password_required() ) { 
 				if( ! empty( $gallery ) ) { 
-					echo ( ! is_single() ) ? '<a href="' . esc_url( get_the_permalink() ) . '">' : ''; ?>
-		                <div class="element-carousel" data-visible-slide="1" data-visible-xl-slide="1" data-visible-lg-slide="1" data-visible-md-slide="1" data-visible-sm-slide="1" data-loop="true" data-autoplay-delay="5000" data-effect="fade">
-		                    <div class="swiper-wrapper">
-		                    	<?php 
-		                    	foreach( $gallery as $single_image ) { 
-									// Fetching the attachment properties
-									$image_prop  = codexin_attachment_metas( $single_image['ID'] );
-									echo '<div class="swiper-slide">';
-										echo '<img src="' . esc_url( $single_image['url'] ) . '" alt="' . esc_attr( $image_prop['alt'] ) . '">';
-									echo '</div> <!-- end of swiper-slide -->';
-			                    } ?>
-		                    </div> <!-- end of swiper-wrapper -->
-		                    <div class="swiper-arrow prev fa fa-angle-left"></div>
-		                    <div class="swiper-arrow next fa fa-angle-right"></div>
-		                </div> <!-- end of element-carousel -->
-					<?php
-					echo ( ! is_single() ) ? '</a>' : '';
+					echo '<div class="post-media">';
+						echo ( ! is_single() ) ? '<a href="' . esc_url( get_the_permalink() ) . '">' : ''; ?>
+			                <div class="element-carousel" data-visible-slide="1" data-visible-xl-slide="1" data-visible-lg-slide="1" data-visible-md-slide="1" data-visible-sm-slide="1" data-loop="true" data-autoplay-delay="5000" data-effect="fade">
+			                    <div class="swiper-wrapper">
+			                    	<?php 
+			                    	foreach( $gallery as $single_image ) { 
+										// Fetching the attachment properties
+										$image_prop  = codexin_attachment_metas( $single_image['ID'] );
+										echo '<div class="swiper-slide bg-img-wrapper">';
+											echo '<div class="image-placeholder"></div>';
+											echo '<img src="' . esc_url( $single_image['url'] ) . '" alt="' . esc_attr( $image_prop['alt'] ) . '" class="visually-hidden">';
+										echo '</div> <!-- end of swiper-slide -->';
+				                    } ?>
+			                    </div> <!-- end of swiper-wrapper -->
+			                    <div class="swiper-arrow prev ion ion-md-arrow-dropleft"></div>
+			                    <div class="swiper-arrow next ion ion-md-arrow-dropright"></div>
+			                </div> <!-- end of element-carousel -->
+						<?php
+						echo ( ! is_single() ) ? '</a>' : '';
+					echo '</div> <!-- end of post-media -->';
 				}
 			} // end of password check condition
 
@@ -137,24 +140,26 @@ $gallery 		 = codexin_meta( 'codexin_gallery', 'size=codexin-fr-rect-two' );
 				<?php 
 				}
 			} else{
-		        if( has_tag() ) { ?>
-		    		<div class="tagcloud">
-			 			<?php the_tags('',' ',''); ?>
-		    		</div>
-		        <?php 
-		    	}
+				if( ! post_password_required() ) {
+			        if( has_tag() ) { ?>
+			    		<div class="tagcloud">
+				 			<?php the_tags('',' ',''); ?>
+			    		</div>
+			        <?php 
+			    	}
 
-				if( $social_share ) { ?>
-				    <div class="share socials share-links">
-						<ul class="list-inline">
-							<li class="list-inline-item caption"><?php esc_html_e('Share this post: ', 'powerpro'); ?></li>
-                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
-                            <li class="list-inline-item"><a href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-google-plus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
-                            <li class="list-inline-item"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-linkedin" data-toggle="tooltip" data-position="top" data-original-title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
-                        </ul>
-				    </div>
-				<?php }
+					if( $social_share ) { ?>
+					    <div class="share socials share-links">
+							<ul class="list-inline">
+								<li class="list-inline-item caption"><?php esc_html_e('Share this post: ', 'powerpro'); ?></li>
+	                            <li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
+	                            <li class="list-inline-item"><a href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
+	                            <li class="list-inline-item"><a href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-google-plus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
+	                            <li class="list-inline-item"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-linkedin" data-toggle="tooltip" data-position="top" data-original-title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
+	                        </ul>
+					    </div>
+					<?php }
+				}
 			}
 			?>
 		</footer> <!-- end of entry-footer -->

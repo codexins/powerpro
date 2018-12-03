@@ -34,7 +34,7 @@ if ( ! function_exists( 'codexin_posts_nav' ) ) {
 
         $nav = '';
 
-        $nav .= '<div class="posts-nav clearfix">';
+        $nav .= '<nav class="posts-nav clearfix" aria-label="'. esc_html__('Posts navigation', 'powerpro') .'">';
             if( $next_link ) { 
                 $nav .= '<div class="nav-next alignright post-btn">'. $next_link .'</div>';
             }
@@ -42,7 +42,7 @@ if ( ! function_exists( 'codexin_posts_nav' ) ) {
             if( $prev_link ) {
                 $nav .= '<div class="nav-previous alignleft post-btn">'. $prev_link .'</div>';
             }
-        $nav .= '</div> <!-- end of posts-nav -->';
+        $nav .= '</nav> <!-- end of posts-nav -->';
         return apply_filters( 'codexin_posts_nav', $nav );
     }
 }
@@ -71,7 +71,7 @@ if ( ! function_exists( 'codexin_post_nav' ) ) {
 
         $nav = '';
 
-        $nav .= '<div class="posts-nav clearfix">';
+        $nav .= '<nav class="posts-nav clearfix" aria-label="'. esc_html__('Post navigation', 'powerpro') .'">';
             if( $next_link ) { 
                 $nav .= '<div class="nav-next alignleft post-btn">'. $next_link .'</div>';
             }
@@ -79,7 +79,7 @@ if ( ! function_exists( 'codexin_post_nav' ) ) {
             if( $prev_link ) {
                 $nav .= '<div class="nav-previous alignright post-btn">'. $prev_link .'</div>';
             }
-        $nav .= '</div> <!-- end of posts-nav -->';
+        $nav .= '</nav> <!-- end of posts-nav -->';
         return apply_filters( 'codexin_post_nav', $nav );
     }
 }
@@ -104,7 +104,7 @@ if ( ! function_exists( 'codexin_numbered_posts_nav' ) ) {
 
         ob_start();
         ?>
-            <nav class="number-pagination">
+            <nav class="number-pagination" aria-label="<?php echo esc_html__('Posts navigation', 'powerpro'); ?>">
                 <?php
                 $current = max( 1, absint( get_query_var( 'paged' ) ) );
                 $pagination = paginate_links( array(
@@ -116,6 +116,7 @@ if ( ! function_exists( 'codexin_numbered_posts_nav' ) ) {
                     'prev_text' => '&laquo;',
                     'next_text' => '&raquo;',
                 ) );
+
                 if ( ! empty( $pagination ) ) { ?>
                     <ul class="pagination">
                         <?php foreach ( $pagination as $key => $page_link ) { ?>
