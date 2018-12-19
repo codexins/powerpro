@@ -1,5 +1,12 @@
+/**
+ * File customize-preview.js.
+ *
+ * Theme Customizer enhancements for a better user experience.
+ *
+ * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ */
 "use strict";
-(function ($) {	
+(function ($) {
 	// Header text.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
@@ -16,8 +23,8 @@
 					position: 'relative'
 				});
 				$( '#header_text, .site-description' ).css({
-                    color: to
-                });
+					color: to
+				});
 				// Add class for different logo styles if title and description are visible.
 				$( 'body' ).removeClass( 'title-tagline-hidden' );
 			}

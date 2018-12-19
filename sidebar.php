@@ -8,7 +8,9 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 if ( is_page() && is_active_sidebar( 'codexin-sidebar-page' ) ) {
 
@@ -31,4 +33,3 @@ if ( is_page() && is_active_sidebar( 'codexin-sidebar-page' ) ) {
 	dynamic_sidebar( 'codexin-sidebar-general' );
 
 }
-?>

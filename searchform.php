@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * The search-form template.
@@ -10,8 +9,9 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 ?>
 
 <form role="search" method="get" class="input-group" action="<?php echo esc_url_raw( home_url( '/' ) ); ?>" role="search">

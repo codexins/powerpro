@@ -7,7 +7,9 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 get_header(); ?>
 
@@ -17,18 +19,19 @@ get_header(); ?>
 		<div class="row">
 			<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 order-1 order-md-1 order-lg-2">
 				<main id="primary" class="site-main">
-					<?php 
-					if ( have_posts() ) { 
+					<?php
+					if ( have_posts() ) {
 
-						// Start the loop
+						// Start the loop.
 						while ( have_posts() ) {
 							the_post();
 
-							// Load the page content template
+							// Load the page content template.
 							get_template_part( 'template-parts/page/content', 'page' );
 						}
-					} else { 
-						// No posts to display
+					} else {
+						// No posts to display.
+						get_template_part( 'template-parts/post/content', 'none' );
 					}
 					?>
 				</main> <!-- end of #primary -->
@@ -43,8 +46,8 @@ get_header(); ?>
 
 			<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3 order-2 order-md-2 order-lg-1">
 				<aside id="secondary" class="widget-area">
-					<?php 
-					// Get active assigned sidebar
+					<?php
+					// Get active assigned sidebar.
 					get_sidebar();
 					?>
 				</aside> <!-- end of #secondary -->
@@ -54,4 +57,4 @@ get_header(); ?>
 </div>
 <!-- End of Main Content Wrapper -->
 
-<?php get_footer() ?>
+<?php get_footer();

@@ -12,8 +12,8 @@
 ?>
 
 <div id="primary_slider" class="primary-slider">
-	<?php 
-	// Get the slider
-	echo codexin_get_smart_slider();
+	<?php
+	// Get the slider.
+	codexin_get_smart_slider();
 	?>
 </div>

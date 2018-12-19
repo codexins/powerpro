@@ -1,5 +1,4 @@
-<?php  
-
+<?php
 /**
  * Customizer Fields definition
  *
@@ -9,23 +8,31 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 $color_selectors = codexin_color_selectors();
 
-/************************************************************
-	General Settings
-*************************************************************/
+/**
+ * General Settings
+ */
 
 Kirki::add_field( $config_id, array(
-    'type'        => 'text',
-    'settings'    => 'cx_google_map_api',
-    'label'       => esc_html__( 'Google Map API Key', 'powerpro' ),
-    'description' => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Get Your Google Map API Key from ', 'powerpro'), esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ), esc_html__( 'here', 'powerpro' ) ),
-    'section'     => 'cx_google_map_settings',
-    'default'     => '',
-    'priority'    => 10,
-    'sanitize_callback' => 'codexin_sanitize_text'
+	'type'        => 'text',
+	'settings'    => 'cx_google_map_api',
+	'label'       => esc_html__( 'Google Map API Key', 'powerpro' ),
+	'description' =>
+		sprintf(
+			'%1$s<a href="%2$s" target="_blank">%3$s</a>',
+			esc_html__( 'Get Your Google Map API Key from ', 'powerpro' ),
+			esc_url( 'https://developers.google.com/maps/documentation/javascript/get-api-key' ),
+			esc_html__( 'here', 'powerpro' )
+		),
+	'section'     => 'cx_google_map_settings',
+	'default'     => '',
+	'priority'    => 10,
+	'sanitize_callback' => 'codexin_sanitize_text',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -39,7 +46,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -53,645 +60,645 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
-    'settings'    => 'cx_logo_size',
-    'label'       => esc_html__('Logo Size', 'powerpro'),
-    'section'     => 'title_tagline',
-    'type'        => 'slider',
-    'priority'    => 50,
-    'default'     => 120,
-    'choices'     => array(
-        'max'  => 300,
-        'min'  => 0,
-        'step' => 1,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element'  => 'header .logo .navbar-brand img',
-            'property' => 'width',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'    => 'cx_logo_top_spacing',
-    'label'       => esc_html__('Logo Top Spacing', 'powerpro'),
-    'section'     => 'title_tagline',
-    'type'        => 'slider',
-    'priority'    => 51,
-    'default'     => 0,
-    'choices'     => array(
-        'max'  => 100,
-        'min'  => 0,
-        'step' => 1,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element'  => '.navbar-brand',
-            'property' => 'padding-top',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'    => 'cx_logo_bottom_spacing',
-    'label'       => esc_html__('Logo Bottom Spacing', 'powerpro'),
-    'section'     => 'title_tagline',
-    'type'        => 'slider',
-    'priority'    => 52,
-    'default'     => 0,
-    'choices'     => array(
-        'max'  => 100,
-        'min'  => 0,
-        'step' => 1,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element'  => '.navbar-brand',
-            'property' => 'padding-bottom',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'      => 'sticky_logo_setting',
-    'label'         => esc_html__( 'Sticky Logo', 'powerpro' ),
-    'description'   => esc_html__( 'Upload sticky logo', 'powerpro' ),
-    'type'          => 'image',
-    'section'       => 'title_tagline',
-    'priority'      => 53,
-    'transport'     => 'auto',
+	'settings'    => 'cx_logo_size',
+	'label'       => esc_html__( 'Logo Size', 'powerpro' ),
+	'section'     => 'title_tagline',
+	'type'        => 'slider',
+	'priority'    => 50,
+	'default'     => 120,
+	'choices'     => array(
+		'max'  => 300,
+		'min'  => 0,
+		'step' => 1,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element'  => 'header .logo .navbar-brand img',
+			'property' => 'width',
+			'units'    => 'px',
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
 ) );
 
-/************************************************************
-	Typography Settings
-*************************************************************/
+Kirki::add_field( $config_id, array(
+	'settings'    => 'cx_logo_top_spacing',
+	'label'       => esc_html__( 'Logo Top Spacing', 'powerpro' ),
+	'section'     => 'title_tagline',
+	'type'        => 'slider',
+	'priority'    => 51,
+	'default'     => 0,
+	'choices'     => array(
+		'max'  => 100,
+		'min'  => 0,
+		'step' => 1,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element'  => '.navbar-brand',
+			'property' => 'padding-top',
+			'units'    => 'px',
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
 
 Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_body_font',
-    'label'       => esc_html__('Body Font Style', 'powerpro'),
-    'description' => esc_html__('Change Body font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_body',
+	'settings'    => 'cx_logo_bottom_spacing',
+	'label'       => esc_html__( 'Logo Bottom Spacing', 'powerpro' ),
+	'section'     => 'title_tagline',
+	'type'        => 'slider',
+	'priority'    => 52,
+	'default'     => 0,
+	'choices'     => array(
+		'max'  => 100,
+		'min'  => 0,
+		'step' => 1,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element'  => '.navbar-brand',
+			'property' => 'padding-bottom',
+			'units'    => 'px',
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'      => 'sticky_logo_setting',
+	'label'         => esc_html__( 'Sticky Logo', 'powerpro' ),
+	'description'   => esc_html__( 'Upload sticky logo', 'powerpro' ),
+	'type'          => 'image',
+	'section'       => 'title_tagline',
+	'priority'      => 53,
+	'transport'     => 'auto',
+) );
+
+/**
+ * Typography Settings
+ */
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_body_font',
+	'label'       => esc_html__( 'Body Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change Body font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_body',
 	'default'     => array(
 		'font-family'    => 'Source Sans Pro',
 		'font-weight'    => 'regular',
 		'font-size'      => '16px',
-		'line-height'    => '1.5'
+		'line-height'    => '1.5',
 	),
-    'priority'    => 10,
-    'choices'     => array(
-        'font-style'  => true,
-        'font-family' => true,
-        'font-size'   => true,
-        'line-height' => true,
-        'font-weight' => true
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'body, button, input, select, textarea',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_header_text_font',
-    'label'       => esc_html__('Header Text Font Style', 'powerpro'),
-    'description' => esc_html__('Change Header Text font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_header',
-    'default'     => array(
-        'font-size'         => '20px',
-        'line-height'       => '33px',
-        'font-family'       => 'Source Sans Pro',
-        'font-weight'       => '400',
-        'text-transform'    => 'uppercase',
-    ),
-    'priority'    => 10,
-    'choices'     => array(
-        'font-style'        => true,
-        'font-family'       => true,
-        'font-size'         => true,
-        'line-height'       => true,
-        'font-weight'       => true,
-        'font-transform'    => true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'header .site-title',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_header_desc_font',
-    'label'       => esc_html__('Header Description Font Style', 'powerpro'),
-    'description' => esc_html__('Change Header Description font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_header',
-    'default'     => array(
-        'font-size'         => '16px',
-        'line-height'       => '33px',
-        'font-family'       => 'Source Sans Pro',
-        'font-weight'       => '400',
-        'text-transform'    => 'capitalize',
-    ),
-    'priority'    => 20,
-    'choices'     => array(
-        'font-style'        => true,
-        'font-family'       => true,
-        'font-size'         => true,
-        'line-height'       => true,
-        'font-weight'       => true,
-        'font-transform'    => true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'header .site-description',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_nav_font',
-    'label'       => esc_html__('Navigation Menu Font Style', 'powerpro'),
-    'description' => esc_html__('Change Navigation Menu font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_nav',
-	'default'     => array(
-        'font-size'         => '16px',
-        'line-height'       => '22px',
-        'font-family'       => 'Source Sans Pro',
-        'font-weight'       => '600',
-        'text-transform'    => 'uppercase',
+	'priority'    => 10,
+	'choices'     => array(
+		'font-style'  => true,
+		'font-family' => true,
+		'font-size'   => true,
+		'line-height' => true,
+		'font-weight' => true,
 	),
-    'priority'    => 20,
-    'choices'     => array(
-        'font-style'  		=> true,
-        'font-family' 		=> true,
-        'font-size'   		=> true,
-        'line-height' 		=> true,
-        'font-weight' 		=> true,
-        'font-transform' 	=> true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => '#main_menu li a',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_page_title_font',
-    'label'       => esc_html__('page Title Font Style', 'powerpro'),
-    'description' => esc_html__('Change page Title font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_page_title',
-    'default'     => array(
-        'font-size'         => '34px',
-        'line-height'       => '40px',
-        'font-family'       => 'Oswald',
-        'font-weight'       => '400',
-        'text-transform'    => 'uppercase',
-    ),
-    'priority'    => 25,
-    'choices'     => array(
-        'font-style'        => true,
-        'font-family'       => true,
-        'font-size'         => true,
-        'line-height'       => true,
-        'font-weight'       => true,
-        'font-transform'    => true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => '#page_title.page-title h1',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_h1_font',
-    'label'       => esc_html__('\'h1\' Font Style', 'powerpro'),
-    'description' => esc_html__('Change h1 font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_h1',
-	'default'     => array(
-        'font-size'   		=> '32px',
-        'font-family' 		=> 'Oswald',
-        'font-weight' 		=> '400',
-        'text-transform'    => 'uppercase',
-        'line-height'    	=> '1.2'
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'body, button, input, select, textarea',
+		),
 	),
-    'priority'    => 30,
-    'choices'     => array(
-        'font-style'  		=> true,
-        'font-family' 		=> true,
-        'font-size'   		=> true,
-        'line-height' 		=> true,
-        'font-weight' 		=> true,
-        'font-transform' 	=> true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'h1, .h1',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_h2_font',
-    'label'       => esc_html__('\'h2\' Font Style', 'powerpro'),
-    'description' => esc_html__('Change h2 font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_h2',
-	'default'     => array(
-        'font-size'   		=> '28px',
-        'font-family' 		=> 'Oswald',
-        'font-weight' 		=> '400',
-        'text-transform'    => 'uppercase',
-        'line-height'    	=> '1.2'
-	),
-    'priority'    => 40,
-    'choices'     => array(
-        'font-style'  		=> true,
-        'font-family' 		=> true,
-        'font-size'   		=> true,
-        'line-height' 		=> true,
-        'font-weight' 		=> true,
-        'font-transform' 	=> true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'h2, .h2',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_h3_font',
-    'label'       => esc_html__('\'h3\' Font Style', 'powerpro'),
-    'description' => esc_html__('Change h3 font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_h3',
-	'default'     => array(
-        'font-size'   		=> '24px',
-        'font-family' 		=> 'Oswald',
-        'font-weight' 		=> '400',
-        'text-transform'    => 'uppercase',
-        'line-height'    	=> '1.2'
-	),
-    'priority'    => 50,
-    'choices'     => array(
-        'font-style'  		=> true,
-        'font-family' 		=> true,
-        'font-size'   		=> true,
-        'line-height' 		=> true,
-        'font-weight' 		=> true,
-        'font-transform' 	=> true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'h3, .h3',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_h4_font',
-    'label'       => esc_html__('\'h4\' Font Style', 'powerpro'),
-    'description' => esc_html__('Change h4 font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_h4',
-	'default'     => array(
-        'font-size'   		=> '21px',
-        'font-family' 		=> 'Oswald',
-        'font-weight' 		=> '400',
-        'text-transform'    => 'uppercase',
-        'line-height'    	=> '1.2'
-	),
-    'priority'    => 60,
-    'choices'     => array(
-        'font-style'  		=> true,
-        'font-family' 		=> true,
-        'font-size'   		=> true,
-        'line-height' 		=> true,
-        'font-weight' 		=> true,
-        'font-transform' 	=> true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'h4, .h4',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_h5_font',
-    'label'       => esc_html__('\'h5\' Font Style', 'powerpro'),
-    'description' => esc_html__('Change h5 font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_h5',
-	'default'     => array(
-        'font-size'   		=> '16px',
-        'font-family' 		=> 'Oswald',
-        'font-weight' 		=> '400',
-        'text-transform'    => 'uppercase',
-        'line-height'    	=> '1.2'
-	),
-    'priority'    => 70,
-    'choices'     => array(
-        'font-style'  		=> true,
-        'font-family' 		=> true,
-        'font-size'   		=> true,
-        'line-height' 		=> true,
-        'font-weight' 		=> true,
-        'font-transform' 	=> true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'h5, .h5',
-        ),
-    ),
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'typography',
-    'settings'    => 'cx_h6_font',
-    'label'       => esc_html__('\'h6\' Font Style', 'powerpro'),
-    'description' => esc_html__('Change h6 font family and font style.', 'powerpro'),
-    'section'     => 'cx_typography_h6',
-	'default'     => array(
-        'font-size'   		=> '14px',
-        'font-family' 		=> 'Oswald',
-        'font-weight' 		=> '400',
-        'text-transform'    => 'uppercase',
-        'line-height'    	=> '1.2'
-	),
-    'priority'    => 80,
-    'choices'     => array(
-        'font-style'  		=> true,
-        'font-family' 		=> true,
-        'font-size'   		=> true,
-        'line-height' 		=> true,
-        'font-weight' 		=> true,
-        'font-transform' 	=> true,
-    ),
-    'transport'   => 'auto',
-    'output'      => array(
-        array(
-            'element' => 'h6, .h6',
-        ),
-    ),
-));
-
-/************************************************************
-	Color Settings
-*************************************************************/
-
-Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_text_color',
-    'label'             => esc_html__('Body Text Color:', 'powerpro'),
-    'description'       => esc_html__('Please Choose the Body Text Color', 'powerpro'),
-    'section'           => 'cx_color_scheme',
-    'type'              => 'color',
-    'priority'          => 20,
-    'default'           => '#000',
-    'sanitize_callback' => 'codexin_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => 'body',
-            'property' => 'color',
-        ),
-    ),
-    'transport'         => 'auto',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_main_menu_color',
-    'label'             => esc_html__('Main Menu Color:', 'powerpro'),
-    'description'       => esc_html__('Please Choose the Main Menu Color', 'powerpro'),
-    'section'           => 'cx_color_scheme',
-    'type'              => 'color',
-    'priority'          => 20,
-    'default'           => '#fff',
-    'sanitize_callback' => 'codexin_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '#main_nav li a',
-            'property' => 'color',
-        ),
-    ),
-    'transport'         => 'auto',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_primary_color',
-    'label'             => esc_html__('Primary Color:', 'powerpro'),
-    'description'       => esc_html__('Please Choose the Primary Color', 'powerpro'),
-    'section'           => 'cx_color_scheme',
-    'type'              => 'color',
-    'priority'          => 30,
-    'default'           => '#295970',
-    'sanitize_callback' => 'codexin_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => $color_selectors['primary_color_selectors'],
-            'property' => 'color',
-        ),
-
-        array(
-            'element'  => $color_selectors['primary_color_in_bg_selectors'],
-            'property' => 'background-color'
-        ),
-    ),
-    'transport'         => 'auto',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_secondary_color',
-    'label'             => esc_html__('Secondary Color:', 'powerpro'),
-    'description'       => esc_html__('Please Choose the Secondary Color', 'powerpro'),
-    'section'           => 'cx_color_scheme',
-    'type'              => 'color',
-    'priority'          => 40,
-    'default'           => '#fce38a',
-    'sanitize_callback' => 'codexin_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '',
-            'property' => 'color',
-        ),
-
-        array(
-            'element'  => '',
-            'property' => 'background-color',
-        ),
-
-        array(
-            'element'  => '',
-            'property' => 'border-color',
-        ),
-    ),
-    'transport'         => 'auto',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_tertiary_color',
-    'label'             => esc_html__('Tertiary Color:', 'powerpro'),
-    'description'       => esc_html__('Please Choose the Tertiary Color', 'powerpro'),
-    'section'           => 'cx_color_scheme',
-    'type'              => 'color',
-    'priority'          => 50,
-    'default'           => '#fce38a',
-    'sanitize_callback' => 'codexin_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '',
-            'property' => 'color',
-        ),
-
-        array(
-            'element'  => '',
-            'property' => 'background-color',
-        ),
-
-        array(
-            'element'  => '',
-            'property' => 'border-color',
-        ),
-    ),
-    'transport'         => 'auto',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_border_color',
-    'label'             => esc_html__('Border Color:', 'powerpro'),
-    'description'       => esc_html__('Please Choose the Border Color', 'powerpro'),
-    'section'           => 'cx_color_scheme',
-    'type'              => 'color',
-    'priority'          => 60,
-    'default'           => '#ddd',
-    'sanitize_callback' => 'codexin_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '',
-            'property' => 'border-color',
-        ),
-    ),
-    'transport'         => 'auto',
-));
-
-Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_offset_color',
-    'label'             => esc_html__('Offset Color:', 'powerpro'),
-    'description'       => esc_html__('Please Choose the Offset Color', 'powerpro'),
-    'section'           => 'cx_color_scheme',
-    'type'              => 'color',
-    'priority'          => 70,
-    'default'           => '#fafafa',
-    'sanitize_callback' => 'codexin_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '',
-            'property' => 'background-color',
-        ),
-    ),
-    'transport'         => 'auto',
-));
-
-/************************************************************
-	header Settings
-*************************************************************/
-
-Kirki::add_field( $config_id, array(
-    'settings'          => 'header_background_color',
-    'label'             => esc_html__('Header Background Color', 'powerpro'),
-    'description'       => esc_html__('Change Header Background Color', 'powerpro'),
-    'section'           => 'header_image',
-    'type'              => 'color',
-    'priority'          => 100,
-    'sanitize_callback' => 'codexin_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => 'header .header-top',
-            'property' => 'background',
-        ),
-    ),
-    'transport'         => 'auto',
-));
-
-Kirki::add_field( $config_id, array(
-    'type'        => 'switch',
-    'settings'    => 'cx_enable_fixed_header',
-    'label'       => esc_html__( 'Enable Fixed Header?', 'powerpro' ),
-    'section'     => 'header_image',
-    'default'     => 1,
-    'priority'    => 110,
-    'choices'     => array(
-        'on'  => esc_html__( 'On', 'powerpro' ),
-        'off' => esc_html__( 'Off', 'powerpro' ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_checkbox'
 ) );
 
 Kirki::add_field( $config_id, array(
-    'type'        => 'switch',
-    'settings'    => 'cx_enable_floating_header',
-    'label'       => esc_html__( 'Enable Floating Header?', 'powerpro' ),
-    'section'     => 'header_image',
-    'default'     => 1,
-    'priority'    => 111,
-    'choices'     => array(
-        'on'  => esc_html__( 'On', 'powerpro' ),
-        'off' => esc_html__( 'Off', 'powerpro' ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'type'        => 'typography',
+	'settings'    => 'cx_header_text_font',
+	'label'       => esc_html__( 'Header Text Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change Header Text font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_header',
+	'default'     => array(
+		'font-size'         => '20px',
+		'line-height'       => '33px',
+		'font-family'       => 'Source Sans Pro',
+		'font-weight'       => '400',
+		'text-transform'    => 'uppercase',
+	),
+	'priority'    => 10,
+	'choices'     => array(
+		'font-style'        => true,
+		'font-family'       => true,
+		'font-size'         => true,
+		'line-height'       => true,
+		'font-weight'       => true,
+		'font-transform'    => true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'header .site-title',
+		),
+	),
 ) );
 
 Kirki::add_field( $config_id, array(
-    'settings' 		=> 'cx_page_title_position',
-    'label'         => esc_html__('Page Title Position', 'powerpro'),
-    'description'   => esc_html__('Please Select Page Title Position', 'powerpro'),
-    'type'     		=> 'radio-buttonset',
-    'section'  		=> 'cx_page_title_section',
-    'default'  		=> 'center',
-    'priority' 		=> 10,
-    'choices'  		=> array(
-        'left' 		=> esc_html__( 'Left', 'powerpro' ),
-        'center' 	=> esc_html__( 'Center', 'powerpro' ),
-        'right'		=> esc_html__( 'Right', 'powerpro' ),
-    ),
-    'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#page_title.page-title h1',
-            'property' => 'text-align'
-        ),
-    ),
-));
+	'type'        => 'typography',
+	'settings'    => 'cx_header_desc_font',
+	'label'       => esc_html__( 'Header Description Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change Header Description font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_header',
+	'default'     => array(
+		'font-size'         => '16px',
+		'line-height'       => '33px',
+		'font-family'       => 'Source Sans Pro',
+		'font-weight'       => '400',
+		'text-transform'    => 'capitalize',
+	),
+	'priority'    => 20,
+	'choices'     => array(
+		'font-style'        => true,
+		'font-family'       => true,
+		'font-size'         => true,
+		'line-height'       => true,
+		'font-weight'       => true,
+		'font-transform'    => true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'header .site-description',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_nav_font',
+	'label'       => esc_html__( 'Navigation Menu Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change Navigation Menu font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_nav',
+	'default'     => array(
+		'font-size'         => '16px',
+		'line-height'       => '22px',
+		'font-family'       => 'Source Sans Pro',
+		'font-weight'       => '600',
+		'text-transform'    => 'uppercase',
+	),
+	'priority'    => 20,
+	'choices'     => array(
+		'font-style'  		=> true,
+		'font-family' 		=> true,
+		'font-size'   		=> true,
+		'line-height' 		=> true,
+		'font-weight' 		=> true,
+		'font-transform' 	=> true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '#main_menu li a',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_page_title_font',
+	'label'       => esc_html__( 'page Title Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change page Title font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_page_title',
+	'default'     => array(
+		'font-size'         => '34px',
+		'line-height'       => '40px',
+		'font-family'       => 'Oswald',
+		'font-weight'       => '400',
+		'text-transform'    => 'uppercase',
+	),
+	'priority'    => 25,
+	'choices'     => array(
+		'font-style'        => true,
+		'font-family'       => true,
+		'font-size'         => true,
+		'line-height'       => true,
+		'font-weight'       => true,
+		'font-transform'    => true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => '#page_title.page-title h1',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_h1_font',
+	'label'       => esc_html__( '\'h1\' Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change h1 font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_h1',
+	'default'     => array(
+		'font-size'   		=> '32px',
+		'font-family' 		=> 'Oswald',
+		'font-weight' 		=> '400',
+		'text-transform'    => 'uppercase',
+		'line-height'    	=> '1.2',
+	),
+	'priority'    => 30,
+	'choices'     => array(
+		'font-style'  		=> true,
+		'font-family' 		=> true,
+		'font-size'   		=> true,
+		'line-height' 		=> true,
+		'font-weight' 		=> true,
+		'font-transform' 	=> true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'h1, .h1',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_h2_font',
+	'label'       => esc_html__( '\'h2\' Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change h2 font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_h2',
+	'default'     => array(
+		'font-size'   		=> '28px',
+		'font-family' 		=> 'Oswald',
+		'font-weight' 		=> '400',
+		'text-transform'    => 'uppercase',
+		'line-height'    	=> '1.2',
+	),
+	'priority'    => 40,
+	'choices'     => array(
+		'font-style'  		=> true,
+		'font-family' 		=> true,
+		'font-size'   		=> true,
+		'line-height' 		=> true,
+		'font-weight' 		=> true,
+		'font-transform' 	=> true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'h2, .h2',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_h3_font',
+	'label'       => esc_html__( '\'h3\' Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change h3 font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_h3',
+	'default'     => array(
+		'font-size'   		=> '24px',
+		'font-family' 		=> 'Oswald',
+		'font-weight' 		=> '400',
+		'text-transform'    => 'uppercase',
+		'line-height'    	=> '1.2',
+	),
+	'priority'    => 50,
+	'choices'     => array(
+		'font-style'  		=> true,
+		'font-family' 		=> true,
+		'font-size'   		=> true,
+		'line-height' 		=> true,
+		'font-weight' 		=> true,
+		'font-transform' 	=> true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'h3, .h3',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_h4_font',
+	'label'       => esc_html__( '\'h4\' Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change h4 font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_h4',
+	'default'     => array(
+		'font-size'   		=> '21px',
+		'font-family' 		=> 'Oswald',
+		'font-weight' 		=> '400',
+		'text-transform'    => 'uppercase',
+		'line-height'    	=> '1.2',
+	),
+	'priority'    => 60,
+	'choices'     => array(
+		'font-style'  		=> true,
+		'font-family' 		=> true,
+		'font-size'   		=> true,
+		'line-height' 		=> true,
+		'font-weight' 		=> true,
+		'font-transform' 	=> true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'h4, .h4',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_h5_font',
+	'label'       => esc_html__( '\'h5\' Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change h5 font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_h5',
+	'default'     => array(
+		'font-size'   		=> '16px',
+		'font-family' 		=> 'Oswald',
+		'font-weight' 		=> '400',
+		'text-transform'    => 'uppercase',
+		'line-height'    	=> '1.2',
+	),
+	'priority'    => 70,
+	'choices'     => array(
+		'font-style'  		=> true,
+		'font-family' 		=> true,
+		'font-size'   		=> true,
+		'line-height' 		=> true,
+		'font-weight' 		=> true,
+		'font-transform' 	=> true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'h5, .h5',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'typography',
+	'settings'    => 'cx_h6_font',
+	'label'       => esc_html__( '\'h6\' Font Style', 'powerpro' ),
+	'description' => esc_html__( 'Change h6 font family and font style.', 'powerpro' ),
+	'section'     => 'cx_typography_h6',
+	'default'     => array(
+		'font-size'   		=> '14px',
+		'font-family' 		=> 'Oswald',
+		'font-weight' 		=> '400',
+		'text-transform'    => 'uppercase',
+		'line-height'    	=> '1.2',
+	),
+	'priority'    => 80,
+	'choices'     => array(
+		'font-style'  		=> true,
+		'font-family' 		=> true,
+		'font-size'   		=> true,
+		'line-height' 		=> true,
+		'font-weight' 		=> true,
+		'font-transform' 	=> true,
+	),
+	'transport'   => 'auto',
+	'output'      => array(
+		array(
+			'element' => 'h6, .h6',
+		),
+	),
+) );
+
+/**
+ * Color Settings
+ */
+
+Kirki::add_field( $config_id, array(
+	'settings'          => 'cx_text_color',
+	'label'             => esc_html__( 'Body Text Color:', 'powerpro' ),
+	'description'       => esc_html__( 'Please Choose the Body Text Color', 'powerpro' ),
+	'section'           => 'cx_color_scheme',
+	'type'              => 'color',
+	'priority'          => 20,
+	'default'           => '#000',
+	'sanitize_callback' => 'codexin_sanitize_color',
+	'output'            => array(
+		array(
+			'element'  => 'body',
+			'property' => 'color',
+		),
+	),
+	'transport'         => 'auto',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'          => 'cx_main_menu_color',
+	'label'             => esc_html__( 'Main Menu Color:', 'powerpro' ),
+	'description'       => esc_html__( 'Please Choose the Main Menu Color', 'powerpro' ),
+	'section'           => 'cx_color_scheme',
+	'type'              => 'color',
+	'priority'          => 20,
+	'default'           => '#fff',
+	'sanitize_callback' => 'codexin_sanitize_color',
+	'output'            => array(
+		array(
+			'element'  => '#main_nav li a',
+			'property' => 'color',
+		),
+	),
+	'transport'         => 'auto',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'          => 'cx_primary_color',
+	'label'             => esc_html__( 'Primary Color:', 'powerpro' ),
+	'description'       => esc_html__( 'Please Choose the Primary Color', 'powerpro' ),
+	'section'           => 'cx_color_scheme',
+	'type'              => 'color',
+	'priority'          => 30,
+	'default'           => '#295970',
+	'sanitize_callback' => 'codexin_sanitize_color',
+	'output'            => array(
+		array(
+			'element'  => $color_selectors['primary_color_selectors'],
+			'property' => 'color',
+		),
+
+		array(
+			'element'  => $color_selectors['primary_color_in_bg_selectors'],
+			'property' => 'background-color',
+		),
+	),
+	'transport'         => 'auto',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'          => 'cx_secondary_color',
+	'label'             => esc_html__( 'Secondary Color:', 'powerpro' ),
+	'description'       => esc_html__( 'Please Choose the Secondary Color', 'powerpro' ),
+	'section'           => 'cx_color_scheme',
+	'type'              => 'color',
+	'priority'          => 40,
+	'default'           => '#fce38a',
+	'sanitize_callback' => 'codexin_sanitize_color',
+	'output'            => array(
+		array(
+			'element'  => '',
+			'property' => 'color',
+		),
+
+		array(
+			'element'  => '',
+			'property' => 'background-color',
+		),
+
+		array(
+			'element'  => '',
+			'property' => 'border-color',
+		),
+	),
+	'transport'         => 'auto',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'          => 'cx_tertiary_color',
+	'label'             => esc_html__( 'Tertiary Color:', 'powerpro' ),
+	'description'       => esc_html__( 'Please Choose the Tertiary Color', 'powerpro' ),
+	'section'           => 'cx_color_scheme',
+	'type'              => 'color',
+	'priority'          => 50,
+	'default'           => '#fce38a',
+	'sanitize_callback' => 'codexin_sanitize_color',
+	'output'            => array(
+		array(
+			'element'  => '',
+			'property' => 'color',
+		),
+
+		array(
+			'element'  => '',
+			'property' => 'background-color',
+		),
+
+		array(
+			'element'  => '',
+			'property' => 'border-color',
+		),
+	),
+	'transport'         => 'auto',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'          => 'cx_border_color',
+	'label'             => esc_html__( 'Border Color:', 'powerpro' ),
+	'description'       => esc_html__( 'Please Choose the Border Color', 'powerpro' ),
+	'section'           => 'cx_color_scheme',
+	'type'              => 'color',
+	'priority'          => 60,
+	'default'           => '#ddd',
+	'sanitize_callback' => 'codexin_sanitize_color',
+	'output'            => array(
+		array(
+			'element'  => '',
+			'property' => 'border-color',
+		),
+	),
+	'transport'         => 'auto',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'          => 'cx_offset_color',
+	'label'             => esc_html__( 'Offset Color:', 'powerpro' ),
+	'description'       => esc_html__( 'Please Choose the Offset Color', 'powerpro' ),
+	'section'           => 'cx_color_scheme',
+	'type'              => 'color',
+	'priority'          => 70,
+	'default'           => '#fafafa',
+	'sanitize_callback' => 'codexin_sanitize_color',
+	'output'            => array(
+		array(
+			'element'  => '',
+			'property' => 'background-color',
+		),
+	),
+	'transport'         => 'auto',
+) );
+
+/**
+ * Header Settings
+ */
+
+Kirki::add_field( $config_id, array(
+	'settings'          => 'header_background_color',
+	'label'             => esc_html__( 'Header Background Color', 'powerpro' ),
+	'description'       => esc_html__( 'Change Header Background Color', 'powerpro' ),
+	'section'           => 'header_image',
+	'type'              => 'color',
+	'priority'          => 100,
+	'sanitize_callback' => 'codexin_sanitize_color',
+	'output'            => array(
+		array(
+			'element'  => 'header .header-top',
+			'property' => 'background',
+		),
+	),
+	'transport'         => 'auto',
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'switch',
+	'settings'    => 'cx_enable_fixed_header',
+	'label'       => esc_html__( 'Enable Fixed Header?', 'powerpro' ),
+	'section'     => 'header_image',
+	'default'     => 1,
+	'priority'    => 110,
+	'choices'     => array(
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
+	),
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'switch',
+	'settings'    => 'cx_enable_floating_header',
+	'label'       => esc_html__( 'Enable Floating Header?', 'powerpro' ),
+	'section'     => 'header_image',
+	'default'     => 1,
+	'priority'    => 111,
+	'choices'     => array(
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
+	),
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings' 		=> 'cx_page_title_position',
+	'label'         => esc_html__( 'Page Title Position', 'powerpro' ),
+	'description'   => esc_html__( 'Please Select Page Title Position', 'powerpro' ),
+	'type'     		=> 'radio-buttonset',
+	'section'  		=> 'cx_page_title_section',
+	'default'  		=> 'center',
+	'priority' 		=> 10,
+	'choices'  		=> array(
+		'left' 		=> esc_html__( 'Left', 'powerpro' ),
+		'center' 	=> esc_html__( 'Center', 'powerpro' ),
+		'right'		=> esc_html__( 'Right', 'powerpro' ),
+	),
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => '#page_title.page-title h1',
+			'property' => 'text-align',
+		),
+	),
+) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'title_background_setting',
@@ -709,79 +716,79 @@ Kirki::add_field( $config_id, array(
 		'background-attachment' => 'scroll',
 	),
 	'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#page_title.page-title',
-            'property' => 'background',
-        ),
-    ),
+	'output'        => array(
+		array(
+			'element'  => '#page_title.page-title',
+			'property' => 'background',
+		),
+	),
 ) );
 
 Kirki::add_field( $config_id, array(
-    'settings'      => 'title_background_overlay_setting',
-    'label'         => esc_html__( 'Page Title Background Overlay', 'powerpro' ),
-    'description'   => esc_html__( 'Page header background overlay', 'powerpro' ),
-    'type'          => 'color',
-    'section'       => 'cx_page_title_section',
-    'priority'      => 16,
-    'default'       => 'rgba(0,0,0,.6)',
-    'choices'     => array(
-        'alpha' => true,
-    ),
-    'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#page_title.page-title::before',
-            'property' => 'background-color',
-        ),
-    ),
+	'settings'      => 'title_background_overlay_setting',
+	'label'         => esc_html__( 'Page Title Background Overlay', 'powerpro' ),
+	'description'   => esc_html__( 'Page header background overlay', 'powerpro' ),
+	'type'          => 'color',
+	'section'       => 'cx_page_title_section',
+	'priority'      => 16,
+	'default'       => 'rgba(0,0,0,.6)',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => '#page_title.page-title::before',
+			'property' => 'background-color',
+		),
+	),
 ) );
 
 Kirki::add_field( $config_id, array(
-    'settings'      => 'cx_pt_top_spacing',
-    'label'         => esc_html__( 'Page Title Top Spacing', 'powerpro' ),
-    'section'       => 'cx_page_title_section',
-    'type'          => 'slider',
-    'priority'      => 20,
-    'default'       => 320,
-    'choices'       => array(
-        'max'  => 500,
-        'min'  => 0,
-        'step' => 1,
-    ),
-    'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#page_title.page-title',
-            'property' => 'padding-top',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number',
-));
+	'settings'      => 'cx_pt_top_spacing',
+	'label'         => esc_html__( 'Page Title Top Spacing', 'powerpro' ),
+	'section'       => 'cx_page_title_section',
+	'type'          => 'slider',
+	'priority'      => 20,
+	'default'       => 320,
+	'choices'       => array(
+		'max'  => 500,
+		'min'  => 0,
+		'step' => 1,
+	),
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => '#page_title.page-title',
+			'property' => 'padding-top',
+			'units'    => 'px',
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'      => 'cx_pt_bottom_spacing',
-    'label'         => esc_html__( 'Page Title Bottom Spacing', 'powerpro' ),
-    'section'       => 'cx_page_title_section',
-    'type'          => 'slider',
-    'priority'      => 25,
-    'default'       => 70,
-    'choices'       => array(
-        'max'  => 500,
-        'min'  => 0,
-        'step' => 1,
-    ),
-    'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#page_title.page-title',
-            'property' => 'padding-bottom',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number',
-));
+	'settings'      => 'cx_pt_bottom_spacing',
+	'label'         => esc_html__( 'Page Title Bottom Spacing', 'powerpro' ),
+	'section'       => 'cx_page_title_section',
+	'type'          => 'slider',
+	'priority'      => 25,
+	'default'       => 70,
+	'choices'       => array(
+		'max'  => 500,
+		'min'  => 0,
+		'step' => 1,
+	),
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => '#page_title.page-title',
+			'property' => 'padding-bottom',
+			'units'    => 'px',
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
 
 Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
@@ -794,41 +801,41 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
-    'settings' 		=> 'cx_breadcrumb_position',
-    'label'         => esc_html__('Breadcrumb Position', 'powerpro'),
-    'description'   => esc_html__('Please Select Breadcrumb Position', 'powerpro'),
-    'type'     		=> 'radio-buttonset',
-    'section'  		=> 'cx_page_bcrumb_section',
-    'default'  		=> 'center',
-    'priority' 		=> 20,
-    'choices'  		=> array(
-        'flex-start' 	=> esc_html__( 'Left', 'powerpro' ),
-        'center' 		=> esc_html__( 'Center', 'powerpro' ),
-        'flex-end'		=> esc_html__( 'Right', 'powerpro' ),
-    ),
-    'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#page_title.page-title .breadcrumb',
-            'property' => 'justify-content'
-        ),
-    ),
-    'required' => array(
-        array(
-			'setting' => 'cx_enable_breadcrumb', 
-			'operator' => '==', 
-			'value' => 1
-        )
-    )
-));
+	'settings' 		=> 'cx_breadcrumb_position',
+	'label'         => esc_html__( 'Breadcrumb Position', 'powerpro' ),
+	'description'   => esc_html__( 'Please Select Breadcrumb Position', 'powerpro' ),
+	'type'     		=> 'radio-buttonset',
+	'section'  		=> 'cx_page_bcrumb_section',
+	'default'  		=> 'center',
+	'priority' 		=> 20,
+		'choices'  		=> array(
+		'flex-start' 	=> esc_html__( 'Left', 'powerpro' ),
+		'center' 		=> esc_html__( 'Center', 'powerpro' ),
+		'flex-end'		=> esc_html__( 'Right', 'powerpro' ),
+	),
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => '#page_title.page-title .breadcrumb',
+			'property' => 'justify-content',
+		),
+	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_breadcrumb',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
+) );
 
-/************************************************************
-	Blog Settings
-*************************************************************/
+/**
+ * Blog Settings
+ */
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'cx_blog_title',
@@ -838,7 +845,7 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_blog_section',
 	'default'     	=> esc_html__( 'Blog', 'powerpro' ),
 	'priority'    	=> 10,
-	'sanitize_callback' => 'codexin_sanitize_text'
+	'sanitize_callback' => 'codexin_sanitize_text',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -849,11 +856,11 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_blog_section',
 	'default'     	=> 'right',
 	'priority'    	=> 20,
-    'choices'       => array(
-        'no' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/1col.png',
-        'left' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cl.png',
-        'right' => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cr.png',
-    ),
+	'choices'       => array(
+		'no' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/1col.png',
+		'left' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cl.png',
+		'right' => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cr.png',
+	),
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -867,52 +874,52 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
-    'settings'      => 'cx_post_title_length',
-    'label'         => esc_html__( 'Title Length for Posts (In Character)', 'powerpro' ),
-    'section'       => 'cx_blog_section',
-    'type'          => 'slider',
-    'priority'      => 40,
-    'default'       => 30,
-    'choices'       => array(
-        'max'  => 150,
-        'min'  => 10,
-        'step' => 1,
-    ),
-    'required' => array(
-        array(
-			'setting' => 'cx_enable_blog_title_excerpt', 
-			'operator' => '==', 
-			'value' => 1
-        )
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number'
-));
+	'settings'      => 'cx_post_title_length',
+	'label'         => esc_html__( 'Title Length for Posts (In Character)', 'powerpro' ),
+	'section'       => 'cx_blog_section',
+	'type'          => 'slider',
+	'priority'      => 40,
+	'default'       => 30,
+	'choices'       => array(
+		'max'  => 150,
+		'min'  => 10,
+		'step' => 1,
+	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_blog_title_excerpt',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'      => 'cx_post_excerpt_length',
-    'label'         => esc_html__( 'Excerpt Length for Posts (In Character)', 'powerpro' ),
-    'section'       => 'cx_blog_section',
-    'type'          => 'slider',
-    'priority'      => 50,
-    'default'       => 180,
-    'choices'       => array(
-        'max'  => 500,
-        'min'  => 20,
-        'step' => 1,
-    ),
-    'required' => array(
-        array(
-			'setting' => 'cx_enable_blog_title_excerpt', 
-			'operator' => '==', 
-			'value' => 1
-        )
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number'
-));
+	'settings'      => 'cx_post_excerpt_length',
+	'label'         => esc_html__( 'Excerpt Length for Posts (In Character)', 'powerpro' ),
+	'section'       => 'cx_blog_section',
+	'type'          => 'slider',
+	'priority'      => 50,
+	'default'       => 180,
+	'choices'       => array(
+		'max'  => 500,
+		'min'  => 20,
+		'step' => 1,
+	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_blog_title_excerpt',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_readmore',
@@ -925,7 +932,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -949,11 +956,11 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_blog_single_section',
 	'default'     	=> 'right',
 	'priority'    	=> 10,
-    'choices'       => array(
-        'no' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/1col.png',
-        'left' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cl.png',
-        'right' => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cr.png',
-    ),
+	'choices'       => array(
+		'no' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/1col.png',
+		'left' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cl.png',
+		'right' => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cr.png',
+	),
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -967,7 +974,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -981,7 +988,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -995,7 +1002,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -1009,127 +1016,127 @@ Kirki::add_field( $config_id, array(
 		'button'  	=> esc_html__( 'Next - Previous Button', 'powerpro' ),
 		'text' 		=> esc_html__( 'Button with Post Title text', 'powerpro' ),
 	),
-    'required' => array(
-        array(
-			'setting' => 'cx_enable_post_nav', 
-			'operator' => '==', 
-			'value' => 1
-        )
-    ),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_post_nav',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
 ) );
 
-/************************************************************
-    Social Media Settings
-*************************************************************/
+/**
+ * Social Media Settings
+ */
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_facebook_link',
-    'label'             => esc_html__( 'Facebook URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 10,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_facebook_link',
+	'label'             => esc_html__( 'Facebook URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 10,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_twitter_link',
-    'label'             => esc_html__( 'Twiter URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 15,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_twitter_link',
+	'label'             => esc_html__( 'Twiter URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 15,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_instagram_link',
-    'label'             => esc_html__( 'Instagram URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 20,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_instagram_link',
+	'label'             => esc_html__( 'Instagram URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 20,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_pinterest_link',
-    'label'             => esc_html__( 'Pinterest URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 25,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_pinterest_link',
+	'label'             => esc_html__( 'Pinterest URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 25,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_behance_link',
-    'label'             => esc_html__( 'Behance URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 30,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_behance_link',
+	'label'             => esc_html__( 'Behance URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 30,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_gplus_link',
-    'label'             => esc_html__( 'Google Plus URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 35,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_gplus_link',
+	'label'             => esc_html__( 'Google Plus URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 35,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_linkedin_link',
-    'label'             => esc_html__( 'Linked In URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 40,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_linkedin_link',
+	'label'             => esc_html__( 'Linked In URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 40,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_youtube_link',
-    'label'             => esc_html__( 'Youtube URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 45,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_youtube_link',
+	'label'             => esc_html__( 'Youtube URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 45,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_vimeoyoutube_link',
-    'label'             => esc_html__( 'Vimeo URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 50,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_vimeoyoutube_link',
+	'label'             => esc_html__( 'Vimeo URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 50,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'          => 'cx_skype_link',
-    'label'             => esc_html__( 'Skype URL', 'powerpro' ),
-    'section'           => 'cx_social_profiles',
-    'type'              => 'url',
-    'priority'          => 55,
-    'sanitize_callback' => 'esc_url_raw',
-));
+	'settings'          => 'cx_skype_link',
+	'label'             => esc_html__( 'Skype URL', 'powerpro' ),
+	'section'           => 'cx_social_profiles',
+	'type'              => 'url',
+	'priority'          => 55,
+	'sanitize_callback' => 'esc_url_raw',
+) );
 
-/************************************************************
-	Footer Settings
-*************************************************************/
+/**
+ * Footer Settings
+ */
 
 Kirki::add_field( $config_id, array(
-    'settings'      => 'footer_layout_setting',
-    'label'         => esc_html__( 'Select Footer Layout', 'powerpro' ),
-    'description'   => esc_html__( 'Choose footer columns', 'powerpro' ),
-    'type'          => 'radio-image',
-    'section'       => 'cx_footer_section',
-    'default'       => 'four',
-    'priority'      => 10,
-    'choices'       => array(
-        'two'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-2.jpg',
-        'three'     => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-3.jpg',
-        'four'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-4.jpg',
-        'five'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-5.jpg',
-    ),
+	'settings'      => 'footer_layout_setting',
+	'label'         => esc_html__( 'Select Footer Layout', 'powerpro' ),
+	'description'   => esc_html__( 'Choose footer columns', 'powerpro' ),
+	'type'          => 'radio-image',
+	'section'       => 'cx_footer_section',
+	'default'       => 'four',
+	'priority'      => 10,
+	'choices'       => array(
+		'two'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-2.jpg',
+		'three'     => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-3.jpg',
+		'four'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-4.jpg',
+		'five'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-5.jpg',
+	),
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -1148,59 +1155,59 @@ Kirki::add_field( $config_id, array(
 		'background-attachment' => 'scroll',
 	),
 	'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => 'footer#colophon',
-            'property' => 'background',
-        ),
-    ),
+	'output'        => array(
+		array(
+			'element'  => 'footer#colophon',
+			'property' => 'background',
+		),
+	),
 ) );
 
 Kirki::add_field( $config_id, array(
-    'settings'      => 'cx_footer_top_spacing',
-    'label'         => esc_html__( 'Footer Top Spacing', 'powerpro' ),
-    'section'       => 'cx_footer_section',
-    'type'          => 'slider',
-    'priority'      => 20,
-    'default'       => 80,
-    'choices'       => array(
-        'max'  => 500,
-        'min'  => 0,
-        'step' => 1,
-    ),
-    'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#colophon .footer-widgets-area',
-            'property' => 'padding-top',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number',
-));
+	'settings'      => 'cx_footer_top_spacing',
+	'label'         => esc_html__( 'Footer Top Spacing', 'powerpro' ),
+	'section'       => 'cx_footer_section',
+	'type'          => 'slider',
+	'priority'      => 20,
+	'default'       => 80,
+	'choices'       => array(
+		'max'  => 500,
+		'min'  => 0,
+		'step' => 1,
+	),
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => '#colophon .footer-widgets-area',
+			'property' => 'padding-top',
+			'units'    => 'px',
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
 
 Kirki::add_field( $config_id, array(
-    'settings'      => 'cx_footer_bottom_spacing',
-    'label'         => esc_html__( 'Footer Bottom Spacing', 'powerpro' ),
-    'section'       => 'cx_footer_section',
-    'type'          => 'slider',
-    'priority'      => 25,
-    'default'       => 80,
-    'choices'       => array(
-        'max'  => 500,
-        'min'  => 0,
-        'step' => 1,
-    ),
-    'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#colophon .footer-widgets-area',
-            'property' => 'padding-bottom',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'codexin_sanitize_number',
-));
+	'settings'      => 'cx_footer_bottom_spacing',
+	'label'         => esc_html__( 'Footer Bottom Spacing', 'powerpro' ),
+	'section'       => 'cx_footer_section',
+	'type'          => 'slider',
+	'priority'      => 25,
+	'default'       => 80,
+	'choices'       => array(
+		'max'  => 500,
+		'min'  => 0,
+		'step' => 1,
+	),
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => '#colophon .footer-widgets-area',
+			'property' => 'padding-bottom',
+			'units'    => 'px',
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_copyright',
@@ -1213,7 +1220,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox'
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -1223,25 +1230,25 @@ Kirki::add_field( $config_id, array(
 	'type'        	=> 'color',
 	'section'     	=> 'cx_footer_copy_section',
 	'priority' 		=> 10,
-    'default'       => 'rgba(0, 0, 0, 0.3)',
+	'default'       => 'rgba(0, 0, 0, 0.3)',
 	'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '#colophon .footer-copyright',
-            'property' => 'background-color',
-        ),
-    ),
-    'choices'     => array(
-        'alpha' => true,
-    ),
-    'required' => array(
-        array(
-			'setting' => 'cx_enable_copyright', 
-			'operator' => '==', 
-			'value' => 1
-        )
-    ),
-    'sanitize_callback' => 'codexin_sanitize_color'
+	'output'        => array(
+		array(
+			'element'  => '#colophon .footer-copyright',
+			'property' => 'background-color',
+		),
+	),
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_copyright',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_color',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -1251,22 +1258,22 @@ Kirki::add_field( $config_id, array(
 	'type'        	=> 'color',
 	'section'     	=> 'cx_footer_copy_section',
 	'priority' 		=> 10,
-    'default'       => '#fff',
+	'default'       => '#fff',
 	'transport'     => 'auto',
-    'output'        => array(
-        array(
-            'element'  => '.footer-copyright',
-            'property' => 'color',
-        ),
-    ),
-    'required' => array(
-        array(
-			'setting' => 'cx_enable_copyright', 
-			'operator' => '==', 
-			'value' => 1
-        )
-    ),
-    'sanitize_callback' => 'codexin_sanitize_color'
+	'output'        => array(
+		array(
+			'element'  => '.footer-copyright',
+			'property' => 'color',
+		),
+	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_copyright',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_color',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -1277,30 +1284,12 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_footer_copy_section',
 	'priority' 		=> 10,
 	'default'     	=> esc_html__( 'Copyright &copy; 2018. All Right Reserved.', 'powerpro' ),
-    'sanitize_callback' => 'codexin_sanitize_text',
-    'required' => array(
-        array(
-			'setting' => 'cx_enable_copyright', 
-			'operator' => '==', 
-			'value' => 1
-        )
-    ),
+	'sanitize_callback' => 'codexin_sanitize_text',
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_copyright',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
 ) );
-
-// Kirki::add_field( $config_id, array(
-// 	'settings'    	=> 'cx_advanced_custom_js',
-// 	'label'       	=> esc_html__( 'Custom JS', 'powerpro' ),
-// 	'description' 	=> esc_html__( 'Please Add Your Custom JS', 'powerpro' ),
-// 	'type'        	=> 'code',
-// 	'section'     	=> 'cx_custom_js',
-// 	'priority' 		=> 10,
-// 	'default'       => "jQuery(document).ready(function(){\n\n});",
-//     'choices'     => array(
-//         'language' => 'js',
-//         'theme'    => 'monokai',
-//         'height' 	=> '500px'
-//     ),
-//     'sanitize_callback' => 'codexin_sanitize_text'
-// ) );
-
-?>

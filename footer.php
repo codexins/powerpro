@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * The template for displaying the footer
@@ -11,9 +10,10 @@
  * @since 		1.0
  */
 
-
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 $codexin_cpr    = codexin_get_option( 'cx_enable_copyright' );
 $copyright_text = codexin_get_option( 'footer_copy_text' );
@@ -22,19 +22,19 @@ $footer_layout	= codexin_get_option( 'footer_layout_setting' );
 
 $column_count = 4;
 
-if( $footer_layout == 'two' ) {
+if ( 'two' === $footer_layout ) {
 	$column_count = 2;
 	$footer_column = 12 / $column_count;
-} elseif( $footer_layout == 'three' ) {
+} elseif ( 'three' === $footer_layout ) {
 	$column_count = 3;
 	$footer_column = 12 / $column_count;
-} elseif( $footer_layout == 'four' ) {
+} elseif ( 'four' === $footer_layout ) {
 	$column_count = 4;
 	$footer_column = 2;
-} elseif( $footer_layout == 'five' ) {
+} elseif ( 'five' === $footer_layout ) {
 	$column_count = 5;
 	$footer_column = 2;
-} // end of footer layout conditional check
+} // End if().
 
 ?>
 		<!-- Start of Footer -->
@@ -42,34 +42,34 @@ if( $footer_layout == 'two' ) {
 			<div class="footer-widgets-area">
 				<div class="container">
 					<div class="row">
-						<?php 
-						for( $i = 1; $i <= $column_count ; $i++ ) {
-							if( $i == 1 ) {
-								if( ( $column_count == 4 ) || ( $column_count == 5 ) ) {
+						<?php
+						for ( $i = 1; $i <= $column_count ; $i++ ) {
+							if ( 1 === $i ) {
+								if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
 									$footer_column = 4;
 								}
 							} else {
-								if( ( $column_count == 4 ) || ( $column_count == 5 ) ) {
+								if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
 									$footer_column = 2;
 								}
 							}
 
-							if( $i == 4 ) {
-								if( $column_count == 4 ) {
+							if ( 4 === $i ) {
+								if ( 4 === $column_count ) {
 									$footer_column = 4;
 								}
 							}
 							echo '<div id="footer_col_' . esc_attr( $i ) . '" class="footer-column col-12 col-sm-12 col-md-6 col-lg-' . esc_attr( $footer_column ) . '">';
-								dynamic_sidebar( 'codexin-footer-col-'. esc_attr( $i ) );
+								dynamic_sidebar( 'codexin-footer-col-' . esc_attr( $i ) );
 							echo '</div>';
 
-						}
+						}  // End for().
 						?>
 					</div>
 				</div>
 			</div> <!-- end of footer-widgets-area -->
 
-			<?php if( $codexin_cpr ) { ?>
+			<?php if ( $codexin_cpr ) { ?>
 				<div class="footer-copyright">
 					<div class="container">
 						<div class="row">
@@ -81,21 +81,22 @@ if( $footer_layout == 'two' ) {
 						</div>
 					</div>
 				</div> <!-- end of footer-copyright -->
-			<?php } ?>
+			<?php }  // End if(). ?>
 		</footer>
 		<!-- End of Footer -->
 		
-		<?php 
-	    if( $to_top ) { ?>
-	    	<!-- Go to Top Button at right bottom of the window screen -->
-	        <div id="to_top">
-		        <i class="fa fa-angle-up"></i><i class="fa fa-angle-double-up"></i>
-		    </div>
-		    <!-- Go to Top Button finished-->
-	    <?php } ?>
+		<?php
+		if ( $to_top ) { ?>
+			<!-- Go to Top Button at right bottom of the window screen -->
+			<div id="to_top">
+				<i class="fa fa-angle-up"></i><i class="fa fa-angle-double-up"></i>
+			</div>
+			<!-- Go to Top Button finished-->
+		<?php
+		} // End if(). ?>
 	</div>
 	<!-- End of Whole Site Wrapper -->
 
-	<?php wp_footer() ?>
+	<?php wp_footer(); ?>
 </body>
 </html>

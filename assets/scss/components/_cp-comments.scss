@@ -26,6 +26,12 @@
 
 	.comment-text {
 		font-size: 15px;
+
+        pre,
+        blockquote {
+            @extend %bgc-white;
+        }
+    
         p {
             &:last-of-type:last-child {
                 @extend %mb0;
@@ -108,6 +114,7 @@
         text-transform: initial;
         @extend %bgc-offset;
         @extend %mb-half;
+        @extend %color-primary;
 	}
 
 	.comment-list {

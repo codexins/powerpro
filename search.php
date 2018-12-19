@@ -8,9 +8,10 @@
  * @since 		1.0
  */
 
-
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 get_header(); ?>
 
@@ -21,19 +22,20 @@ get_header(); ?>
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 				<main id="primary" class="site-main">
 					<div class="blog-area">
-						<?php 
-						if ( have_posts() ) { 
+						<?php
+						if ( have_posts() ) {
 
-							// Start the loop
+							// Start the loop.
 							while ( have_posts() ) {
 								the_post();
 
 								// Load the Post-Format-specific template for the content.
 								get_template_part( 'template-parts/post/content', get_post_format() );
 							}
-						} else { ?>
+						} else {
+						?>
 							<h2 class="search-title text-center">
-								<?php printf( '%1$s"'. get_search_query() .'"', esc_html__( 'Nothing found for the search keyword ', 'powerpro' ) ); ?>
+								<?php printf( '%1$s"' . get_search_query() . '"', esc_html__( 'Nothing found for the search keyword ', 'powerpro' ) ); ?>
 							</h2>
 							<p><?php esc_html_e( 'Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'powerpro' ) ?></p>
 							<?php get_search_form();
@@ -43,7 +45,7 @@ get_header(); ?>
 
 					<?php
 
-					// Rendering Pagination
+					// Rendering Pagination.
 					codexin_posts_nav();
 					?>
 				</main> <!-- end of #primary -->
@@ -53,4 +55,4 @@ get_header(); ?>
 </div>
 <!-- End of Main Content Wrapper -->
 
-<?php get_footer() ?>
+<?php get_footer();

@@ -42,9 +42,11 @@ dd {
     margin-bottom: $cx-heading-margin-bottom * 0.8;
 }
 
-blockquote {
+blockquote,
+blockquote.wp-block-quote {
     margin: $cx-heading-margin-bottom 0;
     padding: 30px;
+    font-style: italic;
     border-left-width: 4px;
     border-left-style: solid;
     @extend %border-primary;
@@ -55,18 +57,83 @@ blockquote {
             @extend %mb0;
         }
     }
-}
 
-cite {
-    display: block;
-    margin: 20px 0 5px;
+    cite,
+    .wp-block-quote__citation {
+        font-style: normal;
+        display: block;
+        margin: 20px 0 5px;
+        @extend %color-dark;
+
+        &::before {
+            content: "— ";
+        }
+    }
+
+    &.is-large,
+    &.is-style-large {
+        margin: 0 auto $cx-heading-margin-bottom;
+        padding: 30px;
+
+        p {
+            font-size: $cx-h3-font-size;
+            line-height: 1.65;
+        }
+
+        cite {
+            text-align: left;
+        }
+    }
+}
+    
+hr,
+.wp-block-separator {
+    @extend %mt-half;
+    @extend %mb-half;
+
+    &:not(.is-style-dots) {
+        background-color: $cx-border-color;
+        border: 0;
+        height: 1px;
+        float: none;
+        clear: both;
+    }
+
+    &:not(.is-style-wide):not(.is-style-dots) {
+        width: 100%;
+        height: 4px;
+        background: transparent;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 4px;
+            width: 100px;
+            margin: auto;
+            background: $cx-border-color;
+        }
+    }
+
+    &.is-style-dots {
+        margin-top: 0.25 * $cx-section-spacing;
+        margin-bottom: 0.25 * $cx-section-spacing;
+
+        &::before {
+            font-size: 40px;
+            letter-spacing: 12px;
+            padding-left: 12px;
+            line-height: 1;
+            @extend %color-tertiary;
+        }
+    }
 }
 
 kbd {
     @extend %bgc-primary;
 }
 
-table {
+table,
+.wp-block-table.is-style-stripes {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -77,7 +144,8 @@ thead {
 }
 
 td,
-th {
+th,
+.wp-block-table.is-style-stripes td {
     padding: 10px;
     border-width: 1px;
     border-style: solid;
@@ -85,13 +153,21 @@ th {
     @extend %border-default;
 }
 
-table tbody tr:nth-child(even) {
+.wp-block-table.is-style-stripes tr:nth-child(odd),
+table tbody tr:nth-child(odd) {
     @extend %bgc-offset;
 }
 
-table tbody tr:nth-child(odd) {
+.wp-block-table.is-style-stripes tr:nth-child(even),
+table tbody tr:nth-child(even) {
     @extend %bgc-white;
 }
+
+.wp-block-table.is-style-regular tbody tr:nth-child(even),
+.wp-block-table.is-style-regular tbody tr:nth-child(odd) {
+    @extend %bgc-transparent;
+}
+
 
 img {
     max-width: 100%;
@@ -194,6 +270,7 @@ pre {
     word-wrap: break-word;
     border-width: 1px;
     border-style: solid;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
     @extend %border-default;
     @extend %bgc-offset;
 }
@@ -345,7 +422,7 @@ a.skip-link {
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: $cx-heading-margin-bottom;
     @extend .pos-r;
 
     iframe {
@@ -357,6 +434,9 @@ a.skip-link {
     }
 }
 
+.cx-fading {
+    opacity: 0.6;
+}
 
 .pswp {
 	z-index: 9999;

@@ -42,8 +42,8 @@ h4,
 h5,
 h6 {
     font-family: $cx-heading-font;
-    font-weight: 500;
-    @extend %color-primary;
+    font-weight: 400;
+    // @extend %color-primary;
     @extend %default-heading;
 }
 

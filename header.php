@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template for displaying the header
  *
@@ -10,7 +9,9 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -28,21 +29,25 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 <body <?php body_class(); ?>>
 
 	<!--[if lt IE 9]>
-	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.</p>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please upgrade your browser to improve your experience.</p>
 	<![endif]-->
 
-	<?php if( codexin_get_option( 'cx_enable_pageloader' ) ) { ?>
-	    <!-- Site Loader started-->
-	    <div class="cx-pageloader">
-	        <div class="cx-pageloader-inner"></div>
-	    </div>
-	    <!-- Site Loader Finished-->
-    <?php } ?>
+	<?php
+	if ( codexin_get_option( 'cx_enable_pageloader' ) ) {
+	?>
+		<!-- Site Loader started-->
+		<div class="cx-pageloader">
+			<div class="cx-pageloader-inner"></div>
+		</div>
+		<!-- Site Loader Finished-->
+	<?php
+	} // End if().
+	?>
 
 	<!-- Start of Mobile Navigation -->
 	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left d-block d-sm-block d-md-block d-lg-none">
-	    <button class="c-menu__close"><?php echo esc_html__( '&larr; Back', 'powerpro' ); ?></button>
-	    <?php codexin_menu( 'mobile_menu' ); ?>
+		<button class="c-menu__close"><?php echo esc_html__( '&larr; Back', 'powerpro' ); ?></button>
+		<?php codexin_menu( 'mobile_menu' ); ?>
 	</div>
 	<!-- End of Mobile Navigation -->
 
@@ -54,7 +59,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 		<?php $header_bg_image = ( ! empty( get_header_image() ) ) ? 'background:url(' . esc_url( get_header_image() ) . ')' : '' ?>
 
 		<!-- Start of Header -->
-		<header class="header<?php echo is_front_page() ? esc_attr(' front-header') : esc_attr(' inner-header'); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
+		<header class="header<?php echo is_front_page() ? esc_attr( ' front-header' ) : esc_attr( ' inner-header' ); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'powerpro' ); ?></a>
 
@@ -79,13 +84,13 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 							<!-- Logo -->
 							<div class="logo">
 								<div class="navbar-brand">
-									<?php 
+									<?php
 									the_custom_logo();
 
-									if( ! empty( codexin_get_option( 'sticky_logo_setting' ) ) ) {
+									if ( ! empty( codexin_get_option( 'sticky_logo_setting' ) ) ) {
 										echo '<div class="sticky-logo">';
-											echo '<a href="'. esc_url( home_url( '/' ) ) .'">';
-												echo '<img src="'. codexin_get_option( 'sticky_logo_setting' ) .'" alt="Logo">';
+											echo '<a href="' . esc_url( home_url( '/' ) ) . '">';
+												echo '<img src="' . esc_url( codexin_get_option( 'sticky_logo_setting' ) ) . '" alt="Logo">';
 											echo '</a>';
 										echo '</div>';
 									} else {
@@ -94,16 +99,17 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 										echo '</div>';
 									}
 
-									// Header Text
+									// Header Text.
 									$header_text = display_header_text();
-									if( $header_text == true ) { ?>
-	                                    <h1 class="site-title">
-	                                    	<a id="header_text" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-	                                    		<?php echo esc_html( get_bloginfo('name') ); ?>
-	                                    	</a>
-                                    	</h1>
-                                    	<p class="site-description"><?php echo esc_html( get_bloginfo('description') ); ?></p>
-									<?php 
+									if ( true === $header_text ) {
+									?>
+									<h1 class="site-title">
+										<a id="header_text" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+											<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+										</a>
+									</h1>
+									<p class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p>
+									<?php
 									}
 									?>
 								</div>
@@ -125,9 +131,10 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 								<a class="default-btn white-scheme" href="#">GET A QUOTE</a>
 							</div>
 						</div>
+						
+						<div class="col-12 col-sm-12 col-md-12 col-lg-12 d-none d-sm-none d-md-none d-lg-block navigation-wrapper">
 
-						<div class="col-12 col-sm-12 col-md-12 col-lg-12 d-none d-sm-none d-md-none d-lg-block">
-
+							<div class="fixed-menu-height"></div>
 							<!-- Start of main Navigation -->
 							<div id="main_nav">						
 								<?php codexin_menu( 'main_menu' ); ?>
@@ -140,18 +147,21 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 			<div class="fixed-header-space"></div> <!-- empty placeholder div for Fixed Menu bar height-->
 
-			<?php 
-			if( is_page_template( 'page-templates/page-home.php' ) ) {
+			<?php
+			if ( is_page_template( 'page-templates/page-home.php' ) ) {
 				if ( class_exists( 'SmartSlider3' ) ) {
-					// Get the Slider
+					// Get the Slider.
 					! empty( codexin_meta( 'codexin_page_slider' ) ) ? get_header( 'home' ) : '';
 				}
-			} else {
-				if( codexin_meta( 'codexin_disable_page_title' ) == 0 ) {
-					// Get the Page Title
+			} elseif ( is_page() ) {
+				if ( ! codexin_meta( 'codexin_disable_page_title' ) ) {
+					// Get the Page Title.
 					get_template_part( 'template-parts/header/page', 'title' );
 				}
-			}
+			} else {
+				// Get the Page Title.
+				get_template_part( 'template-parts/header/page', 'title' );
+			}// End if().
 			?>
 		</header>
 		<!-- End of Header -->

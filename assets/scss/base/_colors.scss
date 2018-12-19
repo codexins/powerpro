@@ -96,15 +96,18 @@
 
 // Color Schemes
 
-.color-primary {
+.color-primary,
+.has-primary-color {
 	@extend %color-primary;
 }
 
-.color-secondary {
+.color-secondary,
+.has-secondary-color {
 	@extend %color-secondary;
 }
 
-.color-tertiary {
+.color-tertiary,
+.has-tertiary-color {
 	@extend %color-tertiary;
 }
 
@@ -112,7 +115,8 @@
 	@extend %color-transparent;
 }
 
-.color-offset {
+.color-offset,
+.has-offset-color {
 	@extend %color-offset;
 }
 
@@ -128,15 +132,18 @@
 	@extend %color-black;
 }
 
-.bgc-primary {
+.bgc-primary,
+.has-primary-background-color {
 	@extend %bgc-primary;
 }
 
-.bgc-secondary {
+.bgc-secondary,
+.has-secondary-background-color {
 	@extend %bgc-secondary;
 }
 
-.bgc-tertiary {
+.bgc-tertiary,
+.has-tertiary-background-color {
 	@extend %bgc-tertiary;
 }
 
@@ -144,7 +151,8 @@
 	@extend %bgc-transparent;
 }
 
-.bgc-offset {
+.bgc-offset,
+.has-offset-background-color {
 	@extend %bgc-offset;
 }
 

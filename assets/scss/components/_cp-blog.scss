@@ -169,12 +169,19 @@
 	}
 
 	.entry-footer {
+		display: flex;
+		justify-content: space-between;
+
 		.list-inline {
-			float: right;
 			margin-top: -2px;
 			// font-size: 15px;
+			order: 2;
 			@extend %mb0;
 			@extend %color-primary;
+
+			li {
+				@extend %pb0;
+			}
 
 			li:not(:last-child) {
 				margin-right: 10px;

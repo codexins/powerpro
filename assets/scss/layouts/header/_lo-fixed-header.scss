@@ -49,11 +49,16 @@
 	    			&:nth-child(3) {
 	    				display: none;
 	    			}
+
+	    			&:nth-child(2) {
+		    			flex: 0 0 25%;
+		    			max-width: 25%
+	    			}
 	    		}
 
 	    		> .col-lg-12 {
-	    			flex: 0 0 66.66%;
-	    			max-width: 66.66%
+	    			flex: 0 0 75%;
+	    			max-width: 75%
 	    		}
 	    	}
 	    }

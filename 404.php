@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 /**
  *
  * The template for displaying the 404 page
@@ -9,9 +8,10 @@
  * @since 		1.0
  */
 
-
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'powerpro' ) );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'This script cannot be accessed directly.' );
+}
 
 get_header(); ?>
 
