@@ -13,8 +13,8 @@
 #customize-controls div.customize-section-description {
     font-size: 14px;
     font-weight: 500;
-    border-bottom: 1px solid #7c9258;
-    border-top: 1px solid #7c9258;
+    border-bottom: 1px solid #0085ba;
+    border-top: 1px solid #0085ba;
     padding-bottom: 10px;
     padding-top: 10px;
 }
@@ -24,7 +24,7 @@
 }
 
 #customize-controls input[type=checkbox]:checked:before {
-	color: #7c9258;
+	color: #0085ba;
 }
 
 #customize-controls .customize-control input[type=number], 
@@ -88,7 +88,7 @@
 
 #customize-controls .customize-control-kirki-switch input:checked + label {
     background: #fff;
-    border: 1px solid #7c9258;
+    border: 1px solid #0085ba;
 }
 
 #customize-controls .customize-control-kirki-switch .switch-off, 
@@ -107,8 +107,8 @@
 }
 
 #customize-controls .customize-control-kirki-switch input:checked + label:after {
-    background: #b2d27e;
-    border: 1px solid #7c9258;
+    background: #0085ba;
+    border: 1px solid #0085ba;
 }
 
 #customize-controls .select2-container--default .select2-selection--single .select2-selection__arrow,
@@ -126,7 +126,7 @@
 }
 
 #customize-controls .customize-control-kirki-radio-image input:checked + label img {
-	border: 1px solid #7c9258;
+	border: 1px solid #0085ba;
 }
 
 #customize-controls .customize-control select {
@@ -149,8 +149,8 @@
 #customize-controls .customize-control-kirki-radio-buttonset .buttonset .switch-input:checked + .switch-label,
 #customize-controls .customize-control-kirki-background .background-attachment .buttonset .switch-input:checked + .switch-label, 
 #customize-controls .customize-control-kirki-background .background-size .buttonset .switch-input:checked + .switch-label {
-    background-color: #b2d27e;
-    border: 1px solid #7c9258;
+    background-color: #0085ba;
+    border: 1px solid #0085ba;
 }
 
 #customize-controls .wp-core-ui .button-secondary:focus, 
@@ -159,7 +159,7 @@
 #customize-controls .wp-core-ui .button.hover, 
 #customize-controls .wp-core-ui .button:focus, 
 #customize-controls .wp-core-ui .button:hover {
-	border-color: #7c9258;
+	border-color: #0085ba;
 }
 
 #customize-controls .select2-container--default .select2-selection--single .select2-selection__arrow:focus,
@@ -175,9 +175,9 @@
 #customize-controls .customize-control input[type=text]:focus, 
 #customize-controls .customize-control input[type=password]:focus, 
 #customize-controls .customize-control input[type=email]:focus {
-	border-color: #7c9258;
-    -webkit-box-shadow: 0 0 2px rgba(124, 146, 88, 0.8);
-    box-shadow: 0 0 2px rgba(124, 146, 88, 0.8);
+	border-color: #0085ba;
+    -webkit-box-shadow: 0 0 2px rgba(0, 133, 186, 0.8);
+    box-shadow: 0 0 2px rgba(0, 133, 186, 0.8);
 }
 
 #customize-controls .customize-control-kirki-slider .wrapper input[type=text] {
@@ -255,8 +255,8 @@
 #customize-controls .control-section .accordion-section-title:hover, 
 #customize-controls .control-section.open .accordion-section-title, 
 #customize-controls .control-section:hover>.accordion-section-title {
-	color: #7c9258;
-	border-left-color: #7c9258;
+	color: #0085ba;
+	border-left-color: #0085ba;
 }
 
 #customize-outer-theme-controls .control-section .accordion-section-title:focus:after, 
@@ -267,7 +267,7 @@
 #customize-theme-controls .control-section .accordion-section-title:hover:after, 
 #customize-theme-controls .control-section.open .accordion-section-title:after, 
 #customize-theme-controls .control-section:hover>.accordion-section-title:after {
-	color: #7c9258;
+	color: #0085ba;
 }
 
 #customize-controls .date-time-fields .date-input.day, 

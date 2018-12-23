@@ -512,14 +512,6 @@ if ( ! function_exists( 'codexin_posts_meta' ) ) {
 							?>
 						</a>
 					</li>
-					<?php
-					// Post like.
-					if ( is_single() && function_exists( 'codexin_likes_button' ) ) {
-					?>
-						<li class="list-inline-item like-count"> <?php echo codexin_likes_button( get_the_ID(), 0 ); ?></li>
-					<?php
-					}
-					?>
 					<li class=" list-inline-item post-categories">
 						<?php
 						// Posted in.
@@ -550,16 +542,15 @@ if ( ! function_exists( 'codexin_posts_footer' ) ) {
 				<li class="list-inline-item post-comments">
 					<i class="ion ion-md-chatbubbles"></i>
 					<a href="<?php comments_link(); ?>">
-						<?php comments_number( '0', '1', '% Comments' ); ?>
+						<?php
+						if ( ! post_password_required() ) {
+							comments_number( '0', '1', '%' );
+						} else {
+							echo esc_html__( '?', 'powerpro' );
+						}
+						?>
 					</a>
 				</li>
-				<?php
-				if ( function_exists( 'codexin_likes_button' ) ) {
-				?>
-					<li class="list-inline-item"> <?php echo codexin_likes_button( get_the_ID(), 0 ); ?></li>
-				<?php
-				}
-				?>
 			</ul>
 			<?php
 
