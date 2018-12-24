@@ -67,7 +67,7 @@
 			&[type="submit"] {
 			    text-indent: -99999px;
 			    line-height: 0;
-			    background-image: url(assets/images/icons/search-white.svg);
+			    background-image: url(assets/images/svg-icons/search-white.svg);
 			    background-repeat: no-repeat;
 			    background-size: 26px;
 			    background-position: 13px 8px;
@@ -307,7 +307,7 @@
 				a {
 					&::after {
 						right: -5px;
-					    background-image: url(assets/images/icons/forward.svg);
+					    background-image: url(assets/images/svg-icons/forward.svg);
 					    background-repeat: no-repeat;
 					    display: block;
 					    background-size: 15px;
@@ -321,7 +321,7 @@
 				a {
 					&::after {
 						left: -5px;
-						background-image: url(assets/images/icons/back.svg);
+						background-image: url(assets/images/svg-icons/back.svg);
 					    background-repeat: no-repeat;
 					    display: block;
 					    background-size: 15px;

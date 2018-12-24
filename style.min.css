@@ -135,7 +135,7 @@ ul.aligncenter{margin-left:18px}
 #whole .mejs-controls .mejs-time-rail .mejs-time-current{background:rgba(0,0,0,0.5)}
 #whole .mejs-time-handle-content{-webkit-border-radius:100%;border-radius:100%;border:4px solid #444}
 html,body{font-size:16px}
-body{font-family:"Source Sans Pro",sans-serif;line-height:20px;color:#000;font-weight:400;background:#fff}
+body{font-family:"Source Sans Pro",sans-serif;line-height:24px;color:#000;font-weight:400;background:#fff}
 h1{font-size:32px}
 h2{font-size:28px}
 h3{font-size:24px}
@@ -257,7 +257,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .bg-quora:hover,.bg-quora:focus{background:#771800}
 .header-search form{max-width:250px}
 .header-search form input[type="search"]{border:0;border-bottom:1px solid white;text-transform:uppercase;padding:0;padding-right:15px;font-size:14px;letter-spacing:1px;color:#eee}
-.header-search form input[type="submit"]{text-indent:-99999px;line-height:0;border:0;background-image:url(assets/images/icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-position:16px 8px}
+.header-search form input[type="submit"]{text-indent:-99999px;line-height:0;border:0;background-image:url(assets/images/svg-icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-position:16px 8px}
 .header-search ::-webkit-input-placeholder{color:#eee;font-size:14px}
 .header-search ::-moz-placeholder{color:#eee;font-size:14px}
 .header-search :-ms-input-placeholder{color:#eee;font-size:14px}
@@ -395,7 +395,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .widgettitle::before{content:"";height:1px;width:100%;background-color:#ddd;bottom:0}
 .widgettitle::after{content:"";height:1px;width:35%;bottom:0;left:0}
 .widget_search form input[type="search"]{text-transform:uppercase;padding:0 15px;font-size:14px;letter-spacing:1px}
-.widget_search form input[type="submit"]{text-indent:-99999px;line-height:0;background-image:url(assets/images/icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-position:13px 8px;-webkit-border-radius:0;border-radius:0;padding:0 25px;border-width:1px;border-style:solid}
+.widget_search form input[type="submit"]{text-indent:-99999px;line-height:0;background-image:url(assets/images/svg-icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-position:13px 8px;-webkit-border-radius:0;border-radius:0;padding:0 25px;border-width:1px;border-style:solid}
 .widget_search ::-webkit-input-placeholder{color:#000}
 .widget_search ::-moz-placeholder{color:#000}
 .widget_search :-ms-input-placeholder{color:#000}
@@ -417,9 +417,9 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .widget_calendar #wp-calendar tfoot #next a,.widget_calendar #wp-calendar tfoot #prev a{width:25px;height:25px;display:block;text-indent:100em}
 .widget_calendar #wp-calendar tfoot #next a::after,.widget_calendar #wp-calendar tfoot #prev a::after{content:'';position:absolute;top:4px;width:20px;height:20px}
 .widget_calendar #wp-calendar tfoot #next{float:right}
-.widget_calendar #wp-calendar tfoot #next a::after{right:-5px;background-image:url(assets/images/icons/forward.svg);background-repeat:no-repeat;display:block;-webkit-background-size:15px 15px;background-size:15px;background-position:2px}
+.widget_calendar #wp-calendar tfoot #next a::after{right:-5px;background-image:url(assets/images/svg-icons/forward.svg);background-repeat:no-repeat;display:block;-webkit-background-size:15px 15px;background-size:15px;background-position:2px}
 .widget_calendar #wp-calendar tfoot #prev{float:left}
-.widget_calendar #wp-calendar tfoot #prev a::after{left:-5px;background-image:url(assets/images/icons/back.svg);background-repeat:no-repeat;display:block;-webkit-background-size:15px 15px;background-size:15px;background-position:2px}
+.widget_calendar #wp-calendar tfoot #prev a::after{left:-5px;background-image:url(assets/images/svg-icons/back.svg);background-repeat:no-repeat;display:block;-webkit-background-size:15px 15px;background-size:15px;background-position:2px}
 .tagcloud a{display:inline-block;margin-right:4px;margin-bottom:8px;padding:7px 12px;border-width:1px;border-style:solid;font-size:14px;text-transform:capitalize}
 .widget_media_gallery .gallery-item{padding-right:0;margin-bottom:15px}
 .widget_media_gallery .gallery-item img{padding:3px;border-width:1px;border-style:solid}
@@ -497,7 +497,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 #colophon select{border-color:white}
 #colophon select:focus{border-color:white}
 #colophon .widget_search input[type="search"]{border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.15);border-color:transparent}
-#colophon .widget_search input[type="submit"]{background-image:url(assets/images/icons/search-white.svg)}
+#colophon .widget_search input[type="submit"]{background-image:url(assets/images/svg-icons/search-white.svg)}
 #colophon .tagcloud a{border-color:white;background-color:rgba(0,0,0,0.3)}
 #colophon .footer-copyright{padding:30px 0;background-color:rgba(0,0,0,0.3)}
 #colophon .footer-copyright p{text-align:center}
