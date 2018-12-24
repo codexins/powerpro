@@ -413,7 +413,7 @@
 
 
 //-------------------- Responsive --------------------//
-// Possible $media Values: small-mobile, modile, large-mobile, tablet, notbook, wide
+// Possible $media Values: small-mobile, mobile, large-mobile, tablet, notbook, wide
 // Usage @include respond-to(mobile);
 
 @mixin respond-to($media) {
