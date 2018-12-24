@@ -38,6 +38,7 @@
 		$testimonial        = $( '.testimonial-container' ),
 		$toTop              = $( '#to_top' ),
 		$intelHeader        = $( '.header-top' ),
+		$fixedMenuSpace    	= $( '.fixed-header-space' ),
 		$footer             = $( '#colophon' );
 
 	// Check if element exists.
@@ -127,9 +128,7 @@
 
 		// Fixed Navigation Menu Height.
 		var headerHeight = $intelHeader[0].getBoundingClientRect().height;
-		// var topBarHeight = $( 'header .top-header')[0].getBoundingClientRect().height : 0;
-		// var headerMainHeight = $( 'header .header-area')[0].getBoundingClientRect().height;
-		// var headerTotalHeight = topBarHeight + headerMainHeight;
+		var menuHeight = $( 'header .navigation-wrapper')[0].getBoundingClientRect().height;
 
 		// For header to float over Main Content.
 		if ( $headerfl.elExists() ) {
@@ -149,10 +148,12 @@
 				$intelHeader.removeClass( 'top' );
 			}
 			if ( height < 400 ) {
-				$( '.fixed-header-space' ).height( 0 );
+				$fixedMenuSpace.height( 0 );
+				// $( 'header .navigation-wrapper' ).height( 0 );
 				$intelHeader.removeClass( 'pinned' );
 			} else {
-				$( '.fixed-header-space' ).height( headerHeight );
+				$fixedMenuSpace.height( headerHeight );
+				$( 'header .navigation-wrapper' ).height( menuHeight );
 				$intelHeader.addClass( 'pinned' );
 			}
 		});
@@ -366,12 +367,13 @@
 		CODEXIN.elementsCarousel(),
 		CODEXIN.testimonialCarousel(),
 		CODEXIN.scrollToTop(),
-		CODEXIN.toolTips();
+		CODEXIN.toolTips(),
+		CODEXIN.ElementsSpacingClasses();
 	});
 
 	// Window load and resize functions.
 	$window.on( 'load resize', function() {
-		CODEXIN.ElementsSpacingClasses();
+		// CODEXIN.ElementsSpacingClasses();
 	});
 
 })( jQuery );

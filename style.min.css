@@ -395,7 +395,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .widgettitle::before{content:"";height:1px;width:100%;background-color:#ddd;bottom:0}
 .widgettitle::after{content:"";height:1px;width:35%;bottom:0;left:0}
 .widget_search form input[type="search"]{text-transform:uppercase;padding:0 15px;font-size:14px;letter-spacing:1px}
-.widget_search form input[type="submit"]{text-indent:-99999px;line-height:0;background-image:url(assets/images/svg-icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-position:13px 8px;-webkit-border-radius:0;border-radius:0;padding:0 25px;border-width:1px;border-style:solid}
+.widget_search form input[type="submit"]{text-indent:-99999px;line-height:0;background-image:url(assets/images/svg-icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-position:13px 7px;-webkit-border-radius:0;border-radius:0;padding:0 25px;border-width:1px;border-style:solid}
 .widget_search ::-webkit-input-placeholder{color:#000}
 .widget_search ::-moz-placeholder{color:#000}
 .widget_search :-ms-input-placeholder{color:#000}
@@ -475,7 +475,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .header-top.pinned .logo{text-align:left;padding:8px 0}
 .header-top.pinned .logo img{width:150px}
 .header-top.pinned #main_menu{margin-top:0;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}
-.header-top.pinned #main_menu>li>a{font-size:15px;padding:25px 20px}
+.header-top.pinned #main_menu>li>a{font-size:15px;padding:22px 20px}
 #page_title{padding-top:100px;padding-bottom:100px}
 #page_title::before{content:"";top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6)}
 #page_title h1{font-size:34px;line-height:1.2;word-wrap:break-word}
