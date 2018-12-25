@@ -118,8 +118,8 @@ Kirki::add_section( 'cx_header_options', array(
 ) );
 
 Kirki::add_section( 'cx_page_title_section', array(
-	'title'          => esc_html__( 'Page Title Settings', 'powerpro' ),
-	'description'    => esc_html__( 'Page Title Properties', 'powerpro' ),
+	'title'          => esc_html__( 'Page Title &amp; Breadcrumb Settings', 'powerpro' ),
+	'description'    => esc_html__( 'Page Title &amp; Breadcrumb Properties', 'powerpro' ),
 	'panel'          => 'header_settings',
 	'priority'       => 105,
 ) );
