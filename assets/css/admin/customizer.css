@@ -216,6 +216,7 @@
 }
 
 #customize-controls #accordion-section-custom_css .accordion-section-title::before,
+#customize-controls #accordion-panel-woocommerce .accordion-section-title::before,
 #customize-controls .control-panel-widgets .accordion-section-title::before,
 #customize-controls .control-panel-nav_menus .accordion-section-title::before {
     display: inline-block;
@@ -245,6 +246,10 @@
 
 #customize-controls #accordion-section-custom_css .accordion-section-title::before {
     content: "\f499";
+}
+
+#customize-controls #accordion-panel-woocommerce .accordion-section-title::before {
+    content: "\f174";
 }
 
 .customize-panel-back:focus, 

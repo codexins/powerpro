@@ -110,11 +110,18 @@ Kirki::add_section( 'cx_logo_section', array(
 	'priority'       => 10,
 ) );
 
+Kirki::add_section( 'cx_header_options', array(
+	'title'          => esc_html__( 'Header Options', 'powerpro' ),
+	'description'    => esc_html__( 'Misc. header settings', 'powerpro' ),
+	'panel'          => 'header_settings',
+	'priority'       => 100,
+) );
+
 Kirki::add_section( 'cx_page_title_section', array(
 	'title'          => esc_html__( 'Page Title Settings', 'powerpro' ),
 	'description'    => esc_html__( 'Page Title Properties', 'powerpro' ),
 	'panel'          => 'header_settings',
-	'priority'       => 100,
+	'priority'       => 105,
 ) );
 
 Kirki::add_section( 'cx_page_bcrumb_section', array(

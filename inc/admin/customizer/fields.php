@@ -652,9 +652,108 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
+	'settings'    => 'cx_enable_header_search',
+	'label'       => esc_html__( 'Enable Header Search?', 'powerpro' ),
+	'section'     => 'cx_header_options',
+	'default'     => 1,
+	'priority'    => 10,
+	'choices'     => array(
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
+	),
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'switch',
+	'settings'    => 'cx_enable_header_socials',
+	'label'       => esc_html__( 'Enable Header Socials?', 'powerpro' ),
+	'section'     => 'cx_header_options',
+	'default'     => 1,
+	'priority'    => 15,
+	'choices'     => array(
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
+	),
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'switch',
+	'settings'    => 'cx_enable_header_phone',
+	'label'       => esc_html__( 'Enable Header Phone?', 'powerpro' ),
+	'section'     => 'cx_header_options',
+	'default'     => 1,
+	'priority'    => 20,
+	'choices'     => array(
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
+	),
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'    	=> 'cx_header_phone_number',
+	'label'       	=> esc_html__( 'Header Phone Number', 'powerpro' ),
+	'description'   => esc_html__( 'Enter header phone number', 'powerpro' ),
+	'type'        	=> 'text',
+	'section'     	=> 'cx_header_options',
+	'default'     	=> esc_html__( '(555) 555 5555', 'powerpro' ),
+	'priority'    	=> 25,
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_header_phone',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_text',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'    	=> 'cx_header_phone_url',
+	'label'       	=> esc_html__( 'Header Phone Number URL', 'powerpro' ),
+	'description'   => esc_html__( 'Enter header phone number URL without \'+\'', 'powerpro' ),
+	'type'        	=> 'text',
+	'section'     	=> 'cx_header_options',
+	'default'     	=> esc_html__( '+15555555555', 'powerpro' ),
+	'priority'    	=> 30,
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_header_phone',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'    	=> 'cx_header_button',
+	'label'       	=> esc_html__( 'Header Button Text', 'powerpro' ),
+	'description'   => esc_html__( 'Enter header Button Text', 'powerpro' ),
+	'type'        	=> 'text',
+	'section'     	=> 'cx_header_options',
+	'default'     	=> esc_html__( 'Get a Quote', 'powerpro' ),
+	'priority'    	=> 35,
+	'sanitize_callback' => 'codexin_sanitize_text',
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'    	=> 'cx_header_button_url',
+	'label'       	=> esc_html__( 'Select Page', 'powerpro' ),
+	'description'   => esc_html__( 'Select page for button URL', 'powerpro' ),
+	'type'        	=> 'dropdown-pages',
+	'section'     	=> 'cx_header_options',
+	'priority'    	=> 40,
+	'sanitize_callback' => 'codexin_sanitize_number',
+) );
+
+Kirki::add_field( $config_id, array(
+	'type'        => 'switch',
 	'settings'    => 'cx_enable_fixed_header',
 	'label'       => esc_html__( 'Enable Fixed Header?', 'powerpro' ),
-	'section'     => 'header_image',
+	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 110,
 	'choices'     => array(
@@ -668,7 +767,7 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_floating_header',
 	'label'       => esc_html__( 'Enable Floating Header?', 'powerpro' ),
-	'section'     => 'header_image',
+	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 111,
 	'choices'     => array(

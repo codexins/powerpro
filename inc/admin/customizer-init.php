@@ -92,7 +92,7 @@ if ( ! function_exists( 'codexin_modify_customizer' ) ) {
 		$wp_customize->get_section( 'background_image' )->title       = esc_html__( 'Site Background', 'powerpro' );
 		$wp_customize->get_section( 'background_image' )->description = esc_html__( 'Site Background Options', 'powerpro' );
 		$wp_customize->get_section( 'title_tagline' )->title 		  = esc_html__( 'Site Logo/Title/Tagline', 'powerpro' );
-		$wp_customize->get_section( 'header_image' )->title 	   	  = esc_html__( 'Header Options', 'powerpro' );
+		$wp_customize->get_section( 'header_image' )->title 	   	  = esc_html__( 'Header Background &amp; Color', 'powerpro' );
 
 		// move some general controls.
 		$wp_customize->get_section( 'static_front_page' )->panel = 'general_settings';
