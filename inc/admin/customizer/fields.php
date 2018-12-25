@@ -521,7 +521,7 @@ Kirki::add_field( $config_id, array(
 	'section'           => 'cx_color_scheme',
 	'type'              => 'color',
 	'priority'          => 30,
-	'default'           => '#295970',
+	'default'           => '#42ad61',
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
@@ -544,7 +544,7 @@ Kirki::add_field( $config_id, array(
 	'section'           => 'cx_color_scheme',
 	'type'              => 'color',
 	'priority'          => 40,
-	'default'           => '#fce38a',
+	'default'           => '#f58025',
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
@@ -572,7 +572,7 @@ Kirki::add_field( $config_id, array(
 	'section'           => 'cx_color_scheme',
 	'type'              => 'color',
 	'priority'          => 50,
-	'default'           => '#fce38a',
+	'default'           => '#212331',
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
@@ -618,7 +618,7 @@ Kirki::add_field( $config_id, array(
 	'section'           => 'cx_color_scheme',
 	'type'              => 'color',
 	'priority'          => 70,
-	'default'           => '#fafafa',
+	'default'           => '#f6f6f6',
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
