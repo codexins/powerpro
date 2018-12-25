@@ -33,6 +33,7 @@
 	.site-title,
 	.site-description {
 		@extend %mb0;
+		@extend %color-white;
 	}
 
 	.custom-logo-link + .site-title {
