@@ -151,7 +151,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 						
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12 d-none d-sm-none d-md-none d-lg-block navigation-wrapper">
 
-							<div class="fixed-menu-height"></div>
 							<!-- Start of main Navigation -->
 							<div id="main_nav">						
 								<?php codexin_menu( 'main_menu' ); ?>

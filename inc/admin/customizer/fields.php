@@ -665,6 +665,26 @@ Kirki::add_field( $config_id, array(
 ) );
 
 Kirki::add_field( $config_id, array(
+	'settings'      => 'title_background_overlay_setting',
+	'label'         => esc_html__( 'Page Title Background Overlay', 'powerpro' ),
+	'description'   => esc_html__( 'Page header background overlay', 'powerpro' ),
+	'type'          => 'color',
+	'section'       => 'header_image',
+	'priority'      => 105,
+	'default'       => 'rgba(0,0,0,.6)',
+	'choices'     => array(
+		'alpha' => true,
+	),
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => 'header.header::before',
+			'property' => 'background-color',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_header_search',
 	'label'       => esc_html__( 'Enable Header Search?', 'powerpro' ),
@@ -800,20 +820,6 @@ Kirki::add_field( $config_id, array(
 ) );
 
 Kirki::add_field( $config_id, array(
-	'type'        => 'switch',
-	'settings'    => 'cx_enable_floating_header',
-	'label'       => esc_html__( 'Enable Floating Header?', 'powerpro' ),
-	'section'     => 'cx_header_options',
-	'default'     => 1,
-	'priority'    => 111,
-	'choices'     => array(
-		'on'  => esc_html__( 'On', 'powerpro' ),
-		'off' => esc_html__( 'Off', 'powerpro' ),
-	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox',
-) );
-
-Kirki::add_field( $config_id, array(
 	'settings' 		=> 'cx_page_title_position',
 	'label'         => esc_html__( 'Page Title Position', 'powerpro' ),
 	'description'   => esc_html__( 'Please Select Page Title Position', 'powerpro' ),
@@ -836,56 +842,12 @@ Kirki::add_field( $config_id, array(
 ) );
 
 Kirki::add_field( $config_id, array(
-	'settings'    	=> 'title_background_setting',
-	'label'       	=> esc_html__( 'Page Title Background', 'powerpro' ),
-	'description' 	=> esc_html__( 'Page header with image, color, etc.', 'powerpro' ),
-	'type'        	=> 'background',
-	'section'     	=> 'cx_page_title_section',
-	'priority' 		=> 15,
-	'default'     	=> array(
-		'background-color'      => 'rgba(20,20,20,.8)',
-		'background-image'      => '',
-		'background-repeat'     => 'repeat',
-		'background-position'   => 'center center',
-		'background-size'       => 'cover',
-		'background-attachment' => 'scroll',
-	),
-	'transport'     => 'auto',
-	'output'        => array(
-		array(
-			'element'  => '#page_title.page-title',
-			'property' => 'background',
-		),
-	),
-) );
-
-Kirki::add_field( $config_id, array(
-	'settings'      => 'title_background_overlay_setting',
-	'label'         => esc_html__( 'Page Title Background Overlay', 'powerpro' ),
-	'description'   => esc_html__( 'Page header background overlay', 'powerpro' ),
-	'type'          => 'color',
-	'section'       => 'cx_page_title_section',
-	'priority'      => 16,
-	'default'       => 'rgba(0,0,0,.6)',
-	'choices'     => array(
-		'alpha' => true,
-	),
-	'transport'     => 'auto',
-	'output'        => array(
-		array(
-			'element'  => '#page_title.page-title::before',
-			'property' => 'background-color',
-		),
-	),
-) );
-
-Kirki::add_field( $config_id, array(
 	'settings'      => 'cx_pt_top_spacing',
 	'label'         => esc_html__( 'Page Title Top Spacing', 'powerpro' ),
 	'section'       => 'cx_page_title_section',
 	'type'          => 'slider',
 	'priority'      => 20,
-	'default'       => 320,
+	'default'       => 100,
 	'choices'       => array(
 		'max'  => 500,
 		'min'  => 0,
