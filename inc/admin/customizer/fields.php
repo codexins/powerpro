@@ -908,7 +908,7 @@ Kirki::add_field( $config_id, array(
 	'section'       => 'cx_page_title_section',
 	'type'          => 'slider',
 	'priority'      => 25,
-	'default'       => 70,
+	'default'       => 80,
 	'choices'       => array(
 		'max'  => 500,
 		'min'  => 0,
