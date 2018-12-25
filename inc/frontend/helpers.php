@@ -592,3 +592,38 @@ if ( ! function_exists( 'codexin_posts_footer' ) ) {
 		} // End if().
 	}
 } // End if().
+
+if ( ! function_exists( 'codexin_header_socials' ) ) {
+	/**
+	 * Render function for header social icons.
+	 *
+	 * @since   v1.0
+	 */
+	function codexin_header_socials() {
+		$social_array = array(
+			'facebook'		=> codexin_get_option( 'cx_facebook_link' ),
+			'twitter'		=> codexin_get_option( 'cx_twitter_link' ),
+			'instagram'		=> codexin_get_option( 'cx_instagram_link' ),
+			'pinterest'		=> codexin_get_option( 'cx_pinterest_link' ),
+			'behance'		=> codexin_get_option( 'cx_behance_link' ),
+			'google_plus'	=> codexin_get_option( 'cx_gplus_link' ),
+			'linkedin'		=> codexin_get_option( 'cx_linkedin_link' ),
+			'youtube'		=> codexin_get_option( 'cx_youtube_link' ),
+			'vimeo'			=> codexin_get_option( 'cx_vimeo_link' ),
+			'skype'			=> codexin_get_option( 'cx_skype_link' ),
+		);
+
+		echo '<div class="header-social">';
+			foreach ( $social_array as $social_key => $social_value ) {
+				if ( ! empty( $social_value ) ) {
+
+					$key = ( 'google_plus' === $social_key ) ? str_replace( '_', '-', $social_key ) : $social_key;
+
+					echo '<a href="' . esc_url( $social_value ) . '" title="' . esc_attr( ucfirst( $key ) ) . '" target="_blank">';
+							echo '<i class="fa fa-' . esc_attr( $key ) . '"></i>';
+					echo '</a>';
+				}
+			}
+		echo '</div>';
+	}
+}

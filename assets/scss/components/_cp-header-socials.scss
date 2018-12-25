@@ -4,7 +4,6 @@
  */
 
 .header-social {
-	margin-top: 20px;
 
 	a {
 		margin-right: 7px;
@@ -23,5 +22,11 @@
 				opacity: 1;
 			}
 		}
+	}
+}
+
+.header-search {
+	+ .header-social {
+		margin-top: 20px;
 	}
 }

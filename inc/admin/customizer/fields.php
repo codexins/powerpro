@@ -654,6 +654,7 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_header_search',
 	'label'       => esc_html__( 'Enable Header Search?', 'powerpro' ),
+	'description' => esc_html__( 'Enable/Disable header search', 'powerpro' ),
 	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 10,
@@ -668,6 +669,7 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_header_socials',
 	'label'       => esc_html__( 'Enable Header Socials?', 'powerpro' ),
+	'description' => esc_html__( 'Please provide social information in \'Social Media Settings\' Section', 'powerpro' ),
 	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 15,
@@ -682,6 +684,7 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_header_phone',
 	'label'       => esc_html__( 'Enable Header Phone?', 'powerpro' ),
+	'description' => esc_html__( 'Enable/Disable header phone button', 'powerpro' ),
 	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 20,
@@ -741,7 +744,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'cx_header_button_url',
-	'label'       	=> esc_html__( 'Select Page', 'powerpro' ),
+	'label'       	=> esc_html__( 'Select Page for Header Button', 'powerpro' ),
 	'description'   => esc_html__( 'Select page for button URL', 'powerpro' ),
 	'type'        	=> 'dropdown-pages',
 	'section'     	=> 'cx_header_options',
@@ -893,9 +896,9 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_breadcrumb',
 	'label'       => esc_html__( 'Enable Breadcrumb?', 'powerpro' ),
-	'section'     => 'cx_page_bcrumb_section',
+	'section'     => 'cx_page_title_section',
 	'default'     => 1,
-	'priority'    => 10,
+	'priority'    => 30,
 	'choices'     => array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
@@ -908,9 +911,9 @@ Kirki::add_field( $config_id, array(
 	'label'         => esc_html__( 'Breadcrumb Position', 'powerpro' ),
 	'description'   => esc_html__( 'Please Select Breadcrumb Position', 'powerpro' ),
 	'type'     		=> 'radio-buttonset',
-	'section'  		=> 'cx_page_bcrumb_section',
+	'section'  		=> 'cx_page_title_section',
 	'default'  		=> 'center',
-	'priority' 		=> 20,
+	'priority' 		=> 40,
 		'choices'  		=> array(
 		'flex-start' 	=> esc_html__( 'Left', 'powerpro' ),
 		'center' 		=> esc_html__( 'Center', 'powerpro' ),
@@ -1201,7 +1204,7 @@ Kirki::add_field( $config_id, array(
 ) );
 
 Kirki::add_field( $config_id, array(
-	'settings'          => 'cx_vimeoyoutube_link',
+	'settings'          => 'cx_vimeo_link',
 	'label'             => esc_html__( 'Vimeo URL', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',

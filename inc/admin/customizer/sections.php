@@ -124,13 +124,6 @@ Kirki::add_section( 'cx_page_title_section', array(
 	'priority'       => 105,
 ) );
 
-Kirki::add_section( 'cx_page_bcrumb_section', array(
-	'title'          => esc_html__( 'Breadcrumb Settings', 'powerpro' ),
-	'description'    => esc_html__( 'Breadcrumb Properties', 'powerpro' ),
-	'panel'          => 'header_settings',
-	'priority'       => 110,
-) );
-
 Kirki::add_section( 'cx_blog_section', array(
 	'title'          => esc_html__( 'Blog and Archive Settings', 'powerpro' ),
 	'description'    => esc_html__( 'Blog and Archive Properties', 'powerpro' ),

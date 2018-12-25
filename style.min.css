@@ -262,10 +262,10 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .header-search ::-moz-placeholder{color:#eee;font-size:14px}
 .header-search :-ms-input-placeholder{color:#eee;font-size:14px}
 .header-search :-moz-placeholder{color:#eee;font-size:14px}
-.header-social{margin-top:20px}
 .header-social a{margin-right:7px;width:30px;height:30px;text-align:center;line-height:30px;display:inline-block}
 .header-social:hover a{opacity:.5}
 .header-social:hover a:hover{opacity:1}
+.header-search+.header-social{margin-top:20px}
 #main_menu{float:none;clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:25px 0 0;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 #main_menu>li{float:none;clear:both;-webkit-box-flex:0;-webkit-flex:0;-ms-flex:0;flex:0}
 #main_menu>li>a{border:0;letter-spacing:.5px;padding:10px 20px}

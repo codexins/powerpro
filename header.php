@@ -68,15 +68,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="row align-items-center">
 						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
 							<div class="header-left">
-								<div class="header-search">
-									<?php get_search_form(); ?>
-								</div>
-								<div class="header-social">
-									<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-									<a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-									<a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-									<a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-								</div>
+								<?php
+								if ( codexin_get_option( 'cx_enable_header_search' ) ) {
+								?>
+									<div class="header-search">
+										<?php get_search_form(); ?>
+									</div>
+								<?php
+								}
+
+								if ( codexin_get_option( 'cx_enable_header_socials' ) ) {
+									codexin_header_socials();
+								}
+								?>
 							</div>
 						</div>
 
@@ -127,8 +131,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
 							<div class="header-right">
-								<a class="default-btn white-scheme" href="#">707.528.7652</a>
-								<a class="default-btn white-scheme" href="#">GET A QUOTE</a>
+								<?php
+								if ( codexin_get_option( 'cx_enable_header_phone' ) ) {
+									$header_phone_url = codexin_get_option( 'cx_header_phone_url' );
+								?>
+									<a class="default-btn white-scheme" href="tel:+<?php echo intval( $header_phone_url ); ?>"><?php echo esc_html( codexin_get_option( 'cx_header_phone_number' ) ); ?></a>
+								<?php
+								}
+
+								if ( ! empty( codexin_get_option( 'cx_header_button' ) ) ) {
+									$header_button_url = get_permalink( codexin_get_option( 'cx_header_button_url' ) );
+								?>
+									<a class="default-btn white-scheme" href="<?php echo esc_url( $header_button_url ); ?>"><?php echo esc_html( codexin_get_option( 'cx_header_button' ) ); ?></a>
+								<?php
+								}
+								?>
 							</div>
 						</div>
 						
