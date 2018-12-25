@@ -28,6 +28,16 @@ function codexin_partial_refresh_header_button() {
     echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_button' ) ) . '</a>';
 }
 
+// Blog Title Text
+function codexin_partial_refresh_blog_title() {
+    echo '<h1>' . wp_kses_post( codexin_get_option( 'cx_blog_title' ) ) . '</h1>';
+}
+
+// Footer Copyright Text.
+function codexin_partial_refresh_footer_copyright() {
+    echo '<p class="copyright-legal">' . wp_kses_post( codexin_get_option( 'footer_copy_text' ) ) . '</p>';
+}
+
 /**
  * General Settings
  */
@@ -195,9 +205,9 @@ Kirki::add_field( $config_id, array(
 	'description' => esc_html__( 'Change Header Text font family and font style.', 'powerpro' ),
 	'section'     => 'cx_typography_header',
 	'default'     => array(
-		'font-size'         => '20px',
-		'line-height'       => '33px',
-		'font-family'       => 'Source Sans Pro',
+		'font-size'         => '26px',
+		'line-height'       => '32px',
+		'font-family'       => 'Oswald',
 		'font-weight'       => '400',
 		'text-transform'    => 'uppercase',
 	),
@@ -942,6 +952,14 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_blog_section',
 	'default'     	=> esc_html__( 'Blog', 'powerpro' ),
 	'priority'    	=> 10,
+	'transport'     => 'postMessage',
+    'partial_refresh'   => array(
+        'cx_header_button' => array(
+            'selector'            => '.home.blog .page-title h1',
+            'container_inclusive' => true,
+            'render_callback'     => 'codexin_partial_refresh_blog_title',
+        ),
+    ),
 	'sanitize_callback' => 'codexin_sanitize_text',
 ) );
 
@@ -1313,6 +1331,7 @@ Kirki::add_field( $config_id, array(
 	'section'     => 'cx_footer_copy_section',
 	'default'     => 1,
 	'priority'    => 10,
+	'transport'   => 'postMessage',
 	'choices'     => array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
@@ -1359,7 +1378,7 @@ Kirki::add_field( $config_id, array(
 	'transport'     => 'auto',
 	'output'        => array(
 		array(
-			'element'  => '.footer-copyright',
+			'element'  => '#colophon .copyright-legal',
 			'property' => 'color',
 		),
 	),
@@ -1389,4 +1408,12 @@ Kirki::add_field( $config_id, array(
 			'value' => 1,
 		),
 	),
+	'transport'     => 'postMessage',
+    'partial_refresh'   => array(
+        'cx_header_button' => array(
+            'selector'            => '#colophon .copyright-legal',
+            'container_inclusive' => true,
+            'render_callback'     => 'codexin_partial_refresh_footer_copyright',
+        ),
+    ),
 ) );

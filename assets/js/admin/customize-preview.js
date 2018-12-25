@@ -77,4 +77,29 @@
             $( 'header .header-right>a:last-child' ).html( to );
         });
     });
+
+    // Blog Title Text
+    wp.customize( 'cx_blog_title', function (value) {
+        value.bind( function ( to ) {
+            $( '.home.blog .page-title h1' ).html( to );
+        });
+    });
+
+    // Footer Copyright.
+    wp.customize( 'cx_enable_copyright', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( '#colophon .footer-copyright' ).show();
+            } else {
+                $( '#colophon .footer-copyright' ).hide();
+            }
+        });
+    });
+
+    // Footer Copyright Text.
+    wp.customize( 'footer_copy_text', function (value) {
+        value.bind( function ( to ) {
+            $( '#colophon .copyright-legal' ).html( to );
+        });
+    });
 })(jQuery);

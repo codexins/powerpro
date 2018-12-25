@@ -337,12 +337,14 @@ if ( ! function_exists( 'codexin_header_style' ) ) {
 				}
 			<?php
 			} else {
+				if ( ! empty( $$header_text_color  ) ) {
 			?>
 				.site-title a,
 				.site-description {
 					color: #<?php echo esc_attr( $header_text_color ); ?>;
 				}
 			<?php
+				}
 			}
 			?>
 		</style>
