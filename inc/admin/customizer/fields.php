@@ -15,6 +15,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 $color_selectors = codexin_color_selectors();
 
 /**
+ * Selective Refresh functions.
+ */
+
+// Header Phone Number
+function codexin_partial_refresh_header_phone() {
+    echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_phone_number' ) ) . '</a>';
+}
+
+function codexin_partial_refresh_header_button() {
+    echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_button' ) ) . '</a>';
+}
+
+/**
  * General Settings
  */
 
@@ -658,6 +671,7 @@ Kirki::add_field( $config_id, array(
 	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 10,
+	'transport'   => 'postMessage',
 	'choices'     => array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
@@ -673,6 +687,7 @@ Kirki::add_field( $config_id, array(
 	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 15,
+	'transport'   => 'postMessage',
 	'choices'     => array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
@@ -688,6 +703,7 @@ Kirki::add_field( $config_id, array(
 	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 20,
+	'transport'   => 'postMessage',
 	'choices'     => array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
@@ -703,6 +719,7 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_header_options',
 	'default'     	=> esc_html__( '(555) 555 5555', 'powerpro' ),
 	'priority'    	=> 25,
+	'transport'     => 'postMessage',
 	'required' => array(
 		array(
 			'setting' => 'cx_enable_header_phone',
@@ -710,6 +727,13 @@ Kirki::add_field( $config_id, array(
 			'value' => 1,
 		),
 	),
+    'partial_refresh'   => array(
+        'cx_header_phone_number' => array(
+            'selector'            => 'header .header-right>a:first-child',
+            'container_inclusive' => true,
+            'render_callback'     => 'codexin_partial_refresh_header_phone',
+        ),
+    ),
 	'sanitize_callback' => 'codexin_sanitize_text',
 ) );
 
@@ -739,6 +763,14 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_header_options',
 	'default'     	=> esc_html__( 'Get a Quote', 'powerpro' ),
 	'priority'    	=> 35,
+	'transport'     => 'postMessage',
+    'partial_refresh'   => array(
+        'cx_header_button' => array(
+            'selector'            => 'header .header-right>a:last-child',
+            'container_inclusive' => true,
+            'render_callback'     => 'codexin_partial_refresh_header_button',
+        ),
+    ),
 	'sanitize_callback' => 'codexin_sanitize_text',
 ) );
 

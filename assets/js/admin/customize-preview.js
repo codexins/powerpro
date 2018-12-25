@@ -30,4 +30,51 @@
 			}
 		});
 	});
+
+	// Header Search.
+    wp.customize( 'cx_enable_header_search', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( 'header .header-search' ).show();
+            } else {
+            	$( 'header .header-search' ).hide();
+            }
+        });
+    });
+
+	// Header Socials.
+    wp.customize( 'cx_enable_header_socials', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( 'header .header-social' ).show();
+            } else {
+            	$( 'header .header-social' ).hide();
+            }
+        });
+    });
+
+	// Header Phone.
+    wp.customize( 'cx_enable_header_phone', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( 'header .header-right>a:first-child').show();
+            } else {
+            	$( 'header .header-right>a:first-child').hide();
+            }
+        });
+    });
+
+    // Header Phone Text.
+    wp.customize( 'cx_header_phone_number', function (value) {
+        value.bind( function ( to ) {
+            $( 'header .header-right>a:first-child' ).html( to );
+        });
+    });
+
+    // Header Button Text.
+    wp.customize( 'cx_header_button', function (value) {
+        value.bind( function ( to ) {
+            $( 'header .header-right>a:last-child' ).html( to );
+        });
+    });
 })(jQuery);
