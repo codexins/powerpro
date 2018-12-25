@@ -18,11 +18,12 @@ $color_selectors = codexin_color_selectors();
  * Selective Refresh functions.
  */
 
-// Header Phone Number
+// Header Phone Number.
 function codexin_partial_refresh_header_phone() {
     echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_phone_number' ) ) . '</a>';
 }
 
+// Header Button.
 function codexin_partial_refresh_header_button() {
     echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_button' ) ) . '</a>';
 }
