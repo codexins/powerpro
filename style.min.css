@@ -266,7 +266,8 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .header-social:hover a{opacity:.5}
 .header-social:hover a:hover{opacity:1}
 .header-search+.header-social{margin-top:20px}
-#main_menu{float:none;clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:60px 0 0;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
+@media only screen and (max-width:991px){.header-search+.header-social{margin-top:0}
+}#main_menu{float:none;clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:60px 0 0;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 #main_menu>li{float:none;clear:both;-webkit-box-flex:0;-webkit-flex:0;-ms-flex:0;flex:0}
 #main_menu>li>a{border:0;letter-spacing:.5px;padding:10px 20px}
 #main_menu>li>a::before{content:"";right:20px;left:auto;bottom:0;width:0;height:2px}
@@ -468,7 +469,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .header .header-right .default-btn{min-width:125px}
 @media only screen and (min-width:992px){.header .header-right .default-btn{padding:8px}
 }.header .header-right .default-btn:last-child{margin-left:15px}
-@media only screen and (min-width:992px){.header .header-right .default-btn:last-child{margin-top:15px}
+@media only screen and (min-width:992px){.header .header-right .default-btn:last-child{margin-top:15px;margin-bottom:15px}
 }@media only screen and (max-width:767px){.header .header-right .default-btn{padding:8px 25px}
 }@media only screen and (max-width:575px){.header .header-right .default-btn{padding:8px 3px;font-size:13px}
 }.header .custom-logo-link+.site-title{margin-top:15px}

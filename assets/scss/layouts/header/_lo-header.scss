@@ -59,12 +59,12 @@
 			@include media-only(notebook, min) {
 				padding:8px;
 			}
-			
+
 			&:last-child {
 				margin-left: 15px;
 				@include media-only(notebook, min) {
 					margin-top: 15px;
-
+					margin-bottom: 15px;
 				}
 			}
 			
