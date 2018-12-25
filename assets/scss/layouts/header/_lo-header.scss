@@ -18,6 +18,10 @@
 	
 	.header-top {
 		padding: 25px 45px;
+		@include media-only(tablet, max) {
+			padding-left:0;	
+			padding-right: 0;
+		}
 	}
 
 	.navbar-brand {
@@ -26,21 +30,51 @@
 
 	.logo {
 		text-align: center;
+		@include media-only(small-mobile, max) {
+			.site-description,
+			.site-title {
+				text-align: left;		
+			}
+
+			.site-description {
+				font-size: 14px;
+			}
+
+			.navbar-brand {
+				width:100%;
+			}
+		}
 
 		img {
 			width: 120px;
 		}
 	}
 
+
 	.header-right {
 		text-align: right;
 
 		.default-btn {
 			min-width:125px;
-			padding:8px;
+			@include media-only(notebook, min) {
+				padding:8px;
+			}
+			
 			&:last-child {
 				margin-left: 15px;
-				margin-top: 15px;
+				@include media-only(notebook, min) {
+					margin-top: 15px;
+
+				}
+			}
+			
+			@include media-only(tablet, max) { 
+				padding: 8px 25px;
+			}
+
+			@include media-only(small-mobile, max) { 
+				padding: 8px 3px;
+				font-size: 13px;
 			}
 		}
 	}
@@ -65,4 +99,22 @@
 			}
 		}
 	}
+}
+
+@include media-only(notebook, max) {
+	#o-wrapper {
+		position: absolute;
+		top:0;
+		right:15px;
+	}
+
+	.header-right,
+	.header-left {
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin-top: $cx-heading-margin-bottom;
+	}
+
 }

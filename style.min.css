@@ -458,14 +458,24 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 #colophon .mc4wp-form .mc4wp-error,#colophon .mc4wp-form .mc4wp-success,#colophon .mc4wp-form .mc4wp-notice{background:rgba(0,0,0,0.4)}
 .header::before{content:"";top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6)}
 .header .header-top{padding:25px 45px}
-.header .logo{text-align:center}
-.header .logo img{width:120px}
+@media only screen and (max-width:767px){.header .header-top{padding-left:0;padding-right:0}
+}.header .logo{text-align:center}
+@media only screen and (max-width:575px){.header .logo .site-description,.header .logo .site-title{text-align:left}
+.header .logo .site-description{font-size:14px}
+.header .logo .navbar-brand{width:100%}
+}.header .logo img{width:120px}
 .header .header-right{text-align:right}
-.header .header-right .default-btn{min-width:125px;padding:8px}
-.header .header-right .default-btn:last-child{margin-left:15px;margin-top:15px}
-.header .custom-logo-link+.site-title{margin-top:15px}
+.header .header-right .default-btn{min-width:125px}
+@media only screen and (min-width:992px){.header .header-right .default-btn{padding:8px}
+}.header .header-right .default-btn:last-child{margin-left:15px}
+@media only screen and (min-width:992px){.header .header-right .default-btn:last-child{margin-top:15px}
+}@media only screen and (max-width:767px){.header .header-right .default-btn{padding:8px 25px}
+}@media only screen and (max-width:575px){.header .header-right .default-btn{padding:8px 3px;font-size:13px}
+}.header .custom-logo-link+.site-title{margin-top:15px}
 .header .floating-header{z-index:10}
-.header-top .sticky-logo{display:none}
+@media only screen and (max-width:991px){#o-wrapper{position:absolute;top:0;right:15px}
+.header-right,.header-left{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center;margin-top:25px}
+}.header-top .sticky-logo{display:none}
 .header-top.pinned{position:fixed;top:0;left:0;width:100%;z-index:9950;padding:0 45px;background:rgba(255,255,255,0.95);-webkit-box-shadow:0 8px 6px -6px rgba(0,0,0,0.15);box-shadow:0 8px 6px -6px rgba(0,0,0,0.15)}
 .admin-bar .header-top.pinned{top:32px}
 .header-top.pinned .navbar-brand>a{display:none}
