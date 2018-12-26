@@ -57,9 +57,9 @@
     wp.customize( 'cx_enable_header_phone', function ( value ) {
         value.bind( function ( to ) {
             if ( to ) {
-                $( 'header .header-right>a:first-child').show();
+                $( 'header .header-right>a:first-child' ).show();
             } else {
-            	$( 'header .header-right>a:first-child').hide();
+            	$( 'header .header-right>a:first-child' ).hide();
             }
         });
     });
@@ -94,6 +94,17 @@
     wp.customize( 'cx_blog_title', function ( value ) {
         value.bind( function ( to ) {
             $( '.home.blog .page-title h1' ).html( to );
+        });
+    });
+
+    // Blog more button.
+    wp.customize( 'cx_enable_readmore', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( 'body:not(.single) .entry-footer' ).show();
+            } else {
+                $( 'body:not(.single) .entry-footer' ).hide();
+            }
         });
     });
 

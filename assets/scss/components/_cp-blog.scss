@@ -77,9 +77,9 @@
 			}
 		}
 
-		.like-count {
+		.post-comments {
 			i {
-				margin-right: 4px;
+				margin-right: 3px;
 			}
 		}
 	}
@@ -167,43 +167,10 @@
 		@extend %visuallyhidden;
 	}
 
-	.entry-footer {
-		display: flex;
-		justify-content: space-between;
-
-		.list-inline {
-			margin-top: -2px;
-			// font-size: 15px;
-			order: 2;
-			@extend %mb0;
-			@extend %color-primary;
-
-			li {
-				@extend %pb0;
-			}
-
-			li:not(:last-child) {
-				margin-right: 10px;
-			}
-
-			a {
-				&:hover {
-					@extend %color-secondary;
-				}
-
-				&:focus {
-					@extend %color-primary;
-				}
-			}
-
-			i {
-				font-size: 16px;
-				margin-right: 7px;
-				top: 1px;
-				@extend .pos-r;
-			}
+	.entry-content {
+		+ .entry-footer {
+			margin-top: $cx-heading-margin-bottom;
 		}
-
 	}
 
 	&:hover {

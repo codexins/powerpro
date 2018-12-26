@@ -28,11 +28,6 @@ function codexin_partial_refresh_header_button() {
     echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_button' ) ) . '</a>';
 }
 
-// Header Sticky Logo.
-function codexin_partial_refresh_sticky_logo() {
-	echo '<img src="' . esc_url( codexin_get_option( 'sticky_logo_setting' ) ) . '" alt="Logo">';
-}
-
 // Blog Title Text.
 function codexin_partial_refresh_blog_title() {
     echo '<h1>' . wp_kses_post( codexin_get_option( 'cx_blog_title' ) ) . '</h1>';
@@ -169,13 +164,6 @@ Kirki::add_field( $config_id, array(
 	'section'       => 'title_tagline',
 	'priority'      => 53,
 	'transport'     => 'postMessage',
-    'partial_refresh'   => array(
-        'cx_header_button' => array(
-            'selector'            => 'header .sticky-logo',
-            'container_inclusive' => true,
-            'render_callback'     => 'codexin_partial_refresh_sticky_logo',
-        ),
-    ),
 ) );
 
 /**
@@ -1059,6 +1047,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
+	'transport'     => 'postMessage',
 	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 

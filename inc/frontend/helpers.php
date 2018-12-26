@@ -514,6 +514,24 @@ if ( ! function_exists( 'codexin_posts_meta' ) ) {
 							?>
 						</a>
 					</li>
+					<?php
+					if ( ! is_single() ) {
+					?>
+						<li class="list-inline-item post-comments">
+							<a href="<?php comments_link(); ?>">
+								<i class="ion ion-md-chatbubbles"></i>
+								<?php
+								if ( ! post_password_required() ) {
+									comments_number( '0', '1', '%' );
+								} else {
+									echo esc_html__( '?', 'powerpro' );
+								}
+								?>
+							</a>
+						</li>
+					<?php
+					}
+					?>
 					<li class=" list-inline-item post-categories">
 						<?php
 						// Posted in.
@@ -539,26 +557,10 @@ if ( ! function_exists( 'codexin_posts_footer' ) ) {
 		$social_share  	= codexin_get_option( 'cx_enable_share_link' );
 
 		if ( ! is_single() ) {
-		?>
-			<ul class="list-inline">
-				<li class="list-inline-item post-comments">
-					<i class="ion ion-md-chatbubbles"></i>
-					<a href="<?php comments_link(); ?>">
-						<?php
-						if ( ! post_password_required() ) {
-							comments_number( '0', '1', '%' );
-						} else {
-							echo esc_html__( '?', 'powerpro' );
-						}
-						?>
-					</a>
-				</li>
-			</ul>
-			<?php
 
 			// Read More button.
 			if ( $read_more ) {
-			?>				
+				?>				
 				<div class="read-more post-btn">
 					<a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'powerpro' ); ?></a>
 				</div>
