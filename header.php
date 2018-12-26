@@ -66,11 +66,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="header-top<?php echo ( codexin_get_option( 'cx_enable_floating_header' ) ? ' floating-header' : '' ); ?>">
 				<div class="container-fluid">
 					<div class="row align-items-center">
-						<div class="col-12 order-2 col-sm-12 order-sm-2 col-md-12 order-md-2 col-lg-4 order-lg-1">
+						<div class="col-12 order-1 col-sm-12 order-sm-2 col-md-12 order-md-2 col-lg-4 order-lg-1">
 							<div class="header-left">
 								<?php
 								if ( codexin_get_option( 'cx_enable_header_search' ) ) {
 								?>
+									<div class="mobile-search-icon d-block d-xs-block d-sm-none d-md-none d-lg-none d-xl-none">
+										<a href="">Icon</a>
+									</div>
 									<div class="header-search">
 										<?php get_search_form(); ?>
 									</div>
@@ -84,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 						</div>
 
-						<div class="col-12 order-1 col-sm-12 order-sm-1 col-md-12 order-md-1 col-lg-4 order-lg-2">
+						<div class="col-12 order-2 col-sm-12 order-sm-1 col-md-12 order-md-1 col-lg-4 order-lg-2">
 							<!-- Logo -->
 							<div class="logo">
 								<div class="navbar-brand">

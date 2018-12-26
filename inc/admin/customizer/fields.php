@@ -93,7 +93,7 @@ Kirki::add_field( $config_id, array(
 	'section'     => 'title_tagline',
 	'type'        => 'slider',
 	'priority'    => 50,
-	'default'     => 120,
+	'default'     => 180,
 	'choices'     => array(
 		'max'  => 300,
 		'min'  => 0,
@@ -102,7 +102,7 @@ Kirki::add_field( $config_id, array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element'  => 'header .logo .navbar-brand img',
+			'element'  => 'header .logo',
 			'property' => 'width',
 			'units'    => 'px',
 		),

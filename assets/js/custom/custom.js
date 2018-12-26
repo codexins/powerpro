@@ -111,6 +111,17 @@
 	*************************************************************/
 
 
+	/************************************************************
+		s04 - Temp, will be shifted later
+	*************************************************************/
+    $(".mobile-search-icon a").click(function(e) {
+        e.preventDefault();
+        $(".header-search").fadeIn();
+        $(".header-search").find('input[type="search"]').focus();
+    });
+    $('.header-search').on('focusout', function() {
+        $(this).fadeOut();
+    });
 
 
 	/************************************************************

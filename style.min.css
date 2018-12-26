@@ -207,7 +207,7 @@ a:focus,a:active,a:hover,.btn-link:hover,.btn-link:focus,.btn-link:active,.wp-bl
 hr.is-style-dots::before,.wp-block-separator.is-style-dots::before,.color-tertiary,.has-tertiary-color,.header-top.pinned #main_menu>li:not(.current_page_item)>a:hover{color:#212331}
 .color-transparent{color:transparent}
 .color-offset,.has-offset-color{color:#f6f6f6}
-button,input[type="reset"],input[type="button"],input[type="submit"],.page-links>a:hover span,.page-links>span:not(.page-links-title),.color-white,.bg-facebook,.bg-facebook:hover,.bg-facebook:focus,.bg-twitter,.bg-twitter:hover,.bg-twitter:focus,.bg-google-plus,.bg-google-plus:hover,.bg-google-plus:focus,.bg-pinterest,.bg-pinterest:hover,.bg-pinterest:focus,.bg-instagram,.bg-instagram:hover,.bg-instagram:focus,.bg-linkedin,.bg-linkedin:hover,.bg-linkedin:focus,.bg-dribbble,.bg-dribbble:hover,.bg-dribbble:focus,.bg-flickr,.bg-flickr:hover,.bg-flickr:focus,.bg-medium,.bg-medium:hover,.bg-medium:focus,.bg-tumblr,.bg-tumblr:hover,.bg-tumblr:focus,.bg-vimeo,.bg-vimeo:hover,.bg-vimeo:focus,.bg-youtube,.bg-youtube:hover,.bg-youtube:focus,.bg-reddit,.bg-reddit:hover,.bg-reddit:focus,.bg-skype,.bg-skype:hover,.bg-skype:focus,.bg-quora,.bg-quora:hover,.bg-quora:focus,#main_menu>li>a,.pinned #main_nav #main_menu .menu-item:hover .sub-menu a,.breadcrumb,.default-btn,.default-btn:hover,.default-btn:focus,.default-btn.white-scheme,.share-links .list-inline .list-inline-item a:hover,.share-links .list-inline .list-inline-item a:focus,.post-content-wrapper .post-media a::before,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,.element-carousel .swiper-arrow,.post-quote,.post-quote>i,.post-quote .quote-source,.post-link .post-format-link>i,#comments .bypostauthor .fn::before,.widget_search form input[type="submit"],.tagcloud a:hover,.mailchimp-wrapper input[type="submit"],#colophon .mailchimp-wrapper input[type="email"],.header .site-title,.header .site-description,#page_title h1,#colophon h1,#colophon h2,#colophon h3,#colophon h4,#colophon h5,#colophon h6,#colophon p,#colophon a,#colophon span,#colophon ul,#colophon li,#colophon i,#colophon select,#colophon #wp-calendar td:hover,#colophon #wp-calendar td:hover a,#colophon .widget_recent_comments>ul>li::before,#colophon .widget_search input[type="search"],.sticky .post-title span,.sticky .post-title span::after{color:white}
+button,input[type="reset"],input[type="button"],input[type="submit"],.page-links>a:hover span,.page-links>span:not(.page-links-title),.color-white,.bg-facebook,.bg-facebook:hover,.bg-facebook:focus,.bg-twitter,.bg-twitter:hover,.bg-twitter:focus,.bg-google-plus,.bg-google-plus:hover,.bg-google-plus:focus,.bg-pinterest,.bg-pinterest:hover,.bg-pinterest:focus,.bg-instagram,.bg-instagram:hover,.bg-instagram:focus,.bg-linkedin,.bg-linkedin:hover,.bg-linkedin:focus,.bg-dribbble,.bg-dribbble:hover,.bg-dribbble:focus,.bg-flickr,.bg-flickr:hover,.bg-flickr:focus,.bg-medium,.bg-medium:hover,.bg-medium:focus,.bg-tumblr,.bg-tumblr:hover,.bg-tumblr:focus,.bg-vimeo,.bg-vimeo:hover,.bg-vimeo:focus,.bg-youtube,.bg-youtube:hover,.bg-youtube:focus,.bg-reddit,.bg-reddit:hover,.bg-reddit:focus,.bg-skype,.bg-skype:hover,.bg-skype:focus,.bg-quora,.bg-quora:hover,.bg-quora:focus,.mobile-search-icon,#main_menu>li>a,.pinned #main_nav #main_menu .menu-item:hover .sub-menu a,.breadcrumb,.default-btn,.default-btn:hover,.default-btn:focus,.default-btn.white-scheme,.share-links .list-inline .list-inline-item a:hover,.share-links .list-inline .list-inline-item a:focus,.post-content-wrapper .post-media a::before,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,.element-carousel .swiper-arrow,.post-quote,.post-quote>i,.post-quote .quote-source,.post-link .post-format-link>i,#comments .bypostauthor .fn::before,.widget_search form input[type="submit"],.tagcloud a:hover,.mailchimp-wrapper input[type="submit"],#colophon .mailchimp-wrapper input[type="email"],.header .site-title,.header .site-description,#page_title h1,#colophon h1,#colophon h2,#colophon h3,#colophon h4,#colophon h5,#colophon h6,#colophon p,#colophon a,#colophon span,#colophon ul,#colophon li,#colophon i,#colophon select,#colophon #wp-calendar td:hover,#colophon #wp-calendar td:hover a,#colophon .widget_recent_comments>ul>li::before,#colophon .widget_search input[type="search"],.sticky .post-title span,.sticky .post-title span::after{color:white}
 blockquote cite,blockquote .wp-block-quote__citation,blockquote.wp-block-quote cite,blockquote.wp-block-quote .wp-block-quote__citation,.color-dark,.header-social a,#comments .comment-meta>a,.widget_calendar #wp-calendar tbody td,.codexin-recent-posts-widget .posts-single .post-content h4 a,.codexin-popular-posts-widget .posts-single .post-content h4 a,.codexin-recent-posts-widget .posts-single .post-content i,.codexin-popular-posts-widget .posts-single .post-content i,.header-top.pinned #main_menu>li:not(.current_page_item)>a{color:#252525}
 .color-black,.widget_calendar #wp-calendar caption,.tagcloud a{color:#000}
 .wp-block-latest-posts>li>a,.wp-block-categories li a,.wp-block-archives li a,.page-links>a span,.post-content-wrapper .entry-meta a,.post-content-wrapper .entry-meta .post-author a,.number-pagination .pagination li a,.number-pagination .pagination li span,#comments .comment-info .fn>a,.widget_nav_menu ul>li>a,.widget_rss ul>li>a,.widget_recent_entries ul>li>a,.widget_meta ul>li>a,.widget_pages ul>li>a,.widget_categories ul>li>a,.widget_archive ul>li>a,.widget_recent_comments ul>li>a,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul>li>a,.widget_recent_comments>ul>li::before,.widget_recent_comments>ul>li a,.header .floating-header.pinned .site-description,.header-top.pinned #main_menu>li>a,.single .entry-footer .share .caption{color:#000}
@@ -255,17 +255,27 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .bg-skype:hover,.bg-skype:focus{background:#008abd}
 .bg-quora{background:#a20}
 .bg-quora:hover,.bg-quora:focus{background:#771800}
-.header-search form{max-width:250px}
-.header-search form input[type="search"]{border:0;border-bottom:1px solid white;text-transform:uppercase;padding:0;padding-right:15px;font-size:14px;letter-spacing:1px;color:#eee}
-.header-search form input[type="submit"]{text-indent:-99999px;line-height:0;border:0;background-image:url(assets/images/svg-icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-position:16px 8px}
-.header-search ::-webkit-input-placeholder{color:#eee;font-size:14px}
+@media only screen and (max-width:575px){.header-search{display:none;position:absolute;top:100%;left:15px;right:15px;z-index:1}
+}.header-search form{max-width:250px}
+@media only screen and (max-width:575px){.header-search form{max-width:100%}
+}.header-search form input[type="search"]{border:0;border-bottom:1px solid white;text-transform:uppercase;padding:0;padding-right:15px;font-size:14px;letter-spacing:1px;color:#eee}
+@media only screen and (max-width:575px){.header-search form input[type="search"]{border:0;background:rgba(255,255,255,0.08);padding-left:8px;padding-right:8px}
+}.header-search form input[type="submit"]{text-indent:-99999px;line-height:0;border:0;background-image:url(assets/images/svg-icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-position:16px 8px}
+@media only screen and (max-width:575px){.header-search form input[type="submit"]{border:0;background-color:rgba(255,255,255,0.1);padding:0;width:40px;background-position:center}
+}.header-search ::-webkit-input-placeholder{color:#eee;font-size:14px}
 .header-search ::-moz-placeholder{color:#eee;font-size:14px}
 .header-search :-ms-input-placeholder{color:#eee;font-size:14px}
 .header-search :-moz-placeholder{color:#eee;font-size:14px}
-.header-social a{margin-right:7px;width:30px;height:30px;text-align:center;line-height:30px;display:inline-block}
-.header-social:hover a{opacity:.5}
+.header-social a{margin-right:7px;width:30px;height:30px;text-align:center;line-height:30px;display:inline-block;margin-top:5px;margin-bottom:5px}
+@media only screen and (max-width:575px){.header-social a{margin-right:0;margin-left:7px;width:28px;height:28px;line-height:28px}
+}.header-social:hover a{opacity:.5}
 .header-social:hover a:hover{opacity:1}
-.header-search+.header-social{margin-top:20px}
+@media only screen and (max-width:575px){.header-social{-webkit-box-ordinal-group:2;-webkit-order:1;-ms-flex-order:1;order:1}
+}.header-search+.header-social{margin-top:20px}
+@media only screen and (max-width:991px){.header-search+.header-social{margin-top:0}
+}.mobile-search-icon{text-indent:-99999px;line-height:0;border:0;background-image:url(assets/images/svg-icons/search-white.svg);background-repeat:no-repeat;-webkit-background-size:26px 26px;background-size:26px;background-color:rgba(255,255,255,0.1);padding:0;width:40px;height:36px;background-position:center}
+@media only screen and (max-width:575px){.mobile-search-icon{-webkit-box-ordinal-group:3;-webkit-order:2;-ms-flex-order:2;order:2}
+}.mobile-search-icon a{display:block;width:100%;height:100%}
 #main_menu{float:none;clear:both;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:60px 0 0;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 #main_menu>li{float:none;clear:both;-webkit-box-flex:0;-webkit-flex:0;-ms-flex:0;flex:0}
 #main_menu>li>a{border:0;letter-spacing:.5px;padding:10px 20px}
@@ -459,22 +469,29 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .header::before{content:"";top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6)}
 .header .header-top{padding:25px 45px}
 @media only screen and (max-width:767px){.header .header-top{padding-left:0;padding-right:0}
-}.header .logo{text-align:center}
+}@media only screen and (max-width:575px){.header .header-top{padding-top:0}
+}.header .logo{width:180px;display:block;margin-left:auto;margin-right:auto}
 @media only screen and (max-width:575px){.header .logo .site-description,.header .logo .site-title{text-align:left}
 .header .logo .site-description{font-size:14px}
 .header .logo .navbar-brand{width:100%}
-}.header .logo img{width:120px}
-.header .header-right{text-align:right}
+}.header .logo img{width:100%}
+@media only screen and (max-width:991px){.header .logo{width:150px}
+}@media only screen and (max-width:575px){.header .logo{margin-left:0;width:130px}
+}.header .header-right{text-align:right}
 .header .header-right .default-btn{min-width:125px}
 @media only screen and (min-width:992px){.header .header-right .default-btn{padding:8px}
 }.header .header-right .default-btn:last-child{margin-left:15px}
-@media only screen and (min-width:992px){.header .header-right .default-btn:last-child{margin-top:15px}
+@media only screen and (min-width:992px){.header .header-right .default-btn:last-child{margin-top:15px;margin-bottom:15px}
 }@media only screen and (max-width:767px){.header .header-right .default-btn{padding:8px 25px}
-}@media only screen and (max-width:575px){.header .header-right .default-btn{padding:8px 3px;font-size:13px}
+}@media only screen and (max-width:575px){.header .header-right .default-btn{padding:8px 3px;font-size:13px;width:50%}
 }.header .custom-logo-link+.site-title{margin-top:15px}
 .header .floating-header{z-index:10}
 @media only screen and (max-width:991px){#o-wrapper{position:absolute;top:0;right:15px}
 .header-right,.header-left{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center;margin-top:25px}
+}@media only screen and (max-width:575px){.header-left,.header-right{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
+}@media only screen and (max-width:575px){.header-left{margin-top:0;margin-bottom:25px;padding:7px 15px;margin-left:-15px;margin-right:-15px;background:rgba(0,0,0,0.3);position:relative}
+}@media only screen and (max-width:575px){#o-wrapper{position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+}@media only screen and (max-width:575px){.primary-nav-details{margin:0}
 }.header-top .sticky-logo{display:none}
 .header-top.pinned{position:fixed;top:0;left:0;width:100%;z-index:9950;padding:0 45px;background:rgba(255,255,255,0.95);-webkit-box-shadow:0 8px 6px -6px rgba(0,0,0,0.15);box-shadow:0 8px 6px -6px rgba(0,0,0,0.15)}
 .admin-bar .header-top.pinned{top:32px}
