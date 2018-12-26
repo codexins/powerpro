@@ -6,6 +6,9 @@
 .header-search {
 	form {
 		max-width: 250px;
+		@include respond-to(small-mobile) {
+			max-width:190px;
+		}
 
 		input[type="search"] {
 			border: 0;
@@ -17,6 +20,14 @@
 		    letter-spacing: 1px;
 		    color: #eee;
 			@extend %bgc-transparent;
+
+			@include respond-to(small-mobile) {
+			    border: 0;
+				background: rgba(255,255,255,.08);
+				padding-left: 8px;
+				padding-right: 8px;
+
+			}
 		}
 
 		input[type="submit"] {
@@ -28,6 +39,13 @@
 		    background-size: 26px;
 		    background-position: 16px 8px;
 		    @extend %bgc-transparent;
+			@include respond-to(small-mobile) {
+			    border: 0;
+				background-color: rgba(255,255,255,.10);
+			    padding: 0;
+    			width: 40px;
+    			background-position: center;
+			}
 		}
 	}
 
