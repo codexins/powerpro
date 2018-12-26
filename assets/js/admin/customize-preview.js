@@ -65,21 +65,33 @@
     });
 
     // Header Phone Text.
-    wp.customize( 'cx_header_phone_number', function (value) {
+    wp.customize( 'cx_header_phone_number', function ( value ) {
         value.bind( function ( to ) {
             $( 'header .header-right>a:first-child' ).html( to );
         });
     });
 
     // Header Button Text.
-    wp.customize( 'cx_header_button', function (value) {
+    wp.customize( 'cx_header_button', function ( value ) {
         value.bind( function ( to ) {
             $( 'header .header-right>a:last-child' ).html( to );
         });
     });
 
+    // Header Sticky Logo.
+    wp.customize( 'sticky_logo_setting', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to !== '' ) {
+                $( 'header .sticky-logo img' ).show();
+                $( 'header .sticky-logo img' ).attr( 'src', to );
+            } else {
+                $( 'header .sticky-logo img' ).hide();
+            }
+        });
+    });
+
     // Blog Title Text
-    wp.customize( 'cx_blog_title', function (value) {
+    wp.customize( 'cx_blog_title', function ( value ) {
         value.bind( function ( to ) {
             $( '.home.blog .page-title h1' ).html( to );
         });
@@ -97,7 +109,7 @@
     });
 
     // Footer Copyright Text.
-    wp.customize( 'footer_copy_text', function (value) {
+    wp.customize( 'footer_copy_text', function ( value ) {
         value.bind( function ( to ) {
             $( '#colophon .copyright-legal' ).html( to );
         });

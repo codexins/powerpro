@@ -119,7 +119,8 @@
 @include media-only(notebook, max) {
 	#o-wrapper {
 		position: absolute;
-		top:0;
+		top:50%;
+		transform: translateY(-50%);
 		right:15px;
 	}
 
