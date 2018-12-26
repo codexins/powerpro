@@ -329,7 +329,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .post-content-wrapper .post-media .image-placeholder,.post-content-wrapper .post-media img{width:100%;-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}
 .post-content-wrapper .post-media .image-placeholder{height:400px}
 .post-content-wrapper .post-title{text-transform:initial;word-wrap:break-word;font-size:40px}
-.post-content-wrapper .post-excerpt{margin-bottom:30px;word-wrap:break-word}
+.post-content-wrapper .post-excerpt{word-wrap:break-word}
 .post-content-wrapper .post-details{word-wrap:break-word}
 .post-content-wrapper .entry-footer{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
 .post-content-wrapper .entry-footer .list-inline{margin-top:-2px;-webkit-box-ordinal-group:3;-webkit-order:2;-ms-flex-order:2;order:2}
