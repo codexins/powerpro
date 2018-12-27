@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- Start of Whole Site Wrapper with mobile menu support -->
 	<div id="whole" class="whole-site-wrapper">
 
-		<?php $header_bg_image = ( ! empty( get_header_image() ) ) ? 'background:url(' . esc_url( get_header_image() ) . ')' : '' ?>
+		<?php $header_bg_image = ( ! empty( get_header_image() ) ) ? 'background-image: url(' . esc_url( get_header_image() ) . ')' : '' ?>
 
 		<!-- Start of Header -->
 		<header class="header<?php echo is_front_page() ? esc_attr( ' front-header' ) : esc_attr( ' inner-header' ); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
@@ -92,7 +92,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<div class="logo">
 								<div class="navbar-brand">
 									<?php
-									the_custom_logo();
+									if ( has_custom_logo() ) {
+										the_custom_logo();
+									} else {
+										echo '<a href="' . esc_url( home_url( '/' ) ) . '">';
+											echo '<img src="' . get_parent_theme_file_uri() . '/assets/images/logo.png' . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '">';
+										echo '</a>';
+									}
 
 									if ( ! empty( codexin_get_option( 'sticky_logo_setting' ) ) ) {
 										echo '<div class="sticky-logo">';
@@ -143,9 +149,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 								}
 
 								if ( ! empty( codexin_get_option( 'cx_header_button' ) ) ) {
-									$header_button_url = get_permalink( codexin_get_option( 'cx_header_button_url' ) );
 								?>
-									<a class="default-btn white-scheme" href="<?php echo esc_url( $header_button_url ); ?>"><?php echo esc_html( codexin_get_option( 'cx_header_button' ) ); ?></a>
+									<a class="default-btn white-scheme" href="<?php echo esc_url( codexin_get_option( 'cx_header_button_url' ) ); ?>"><?php echo esc_html( codexin_get_option( 'cx_header_button' ) ); ?></a>
 								<?php
 								}
 								?>

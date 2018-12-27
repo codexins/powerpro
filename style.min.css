@@ -463,6 +463,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 #colophon .mailchimp-wrapper input[type="submit"]{height:45px;line-height:45px}
 .mc4wp-form .mc4wp-error,.mc4wp-form .mc4wp-success,.mc4wp-form .mc4wp-notice{padding:15px;margin-top:15px}
 #colophon .mc4wp-form .mc4wp-error,#colophon .mc4wp-form .mc4wp-success,#colophon .mc4wp-form .mc4wp-notice{background:rgba(0,0,0,0.4)}
+.header{background-position:center;background-repeat:no-repeat;background-attachment:scroll}
 .header::before{content:"";top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6)}
 .header .header-top{padding:25px 45px}
 @media only screen and (max-width:767px){.header .header-top{padding-left:0;padding-right:0}

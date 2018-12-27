@@ -10,6 +10,10 @@
 	content: none;
 }
 
+#customize-controls .customize-section-title h3 .dashicons {
+    display: none;
+}
+
 #customize-controls div.customize-section-description {
     font-size: 14px;
     font-weight: 500;

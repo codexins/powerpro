@@ -191,8 +191,8 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 			 * Adding custom logo support to the theme
 			 */
 			$logo_args = array(
-				'width'       => 175,
-				'height'      => 175,
+				'width'       => 180,
+				'height'      => 180,
 				'flex-width'  => true,
 				'flex-height' => true,
 			);
