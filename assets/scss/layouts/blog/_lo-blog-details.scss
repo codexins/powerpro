@@ -29,11 +29,19 @@
 		}
 	}
 
-	.entry-footer {
-		@extend %mt-half;
+	.blog-area {
+		+ .comments-area {
+			border-top-width: 1px;
+			border-top-style: dashed;
+			@extend %border-default;
+			@extend %pt-half;
+		}
+	}
 
+	.entry-footer {
 		.tagcloud {
 			margin-bottom: -8px;
+			@extend %mt-half;
 		}
 
 		.share {
@@ -45,6 +53,11 @@
 
 			.list-inline {
 				float: none;
+				@extend %mb0;
+
+				li {
+					@extend %pb0;
+				}
 			}
 		}
 	}

@@ -1079,19 +1079,22 @@ Kirki::add_field( $config_id, array(
 	),
 ) );
 
-Kirki::add_field( $config_id, array(
-	'settings'    => 'cx_enable_share_link',
-	'label'       => esc_html__( 'Enable Share Links?', 'powerpro' ),
-	'type'        => 'switch',
-	'section'     => 'cx_blog_single_section',
-	'default'     => 1,
-	'priority'    => 20,
-	'choices'     => array(
-		'on'  => esc_html__( 'On', 'powerpro' ),
-		'off' => esc_html__( 'Off', 'powerpro' ),
-	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox',
-) );
+if ( class_exists( 'Codexin_Core' ) ) {
+	Kirki::add_field( $config_id, array(
+		'settings'    => 'cx_enable_share_link',
+		'label'       => esc_html__( 'Enable Share Links?', 'powerpro' ),
+		'type'        => 'switch',
+		'section'     => 'cx_blog_single_section',
+		'default'     => 1,
+		'priority'    => 20,
+		'choices'     => array(
+			'on'  => esc_html__( 'On', 'powerpro' ),
+			'off' => esc_html__( 'Off', 'powerpro' ),
+		),
+		'transport'     => 'postMessage',
+		'sanitize_callback' => 'codexin_sanitize_checkbox',
+	) );
+}
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_comments',
@@ -1104,6 +1107,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
+	'transport'     => 'postMessage',
 	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
@@ -1118,6 +1122,7 @@ Kirki::add_field( $config_id, array(
 		'on'  => esc_html__( 'On', 'powerpro' ),
 		'off' => esc_html__( 'Off', 'powerpro' ),
 	),
+	'transport'     => 'postMessage',
 	'sanitize_callback' => 'codexin_sanitize_checkbox',
 ) );
 
