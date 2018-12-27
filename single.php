@@ -70,10 +70,17 @@ $post_comment 		= codexin_get_option( 'cx_enable_comments' );
 						codexin_post_nav();
 					}
 
-					if ( $post_comment ) {
+					if ( ! class_exists( 'Codexin_core' ) ) {
 						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) {
 							comments_template();
+						}
+					} else {
+						if ( $post_comment ) {
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) {
+								comments_template();
+							}
 						}
 					}
 					?>

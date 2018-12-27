@@ -97,11 +97,12 @@ $excerpt_length  = codexin_get_option( 'cx_post_excerpt_length' );
 			}
 			?>
 		</div> <!-- end of entry-content -->
-		
+
 		<footer class="entry-footer">
 			<?php
 			codexin_posts_footer();
 			?>
 		</footer> <!-- end of entry-footer -->
+
 	 </div> <!-- end of post-content-wrapper -->
 </article> <!-- end of #post-## -->

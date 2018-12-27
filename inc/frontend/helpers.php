@@ -255,7 +255,7 @@ if ( ! function_exists( 'codexin_default_google_fonts' ) ) {
 			if ( $fonts ) {
 				$subsets   = apply_filters( 'codexin_default_google_fonts', 'latin' );
 				$fonts_url = add_query_arg( array(
-					'family' => urlencode( implode( '|', $fonts ) ),
+					'family' => implode( '|', $fonts ),
 					'subset' => urlencode( $subsets ),
 				),  'https://fonts.googleapis.com/css' );
 			}
@@ -580,17 +580,9 @@ if ( ! function_exists( 'codexin_posts_footer' ) ) {
 
 				// Social Share buttons.
 				if ( $social_share ) {
-				?>
-					<div class="share socials share-links">
-						<ul class="list-inline">
-							<li class="list-inline-item caption"><?php esc_html_e( 'Share this post: ', 'powerpro' ); ?></li>
-							<li class="list-inline-item"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
-							<li class="list-inline-item"><a href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
-							<li class="list-inline-item"><a href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-google-plus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
-							<li class="list-inline-item"><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" class="bg-linkedin" data-toggle="tooltip" data-position="top" data-original-title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a></li>
-						</ul>
-					</div>
-				<?php
+					if ( class_exists( 'Codexin_Core' ) && class_exists( 'Kirki' ) ) {
+						echo do_shortcode( '[cx_social_share]' );
+					}
 				}
 			}
 		} // End if().

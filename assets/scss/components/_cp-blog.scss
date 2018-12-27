@@ -167,8 +167,8 @@
 		@extend %visuallyhidden;
 	}
 
-	.entry-content {
-		+ .entry-footer {
+	.entry-footer {
+		.read-more {
 			margin-top: $cx-heading-margin-bottom;
 		}
 	}

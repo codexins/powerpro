@@ -108,6 +108,39 @@
         });
     });
 
+    // Social shares.
+    wp.customize( 'cx_enable_share_link', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( '.single .entry-footer .share' ).show();
+            } else {
+                $( '.single .entry-footer .share' ).hide();
+            }
+        });
+    });
+
+    // Comments Area.
+    wp.customize( 'cx_enable_comments', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( '.single #comments' ).show();
+            } else {
+                $( '.single #comments' ).hide();
+            }
+        });
+    });
+
+    // Single Post Nav.
+    wp.customize( 'cx_enable_post_nav', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( '.single .posts-nav' ).show();
+            } else {
+                $( '.single .posts-nav' ).hide();
+            }
+        });
+    });
+
     // Footer Copyright.
     wp.customize( 'cx_enable_copyright', function ( value ) {
         value.bind( function ( to ) {
