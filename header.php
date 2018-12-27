@@ -63,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'powerpro' ); ?></a>
 
-			<div class="header-top<?php echo ( codexin_get_option( 'cx_enable_floating_header' ) ? ' floating-header' : '' ); ?>">
+			<div class="header-top">
 				<div class="container-fluid">
 					<div class="row align-items-center">
 						<div class="col-12 order-1 col-sm-12 order-sm-2 col-md-12 order-md-2 col-lg-4 order-lg-1">
@@ -151,18 +151,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 								?>
 							</div>
 						</div>
-						
-						<div class="col-12 order-4 col-sm-12 col-md-12 col-lg-12 d-none d-sm-none d-md-none d-lg-block navigation-wrapper">
-
-							<!-- Start of main Navigation -->
-							<div id="main_nav">						
-								<?php codexin_menu( 'main_menu' ); ?>
-							</div>
-							<!-- Start of main Navigation -->
-						</div>
 					</div>
-				</div> <!-- end of container -->
+				</div> <!-- end of container-fluid -->
 			</div> <!-- end of header-top -->
+
+			<div class="header-bottom">
+				<div class="navigation-wrapper d-none d-sm-none d-md-none d-lg-block">
+					<!-- Start of main Navigation -->
+					<div id="main_nav">						
+						<?php codexin_menu( 'main_menu' ); ?>
+					</div>
+					<!-- end of main_nav -->
+				</div>
+			</div> <!-- end of header-bottom -->
 
 			<div class="fixed-header-space"></div> <!-- empty placeholder div for Fixed Menu bar height-->
 

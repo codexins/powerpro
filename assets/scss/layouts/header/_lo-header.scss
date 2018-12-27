@@ -18,6 +18,9 @@
 	
 	.header-top {
 		padding: 25px 45px;
+		@include media-only(notebook, max) {
+			padding-bottom: 0;
+		}
 		@include media-only(tablet, max) {
 			padding-left:0;	
 			padding-right: 0;
@@ -54,14 +57,7 @@
 		img {
 			width:100%;
 		}
-		@include media-only(notebook, max) {
-			width:150px;
-		}
 
-		@include respond-to(small-mobile) {
-			margin-left: 0;
-			width:130px;
-		}
 	}
 
 
@@ -104,13 +100,18 @@
 		margin-top: 15px;
 	}
 
-	.floating-header {
-		z-index: 10;
-		@extend %bgc-transparent;
-		@extend .pos-r;
-		&.pinned {
-			.site-description {
-				@extend %color-text;
+}
+
+#whole {
+	.header {
+		.logo {
+			@include media-only(notebook, max) {
+				width:150px;
+			}
+
+			@include respond-to(small-mobile) {
+				margin-left: 0;
+				width:130px;
 			}
 		}
 	}
@@ -132,9 +133,6 @@
 		text-align: center;
 		margin-top: $cx-heading-margin-bottom;
 	}
-
-
-
 }
 
 
@@ -169,5 +167,44 @@
 .primary-nav-details {
 	@include respond-to(small-mobile) {
 		margin: 0;
+	}
+}
+
+.header-bottom {
+	position: relative;
+	z-index: 11;
+	.navigation-wrapper {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+.is-sticky {
+	.navigation-wrapper {
+		background: rgba(32,32,32,.95);
+    	margin-top: 0;
+    	border-bottom: 1px solid #222;
+	}
+
+
+
+	#main_menu {
+		> li {
+			> a {
+				// @extend %color-text;
+				&:hover,
+				&:focus {
+					@extend %color-secondary;
+				}
+			}
+		}
+
+	> .current-menu-parent,
+    > .current-menu-item,
+    > .current-page-parent {
+    	> a {
+    		@extend %color-primary;	
+    	}
+    	
+    }
 	}
 }

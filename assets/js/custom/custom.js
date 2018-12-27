@@ -106,6 +106,7 @@
 		});
 	};
 
+
 	/************************************************************
 		s04 - Primary Slider Settings
 	*************************************************************/
@@ -134,41 +135,11 @@
 		$( '.tagcloud' ).find( 'a' ).removeAttr( 'style' );
 
 		// Fluid Wrapper for iframe.
-		$( '#whole' ).find( '.cx-fluid-wrapper' ).removeClass( 'cx-fluid-wrapper' );
-		$( '#whole' ).find( 'iframe' ).parent().addClass( 'cx-fluid-wrapper' );
+		// $( '#whole' ).find( '.cx-fluid-wrapper' ).removeClass( 'cx-fluid-wrapper' );
+		// $( '#whole' ).find( 'iframe' ).parent().addClass( 'cx-fluid-wrapper' );
+		$('.rwmb-oembed-not-available').closest('.cx-fluid-wrapper').remove();
 
-		// Fixed Navigation Menu Height.
-		var headerHeight = $intelHeader[0].getBoundingClientRect().height;
-		var menuHeight = $( 'header .navigation-wrapper')[0].getBoundingClientRect().height;
-
-		// For header to float over Main Content.
-		if ( $headerfl.elExists() ) {
-			var navHeight = ( $window.width() > 991 ) ? $headerfl[0].getBoundingClientRect().height : 0;
-			$( '#primary_slider, #page_title' ).css( 'margin-top', -navHeight );
-		}
-
-		// Sticky header.
-		$window.on( 'scroll', function() {
-			var height = $window.scrollTop();
-			if ( height < 500 ) {
-				$intelHeader.addClass( 'top' );
-				$intelHeader.removeClass( 'not-top' );
-			} else if ( ( height < 600 ) && ( height > 500 ) ) {
-				$intelHeader.addClass( 'not-top' );
-			} else {
-				$intelHeader.removeClass( 'top' );
-			}
-			if ( height < 400 ) {
-				$fixedMenuSpace.height( 0 );
-				// $( 'header .navigation-wrapper' ).height( 0 );
-				$intelHeader.removeClass( 'pinned' );
-			} else {
-				$fixedMenuSpace.height( headerHeight );
-				$( 'header .navigation-wrapper' ).height( menuHeight );
-				$intelHeader.addClass( 'pinned' );
-			}
-		});
-	};
+	}
 
 	/************************************************************
 		s06 - Elements Carousel
@@ -369,6 +340,7 @@
 	$window.on( 'load', function() {
 		CODEXIN.interactiveBehaviour();
 		CODEXIN.imageBgSettings();
+		$(".navigation-wrapper").sticky({ topSpacing: 0 });
 	});
 
 	// Document ready functions.

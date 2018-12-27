@@ -102,6 +102,9 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		// Mobile Menu.
 		wp_enqueue_script( 'mobile-menu-js', trailingslashit( get_template_directory_uri() ) . 'assets/js/mobile-menu.min.js', array( 'jquery' ), '1.0', true );
 
+		// Sticky JS.
+		wp_enqueue_script( 'sticky-js', trailingslashit( get_template_directory_uri() ) . 'assets/js/jquery.sticky.js', array( 'jquery' ), '1.0', true );
+
 		// Comment Reply Ajax Support.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );

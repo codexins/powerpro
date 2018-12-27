@@ -8,7 +8,7 @@
     clear: both;
     display: flex;
     flex-wrap: wrap;
-    margin: 60px 0 0;
+    margin: 0;
     justify-content: center;
 
     > li {
@@ -20,32 +20,14 @@
     	> a {
     		border: 0;
 		    letter-spacing: 0.5px;
-		    padding: 10px 20px;
+		    padding: 15px 20px;
     		@extend %color-white;
             @extend .pos-r;
-
-            &::before {
-                content: "";
-                right: 20px;
-                left: auto;
-                bottom: 0;
-                width: 0;
-                height: 2px;
-                @extend %bgc-white;
-                @extend .pos-a;
-                @extend %cx-transition;
-            }
         }
 
 		&:hover {
             > a {
-    			@extend %color-primary;
-
-                &::before {
-                    left: 20px;
-                    width: calc(100% - 40px);
-                    @extend %bgc-primary;
-                }
+    			@extend %color-secondary;
             }
 		}
     }
@@ -179,5 +161,12 @@
         .current-menu-item.menu-item {
             background: rgba(0, 0, 0, 0.2);
         }
+    }
+}
+
+
+header {
+    .navigation-wrapper {
+        margin-top: 60px;
     }
 }
