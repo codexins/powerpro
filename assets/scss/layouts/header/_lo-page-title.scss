@@ -16,11 +16,22 @@
 	}
 
 	h1 + .breadcrumb {
-		margin-top: 25px;
+		margin-top: $cx-header-margin-bottom;
+		@include respond-to(mobile) {
+			margin-top: 10px;
+		}
 	}
 }
 
 .floating-header + #page_title {
 	padding-top: 320px;
 	margin-bottom: 70px;
+}
+
+
+#whole #page_title.page-title {
+	@include respond-to(mobile) {
+		padding-top: $cx-section-spacing-mob + 20px;
+		padding-bottom: $cx-section-spacing-mob;
+	}
 }
