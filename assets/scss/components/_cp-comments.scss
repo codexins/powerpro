@@ -228,6 +228,12 @@
     }
 }
 
+.comment-body {
+    + .comment-respond {
+        @extend %mb-half;
+    }
+}
+
 .no-comments,
 .nopassword {
     padding: 15px;
