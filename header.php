@@ -105,18 +105,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 										echo '</a>';
 									}
 
-									if ( ! empty( codexin_get_option( 'sticky_logo_setting' ) ) ) {
-										echo '<div class="sticky-logo">';
-											echo '<a href="' . esc_url( home_url( '/' ) ) . '">';
-												echo '<img src="' . esc_url( codexin_get_option( 'sticky_logo_setting' ) ) . '" alt="Logo">';
-											echo '</a>';
-										echo '</div>';
-									} else {
-										echo '<div class="sticky-logo">';
-											the_custom_logo();
-										echo '</div>';
-									}
-
 									// Header Text.
 									$header_text = display_header_text();
 									if ( true === $header_text ) {

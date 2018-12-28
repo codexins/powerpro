@@ -89,6 +89,23 @@
       e.preventDefault;
       slideLeft.open();
     });
+  }; // Mobile menu sub-menu actions
+
+
+  CODEXIN.responsiveSubMenu = function () {
+    var nav = $('#mobile-menu'); // adds toggle button to li items that have children
+
+    nav.find('li a').each(function () {
+      if ($(this).next().length > 0) {
+        $(this).parent('li').addClass('has-child').append('<a class="drawer-toggle" href="#"><i class="fa fa-angle-down"></i></a>');
+      }
+    }); // expands the dropdown menu on each click 
+
+    nav.find('li .drawer-toggle').on('click', function (e) {
+      e.preventDefault();
+      $(this).parent('li').children('ul').stop(true, true).slideToggle(250);
+      $(this).parent('li').toggleClass('open');
+    });
   };
   /************************************************************
   	s03 - Image Background Settings
@@ -115,17 +132,20 @@
   *************************************************************/
 
 
-  $(".mobile-search-icon a").click(function (e) {
-    e.preventDefault();
-    $(".header-search").fadeIn();
-    $(".header-search").find('input[type="search"]').focus();
-  });
-  $('.header-search').on('focusout', function () {
-    $(this).fadeOut();
-  });
+  if ($window.width() < 576) {
+    $(".mobile-search-icon a").click(function (e) {
+      e.preventDefault();
+      $(".header-search").fadeIn();
+      $(".header-search").find('input[type="search"]').focus();
+    });
+    $('.header-search').on('focusout', function () {
+      $(this).fadeOut();
+    });
+  }
   /************************************************************
   	s05 - Elements Spacing & Classes
   *************************************************************/
+
 
   CODEXIN.ElementsSpacingClasses = function () {
     $('.sidebar-widget p:empty').remove();
@@ -325,7 +345,7 @@
   }); // Document ready functions.
 
   $document.on('ready', function () {
-    CODEXIN.mainNav(), CODEXIN.mobileNav(), CODEXIN.elementsCarousel(), CODEXIN.testimonialCarousel(), CODEXIN.scrollToTop(), CODEXIN.toolTips(), CODEXIN.ElementsSpacingClasses();
+    CODEXIN.mainNav(), CODEXIN.mobileNav(), CODEXIN.responsiveSubMenu(), CODEXIN.elementsCarousel(), CODEXIN.testimonialCarousel(), CODEXIN.scrollToTop(), CODEXIN.toolTips(), CODEXIN.ElementsSpacingClasses();
   }); // Window load and resize functions.
 
   $window.on('load resize', function () {// CODEXIN.ElementsSpacingClasses();
