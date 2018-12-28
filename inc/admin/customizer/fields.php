@@ -563,20 +563,20 @@ Kirki::add_field( $config_id, array(
 			'property' => 'border-color',
 		),
 
-		// array(
-		// 	'element'  => '::-webkit-selection',
-		// 	'property' => 'background-color',
-		// ),
+		array(
+			'element'  => '::-webkit-selection',
+			'property' => 'background-color',
+		),
 
-		// array(
-		// 	'element'  => '::-moz-selection',
-		// 	'property' => 'background-color',
-		// ),
+		array(
+			'element'  => '::-moz-selection',
+			'property' => 'background-color',
+		),
 
-		// array(
-		// 	'element'  => '::selection',
-		// 	'property' => 'background-color',
-		// ),
+		array(
+			'element'  => '::selection',
+			'property' => 'background-color',
+		),
 	),
 	'transport'         => 'auto',
 ) );

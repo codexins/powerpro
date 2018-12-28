@@ -135,6 +135,7 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 			'.form-control:focus',
 			'button:focus',
 			'input:focus',
+			'.wp-block-pullquote blockquote',
 			'.wp-block-button.is-style-outline',
 			'.wp-block-latest-posts>li>a:hover::before',
 			'.wp-block-latest-posts>li>a:focus::before',
