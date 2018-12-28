@@ -61,6 +61,7 @@
                 text-transform: initial;
                 border-bottom:1px solid rgba(0,0,0,.15);
                 font-weight: normal;
+                @extend %color-white;
                 &:hover,
                 &:focus {
                     background: rgba(0,0,0,.1);
