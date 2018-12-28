@@ -520,23 +520,23 @@ Kirki::add_field( $config_id, array(
 	'transport'         => 'auto',
 ) );
 
-Kirki::add_field( $config_id, array(
-	'settings'          => 'cx_main_menu_color',
-	'label'             => esc_html__( 'Main Menu Color:', 'powerpro' ),
-	'description'       => esc_html__( 'Please Choose the Main Menu Color', 'powerpro' ),
-	'section'           => 'cx_color_scheme',
-	'type'              => 'color',
-	'priority'          => 20,
-	'default'           => '#fff',
-	'sanitize_callback' => 'codexin_sanitize_color',
-	'output'            => array(
-		array(
-			'element'  => '#main_nav li a',
-			'property' => 'color',
-		),
-	),
-	'transport'         => 'auto',
-) );
+// Kirki::add_field( $config_id, array(
+// 	'settings'          => 'cx_main_menu_color',
+// 	'label'             => esc_html__( 'Main Menu Color:', 'powerpro' ),
+// 	'description'       => esc_html__( 'Please Choose the Main Menu Color', 'powerpro' ),
+// 	'section'           => 'cx_color_scheme',
+// 	'type'              => 'color',
+// 	'priority'          => 20,
+// 	'default'           => '#fff',
+// 	'sanitize_callback' => 'codexin_sanitize_color',
+// 	'output'            => array(
+// 		array(
+// 			'element'  => '#main_nav li a',
+// 			'property' => 'color',
+// 		),
+// 	),
+// 	'transport'         => 'auto',
+// ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_primary_color',
@@ -554,8 +554,13 @@ Kirki::add_field( $config_id, array(
 		),
 
 		array(
-			'element'  => $color_selectors['primary_color_in_bg_selectors'],
+			'element'  => $color_selectors['primary_color_in_bg_color_selectors'],
 			'property' => 'background-color',
+		),
+
+		array(
+			'element'  => $color_selectors['primary_color_in_border_color_selectors'],
+			'property' => 'border-color',
 		),
 	),
 	'transport'         => 'auto',
@@ -572,17 +577,17 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['secodnary_color_selectors'],
 			'property' => 'color',
 		),
 
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['secodnary_color_in_bg_color_selectors'],
 			'property' => 'background-color',
 		),
 
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['secodnary_color_in_border_color_selectors'],
 			'property' => 'border-color',
 		),
 	),
@@ -600,17 +605,17 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['tertiary_color_selectors'],
 			'property' => 'color',
 		),
 
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['tertiary_color_in_bg_color_selectors'],
 			'property' => 'background-color',
 		),
 
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['tertiary_color_in_border_color_selectors'],
 			'property' => 'border-color',
 		),
 	),
@@ -628,8 +633,13 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['default_border_color_selectors'],
 			'property' => 'border-color',
+		),
+
+		array(
+			'element'  => $color_selectors['default_border_color_in_bg_color_selectors'],
+			'property' => 'background-color',
 		),
 	),
 	'transport'         => 'auto',
@@ -646,8 +656,18 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['offset_color_selectors'],
+			'property' => 'color',
+		),
+
+		array(
+			'element'  => $color_selectors['offset_color_in_bg_color_selectors'],
 			'property' => 'background-color',
+		),
+
+		array(
+			'element'  => $color_selectors['offset_color_in_border_color_selectors'],
+			'property' => 'border-color',
 		),
 	),
 	'transport'         => 'auto',

@@ -80,6 +80,11 @@
                     font-size: 15px;
                     text-transform: initial;
                     font-weight: 400;
+
+                    &:hover,
+                    &:focus {
+                        @extend %color-white;
+                    }
                 }
 
                 &:hover {
