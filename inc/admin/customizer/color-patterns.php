@@ -92,13 +92,10 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 			'#whole .mejs-embed body',
 			'.bgc-primary',
 			'.has-primary-background-color',
-			'#main_menu>.current-menu-parent>a::before',
-			'#main_menu>.current-menu-item>a::before',
-			'#main_menu>.current-page-parent>a::before',
+			'.c-menu__close',
 			'.default-btn',
 			'.post-btn a::after',
 			'#to_top',
-			'#to_top::after',
 			'.number-pagination .pagination li a:hover',
 			'.number-pagination .pagination li a:focus',
 			'.number-pagination .pagination li span:hover',
@@ -216,7 +213,6 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 			'.wp-block-separator.is-style-dots::before',
 			'.color-tertiary',
 			'.has-tertiary-color',
-			'.header-top.pinned #main_menu>li:not(.current_page_item)>a:hover',
 		);
 
 		// Tertiary color in background Color targeting selectors.
@@ -224,6 +220,7 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 			'.tooltip .tooltip-inner',
 			'.bgc-tertiary',
 			'.has-tertiary-background-color',
+			'.c-menu',
 			'.post-content-wrapper .post-media a::before',
 			'.post-quote blockquote::before',
 			'#colophon',
@@ -233,9 +230,13 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 		// Tertiary color in Border Color targeting selectors.
 		$selectors['tertiary_color_in_border_color_selectors'] = array(
 			'.border-tertiary',
-			'#main_menu .menu-item-has-children .sub-menu',
 			'#colophon #wp-calendar thead',
 			'#colophon #wp-calendar caption',
+		);
+
+		// Tertiary color in Border Top Color targeting selectors.
+		$selectors['tertiary_color_in_border_top_color_selectors'] = array(
+			'.tooltip .arrow::before',
 		);
 
 		// Offset Color targeting selectors.
@@ -280,6 +281,11 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 			'.border-offset',
 		);
 
+		// Offset color in border right color targeting selectors.
+		$selectors['offset_color_in_border_right_color_selectors'] = array(
+			'#comments .comment-info::before',
+		);
+
 		// Default border color targeting selectors.
 		$selectors['default_border_color_selectors'] = array(
 			'td',
@@ -298,6 +304,14 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 			'input[type="search"]',
 			'input[type="tel"]',
 			'.wp-caption',
+			'.top-bordered',
+			'.right-bordered',
+			'.bottom-bordered',
+			'.left-bordered',
+			'.rb-bordered',
+			'.bl-bordered',
+			'.tr-bordered',
+			'.lt-bordered',
 			'.border-default',
 			'.post-content-wrapper .entry-meta .author-media img',
 			'.posts-nav',
@@ -317,6 +331,11 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 		// Default border color in background Color targeting selectors.
 		$selectors['default_border_color_in_bg_color_selectors'] = array(
 			'.bgc-default-border',
+			'hr:not(.is-style-dots)',
+			'.wp-block-separator:not(.is-style-dots)',
+			'hr:not(.is-style-wide):not(.is-style-dots)::before',
+			'.wp-block-separator:not(.is-style-wide):not(.is-style-dots)::before',
+			'.widgettitle::before',
 		);
 
 		return $selectors;

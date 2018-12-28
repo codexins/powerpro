@@ -138,6 +138,10 @@
     margin-bottom: $cx-heading-margin-bottom;
 }
 
+%default-margin-bottom {
+	margin-bottom: $cx-heading-margin-bottom;
+}
+
 %cx-transition {
 	transition: $cx-transition;
 }

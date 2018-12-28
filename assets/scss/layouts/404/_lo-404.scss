@@ -49,8 +49,8 @@
 	    font-size: 21px;
 	    font-weight: 300;
 	    line-height: 30px;
-	    margin-bottom: 25px;
 	    padding: 0px 130px;
+	    @extend %default-margin-bottom;
 	    @extend %color-black;
 
 	    @include respond-to(tablet) {
@@ -97,12 +97,12 @@
 		    border: medium none;
 		    color: #4f4f4f;
 		    height: 100%;
-		    position: absolute;
 		    right: 0;
 		    top: 0;
 		    width: 50px;
 		    line-height: 45px;
 		    z-index: 3;
+		    @extend %pos-a;
 		    @extend %bgc-transparent;
 
 		    i {

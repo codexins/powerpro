@@ -33,6 +33,7 @@
 
         &:hover,
         &:focus {
+            @extend %bgc-transparent;
             @extend %border-primary;
             @extend %color-primary;
         }

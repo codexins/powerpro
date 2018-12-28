@@ -36,10 +36,10 @@
             &::after {
                 content:"\f107";
                 font-family: FontAwesome;
-                position: absolute;
                 right:20px;
                 border:0;
                 @include cx-centered(vertical);
+                @extend %pos-a;
             }
 
         }
@@ -71,14 +71,15 @@
 
             .menu-item-has-children {
                 > a {
-                    position:relative;
                     padding-right: 30px;
+                    @extend %pos-r;
+                    
                     &::after {
                         content:"\f105";
                         font-family: FontAwesome;
-                        position: absolute;
                         right:10px;
                         @include cx-centered(vertical);
+                        @extend %pos-a;
                     }
                 }
             }

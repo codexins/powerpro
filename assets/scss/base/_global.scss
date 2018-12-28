@@ -26,7 +26,7 @@ p {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: $cx-heading-margin-bottom;
+    @extend %default-margin-bottom;
 }
 
 ul,
@@ -35,11 +35,11 @@ table,
 dl,
 pre,
 address {
-    margin-bottom: $cx-heading-margin-bottom;
+    @extend %default-margin-bottom;
 }
 
 dd {
-    margin-bottom: $cx-heading-margin-bottom * 0.8;
+    @extend %default-margin-bottom;
 }
 
 blockquote,
@@ -380,7 +380,7 @@ input[type="button"]:hover {
 .lead {
 	font-size: 16px;
 	line-height: 1.65;
-	margin-bottom: $cx-heading-margin-bottom;
+	@extend %default-margin-bottom;
 }
 
 .whole-site-wrapper {
@@ -422,7 +422,7 @@ a.skip-link {
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    margin-bottom: $cx-heading-margin-bottom;
+    @extend %default-margin-bottom;
     @extend .pos-r;
 
     iframe {
@@ -592,7 +592,7 @@ a.skip-link {
 	@extend %pb-half;
 }
 
-/* Speical Padding & Margin */
+/* Special Padding & Margin */
 
 .mt-30 {
 	margin-top: 30px;
@@ -624,7 +624,7 @@ a.skip-link {
 	@extend %overflow-hidden;
 }
 
-/* Position */
+// Position
 
 .pos-r {
 	@extend %pos-r;

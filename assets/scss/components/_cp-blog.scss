@@ -5,7 +5,7 @@
 
 .post-content-wrapper {
 	.entry-meta {
-		margin-bottom: $cx-heading-margin-bottom;
+		@extend %default-margin-bottom;
 		a {
 			@extend %color-text;
 
@@ -85,7 +85,7 @@
 	}
 
 	.post-media {
-		margin-bottom: $cx-heading-margin-bottom;
+		@extend %default-margin-bottom;
 		@extend .oflow-hidden;
 
 		a {

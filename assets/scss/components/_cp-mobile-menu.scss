@@ -60,18 +60,17 @@
 
 #mobile-menu {
     .has-child {
-        position: relative;
+        @extend %pos-r;
         > ul {
-            position: relative;
             opacity: 1;
             visibility: visible;
             width: auto;
             display: none;
             @include cx-transition(none);
+            @extend %pos-r;
         }
         .drawer-toggle {
             display: inline-block;
-            position: absolute;
             top: 0;
             right: 0;
             padding: 0;
@@ -80,14 +79,16 @@
             text-align: center;
             z-index: 9999;
             border: 0;
+            @extend %pos-a;
+
             i {
-                position: absolute;
                 margin: auto;
                 top: 33%;
                 left: 0;
                 right: 0;
                 color: #fff;
                 @include cx-transition(transform .3s ease-out);
+                @extend %pos-a;
             }
         }
         &.open {
