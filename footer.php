@@ -34,7 +34,10 @@ if ( 'two' === $footer_layout ) {
 } elseif ( 'five' === $footer_layout ) {
 	$column_count = 5;
 	$footer_column = 2;
-} // End if().
+} else {
+	$column_count = 4;
+	$footer_column = 12 / $column_count;
+}// End if().
 
 ?>
 		<!-- Start of Footer -->
@@ -44,7 +47,9 @@ if ( 'two' === $footer_layout ) {
 					<div class="row">
 						<?php
 						for ( $i = 1; $i <= $column_count ; $i++ ) {
-							if ( 1 === $i ) {
+							if ( 'one' === $footer_layout ) {
+								$footer_column = 3;
+							} elseif ( 1 === $i ) {
 								if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
 									$footer_column = 4;
 								}
@@ -54,7 +59,7 @@ if ( 'two' === $footer_layout ) {
 								}
 							}
 
-							if ( 4 === $i ) {
+							if ( ( 'one' !== $footer_layout ) && ( 4 === $i ) ) {
 								if ( 4 === $column_count ) {
 									$footer_column = 4;
 								}

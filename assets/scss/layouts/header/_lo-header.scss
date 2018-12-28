@@ -4,6 +4,9 @@
  */
 
 .header {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
 	@extend .pos-r;
 
 	&::before {

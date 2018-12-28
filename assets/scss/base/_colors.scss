@@ -56,6 +56,10 @@
 	background-color: $cx-offset-color;
 }
 
+%bgc-default-border {
+	background-color: $cx-border-color;
+}
+
 %bgc-white {
 	background-color: lighten($cx-text-color, 100%);
 }
@@ -154,6 +158,10 @@
 .bgc-offset,
 .has-offset-background-color {
 	@extend %bgc-offset;
+}
+
+.bgc-default-border {
+	@extend %bgc-default-border;
 }
 
 .bgc-white {

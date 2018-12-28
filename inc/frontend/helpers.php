@@ -149,7 +149,7 @@ if ( ! function_exists( 'codexin_title_background' ) ) {
 		if ( empty( $header_bg ) ) {
 			return;
 		}
-		return rwmb_the_value( $header_bg, '', '', false );
+		return rwmb_the_value( 'codexin_page_background', '', '', false );
 	}
 }
 
@@ -167,7 +167,6 @@ if ( ! function_exists( 'codexin_get_page_title' ) ) {
 
 		$alignment = codexin_get_option( 'cx_page_title_position' );
 		$bcrumb    = codexin_get_option( 'cx_enable_breadcrumb' );
-		$page_bg   = ( ! empty( codexin_meta( 'codexin_page_background' ) ) ) ? rwmb_the_value( 'codexin_page_background', '', '', false ) : '';
 		$alignment_single = codexin_meta( 'codexin_page_title_alignment' );
 		$bcrumb_position = '';
 		$alignment_class = '';
@@ -186,7 +185,7 @@ if ( ! function_exists( 'codexin_get_page_title' ) ) {
 
 		?>
 		<!-- Start of Page Title -->
-		<div id="page_title" class="page-title" style="<?php echo esc_attr( $page_bg ); ?>">
+		<div id="page_title" class="page-title">
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-12">
@@ -471,7 +470,7 @@ if ( ! function_exists( 'codexin_posts_meta' ) ) {
 	function codexin_posts_meta() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated screen-reader-text" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(

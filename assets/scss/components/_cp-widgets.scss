@@ -36,8 +36,8 @@
     	content: "";
     	height: 1px;
     	width: 100%;
-    	background-color: #ddd;
     	bottom: 0;
+    	@extend .bgc-default-border;
     	@extend .pos-a;
     }
 

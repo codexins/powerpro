@@ -156,15 +156,15 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_number',
 ) );
 
-Kirki::add_field( $config_id, array(
-	'settings'      => 'sticky_logo_setting',
-	'label'         => esc_html__( 'Sticky Logo', 'powerpro' ),
-	'description'   => esc_html__( 'Upload sticky logo', 'powerpro' ),
-	'type'          => 'image',
-	'section'       => 'title_tagline',
-	'priority'      => 53,
-	'transport'     => 'postMessage',
-) );
+// Kirki::add_field( $config_id, array(
+// 	'settings'      => 'sticky_logo_setting',
+// 	'label'         => esc_html__( 'Sticky Logo', 'powerpro' ),
+// 	'description'   => esc_html__( 'Upload sticky logo', 'powerpro' ),
+// 	'type'          => 'image',
+// 	'section'       => 'title_tagline',
+// 	'priority'      => 53,
+// 	'transport'     => 'postMessage',
+// ) );
 
 /**
  * Typography Settings
@@ -178,7 +178,7 @@ Kirki::add_field( $config_id, array(
 	'section'     => 'cx_typography_body',
 	'default'     => array(
 		'font-family'    => 'Source Sans Pro',
-		'font-weight'    => 'regular',
+		'variant'    	 => 'regular',
 		'font-size'      => '16px',
 		'line-height'    => '1.5',
 	),
@@ -208,7 +208,7 @@ Kirki::add_field( $config_id, array(
 		'font-size'         => '26px',
 		'line-height'       => '32px',
 		'font-family'       => 'Oswald',
-		'font-weight'       => '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'uppercase',
 	),
 	'priority'    => 10,
@@ -238,7 +238,7 @@ Kirki::add_field( $config_id, array(
 		'font-size'         => '16px',
 		'line-height'       => '33px',
 		'font-family'       => 'Source Sans Pro',
-		'font-weight'       => '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'capitalize',
 	),
 	'priority'    => 20,
@@ -298,7 +298,7 @@ Kirki::add_field( $config_id, array(
 		'font-size'         => '34px',
 		'line-height'       => '40px',
 		'font-family'       => 'Oswald',
-		'font-weight'       => '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'uppercase',
 	),
 	'priority'    => 25,
@@ -327,7 +327,7 @@ Kirki::add_field( $config_id, array(
 	'default'     => array(
 		'font-size'   		=> '32px',
 		'font-family' 		=> 'Oswald',
-		'font-weight' 		=> '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'uppercase',
 		'line-height'    	=> '1.2',
 	),
@@ -357,7 +357,7 @@ Kirki::add_field( $config_id, array(
 	'default'     => array(
 		'font-size'   		=> '28px',
 		'font-family' 		=> 'Oswald',
-		'font-weight' 		=> '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'uppercase',
 		'line-height'    	=> '1.2',
 	),
@@ -387,7 +387,7 @@ Kirki::add_field( $config_id, array(
 	'default'     => array(
 		'font-size'   		=> '24px',
 		'font-family' 		=> 'Oswald',
-		'font-weight' 		=> '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'uppercase',
 		'line-height'    	=> '1.2',
 	),
@@ -417,7 +417,7 @@ Kirki::add_field( $config_id, array(
 	'default'     => array(
 		'font-size'   		=> '21px',
 		'font-family' 		=> 'Oswald',
-		'font-weight' 		=> '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'uppercase',
 		'line-height'    	=> '1.2',
 	),
@@ -447,7 +447,7 @@ Kirki::add_field( $config_id, array(
 	'default'     => array(
 		'font-size'   		=> '16px',
 		'font-family' 		=> 'Oswald',
-		'font-weight' 		=> '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'uppercase',
 		'line-height'    	=> '1.2',
 	),
@@ -477,7 +477,7 @@ Kirki::add_field( $config_id, array(
 	'default'     => array(
 		'font-size'   		=> '14px',
 		'font-family' 		=> 'Oswald',
-		'font-weight' 		=> '400',
+		'variant'    	 	=> 'regular',
 		'text-transform'    => 'uppercase',
 		'line-height'    	=> '1.2',
 	),
@@ -520,23 +520,23 @@ Kirki::add_field( $config_id, array(
 	'transport'         => 'auto',
 ) );
 
-Kirki::add_field( $config_id, array(
-	'settings'          => 'cx_main_menu_color',
-	'label'             => esc_html__( 'Main Menu Color:', 'powerpro' ),
-	'description'       => esc_html__( 'Please Choose the Main Menu Color', 'powerpro' ),
-	'section'           => 'cx_color_scheme',
-	'type'              => 'color',
-	'priority'          => 20,
-	'default'           => '#fff',
-	'sanitize_callback' => 'codexin_sanitize_color',
-	'output'            => array(
-		array(
-			'element'  => '#main_nav li a',
-			'property' => 'color',
-		),
-	),
-	'transport'         => 'auto',
-) );
+// Kirki::add_field( $config_id, array(
+// 	'settings'          => 'cx_main_menu_color',
+// 	'label'             => esc_html__( 'Main Menu Color:', 'powerpro' ),
+// 	'description'       => esc_html__( 'Please Choose the Main Menu Color', 'powerpro' ),
+// 	'section'           => 'cx_color_scheme',
+// 	'type'              => 'color',
+// 	'priority'          => 20,
+// 	'default'           => '#fff',
+// 	'sanitize_callback' => 'codexin_sanitize_color',
+// 	'output'            => array(
+// 		array(
+// 			'element'  => '#main_nav li a',
+// 			'property' => 'color',
+// 		),
+// 	),
+// 	'transport'         => 'auto',
+// ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_primary_color',
@@ -554,8 +554,13 @@ Kirki::add_field( $config_id, array(
 		),
 
 		array(
-			'element'  => $color_selectors['primary_color_in_bg_selectors'],
+			'element'  => $color_selectors['primary_color_in_bg_color_selectors'],
 			'property' => 'background-color',
+		),
+
+		array(
+			'element'  => $color_selectors['primary_color_in_border_color_selectors'],
+			'property' => 'border-color',
 		),
 	),
 	'transport'         => 'auto',
@@ -572,17 +577,17 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['secodnary_color_selectors'],
 			'property' => 'color',
 		),
 
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['secodnary_color_in_bg_color_selectors'],
 			'property' => 'background-color',
 		),
 
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['secodnary_color_in_border_color_selectors'],
 			'property' => 'border-color',
 		),
 	),
@@ -600,17 +605,17 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['tertiary_color_selectors'],
 			'property' => 'color',
 		),
 
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['tertiary_color_in_bg_color_selectors'],
 			'property' => 'background-color',
 		),
 
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['tertiary_color_in_border_color_selectors'],
 			'property' => 'border-color',
 		),
 	),
@@ -628,8 +633,13 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['default_border_color_selectors'],
 			'property' => 'border-color',
+		),
+
+		array(
+			'element'  => $color_selectors['default_border_color_in_bg_color_selectors'],
+			'property' => 'background-color',
 		),
 	),
 	'transport'         => 'auto',
@@ -646,8 +656,18 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => '',
+			'element'  => $color_selectors['offset_color_selectors'],
+			'property' => 'color',
+		),
+
+		array(
+			'element'  => $color_selectors['offset_color_in_bg_color_selectors'],
 			'property' => 'background-color',
+		),
+
+		array(
+			'element'  => $color_selectors['offset_color_in_border_color_selectors'],
+			'property' => 'border-color',
 		),
 	),
 	'transport'         => 'auto',
@@ -658,16 +678,104 @@ Kirki::add_field( $config_id, array(
  */
 
 Kirki::add_field( $config_id, array(
+	'settings'    	=> 'header_background_size',
+	'label'       	=> esc_html__( 'Header Background Size', 'powerpro' ),
+	'type'        	=> 'select',
+	'section'     	=> 'header_image',
+	'priority' 		=> 100,
+	'choices'		=> array(
+		'cover'     => esc_html__( 'Cover', 'powerpro' ),
+		'contain'   => esc_html__( 'Contain', 'powerpro' ),
+		'Auto'      => esc_html__( 'Auto', 'powerpro' ),
+	),
+	'default'     	=> 'cover',
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => 'header.header',
+			'property' => 'background-size',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'    	=> 'header_background_position',
+	'label'       	=> esc_html__( 'Header Background Position', 'powerpro' ),
+	'type'        	=> 'select',
+	'section'     	=> 'header_image',
+	'priority' 		=> 101,
+	'choices'		=> array(
+		'left top'     		=> esc_html__( 'X: Left and Y: Top', 'powerpro' ),
+		'left center'     	=> esc_html__( 'X: Left and Y: Center', 'powerpro' ),
+		'left bottom'     	=> esc_html__( 'X: Left and Y: Bottom', 'powerpro' ),
+		'center top'     	=> esc_html__( 'X: Center and Y: top', 'powerpro' ),
+		'center center'     => esc_html__( 'X: Center and Y: Center', 'powerpro' ),
+		'center bottom'     => esc_html__( 'X: Center and Y: Bottom', 'powerpro' ),
+		'right top'     	=> esc_html__( 'X: Right and Y: Top', 'powerpro' ),
+		'right center'     	=> esc_html__( 'X: Right and Y: Center', 'powerpro' ),
+		'right bottom'     	=> esc_html__( 'X: Right and Y: Bottom', 'powerpro' ),
+	),
+	'default'     	=> 'center center',
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => 'header.header',
+			'property' => 'background-position',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'    	=> 'header_background_repeat',
+	'label'       	=> esc_html__( 'Header Background Repeat', 'powerpro' ),
+	'type'        	=> 'select',
+	'section'     	=> 'header_image',
+	'priority' 		=> 102,
+	'choices'		=> array(
+		'repeat'     	=> esc_html__( 'Repeat', 'powerpro' ),
+		'no-repeat'   	=> esc_html__( 'No Repeat', 'powerpro' ),
+	),
+	'default'     	=> 'no-repeat',
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => 'header.header',
+			'property' => 'background-repeat',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'    	=> 'header_background_attachment',
+	'label'       	=> esc_html__( 'Header Background Attachment', 'powerpro' ),
+	'type'        	=> 'select',
+	'section'     	=> 'header_image',
+	'priority' 		=> 103,
+	'choices'		=> array(
+		'scroll'     	=> esc_html__( 'Scroll', 'powerpro' ),
+		'fixed'   		=> esc_html__( 'Fixed', 'powerpro' ),
+	),
+	'default'     	=> 'scroll',
+	'transport'     => 'auto',
+	'output'        => array(
+		array(
+			'element'  => 'header.header',
+			'property' => 'background-attachment',
+		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
 	'settings'          => 'header_background_color',
 	'label'             => esc_html__( 'Header Background Color', 'powerpro' ),
 	'description'       => esc_html__( 'Change Header Background Color', 'powerpro' ),
 	'section'           => 'header_image',
 	'type'              => 'color',
-	'priority'          => 100,
+	'priority'          => 104,
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => 'header .header-top',
+			'element'  => 'header.header',
 			'property' => 'background',
 		),
 	),
@@ -714,7 +822,15 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_header_socials',
 	'label'       => esc_html__( 'Enable Header Socials?', 'powerpro' ),
-	'description' => esc_html__( 'Please provide social information in \'Social Media Settings\' Section', 'powerpro' ),
+	// 'description' => esc_html__( 'Please provide social information in \'Social Media Settings\' Section. If no social information is set, no social icon will be shown.', 'powerpro' ),
+	'description' =>
+		sprintf(
+			'%1$s <a href="%2$s">%3$s</a>%4$s',
+			esc_html__( 'Please provide social information in', 'powerpro' ),
+			esc_url( admin_url( '/customize.php?autofocus[section]=cx_social_profiles' ) ),
+			esc_html__( 'Social Media Settings. ', 'powerpro' ),
+			esc_html__( 'If no social information is set, no social icon will be shown.', 'powerpro' )
+		),
 	'section'     => 'cx_header_options',
 	'default'     => 1,
 	'priority'    => 15,
@@ -807,12 +923,12 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'cx_header_button_url',
-	'label'       	=> esc_html__( 'Select Page for Header Button', 'powerpro' ),
-	'description'   => esc_html__( 'Select page for button URL', 'powerpro' ),
-	'type'        	=> 'dropdown-pages',
+	'label'       	=> esc_html__( 'Enter Page URL for Header Button', 'powerpro' ),
+	'description'   => esc_html__( 'enter page URL for button i.e. \'/contact-us/\' or \'www.abc.com\' ', 'powerpro' ),
+	'type'        	=> 'link',
 	'section'     	=> 'cx_header_options',
 	'priority'    	=> 40,
-	'sanitize_callback' => 'codexin_sanitize_number',
+	'sanitize_callback' => 'esc_url_raw',
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -1250,9 +1366,10 @@ Kirki::add_field( $config_id, array(
 	'description'   => esc_html__( 'Choose footer columns', 'powerpro' ),
 	'type'          => 'radio-image',
 	'section'       => 'cx_footer_section',
-	'default'       => 'four',
+	'default'       => 'one',
 	'priority'      => 10,
 	'choices'       => array(
+		'one'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-1.jpg',
 		'two'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-2.jpg',
 		'three'     => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-3.jpg',
 		'four'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-4.jpg',
