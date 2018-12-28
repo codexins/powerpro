@@ -85,12 +85,14 @@ ul {
     margin-bottom: $cx-heading-margin-bottom;
 
     blockquote {
-        border-left: 0;
-        border-top: 8px solid $cx-primary-color;
-        border-bottom: 8px solid $cx-primary-color;
+        border: 0;
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+        border-style: solid;
         padding: 15px;
         text-align: center;
         margin: 0 auto;
+        @extend %border-primary;
 
         * {
             max-width: 1110px;

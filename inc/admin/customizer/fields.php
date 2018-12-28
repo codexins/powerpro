@@ -562,6 +562,21 @@ Kirki::add_field( $config_id, array(
 			'element'  => $color_selectors['primary_color_in_border_color_selectors'],
 			'property' => 'border-color',
 		),
+
+		// array(
+		// 	'element'  => '::-webkit-selection',
+		// 	'property' => 'background-color',
+		// ),
+
+		// array(
+		// 	'element'  => '::-moz-selection',
+		// 	'property' => 'background-color',
+		// ),
+
+		// array(
+		// 	'element'  => '::selection',
+		// 	'property' => 'background-color',
+		// ),
 	),
 	'transport'         => 'auto',
 ) );
@@ -577,17 +592,17 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_color',
 	'output'            => array(
 		array(
-			'element'  => $color_selectors['secodnary_color_selectors'],
+			'element'  => $color_selectors['secondary_color_selectors'],
 			'property' => 'color',
 		),
 
 		array(
-			'element'  => $color_selectors['secodnary_color_in_bg_color_selectors'],
+			'element'  => $color_selectors['secondary_color_in_bg_color_selectors'],
 			'property' => 'background-color',
 		),
 
 		array(
-			'element'  => $color_selectors['secodnary_color_in_border_color_selectors'],
+			'element'  => $color_selectors['secondary_color_in_border_color_selectors'],
 			'property' => 'border-color',
 		),
 	),

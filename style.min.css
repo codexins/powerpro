@@ -83,7 +83,7 @@ ul.aligncenter{margin-left:18px}
 .page-sidebar-active .alignfull,.archive-sidebar-active .alignfull,.single-sidebar-active .alignfull,.page-sidebar-active .alignwide,.archive-sidebar-active .alignwide,.single-sidebar-active .alignwide{margin-left:0;margin-right:0;max-width:100%}
 .alignfull img,.alignwide img{display:block;margin:0 auto}
 }.wp-block-pullquote{border:0;padding:0;margin-bottom:25px}
-.wp-block-pullquote blockquote{border-left:0;border-top:8px solid #42ad61;border-bottom:8px solid #42ad61;padding:15px;text-align:center;margin:0 auto}
+.wp-block-pullquote blockquote{border:0;border-top-width:8px;border-bottom-width:8px;border-style:solid;padding:15px;text-align:center;margin:0 auto}
 .wp-block-pullquote blockquote *{max-width:1110px;margin-left:auto;margin-right:auto}
 .wp-block-pullquote.alignleft blockquote,.wp-block-pullquote.alignright blockquote{max-width:100%}
 .wp-block-embed,.wp-block-image{margin-top:25px;margin-bottom:25px}
@@ -158,9 +158,9 @@ button,input[type="reset"],input[type="button"],input[type="submit"]{text-transf
 ::-moz-placeholder{color:#000;font-size:13px}
 :-ms-input-placeholder{color:#000;font-size:13px}
 :-moz-placeholder{color:#000;font-size:13px}
-::-webkit-selection{background:#42ad61;text-shadow:none;color:#fff}
-::-moz-selection{background:#42ad61;text-shadow:none;color:#fff}
-::selection{background:#42ad61;text-shadow:none;color:#fff}
+::-webkit-selection{background-color:#42ad61;text-shadow:none;color:#fff}
+::-moz-selection{background-color:#42ad61;text-shadow:none;color:#fff}
+::selection{background-color:#42ad61;text-shadow:none;color:#fff}
 .vpadding{padding-top:80px;padding-bottom:80px}
 @media only screen and (max-width:767px){.vpadding{padding-top:60px;padding-bottom:60px}
 }.pb-full,#colophon .footer-widgets-area{padding-bottom:80px}
@@ -220,7 +220,7 @@ blockquote,blockquote.wp-block-quote,.wp-block-table.is-style-stripes tr:nth-chi
 .wp-block-table.is-style-stripes tr:nth-child(even),table tbody tr:nth-child(even),.bgc-white,.header-social a,#comments .comment-text pre,#comments .comment-text blockquote,#comments .comment-reply .comment-reply-link,.header-top.pinned:hover,#colophon #wp-calendar td:hover a::before{background-color:white}
 .bgc-dark,.post-content-wrapper .entry-meta .list-inline-item::before{background-color:#252525}
 .bgc-black{background-color:#000}
-blockquote,blockquote.wp-block-quote,textarea:focus,select:focus,input[type="text"]:focus,input[type="url"]:focus,input[type="number"]:focus,input[type="email"]:focus,input[type="button"]:focus,input[type="reset"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,.form-control:focus,button:focus,input:focus,.wp-block-button.is-style-outline,.wp-block-latest-posts>li>a:hover::before,.wp-block-latest-posts>li>a:focus::before,.border-primary,.default-btn,.default-btn.white-scheme:hover,.default-btn.white-scheme:focus,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,#comments .comment-reply .comment-reply-link,.widget_search form input[type="submit"],.tagcloud a:hover,#colophon .mailchimp-wrapper input[type="submit"],#colophon .widget_search input[type="submit"],#colophon .tagcloud a:hover{border-color:#42ad61}
+blockquote,blockquote.wp-block-quote,textarea:focus,select:focus,input[type="text"]:focus,input[type="url"]:focus,input[type="number"]:focus,input[type="email"]:focus,input[type="button"]:focus,input[type="reset"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,.form-control:focus,button:focus,input:focus,.wp-block-pullquote blockquote,.wp-block-button.is-style-outline,.wp-block-latest-posts>li>a:hover::before,.wp-block-latest-posts>li>a:focus::before,.border-primary,.default-btn,.default-btn.white-scheme:hover,.default-btn.white-scheme:focus,.number-pagination .pagination li a:hover,.number-pagination .pagination li a:focus,.number-pagination .pagination li span:hover,.number-pagination .pagination li span:focus,.number-pagination .pagination li.active span,#comments .comment-reply .comment-reply-link,.widget_search form input[type="submit"],.tagcloud a:hover,#colophon .mailchimp-wrapper input[type="submit"],#colophon .widget_search input[type="submit"],#colophon .tagcloud a:hover{border-color:#42ad61}
 button:hover,input[type="submit"]:hover,input[type="button"]:hover,.wp-block-button.is-style-outline:hover,.wp-block-button.is-style-outline:focus,.border-secondary,.default-btn:hover,.default-btn:focus,#comments .comment-reply .comment-reply-link:hover,#comments .comment-reply .comment-reply-link:focus,.widget_search form input[type="submit"]:hover,#colophon .mailchimp-wrapper input[type="submit"]:hover,#colophon .widget_search input[type="submit"]:hover{border-color:#f58025}
 .border-tertiary,#main_menu .menu-item-has-children .sub-menu,#colophon #wp-calendar thead,#colophon #wp-calendar caption{border-color:#212331}
 td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="email"],input[type="button"],input[type="reset"],input[type="password"],input[type="search"],input[type="tel"],.wp-caption,.border-default,.post-content-wrapper .entry-meta .author-media img,.posts-nav,.nav-links,.number-pagination,#comments .comment-author img,.tagcloud a,.widget_media_gallery .gallery-item img,.widget_media_gallery .gallery-caption,.codexin-recent-posts-widget .posts-single,.codexin-popular-posts-widget .posts-single,.post-item:not(.sticky) .post-content-wrapper,.sticky.post-item,.single .blog-area+.comments-area{border-color:#ddd}

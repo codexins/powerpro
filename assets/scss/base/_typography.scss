@@ -145,19 +145,19 @@ input[type="submit"] {
 }
 
 ::-webkit-selection {
-    background: $cx-primary-color;
+    background-color: $cx-primary-color;
     text-shadow: none;
     color: #fff;
 }
 
 ::-moz-selection {
-    background: $cx-primary-color;
+    background-color: $cx-primary-color;
     text-shadow: none;
     color: #fff;
 }
 
 ::selection {
-    background: $cx-primary-color;
+    background-color: $cx-primary-color;
     text-shadow: none;
     color: #fff;
 }
