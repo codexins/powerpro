@@ -124,7 +124,7 @@
 	}
 	
 	body.has-active-menu {
-	    overflow: hidden;
+	    overflow-x: hidden;
 	}
 	
 	.c-menu__close {
