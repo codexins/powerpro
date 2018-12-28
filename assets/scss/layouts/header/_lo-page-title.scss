@@ -16,7 +16,7 @@
 	}
 
 	h1 + .breadcrumb {
-		margin-top: $cx-header-margin-bottom;
+		margin-top: $cx-heading-margin-bottom;
 		@include respond-to(mobile) {
 			margin-top: 10px;
 		}
