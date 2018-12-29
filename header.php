@@ -163,7 +163,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 			</div> <!-- end of header-bottom -->
 
-			<div class="fixed-header-space"></div> <!-- empty placeholder div for Fixed Menu bar height-->
+			
 
 			<?php
 			if ( is_page_template( 'page-templates/page-home.php' ) ) {
@@ -183,3 +183,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</header>
 		<!-- End of Header -->
+		<div class="fixed-header-space">
+			
+		</div> <!-- empty placeholder div for Fixed Menu bar height-->
+
+		
