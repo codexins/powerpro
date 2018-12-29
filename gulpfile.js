@@ -145,8 +145,8 @@ gulp.task('styles', () => {
         .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
         .pipe(gulp.dest(config.styleDestination))
         .pipe(filter('**/*.css')) // Filtering stream to only css files.
-        .pipe(browserSync.stream()); // Reloads style.min.css if that is enqueued.
-        //.pipe(notify({ message: "✅  \n===> STYLES — completed!", onLast: true }));
+        .pipe(browserSync.stream()) // Reloads style.min.css if that is enqueued.
+        .pipe(notify({ message: "✅  \n===> STYLES — completed!", onLast: true }));
 });
 
 /**
@@ -186,8 +186,8 @@ gulp.task('buildStyles', () => {
         .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
         .pipe(gulp.dest(config.build))
         .pipe(filter('**/*.css')) // Filtering stream to only css files.
-        .pipe(browserSync.stream()); // Reloads style.min.css if that is enqueued.
-        //.pipe(notify({ message: "✅  \n===> STYLES — completed!", onLast: true }));
+        .pipe(browserSync.stream()) // Reloads style.min.css if that is enqueued.
+        .pipe(notify({ message: "✅  \n===> STYLES — completed!", onLast: true }));
 });
 
 /**
@@ -223,8 +223,8 @@ gulp.task('shortcodes', () => {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(config.styleShortcodeDestination))
         .pipe(filter('**/*.css')) // Filtering stream to only css files.
-        .pipe(browserSync.stream()); // Reloads style.css if that is enqueued.
-        //.pipe(notify({ message: "✅  \n===> SC STYLES — completed!", onLast: true }));
+        .pipe(browserSync.stream()) // Reloads style.css if that is enqueued.
+        .pipe(notify({ message: "✅  \n===> SC STYLES — completed!", onLast: true }));
 });
 
 /**
@@ -258,8 +258,8 @@ gulp.task('buildShortcodes', () => {
         .pipe(beautify()) // Beautify output CSS
         .pipe(gulp.dest(config.build+'assets/css/'))
         .pipe(filter('**/*.css')) // Filtering stream to only css files.
-        .pipe(browserSync.stream()); // Reloads style.css if that is enqueued.
-        //.pipe(notify({ message: "✅  \n===> SC STYLES — completed!", onLast: true }));
+        .pipe(browserSync.stream()) // Reloads style.css if that is enqueued.
+        .pipe(notify({ message: "✅  \n===> SC STYLES — completed!", onLast: true }));
 });
 
 /**
@@ -303,8 +303,8 @@ gulp.task('stylesRTL', () => {
         .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
         .pipe(gulp.dest(config.styleDestination))
         .pipe(filter('**/*.css')) // Filtering stream to only css files.
-        .pipe(browserSync.stream()); // Reloads style.min.css if that is enqueued.
-        //.pipe(notify({ message: "✅  \n===> STYLES RTL — completed!", onLast: true }));
+        .pipe(browserSync.stream()) // Reloads style.min.css if that is enqueued.
+        .pipe(notify({ message: "✅  \n===> STYLES RTL — completed!", onLast: true }));
 });
 
 /**
@@ -346,8 +346,8 @@ gulp.task('vendorsJS', () => {
         )
         .pipe(uglify())
         .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-        .pipe(gulp.dest(config.jsVendorDestination));
-        //.pipe(notify({ message: "✅  \n===> VENDOR JS — completed!", onLast: true }));
+        .pipe(gulp.dest(config.jsVendorDestination))
+        .pipe(notify({ message: "✅  \n===> VENDOR JS — completed!", onLast: true }));
 });
 
 /**
@@ -389,8 +389,8 @@ gulp.task('customJS', () => {
         )
         .pipe(uglify())
         .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-        .pipe(gulp.dest(config.jsCustomDestination));
-        //.pipe(notify({ message: "✅  \n===> CUSTOM JS — completed!", onLast: true }));
+        .pipe(gulp.dest(config.jsCustomDestination))
+        .pipe(notify({ message: "✅  \n===> CUSTOM JS — completed!", onLast: true }));
 });
 
 /**
@@ -428,8 +428,8 @@ gulp.task('images', () => {
                 })
             )
         )
-        .pipe(gulp.dest(config.imgDST));
-        //.pipe(notify({ message: "✅  ===> IMAGES — completed!", onLast: true }));
+        .pipe(gulp.dest(config.imgDST))
+        .pipe(notify({ message: "✅  ===> IMAGES — completed!", onLast: true }));
 });
 
 /**
@@ -464,8 +464,8 @@ gulp.task('translate', () => {
                 team: config.team
             })
         )
-        .pipe(gulp.dest(config.translationDestination + '/' + config.translationFile));
-        //.pipe(notify({ message: "✅  \n===> TRANSLATE — completed!", onLast: true }));
+        .pipe(gulp.dest(config.translationDestination + '/' + config.translationFile))
+        .pipe(notify({ message: "✅  \n===> TRANSLATE — completed!", onLast: true }));
 });
 
 /**
@@ -503,8 +503,8 @@ gulp.task('clean', () => {
  */
 gulp.task('buildFiles', () => {
 	return 	gulp.src(config.buildInclude)
-	 		.pipe(gulp.dest(config.build));
-	 		//.pipe(notify({ message: '✅  Copy from buildFiles complete', onLast: true }));
+	 		.pipe(gulp.dest(config.build))
+	 		.pipe(notify({ message: '✅  Copy from buildFiles complete', onLast: true }));
 });
 
 /**
@@ -514,8 +514,8 @@ gulp.task('buildFiles', () => {
  */
 gulp.task('buildImages', () => {
 	return 	gulp.src(['assets/images/**/*', '!assets/images/raw/**'])
-	 		.pipe(gulp.dest(config.build+'assets/images/'));
-	 		//.pipe(notify({ message: '✅  Images copied to buildTheme folder', onLast: true }));
+	 		.pipe(gulp.dest(config.build+'assets/images/'))
+	 		.pipe(notify({ message: '✅  Images copied to buildTheme folder', onLast: true }));
 });
 
 /**
@@ -527,8 +527,8 @@ gulp.task('buildZip', () => {
 	// return 	gulp.src([build+'/**/', './.jshintrc','./.bowerrc','./.gitignore' ])
 	return 	gulp.src(config.build+'/**/*')
 	 		.pipe(zip(config.projectName+'.zip'))
-	 		.pipe(gulp.dest(config.buildFinalZip));
-	 		//.pipe(notify({ message: '✅  Zip task complete', onLast: true }));
+	 		.pipe(gulp.dest(config.buildFinalZip))
+	 		.pipe(notify({ message: '✅  Zip task complete', onLast: true }));
 });
 
 
