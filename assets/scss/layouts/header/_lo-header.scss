@@ -174,8 +174,9 @@
 }
 
 .header-bottom {
-	position: relative;
 	z-index: 11;
+	@extend %pos-r;
+	
 	.navigation-wrapper {
 		padding-left: 15px;
 		padding-right: 15px;

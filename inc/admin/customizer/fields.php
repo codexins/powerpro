@@ -633,6 +633,11 @@ Kirki::add_field( $config_id, array(
 			'element'  => $color_selectors['tertiary_color_in_border_color_selectors'],
 			'property' => 'border-color',
 		),
+
+		array(
+			'element'  => $color_selectors['tertiary_color_in_border_top_color_selectors'],
+			'property' => 'border-top-color',
+		),
 	),
 	'transport'         => 'auto',
 ) );
@@ -683,6 +688,11 @@ Kirki::add_field( $config_id, array(
 		array(
 			'element'  => $color_selectors['offset_color_in_border_color_selectors'],
 			'property' => 'border-color',
+		),
+
+		array(
+			'element'  => $color_selectors['offset_color_in_border_right_color_selectors'],
+			'property' => 'border-right-color',
 		),
 	),
 	'transport'         => 'auto',
@@ -837,7 +847,6 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_header_socials',
 	'label'       => esc_html__( 'Enable Header Socials?', 'powerpro' ),
-	// 'description' => esc_html__( 'Please provide social information in \'Social Media Settings\' Section. If no social information is set, no social icon will be shown.', 'powerpro' ),
 	'description' =>
 		sprintf(
 			'%1$s <a href="%2$s">%3$s</a>%4$s',

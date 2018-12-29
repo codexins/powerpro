@@ -263,7 +263,7 @@
     overflow: hidden;
     font-size: 12px;
     font-weight: 700;
-    line-height: 1.5em;
+    line-height: 1.5;
     letter-spacing: 2px;
     text-transform: uppercase;
     border-width: 1.2px;
@@ -480,10 +480,12 @@
 // Usage @include cx-border(1px, 0, 0, 0);
 
 @mixin cx-border($top, $right, $bottom, $left) {
-    border-top: $top solid $cx-border-color;
-    border-right: $right solid $cx-border-color;
-    border-bottom: $bottom solid $cx-border-color;
-    border-left: $left solid $cx-border-color;
+    border-top-width: $top;
+    border-right-width: $right;
+    border-bottom-width: $bottom;
+    border-left-width: $left;
+    border-style: solid;
+    @extend %border-default;
 }
 
 

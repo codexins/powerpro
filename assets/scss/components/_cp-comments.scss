@@ -69,7 +69,7 @@
     .comment-single-right {
         width: 80%;
         width: calc(100% - 105px);
-        margin-bottom: $cx-heading-margin-bottom;
+        @extend %default-margin-bottom;
     }
 
     .comment-info {
@@ -85,7 +85,9 @@
             height: 0;
             border-top: 12px solid transparent;
             border-bottom: 12px solid transparent;
-            border-right: 12px solid $cx-offset-color;
+            border-right-width: 12px;
+            border-right-style: solid;
+            border-right-color: $cx-offset-color;
             margin-left: -12px;
             left: 0;
             top: 28px;
@@ -145,7 +147,7 @@
 		}
 
         // .media {
-        //     margin-bottom: $cx-heading-margin-bottom;
+        //     @extend %default-margin-bottom;
         // }
 	}
 

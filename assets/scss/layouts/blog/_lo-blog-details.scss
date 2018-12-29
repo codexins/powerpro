@@ -12,7 +12,7 @@
 
 	.has-post-thumbnail {
 		.post-title {
-			margin-bottom: $cx-heading-margin-bottom;
+			@extend %default-margin-bottom;
 		}
 
 		.post-media {
