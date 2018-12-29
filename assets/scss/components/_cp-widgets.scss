@@ -4,14 +4,8 @@
  */
 
 .sidebar-widget {
-	// padding-top: 0.4 * $cx-section-spacing;
-	// padding-bottom: 0.4 * $cx-section-spacing;
-	padding-top: 20px;
-	padding-bottom: 20px;
-    // border-bottom-width: 1px;
-    // border-bottom-style: dashed;
-    // @extend %border-default;
-
+	padding-top: $cx-heading-margin-bottom;
+	padding-bottom: $cx-heading-margin-bottom;
     &:first-child {
     	@extend %pt0;
     }
