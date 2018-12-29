@@ -175,8 +175,8 @@ button,input[type="reset"],input[type="button"],input[type="submit"]{text-transf
 ul li:last-child,ol li:last-child,.pb0,.wp-block-gallery:not(.alignwide):not(.alignfull) .blocks-gallery-item,.wp-block-gallery .blocks-gallery-item,.wp-block-latest-posts>li,.wp-block-latest-posts.is-grid>li,.sidebar-widget:last-child,.widget_nav_menu ul li:last-child,.widget_rss ul li:last-child,.widget_recent_entries ul li:last-child,.widget_meta ul li:last-child,.widget_pages ul li:last-child,.widget_categories ul li:last-child,.widget_archive ul li:last-child,.widget_recent_comments ul li:last-child,.footer-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li:last-child,.sidebar-widget:not(.widget_recent_comments):not(.codexin-social-share-widget) ul li:last-child,.codexin-recent-posts-widget .posts-single:last-child,.codexin-popular-posts-widget .posts-single:last-child,#colophon .widgettitle,.post-item:not(.sticky):last-child .post-content-wrapper,.single .entry-footer .share .list-inline li{padding-bottom:0}
 .vmargin{margin-top:80px;margin-bottom:80px}
 @media only screen and (max-width:767px){.vmargin{margin-top:60px;margin-bottom:60px}
-}#primary,#secondary,.mb-full{margin-bottom:80px}
-@media only screen and (max-width:767px){#primary,#secondary,.mb-full{margin-bottom:60px}
+}#primary,#secondary,.mb-full,#comments{margin-bottom:80px}
+@media only screen and (max-width:767px){#primary,#secondary,.mb-full,#comments{margin-bottom:60px}
 }#content,.mt-full{margin-top:80px}
 @media only screen and (max-width:767px){#content,.mt-full{margin-top:60px}
 }hr,.wp-block-separator,.mb-half,#comments .comments-title,.comment-body+.comment-respond,#colophon .footer-widget,.post-item:not(.sticky) .post-content-wrapper,.sticky.post-item,.single .entry-header .post-title,.single .has-post-thumbnail .post-media{margin-bottom:40px}
@@ -398,7 +398,7 @@ header .navigation-wrapper{margin-top:25px}
 #comments .pingback .comment-single-right::before{content:none}
 .no-comments,.nopassword{padding:15px}
 .no-comments{font-size:20px;text-align:center;font-weight:600}
-.sidebar-widget{padding-top:20px;padding-bottom:20px}
+.sidebar-widget{padding-top:25px;padding-bottom:25px}
 .sidebar-widget:last-child{border-bottom:0}
 .widgettitle{font-size:28px;font-weight:500;text-transform:capitalize;margin-bottom:30px;padding-bottom:15px}
 .widgettitle::before{content:"";height:1px;width:100%;bottom:0}
