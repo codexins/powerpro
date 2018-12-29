@@ -42,3 +42,4 @@ Thumbs.db
 **/.sass-cache/*
 
 codexin.config.js
+gulpfile.js

@@ -133,17 +133,37 @@
 	/************************************************************
 		s04 - Temp, will be shifted later
 	*************************************************************/
-	 if ($window.width() < 576) {
-	    $(".mobile-search-icon a").click(function(e) {
-	        e.preventDefault();
-	        $(".header-search").fadeIn();
-	        $(".header-search").find('input[type="search"]').focus();
-	    });
-	    $('.header-search').on('focusout', function() {
-	        $(this).fadeOut();
-	    });
-     }
+	 // if ($window.width() < 576) {
+	 //    $(".mobile-search-icon a").click(function(e) {
+	 //        e.preventDefault();
+	 //        $(".header-search").fadeIn();
+	 //        $(".header-search").find('input[type="search"]').focus();
+	 //    });
+	 //    $('.header-search').on('focusout', function() {
+	 //        $(this).fadeOut();
+	 //    });
+  	 	//  }
 
+  	 CODEXIN.searchComponentTrigger = function() {
+  	 	     if ($window.width() < 576) {
+  	 	     	$(".header-search").hide();
+			 	var searchTerm = $(".header-search").find('input[type="search"]').val();
+			 	if ( searchTerm.length > 0 ) {
+			 		$(".header-search").slideDown();
+			 	}
+			    $(".mobile-search-icon a").click(function(e) {
+			        e.preventDefault();
+			        $(".header-search").slideToggle();
+			        $(".header-search").find('input[type="search"]').focus();
+			    });
+		    }
+  	 	}
+
+  	 	CODEXIN.searchComponentTriggerOnResize = function() {
+  	 		if ($window.width() >= 576) {
+				$(".header-search").show();
+  	 		}	
+  	 	}
 
 
 	/************************************************************
@@ -374,11 +394,15 @@
 		CODEXIN.scrollToTop(),
 		CODEXIN.toolTips(),
 		CODEXIN.ElementsSpacingClasses();
+		CODEXIN.searchComponentTrigger();
+		
 	});
 
 	// Window load and resize functions.
 	$window.on( 'load resize', function() {
 		// CODEXIN.ElementsSpacingClasses();
+		CODEXIN.searchComponentTriggerOnResize();
+		
 	});
 
 })( jQuery );

@@ -77,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								if ( codexin_get_option( 'cx_enable_header_search' ) ) {
 								?>
 									<div class="mobile-search-icon d-block d-xs-block d-sm-none d-md-none d-lg-none d-xl-none">
-										<a href="">Icon</a>
+										<a href="javascript:void(0)">Icon</a>
 									</div>
 									<div class="header-search">
 										<?php get_search_form(); ?>
