@@ -357,6 +357,7 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .post-content-wrapper:hover .post-media a::before,.post-content-wrapper:hover .post-media a::after{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .post-content-wrapper:hover .post-media .image-placeholder,.post-content-wrapper:hover .post-media img{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .posts-nav,.nav-links{border-top-width:1px;border-top-style:dashed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
+.posts-nav .post-btn,.nav-links .post-btn{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%}
 .posts-nav .post-btn.nav-next,.nav-links .post-btn.nav-next{padding-right:15px}
 .posts-nav .post-btn.nav-previous,.nav-links .post-btn.nav-previous{text-align:right;padding-left:15px}
 .posts-nav .post-btn a,.nav-links .post-btn a{line-height:1.3}

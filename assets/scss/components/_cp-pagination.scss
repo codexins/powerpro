@@ -14,7 +14,7 @@
 	@extend %border-default;
 	.post-btn {
 		@extend %margin-0;
-		// flex: 0 0 100%;
+		flex: 0 0 100%;
 		&.nav-next {
 			padding-right: 15px;
 		}
