@@ -962,7 +962,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'cx_header_button_url',
 	'label'       	=> esc_html__( 'Enter Page URL for Header Button', 'powerpro' ),
-	'description'   => esc_html__( 'enter page URL for button i.e. \'/contact-us/\' or \'www.abc.com\' ', 'powerpro' ),
+	'description'   => esc_html__( 'Enter page URL for button i.e. \'/contact-us/\' or \'www.abc.com\' ', 'powerpro' ),
 	'type'        	=> 'link',
 	'section'     	=> 'cx_header_options',
 	'priority'    	=> 40,

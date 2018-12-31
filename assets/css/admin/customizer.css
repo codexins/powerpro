@@ -4,6 +4,18 @@
     margin-bottom: 12px;
 }
 
+#customize-controls .customize-control .customize-control-title {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+#customize-controls .customize-control .customize-control-description {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
 #customize-controls #sub-accordion-panel-widgets .accordion-section-title::before,
 #customize-controls #sub-accordion-panel-nav_menus .accordion-section-title::before,
 #customize-controls .accordion-section-title .panel-title::before {
@@ -15,7 +27,8 @@
 }
 
 #customize-controls div.customize-section-description {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.3;
     font-weight: 500;
     border-bottom: 1px solid #0085ba;
     border-top: 1px solid #0085ba;
@@ -85,7 +98,7 @@
     line-height: 30px;
 }
 
-#customize-controls .customize-control-kirki-switch label {
+/*#customize-controls .customize-control-kirki-switch label {
 	border: 1px solid #7f291b;
 	background: #fff;
 }
@@ -113,6 +126,38 @@
 #customize-controls .customize-control-kirki-switch input:checked + label:after {
     background: #0085ba;
     border: 1px solid #0085ba;
+}*/
+
+#customize-controls .customize-control-kirki-switch label {
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    background: #FAFAFB;
+    height: 35px;
+    transition: 0.4s;
+}
+
+#customize-controls .customize-control-kirki-switch .switch-off, 
+#customize-controls .customize-control-kirki-switch .switch-on {
+    color: #333;
+    font-weight: 500;
+    padding: 0;
+    visibility: hidden;
+    width: 35px;
+}
+
+#customize-controls .customize-control-kirki-switch label:after {
+    top: 3.5px;
+    width: 27px;
+    height: 27px;
+    border-radius: 25px;
+    box-shadow: 0 4px 4px rgba(26,53,71,.25), 0 0 0 1px rgba(26,53,71,.07); 
+    background: #fff;
+    transition: .4s;
+}
+
+#customize-controls .customize-control-kirki-switch input:checked + label {
+    border-color: #0085ba;
+    background: rgba(0, 133, 186, 0.7);
 }
 
 #customize-controls .select2-container--default .select2-selection--single .select2-selection__arrow,
@@ -154,6 +199,7 @@
 #customize-controls .customize-control-kirki-background .background-size .buttonset .switch-input:checked + .switch-label {
     background-color: #0085ba;
     border: 1px solid #0085ba;
+    color: #fff;
 }
 
 #customize-controls .wp-core-ui .button-secondary:focus, 
