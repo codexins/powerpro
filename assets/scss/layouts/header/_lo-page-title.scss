@@ -21,6 +21,12 @@
 			margin-top: 10px;
 		}
 	}
+
+	.header-element-dark & {
+		h1 {
+			@extend %color-text;
+		}
+	}
 }
 
 .floating-header + #page_title {

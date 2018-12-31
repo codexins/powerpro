@@ -355,20 +355,28 @@
   *************************************************************/
 
 
-  CODEXIN.interactiveBehaviour = function () {}; // Window load functions.
+  CODEXIN.interactiveBehaviour = function () {};
+  /************************************************************
+  	s11 - Sticky nav
+  *************************************************************/
+
+
+  CODEXIN.stickyNavTrigger = function () {
+    $(".navigation-wrapper").sticky({
+      topSpacing: 0
+    });
+  }; // Window load functions.
 
 
   $window.on('load', function () {
     CODEXIN.interactiveBehaviour();
     CODEXIN.imageBgSettings();
-    $(".navigation-wrapper").sticky({
-      topSpacing: 0
-    });
   }); // Document ready functions.
 
   $document.on('ready', function () {
     CODEXIN.mainNav(), CODEXIN.mobileNav(), CODEXIN.responsiveSubMenu(), CODEXIN.elementsCarousel(), CODEXIN.testimonialCarousel(), CODEXIN.scrollToTop(), CODEXIN.toolTips(), CODEXIN.ElementsSpacingClasses();
     CODEXIN.searchComponentTrigger();
+    CODEXIN.stickyNavTrigger();
   }); // Window load and resize functions.
 
   $window.on('load resize', function () {

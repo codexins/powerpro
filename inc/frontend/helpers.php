@@ -622,3 +622,31 @@ if ( ! function_exists( 'codexin_header_socials' ) ) {
 		echo '</div>';
 	}
 }
+
+if ( ! function_exists( 'codexin_get_header_class' ) ) {
+	/**
+	 * Header classes.
+	 *
+	 * @return  string
+	 * @since   v1.0
+	 */
+	function codexin_get_header_class() {
+
+		$header_classes 	 = array( 'header' );
+		$header_color_scheme = codexin_get_option( 'header_color_scheme' );
+
+		if ( is_front_page() ) {
+			array_push( $header_classes, 'front-header' );
+		} else {
+			array_push( $header_classes, 'inner-header' );
+		}
+
+		if ( 'white' === $header_color_scheme ) {
+			array_push( $header_classes, 'header-element-white' );
+		} else {
+			array_push( $header_classes, 'header-element-dark' );
+		}
+
+		return implode( " ", $header_classes );
+	}
+}

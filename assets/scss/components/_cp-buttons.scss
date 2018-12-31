@@ -37,6 +37,11 @@
             @extend %border-primary;
             @extend %color-primary;
         }
+
+        .header-element-dark & {
+            @extend %border-black;
+            @extend %color-text;
+        }
     }
 }
 

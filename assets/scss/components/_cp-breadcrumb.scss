@@ -32,4 +32,8 @@
         word-wrap: break-word;
         word-break: break-word;
     }
+
+    .header-element-dark & {
+        @extend %color-text;
+    }
 }

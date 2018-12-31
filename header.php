@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<!-- Start of Header -->
-		<header class="header<?php echo is_front_page() ? esc_attr( ' front-header' ) : esc_attr( ' inner-header' ); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
+		<header class="<?php echo esc_attr( codexin_get_header_class() ); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'powerpro' ); ?></a>
 
@@ -163,7 +163,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 			</div> <!-- end of header-bottom -->
 
-			<div class="fixed-header-space"></div> <!-- empty placeholder div for Fixed Menu bar height-->
+			
 
 			<?php
 			if ( is_page_template( 'page-templates/page-home.php' ) ) {
@@ -183,3 +183,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</header>
 		<!-- End of Header -->
+		<div class="fixed-header-space">
+			
+		</div> <!-- empty placeholder div for Fixed Menu bar height-->
+
+		

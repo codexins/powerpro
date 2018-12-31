@@ -87,11 +87,25 @@
         }
     }
 
+    .sticky-wrapper & {
+        .header-element-white & {
+            > .current-menu-ancestor,
+            > .current-menu-item {
+                > a {
+                    @extend %color-primary;
+                }
+            }
+        }
+    }
 
-    > .current-menu-ancestor,
-    > .current-menu-item {
-        > a {
-            @extend %color-primary;
+    .sticky-wrapper:not(.is-sticky) & {
+        .header-element-dark & {
+            > .current-menu-ancestor,
+            > .current-menu-item {
+                > a {
+                    @extend %color-primary;
+                }
+            }
         }
     }
 
@@ -104,11 +118,25 @@
         }
     }
 
-}
+    .sticky-wrapper:not(.is-sticky) & {
+        .header-element-dark & {
+            > li {
+                > a {
+                    @extend %color-text;
 
-
-header {
-    .navigation-wrapper {
-        margin-top: $cx-heading-margin-bottom;
+                    &:hover,
+                    &:focus {
+                        @extend %color-primary;
+                    }
+                }
+            }
+        }
     }
 }
+
+
+// header {
+//     .navigation-wrapper {
+//         margin-top: $cx-heading-margin-bottom;
+//     }
+// }

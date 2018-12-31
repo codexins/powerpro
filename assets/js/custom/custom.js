@@ -377,11 +377,22 @@
 
 	};
 
+	/************************************************************
+		s11 - Sticky nav
+	*************************************************************/
+
+	CODEXIN.stickyNavTrigger = function() {
+		$(".navigation-wrapper").sticky({ topSpacing: 0 });
+
+
+	};
+
+
 	// Window load functions.
 	$window.on( 'load', function() {
 		CODEXIN.interactiveBehaviour();
 		CODEXIN.imageBgSettings();
-		$(".navigation-wrapper").sticky({ topSpacing: 0 });
+		
 	});
 
 	// Document ready functions.
@@ -395,6 +406,7 @@
 		CODEXIN.toolTips(),
 		CODEXIN.ElementsSpacingClasses();
 		CODEXIN.searchComponentTrigger();
+		CODEXIN.stickyNavTrigger();
 		
 	});
 
