@@ -133,7 +133,7 @@ gulp.task('styles', () => {
         .pipe(autoprefixer(config.BROWSERS_LIST))
         .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
         // .pipe(mmq({ log: true })) // Merge Media Queries
-        .pipe(beautify()) // Beautify output CSS
+        // .pipe(beautify()) // Beautify output CSS
         .pipe(sourcemaps.write({ includeContent: true }))
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write('./'))
@@ -216,8 +216,8 @@ gulp.task('shortcodes', () => {
         .on('error', sass.logError)
         .pipe(autoprefixer(config.BROWSERS_LIST))
         .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-        .pipe(mmq({ log: true })) // Merge Media Queries
-        .pipe(beautify()) // Beautify output CSS
+        // .pipe(mmq({ log: true })) // Merge Media Queries
+        // .pipe(beautify()) // Beautify output CSS
         .pipe(sourcemaps.write({ includeContent: false }))
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write('./'))

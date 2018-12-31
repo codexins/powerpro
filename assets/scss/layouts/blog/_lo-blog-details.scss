@@ -43,23 +43,6 @@
 			margin-bottom: -8px;
 			@extend %mt-half;
 		}
-
-		.share {
-			@extend %mt-half;
-			.caption {
-				font-size: 20px;
-				@extend %color-text;
-			}
-
-			.list-inline {
-				float: none;
-				@extend %mb0;
-
-				li {
-					@extend %pb0;
-				}
-			}
-		}
 	}
 
 	.rwmb-oembed-not-available {
