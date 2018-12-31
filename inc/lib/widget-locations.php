@@ -57,18 +57,20 @@ if ( ! function_exists( 'codexin_widgets_init' ) ) {
 			'after_widget'  	=> '</div>',
 		) );
 
-		for ( $i = 1; $i <= $widget_count ; $i++ ) {
-			register_sidebar( array(
-				/* translators: %s: column number */
-				'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'powerpro' ), $i ),
-				'id'				=> 'codexin-footer-col-' . $i . '',
-				/* translators: %s: column number */
-				'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'powerpro' ), $i ),
-				'before_title'		=> '<h4 class="widgettitle">',
-				'after_title'		=> '</h4>',
-				'before_widget' 	=> '<aside id="%1$s" class="%2$s footer-widget">',
-				'after_widget'  	=> '</aside>',
-			) );
+		if( codexin_get_option( 'cx_enable_footer_widget' ) ) {
+			for ( $i = 1; $i <= $widget_count ; $i++ ) {
+				register_sidebar( array(
+					/* translators: %s: column number */
+					'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'powerpro' ), $i ),
+					'id'				=> 'codexin-footer-col-' . $i . '',
+					/* translators: %s: column number */
+					'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'powerpro' ), $i ),
+					'before_title'		=> '<h4 class="widgettitle">',
+					'after_title'		=> '</h4>',
+					'before_widget' 	=> '<aside id="%1$s" class="%2$s footer-widget">',
+					'after_widget'  	=> '</aside>',
+				) );
+			}
 		}
 	}
 } // End if().

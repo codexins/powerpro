@@ -1399,19 +1399,41 @@ Kirki::add_field( $config_id, array(
  */
 
 Kirki::add_field( $config_id, array(
+	'settings'    => 'cx_enable_footer_widget',
+	'label'       => esc_html__( 'Enable Widgetized Footer?', 'powerpro' ),
+	'type'        => 'switch',
+	'section'     => 'cx_footer_section',
+	'default'     => 1,
+	'priority'    => 10,
+	'transport'   => 'postMessage',
+	'choices'     => array(
+		'on'  => esc_html__( 'On', 'powerpro' ),
+		'off' => esc_html__( 'Off', 'powerpro' ),
+	),
+	'sanitize_callback' => 'codexin_sanitize_checkbox',
+) );
+
+Kirki::add_field( $config_id, array(
 	'settings'      => 'footer_layout_setting',
 	'label'         => esc_html__( 'Select Footer Layout', 'powerpro' ),
 	'description'   => esc_html__( 'Choose footer columns', 'powerpro' ),
 	'type'          => 'radio-image',
 	'section'       => 'cx_footer_section',
 	'default'       => 'one',
-	'priority'      => 10,
+	'priority'      => 11,
 	'choices'       => array(
 		'one'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-1.jpg',
 		'two'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-2.jpg',
 		'three'     => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-3.jpg',
 		'four'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-4.jpg',
 		'five'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-5.jpg',
+	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_footer_widget',
+			'operator' => '==',
+			'value' => 1,
+		),
 	),
 ) );
 
@@ -1437,6 +1459,13 @@ Kirki::add_field( $config_id, array(
 			'property' => 'background',
 		),
 	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_footer_widget',
+			'operator' => '==',
+			'value' => 1,
+		),
+	),
 ) );
 
 Kirki::add_field( $config_id, array(
@@ -1457,6 +1486,13 @@ Kirki::add_field( $config_id, array(
 			'element'  => '#colophon .footer-widgets-area',
 			'property' => 'padding-top',
 			'units'    => 'px',
+		),
+	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_footer_widget',
+			'operator' => '==',
+			'value' => 1,
 		),
 	),
 	'sanitize_callback' => 'codexin_sanitize_number',
@@ -1480,6 +1516,13 @@ Kirki::add_field( $config_id, array(
 			'element'  => '#colophon .footer-widgets-area',
 			'property' => 'padding-bottom',
 			'units'    => 'px',
+		),
+	),
+	'required' => array(
+		array(
+			'setting' => 'cx_enable_footer_widget',
+			'operator' => '==',
+			'value' => 1,
 		),
 	),
 	'sanitize_callback' => 'codexin_sanitize_number',

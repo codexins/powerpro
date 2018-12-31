@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
+$codexin_footer = codexin_get_option( 'cx_enable_footer_widget' );
 $codexin_cpr    = codexin_get_option( 'cx_enable_copyright' );
 $copyright_text = codexin_get_option( 'footer_copy_text' );
 $to_top 		= codexin_get_option( 'cx_enable_totop' );
@@ -42,37 +43,39 @@ if ( 'two' === $footer_layout ) {
 ?>
 		<!-- Start of Footer -->
 		<footer id="colophon">
-			<div class="footer-widgets-area">
-				<div class="container">
-					<div class="row">
-						<?php
-						for ( $i = 1; $i <= $column_count ; $i++ ) {
-							if ( 'one' === $footer_layout ) {
-								$footer_column = 3;
-							} elseif ( 1 === $i ) {
-								if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
-									$footer_column = 4;
+			<?php if ( $codexin_footer ) { ?>
+				<div class="footer-widgets-area">
+					<div class="container">
+						<div class="row">
+							<?php
+							for ( $i = 1; $i <= $column_count ; $i++ ) {
+								if ( 'one' === $footer_layout ) {
+									$footer_column = 3;
+								} elseif ( 1 === $i ) {
+									if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
+										$footer_column = 4;
+									}
+								} else {
+									if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
+										$footer_column = 2;
+									}
 								}
-							} else {
-								if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
-									$footer_column = 2;
-								}
-							}
 
-							if ( ( 'one' !== $footer_layout ) && ( 4 === $i ) ) {
-								if ( 4 === $column_count ) {
-									$footer_column = 4;
+								if ( ( 'one' !== $footer_layout ) && ( 4 === $i ) ) {
+									if ( 4 === $column_count ) {
+										$footer_column = 4;
+									}
 								}
-							}
-							echo '<div id="footer-col-' . esc_attr( $i ) . '" class="footer-column col-12 col-sm-12 col-md-6 col-lg-' . esc_attr( $footer_column ) . '">';
-								dynamic_sidebar( 'codexin-footer-col-' . esc_attr( $i ) );
-							echo '</div>';
+								echo '<div id="footer-col-' . esc_attr( $i ) . '" class="footer-column col-12 col-sm-12 col-md-6 col-lg-' . esc_attr( $footer_column ) . '">';
+									dynamic_sidebar( 'codexin-footer-col-' . esc_attr( $i ) );
+								echo '</div>';
 
-						}  // End for().
-						?>
+							}  // End for().
+							?>
+						</div>
 					</div>
-				</div>
-			</div> <!-- end of footer-widgets-area -->
+				</div> <!-- end of footer-widgets-area -->
+			<?php }  // End if(). ?>
 
 			<?php if ( $codexin_cpr ) { ?>
 				<div class="footer-copyright">

@@ -141,6 +141,17 @@
         });
     });
 
+    // Widgetized Footer.
+    wp.customize( 'cx_enable_footer_widget', function ( value ) {
+        value.bind( function ( to ) {
+            if ( to ) {
+                $( '#colophon .footer-widgets-area' ).show();
+            } else {
+                $( '#colophon .footer-widgets-area' ).hide();
+            }
+        });
+    });
+
     // Footer Copyright.
     wp.customize( 'cx_enable_copyright', function ( value ) {
         value.bind( function ( to ) {
