@@ -41,6 +41,13 @@ Thumbs.db
 **/.sass-cache
 **/.sass-cache/*
 
+# EXTRAS #
+##########
 codexin.config.js
 gulpfile.js
 style.css
+style.css.map
+style.min.css
+package.json
+assets/css/shortcodes.css
+assets/css/shortcodes.css.map
