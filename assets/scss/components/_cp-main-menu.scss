@@ -27,6 +27,10 @@
             &:focus {
                 @extend %color-primary;
             }
+
+            @include respond-to(notebook) {
+                padding: 22px 12px;
+            }
         }
     }
 
@@ -40,6 +44,13 @@
                 border:0;
                 @include cx-centered(vertical);
                 @extend %pos-a;
+                @include respond-to(notebook) {
+                    right:15px;
+                }
+            }
+
+            @include respond-to(notebook) {
+                padding-right: 35px;
             }
 
         }

@@ -7,12 +7,26 @@
 .nav-links {
 	border-top-width: 1px;
 	border-top-style: dashed;
+	display: flex;
+	justify-content: space-between;
 	@extend %mt-half;
 	@extend %pt-half;
 	@extend %border-default;
-
 	.post-btn {
 		@extend %margin-0;
+		flex: 0 0 50%;
+		&.nav-next {
+			padding-right: 15px;
+		}
+
+		&.nav-previous {
+			text-align: right;
+			padding-left: 15px;
+		}
+
+		a {
+			line-height: 1.3;
+		}
 	}
 }
 
