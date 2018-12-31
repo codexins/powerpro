@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<!-- Start of Header -->
-		<header class="header<?php echo is_front_page() ? esc_attr( ' front-header' ) : esc_attr( ' inner-header' ); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
+		<header class="<?php echo esc_attr( codexin_get_header_class() ); ?>" style="<?php echo esc_attr( $header_bg_image ); ?>">
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'powerpro' ); ?></a>
 

@@ -809,7 +809,7 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'      => 'title_background_overlay_setting',
-	'label'         => esc_html__( 'Page Title Background Overlay', 'powerpro' ),
+	'label'         => esc_html__( 'Header Background Overlay', 'powerpro' ),
 	'description'   => esc_html__( 'Page header background overlay', 'powerpro' ),
 	'type'          => 'color',
 	'section'       => 'header_image',
@@ -824,6 +824,20 @@ Kirki::add_field( $config_id, array(
 			'element'  => 'header.header::before',
 			'property' => 'background-color',
 		),
+	),
+) );
+
+Kirki::add_field( $config_id, array(
+	'settings'    => 'header_color_scheme',
+	'label'       => esc_html__( 'Header element Color Scheme', 'powerpro' ),
+	'description' => esc_html__( 'White or dark color for header elements', 'powerpro' ),
+	'type'        => 'select',
+	'section'     => 'header_image',
+	'default'     => 'white',
+	'priority'    => 106,
+	'choices'     => array(
+		'white'  	=> esc_html__( 'White Scheme', 'powerpro' ),
+		'dark' 		=> esc_html__( 'Dark Scheme', 'powerpro' ),
 	),
 ) );
 

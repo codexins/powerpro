@@ -54,7 +54,7 @@
                 }
             }
         }
-    }   
+    }
 }
 
 
@@ -101,5 +101,11 @@
                 }
             }
         }
+    }
+}
+
+.header-element-dark {
+    .primary-nav-details {
+        @extend %color-black;
     }
 }
