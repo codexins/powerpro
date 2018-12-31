@@ -357,10 +357,10 @@ td,th,.wp-block-table.is-style-stripes td,pre,textarea,select,input[type="text"]
 .post-content-wrapper:hover .post-media a::before,.post-content-wrapper:hover .post-media a::after{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .post-content-wrapper:hover .post-media .image-placeholder,.post-content-wrapper:hover .post-media img{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .posts-nav,.nav-links{border-top-width:1px;border-top-style:dashed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
-.posts-nav .post-btn,.nav-links .post-btn{-webkit-box-flex:0;-webkit-flex:0 0 50%;-ms-flex:0 0 50%;flex:0 0 50%}
 .posts-nav .post-btn.nav-next,.nav-links .post-btn.nav-next{padding-right:15px}
 .posts-nav .post-btn.nav-previous,.nav-links .post-btn.nav-previous{text-align:right;padding-left:15px}
 .posts-nav .post-btn a,.nav-links .post-btn a{line-height:1.3}
+.posts-nav .nav-next.post-btn,.posts-nav .nav-next+.post-btn,.nav-links .nav-next.post-btn,.nav-links .nav-next+.post-btn{-webkit-box-flex:0;-webkit-flex:0 0 50%;-ms-flex:0 0 50%;flex:0 0 50%}
 .number-pagination{border-top-width:1px;border-top-style:dashed}
 .number-pagination .pagination{line-height:1;margin:0;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 .number-pagination .pagination li a,.number-pagination .pagination li span{display:block;font-weight:400;padding:0;width:35px;height:35px;line-height:35px;margin:0 5px;text-align:center}

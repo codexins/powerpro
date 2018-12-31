@@ -14,7 +14,7 @@
 	@extend %border-default;
 	.post-btn {
 		@extend %margin-0;
-		flex: 0 0 50%;
+		// flex: 0 0 100%;
 		&.nav-next {
 			padding-right: 15px;
 		}
@@ -26,6 +26,13 @@
 
 		a {
 			line-height: 1.3;
+		}
+	}
+
+	.nav-next {
+		&.post-btn,
+		& + .post-btn {
+			flex: 0 0 50%;
 		}
 	}
 }
