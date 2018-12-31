@@ -106,7 +106,7 @@ if ( ! function_exists( 'codexin_modify_customizer' ) ) {
 		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'        => 'header #header_text',
+			'selector'        => 'header #header-text',
 			'render_callback' => function() {
 				bloginfo( 'name' );
 			},

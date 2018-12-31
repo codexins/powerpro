@@ -33,10 +33,9 @@
 		$document           = $( document ),
 		$mainMenu           = $( '.sf-menu' ),
 		$headerfl           = $( '.floating-header' ),
-		$pSlider            = $( '#primary_slider' ),
 		$elCarousel         = $( '.element-carousel' ),
 		$testimonial        = $( '.testimonial-container' ),
-		$toTop              = $( '#to_top' ),
+		$toTop              = $( '#to-top' ),
 		$intelHeader        = $( '.header-top' ),
 		$fixedMenuSpace    	= $( '.fixed-header-space' ),
 		$footer             = $( '#colophon' );

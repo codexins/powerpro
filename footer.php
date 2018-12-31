@@ -64,7 +64,7 @@ if ( 'two' === $footer_layout ) {
 									$footer_column = 4;
 								}
 							}
-							echo '<div id="footer_col_' . esc_attr( $i ) . '" class="footer-column col-12 col-sm-12 col-md-6 col-lg-' . esc_attr( $footer_column ) . '">';
+							echo '<div id="footer-col-' . esc_attr( $i ) . '" class="footer-column col-12 col-sm-12 col-md-6 col-lg-' . esc_attr( $footer_column ) . '">';
 								dynamic_sidebar( 'codexin-footer-col-' . esc_attr( $i ) );
 							echo '</div>';
 
@@ -93,7 +93,7 @@ if ( 'two' === $footer_layout ) {
 		<?php
 		if ( $to_top ) { ?>
 			<!-- Go to Top Button at right bottom of the window screen -->
-			<div id="to_top">
+			<div id="to-top">
 				<i class="fa fa-angle-up"></i><i class="fa fa-angle-double-up"></i>
 			</div>
 			<!-- Go to Top Button finished-->

@@ -185,7 +185,7 @@ if ( ! function_exists( 'codexin_get_page_title' ) ) {
 
 		?>
 		<!-- Start of Page Title -->
-		<div id="page_title" class="page-title">
+		<div id="page-title" class="page-title">
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-12">

@@ -48,7 +48,7 @@ function init_codexin_menu( $menu_type ) {
 		'container_class' => ( 'mobile_menu' === $menu_type ) ? 'nav-wrapper' : 'main-menu',
 		'container_id'    => '',
 		'menu_class'      => ( 'mobile_menu' === $menu_type ) ? 'c-menu__items' : 'sf-menu',
-		'menu_id'         => ( 'mobile_menu' === $menu_type ) ? 'mobile-menu' : $menu_type,
+		'menu_id'         => ( 'mobile_menu' === $menu_type ) ? 'mobile-menu' : 'main-menu',
 		'echo'            => true,
 		'fallback_cb'     => 'wp_page_menu',
 		'before'          => '',

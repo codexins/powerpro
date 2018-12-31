@@ -283,7 +283,7 @@ Kirki::add_field( $config_id, array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '#main_menu li a',
+			'element' => '#main-menu li a',
 		),
 	),
 ) );
@@ -313,7 +313,7 @@ Kirki::add_field( $config_id, array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '#page_title.page-title h1',
+			'element' => '#page-title.page-title h1',
 		),
 	),
 ) );
@@ -531,7 +531,7 @@ Kirki::add_field( $config_id, array(
 // 	'sanitize_callback' => 'codexin_sanitize_color',
 // 	'output'            => array(
 // 		array(
-// 			'element'  => '#main_nav li a',
+// 			'element'  => '#main-nav li a',
 // 			'property' => 'color',
 // 		),
 // 	),
@@ -999,7 +999,7 @@ Kirki::add_field( $config_id, array(
 	'transport'     => 'auto',
 	'output'        => array(
 		array(
-			'element'  => '#page_title.page-title h1',
+			'element'  => '#page-title.page-title h1',
 			'property' => 'text-align',
 		),
 	),
@@ -1020,7 +1020,7 @@ Kirki::add_field( $config_id, array(
 	'transport'     => 'auto',
 	'output'        => array(
 		array(
-			'element'  => '#page_title.page-title',
+			'element'  => '#page-title.page-title',
 			'property' => 'padding-top',
 			'units'    => 'px',
 		),
@@ -1043,7 +1043,7 @@ Kirki::add_field( $config_id, array(
 	'transport'     => 'auto',
 	'output'        => array(
 		array(
-			'element'  => '#page_title.page-title',
+			'element'  => '#page-title.page-title',
 			'property' => 'padding-bottom',
 			'units'    => 'px',
 		),
@@ -1081,7 +1081,7 @@ Kirki::add_field( $config_id, array(
 	'transport'     => 'auto',
 	'output'        => array(
 		array(
-			'element'  => '#page_title.page-title .breadcrumb',
+			'element'  => '#page-title.page-title .breadcrumb',
 			'property' => 'justify-content',
 		),
 	),

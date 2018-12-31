@@ -110,7 +110,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									if ( true === $header_text ) {
 									?>
 									<h1 class="site-title">
-										<a id="header_text" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+										<a id="header-text" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 											<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 										</a>
 									</h1>
@@ -156,10 +156,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="header-bottom">
 				<div class="navigation-wrapper d-none d-sm-none d-md-none d-lg-block">
 					<!-- Start of main Navigation -->
-					<div id="main_nav">						
+					<div id="main-nav">						
 						<?php codexin_menu( 'main_menu' ); ?>
 					</div>
-					<!-- end of main_nav -->
+					<!-- end of #main-nav -->
 				</div>
 			</div> <!-- end of header-bottom -->
 
