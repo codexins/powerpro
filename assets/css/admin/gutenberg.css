@@ -85,19 +85,25 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 
 .edit-post-visual-editor blockquote.wp-block-quote {
     padding: 30px;
-    border-left: 4px solid #42ad61;
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: #42ad61;
     background: #f6f6f6;
 }
 
 .edit-post-visual-editor blockquote.wp-block-quote:not(.is-large):not(.is-style-large) {
     padding-left: 30px;
-    border-left: 4px solid #42ad61;
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: #42ad61;
 }
 
 .edit-post-visual-editor blockquote.wp-block-quote.is-large,
 .edit-post-visual-editor blockquote.wp-block-quote.is-style-large {
     padding: 30px;
-    border-left: 4px solid #42ad61;
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: #42ad61;
 }
 
 .edit-post-visual-editor blockquote.wp-block-quote.is-large p,
@@ -137,8 +143,10 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 }
 
 .edit-post-visual-editor .wp-block-pullquote {
-    border-top: 8px solid #42ad61;
-    border-bottom: 8px solid #42ad61;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-style: solid;
+    border-color: #42ad61;
     padding: 0;
     background: #f6f6f6;
 }
@@ -161,7 +169,9 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 
 .edit-post-visual-editor table thead,
 .edit-post-visual-editor table tfoot {
-    border: 1px solid #ddd;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
 }
 
 .edit-post-visual-editor table thead th,
@@ -173,14 +183,18 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
     font-size: 1.2rem;
     margin: 0px;
     padding: 12px;
-    border: 1px solid #ddd;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
     box-sizing: border-box;
 }
 
 .edit-post-visual-editor table td {
     padding: 12px;
     margin: 0px;
-    border: 1px solid #ddd;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
     box-sizing: border-box;
 }
 
@@ -194,7 +208,9 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 }
 
 .edit-post-visual-editor table.wp-block-table.is-style-stripes td {
-    border: 1px solid #ddd;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
 }
 
 /* Lists */
@@ -254,7 +270,9 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
     overflow: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
-    border: 1px solid #ddd;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
     box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
     background: #f6f6f6;
 }

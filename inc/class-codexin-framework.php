@@ -54,6 +54,7 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 				'/lib/scripts.php',                         		// Adding the function to enqueue styles and javascripts.
 				'/admin/customizer-init.php',                  		// Initializing the customizer.
 				'/admin/required-plugins.php',                      // Including required plugins to run framework.
+				// '/admin/gutenberg-dynamic-css.php',                 // Including Gutenberg dynamic CSS.
 				'/frontend/breadcrumbs.php',                 		// Adding the function to show breadcrumbs.
 				'/frontend/helpers.php',                       		// Adding the helper functions.
 				'/frontend/paginations.php',                      	// Adding the functions for various paginations.
@@ -214,7 +215,7 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 			add_theme_support( 'align-wide' );
 
 			/**
-			 * Gutenberge: Adding support for custom color scheme.
+			 * Gutenberg: Adding support for custom color scheme.
 			 */
 			add_theme_support( 'editor-color-palette', array(
 				array(

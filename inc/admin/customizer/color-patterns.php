@@ -95,7 +95,7 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 			'.c-menu__close',
 			'.default-btn',
 			'.post-btn a::after',
-			'#to_top',
+			'#to-top',
 			'.number-pagination .pagination li a:hover',
 			'.number-pagination .pagination li a:focus',
 			'.number-pagination .pagination li span:hover',
