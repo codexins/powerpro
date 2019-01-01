@@ -5,6 +5,7 @@ s03 - Shortcode - CX Social Share
 .share-links {
 	.list-inline {
 		.list-inline-item {
+			margin-bottom: 10px;
 			a {
 			    text-align: center;
 			    font-size: 13px;
@@ -31,7 +32,6 @@ s03 - Shortcode - CX Social Share
 		.share {
 			@extend %mt-half;
 			.caption {
-				font-size: 20px;
 				@extend %color-text;
 			}
 

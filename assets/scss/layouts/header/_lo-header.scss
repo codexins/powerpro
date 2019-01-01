@@ -21,6 +21,7 @@
 	
 	.header-top {
 		padding: 25px 45px;
+		margin-bottom: $cx-heading-margin-bottom;
 		@include media-only(notebook, max) {
 			padding-bottom: 0;
 		}
