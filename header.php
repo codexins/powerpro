@@ -97,13 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<div class="logo">
 								<div class="navbar-brand">
 									<?php
-									if ( has_custom_logo() ) {
-										the_custom_logo();
-									} else {
-										echo '<a href="' . esc_url( home_url( '/' ) ) . '">';
-											echo '<img src="' . get_parent_theme_file_uri() . '/assets/images/logo.png' . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '">';
-										echo '</a>';
-									}
+									the_custom_logo();
 
 									// Header Text.
 									$header_text = display_header_text();
@@ -183,4 +177,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</header>
 		<!-- End of Header -->
-		

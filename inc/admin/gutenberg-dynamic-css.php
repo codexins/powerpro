@@ -22,11 +22,11 @@ if ( ! function_exists( 'codexin_get_option' ) ) {
 	function codexin_gutenberg_dynamic_css() {
 
         // Retrieving values from customizer
-        $body_bg            = !empty( codexin_get_option( 'cx_body_bg' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_body_bg' ) ) : '#fff';
-        $text_color         = !empty( codexin_get_option( 'cx_text_color' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_text_color' ) ) : '#333';
-        $primary_color      = !empty( codexin_get_option( 'cx_primary_color' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_primary_color' ) ) : '#295970';
-        $secondary_color    = !empty( codexin_get_option( 'cx_secondary_color' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_secondary_color' ) ): '#fce38a';
-        $border_color       = !empty( codexin_get_option( 'cx_border_color' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_border_color' ) ) : '#ddd';
-        $secondary_bg       = !empty( codexin_get_option( 'cx_secondary_bg' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_secondary_bg' ) ) : '#fafafa';
+        $text_color         = ! empty( codexin_get_option( 'cx_text_color' ) ) ? codexin_get_option( 'cx_text_color' ) : '#333';
+        $primary_color      = ! empty( codexin_get_option( 'cx_primary_color' ) ) ? codexin_get_option( 'cx_primary_color' ) : '#295970';
+        $secondary_color    = ! empty( codexin_get_option( 'cx_secondary_color' ) ) ? codexin_get_option( 'cx_secondary_color' ): '#fce38a';
+        $tertiary_color    	= ! empty( codexin_get_option( 'cx_tertiary_color' ) ) ? codexin_get_option( 'cx_tertiary_color' ): '#fce38a';
+        $border_color       = ! empty( codexin_get_option( 'cx_border_color' ) ) ? codexin_get_option( 'cx_border_color' ) : '#ddd';
+        $secondary_bg       = ! empty( codexin_get_option( 'cx_secondary_bg' ) ) ? codexin_get_option( 'cx_secondary_bg' ) : '#fafafa';
 	}
 }
