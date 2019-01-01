@@ -37,6 +37,11 @@
 
 	.navbar-brand {
 		@extend %margin-0;
+		text-align: center;
+		width:100%;
+		h1 {
+			line-height: 1.2;
+		}
 	}
 
 	.logo {
@@ -53,13 +58,16 @@
 
 			.navbar-brand {
 				width:100%;
+				text-align: left;
 			}
 		}
 
-		width:180px;
+		
 		@include push-center;
 		img {
 			width:100%;
+			max-width:180px;
+
 		}
 
 	}
@@ -107,7 +115,7 @@
 
 #whole {
 	.header {
-		.logo {
+		img {
 			@include media-only(notebook, max) {
 				width:150px;
 			}
