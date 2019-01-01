@@ -633,7 +633,7 @@ if ( ! function_exists( 'codexin_get_header_class' ) ) {
 	function codexin_get_header_class() {
 
 		$header_classes 	 = array( 'header' );
-		$header_color_scheme = codexin_get_option( 'header_color_scheme' );
+		$header_color_scheme = ! empty( codexin_get_option( 'header_color_scheme' ) ) ? codexin_get_option( 'header_color_scheme' ) : 'header-element-white';
 
 		if ( is_front_page() ) {
 			array_push( $header_classes, 'front-header' );
