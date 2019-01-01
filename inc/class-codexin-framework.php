@@ -311,10 +311,9 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 			 * Declaring Jetpack support for Infinite Scroll
 			 */
 			add_theme_support( 'infinite-scroll', array(
-				'type'           	=> 'click',
-				'container' 		=> 'blog_area',
-				'footer_widgets' 	=> true,
+				'container' 		=> 'post-content',
 				'render'    		=> 'codexin_infinite_scroll_render',
+				'posts_per_page' 	=> get_option( 'posts_per_page' ),
 				'footer'    		=> 'whole',
 			) );
 

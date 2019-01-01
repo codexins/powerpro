@@ -41,7 +41,7 @@ $pagination 		= codexin_get_option( 'cx_blog_pagination' );
 
 			?>
 				<main id="primary" class="site-main">
-					<div class="blog-area">
+					<div id="post-content" class="blog-area">
 						<?php
 						if ( have_posts() ) {
 
