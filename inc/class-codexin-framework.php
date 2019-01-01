@@ -221,7 +221,7 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 				array(
 					'name'  => esc_html__( 'Text', 'powerpro' ),
 					'slug'  => 'text',
-					'color' => ! empty( codexin_get_option( 'cx_text_color' ) ) ? codexin_get_option( 'cx_primary_color' ) : '#000',
+					'color' => ! empty( codexin_get_option( 'cx_text_color' ) ) ? codexin_get_option( 'cx_text_color' ) : '#000',
 				),
 				array(
 					'name'  => esc_html__( 'Primary', 'powerpro' ),
@@ -440,6 +440,9 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 		public function codexin_gutenberg_scripts() {
 			wp_enqueue_style( 'codexin-fonts-url', codexin_default_google_fonts(), array(), null );
 			wp_enqueue_style( 'codexin-gutenberg-styles', trailingslashit( get_template_directory_uri() ) . '/assets/css/admin/gutenberg.css', false, '1.0', 'all' );
+
+			// Add dynamic css to Gutenberg.
+			wp_add_inline_style( 'codexin-gutenberg-styles', codexin_gutenberg_dynamic_css() );
 		}
 	}
 } // End if().

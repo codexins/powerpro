@@ -66,7 +66,7 @@ blockquote.wp-block-quote {
     .wp-block-quote__citation {
         font-style: normal;
         display: block;
-        margin: 20px 0 5px;
+        margin: 20px 0 0;
         @extend %color-dark;
 
         &::before {
@@ -127,7 +127,7 @@ hr,
             letter-spacing: 12px;
             padding-left: 12px;
             line-height: 1;
-            @extend %color-tertiary;
+            color: $cx-border-color;
         }
     }
 }
@@ -277,6 +277,11 @@ pre {
     box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
     @extend %border-default;
     @extend %bgc-offset;
+
+    b,
+    strong {
+        font-weight: 600;
+    }
 }
 
 *:focus {
@@ -410,6 +415,22 @@ embed,
 object,
 select {
     max-width: 100%;
+}
+
+.has-small-font-size {
+    font-size: 14px;
+}
+
+.has-regular-font-size {
+    font-size: 16px;
+}
+
+.has-large-font-size {
+    font-size: 24px;
+}
+
+.has-huge-font-size {
+    font-size: 32px;
 }
 
 // Skip to content link

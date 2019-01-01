@@ -32,19 +32,20 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 
 /* Body */
 
-.edit-post-visual-editor .mce-content-body,
-.edit-post-visual-editor .editor-rich-text__tinymce {
+.block-editor .edit-post-visual-editor .mce-content-body,
+.block-editor .edit-post-visual-editor .editor-rich-text__tinymce {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1rem;
+    color: #000;
 }
 
-.edit-post-visual-editor h1.editor-rich-text__tinymce,
-.edit-post-visual-editor h2.editor-rich-text__tinymce,
-.edit-post-visual-editor h3.editor-rich-text__tinymce,
-.edit-post-visual-editor h4.editor-rich-text__tinymce,
-.edit-post-visual-editor h5.editor-rich-text__tinymce,
-.edit-post-visual-editor h6.editor-rich-text__tinymce,
-.editor-post-title__block .editor-post-title__input {
+.block-editor .edit-post-visual-editor h1.editor-rich-text__tinymce,
+.block-editor .edit-post-visual-editor h2.editor-rich-text__tinymce,
+.block-editor .edit-post-visual-editor h3.editor-rich-text__tinymce,
+.block-editor .edit-post-visual-editor h4.editor-rich-text__tinymce,
+.block-editor .edit-post-visual-editor h5.editor-rich-text__tinymce,
+.block-editor .edit-post-visual-editor h6.editor-rich-text__tinymce,
+.block-editor .editor-post-title__block .editor-post-title__input {
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     line-height: 1;
@@ -116,12 +117,27 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 .edit-post-visual-editor blockquote.wp-block-quote .wp-block-quote__citation,
 .edit-post-visual-editor .wp-block-pullquote cite,
 .edit-post-visual-editor .wp-block-pullquote footer,
-.edit-post-visual-editor .wp-block-pullquote .wp-block-pullquote__citation {
+.block-editor .edit-post-visual-editor .wp-block-pullquote .wp-block-pullquote__citation {
     color: #252525;
     font-size: 95%;
     display: block;
-    margin: 20px 0 5px;
+    margin: 20px 0 0;
     text-transform: initial;
+}
+
+.block-editor .edit-post-visual-editor .wp-block-cover .wp-block-cover-text {
+    color: #fff;
+    font-size: 2em;
+}
+
+.block-editor .edit-post-visual-editor .wp-block-gallery .blocks-gallery-item figcaption {
+    color: #fff;
+    font-size: 14px;
+}
+
+.edit-post-visual-editor .wp-block-image figcaption.editor-rich-text__tinymce,
+.edit-post-visual-editor .wp-block-audio figcaption.editor-rich-text__tinymce {
+    font-size: 14px;
 }
 
 .edit-post-visual-editor blockquote.wp-block-quote cite::before,
@@ -143,6 +159,7 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 }
 
 .edit-post-visual-editor .wp-block-pullquote {
+    border: 0;
     border-top-width: 8px;
     border-bottom-width: 8px;
     border-style: solid;
@@ -189,7 +206,7 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
     box-sizing: border-box;
 }
 
-.edit-post-visual-editor table td {
+.block-editor .edit-post-visual-editor table td {
     padding: 12px;
     margin: 0px;
     border-width: 1px;
@@ -262,8 +279,8 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 
 /* Theme CSS */
 
-.edit-post-visual-editor .wp-block-preformatted,
-.edit-post-visual-editor .wp-block-verse {
+.block-editor .edit-post-visual-editor .wp-block-preformatted,
+.block-editor .edit-post-visual-editor .wp-block-verse {
     padding: 30px;
     display: block;
     clear: both;
@@ -273,18 +290,26 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
     border-width: 1px;
     border-style: solid;
     border-color: #ddd;
+    -webkit-box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
     box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
     background: #f6f6f6;
 }
 
-.edit-post-visual-editor .wp-block-preformatted pre,
-.edit-post-visual-editor .wp-block-verse pre {
+.block-editor .edit-post-visual-editor .wp-block-preformatted pre,
+.block-editor .edit-post-visual-editor .wp-block-verse pre {
     margin-bottom: 0;
     padding: 0;
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-size: 100%;
+    color: #212529;
 }
 
 .edit-post-visual-editor .wp-block-button .wp-block-button__link {
     background: #42ad61;
+}
+
+.block-editor .edit-post-visual-editor .wp-block-button .wp-block-button__link {
+    color: #fff;
 }
 
 .edit-post-visual-editor .wp-block-archives-dropdown select {
@@ -332,11 +357,14 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 .edit-post-visual-editor ul.wp-block-latest-posts > li > a {
     padding: 20px;
     color: inherit;
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
     text-decoration: none;
-    font-weight: 600;
     background: #f6f6f6;
     display: block;
+}
+
+.block-editor .edit-post-visual-editor ul.wp-block-latest-posts > li > a {
+    font-weight: 600;
 }
 
 .edit-post-visual-editor ul.wp-block-latest-posts.is-grid {
