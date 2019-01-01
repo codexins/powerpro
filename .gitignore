@@ -51,3 +51,5 @@ style.min.css
 package.json
 assets/css/shortcodes.css
 assets/css/shortcodes.css.map
+assets/js/main.js
+assets/js/main.min.js
