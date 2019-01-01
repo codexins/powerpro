@@ -120,15 +120,15 @@
     });
 
     // Comments Area.
-    wp.customize( 'cx_enable_comments', function ( value ) {
-        value.bind( function ( to ) {
-            if ( to ) {
-                $( '.single #comments' ).show();
-            } else {
-                $( '.single #comments' ).hide();
-            }
-        });
-    });
+    // wp.customize( 'cx_enable_comments', function ( value ) {
+    //     value.bind( function ( to ) {
+    //         if ( to ) {
+    //             $( '.single #comments' ).show();
+    //         } else {
+    //             $( '.single #comments' ).hide();
+    //         }
+    //     });
+    // });
 
     // Single Post Nav.
     wp.customize( 'cx_enable_post_nav', function ( value ) {

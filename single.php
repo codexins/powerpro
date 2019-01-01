@@ -23,7 +23,6 @@ $sidebar_class_xl	= ( 'no' === $layout ) ? '' : '3';
 $order_class     	= ( 'left' === $layout) ? ' order-1 order-md-1 order-lg-2' : '';
 $sb_order_class  	= ( 'left' === $layout) ? ' order-2 order-md-2 order-lg-1' : '';
 $pagination 		= codexin_get_option( 'cx_enable_post_nav' );
-$post_comment 		= codexin_get_option( 'cx_enable_comments' );
 
 ?>
 
@@ -70,18 +69,9 @@ $post_comment 		= codexin_get_option( 'cx_enable_comments' );
 						codexin_post_nav();
 					}
 
-					if ( ! class_exists( 'Codexin_core' ) ) {
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
-							comments_template();
-						}
-					} else {
-						if ( $post_comment ) {
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ) {
-								comments_template();
-							}
-						}
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) {
+						comments_template();
 					}
 					?>
 				</main> <!-- end of #primary -->

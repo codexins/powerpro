@@ -183,8 +183,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</header>
 		<!-- End of Header -->
-		<div class="fixed-header-space">
-			
-		</div> <!-- empty placeholder div for Fixed Menu bar height-->
-
 		

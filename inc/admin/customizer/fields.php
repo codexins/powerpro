@@ -63,6 +63,7 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_totop',
 	'label'       => esc_html__( 'Enable Scroll To-Top Button?', 'powerpro' ),
+	'description' => esc_html__( 'Enables a scroll to top button at bottom right corner of the screen', 'powerpro' ),
 	'section'     => 'cx_extra_settings',
 	'default'     => 1,
 	'priority'    => 10,
@@ -77,6 +78,7 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_pageloader',
 	'label'       => esc_html__( 'Enable Page Loader?', 'powerpro' ),
+	'description' => esc_html__( 'Enables a global page loader animation', 'powerpro' ),
 	'section'     => 'cx_extra_settings',
 	'default'     => 1,
 	'priority'    => 15,
@@ -90,6 +92,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_logo_size',
 	'label'       => esc_html__( 'Logo Size', 'powerpro' ),
+	'description' => esc_html__( 'Specify Logo width in px (Default: 180)', 'powerpro' ),
 	'section'     => 'title_tagline',
 	'type'        => 'slider',
 	'priority'    => 50,
@@ -113,6 +116,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_logo_top_spacing',
 	'label'       => esc_html__( 'Logo Top Spacing', 'powerpro' ),
+	'description' => esc_html__( 'Specify Logo top spacing in px (Default: 0)', 'powerpro' ),
 	'section'     => 'title_tagline',
 	'type'        => 'slider',
 	'priority'    => 51,
@@ -136,6 +140,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_logo_bottom_spacing',
 	'label'       => esc_html__( 'Logo Bottom Spacing', 'powerpro' ),
+	'description' => esc_html__( 'Specify Logo bottom spacing in px (Default: 0)', 'powerpro' ),
 	'section'     => 'title_tagline',
 	'type'        => 'slider',
 	'priority'    => 52,
@@ -969,19 +974,19 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'esc_url_raw',
 ) );
 
-Kirki::add_field( $config_id, array(
-	'type'        => 'switch',
-	'settings'    => 'cx_enable_fixed_header',
-	'label'       => esc_html__( 'Enable Fixed Header?', 'powerpro' ),
-	'section'     => 'cx_header_options',
-	'default'     => 1,
-	'priority'    => 110,
-	'choices'     => array(
-		'on'  => esc_html__( 'On', 'powerpro' ),
-		'off' => esc_html__( 'Off', 'powerpro' ),
-	),
-	'sanitize_callback' => 'codexin_sanitize_checkbox',
-) );
+// Kirki::add_field( $config_id, array(
+// 	'type'        => 'switch',
+// 	'settings'    => 'cx_enable_fixed_header',
+// 	'label'       => esc_html__( 'Enable Fixed Header?', 'powerpro' ),
+// 	'section'     => 'cx_header_options',
+// 	'default'     => 1,
+// 	'priority'    => 110,
+// 	'choices'     => array(
+// 		'on'  => esc_html__( 'On', 'powerpro' ),
+// 		'off' => esc_html__( 'Off', 'powerpro' ),
+// 	),
+// 	'sanitize_callback' => 'codexin_sanitize_checkbox',
+// ) );
 
 Kirki::add_field( $config_id, array(
 	'settings' 		=> 'cx_page_title_position',
@@ -1008,6 +1013,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'      => 'cx_pt_top_spacing',
 	'label'         => esc_html__( 'Page Title Top Spacing', 'powerpro' ),
+	'description'   => esc_html__( 'Specify Page title top spacing in px (Default: 100)', 'powerpro' ),
 	'section'       => 'cx_page_title_section',
 	'type'          => 'slider',
 	'priority'      => 20,
@@ -1031,6 +1037,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'      => 'cx_pt_bottom_spacing',
 	'label'         => esc_html__( 'Page Title Bottom Spacing', 'powerpro' ),
+	'description'   => esc_html__( 'Specify Page title bottom spacing in px (Default: 80)', 'powerpro' ),
 	'section'       => 'cx_page_title_section',
 	'type'          => 'slider',
 	'priority'      => 25,
@@ -1055,6 +1062,7 @@ Kirki::add_field( $config_id, array(
 	'type'        => 'switch',
 	'settings'    => 'cx_enable_breadcrumb',
 	'label'       => esc_html__( 'Enable Breadcrumb?', 'powerpro' ),
+	'description' => esc_html__( 'Enables breadcrumb under Page title', 'powerpro' ),
 	'section'     => 'cx_page_title_section',
 	'default'     => 1,
 	'priority'    => 30,
@@ -1135,6 +1143,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_blog_title_excerpt',
 	'label'       => esc_html__( 'Limit Blog Title & Excerpt Length by Character?', 'powerpro' ),
+	'description' => esc_html__( 'Enable this setting to limit Title & Excerpt length (by text character)', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_blog_section',
 	'default'     => 0,
@@ -1149,6 +1158,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'      => 'cx_post_title_length',
 	'label'         => esc_html__( 'Title Length for Posts (In Character)', 'powerpro' ),
+	'description' 	=> esc_html__( 'Specify Title length (by text character)', 'powerpro' ),
 	'section'       => 'cx_blog_section',
 	'type'          => 'slider',
 	'priority'      => 40,
@@ -1171,6 +1181,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'      => 'cx_post_excerpt_length',
 	'label'         => esc_html__( 'Excerpt Length for Posts (In Character)', 'powerpro' ),
+	'description' 	=> esc_html__( 'Specify Excerpt length (by text character)', 'powerpro' ),
 	'section'       => 'cx_blog_section',
 	'type'          => 'slider',
 	'priority'      => 50,
@@ -1193,6 +1204,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_readmore',
 	'label'       => esc_html__( 'Enable Read More Button?', 'powerpro' ),
+	'description' => esc_html__( 'Enables \'Read More\' button under each post', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_blog_section',
 	'default'     => 1,
@@ -1208,6 +1220,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_blog_pagination',
 	'label'       => esc_html__( 'Pagination Type', 'powerpro' ),
+	'description' => esc_html__( 'Specify the pagination type', 'powerpro' ),
 	'type'        => 'select',
 	'section'     => 'cx_blog_section',
 	'default'     => 'button',
@@ -1237,6 +1250,7 @@ if ( class_exists( 'Codexin_Core' ) ) {
 	Kirki::add_field( $config_id, array(
 		'settings'    => 'cx_enable_share_link',
 		'label'       => esc_html__( 'Enable Share Links?', 'powerpro' ),
+		'description' => esc_html__( 'Enables social share link under the post content', 'powerpro' ),
 		'type'        => 'switch',
 		'section'     => 'cx_blog_single_section',
 		'default'     => 1,
@@ -1250,24 +1264,25 @@ if ( class_exists( 'Codexin_Core' ) ) {
 	) );
 }
 
-Kirki::add_field( $config_id, array(
-	'settings'    => 'cx_enable_comments',
-	'label'       => esc_html__( 'Enable Comments?', 'powerpro' ),
-	'type'        => 'switch',
-	'section'     => 'cx_blog_single_section',
-	'default'     => 1,
-	'priority'    => 30,
-	'choices'     => array(
-		'on'  => esc_html__( 'On', 'powerpro' ),
-		'off' => esc_html__( 'Off', 'powerpro' ),
-	),
-	'transport'     => 'postMessage',
-	'sanitize_callback' => 'codexin_sanitize_checkbox',
-) );
+// Kirki::add_field( $config_id, array(
+// 	'settings'    => 'cx_enable_comments',
+// 	'label'       => esc_html__( 'Enable Comments?', 'powerpro' ),
+// 	'type'        => 'switch',
+// 	'section'     => 'cx_blog_single_section',
+// 	'default'     => 1,
+// 	'priority'    => 30,
+// 	'choices'     => array(
+// 		'on'  => esc_html__( 'On', 'powerpro' ),
+// 		'off' => esc_html__( 'Off', 'powerpro' ),
+// 	),
+// 	'transport'     => 'postMessage',
+// 	'sanitize_callback' => 'codexin_sanitize_checkbox',
+// ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_post_nav',
 	'label'       => esc_html__( 'Enable Post Navigation?', 'powerpro' ),
+	'description' => esc_html__( 'Enables single post navigation buttons', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_blog_single_section',
 	'default'     => 1,
@@ -1283,6 +1298,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_post_pagination',
 	'label'       => esc_html__( 'Pagination Type', 'powerpro' ),
+	'description' => esc_html__( 'Specify the pagination type', 'powerpro' ),
 	'type'        => 'select',
 	'section'     => 'cx_blog_single_section',
 	'default'     => 'button',
@@ -1307,6 +1323,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_facebook_link',
 	'label'             => esc_html__( 'Facebook URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Facebook Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 10,
@@ -1315,7 +1332,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_twitter_link',
-	'label'             => esc_html__( 'Twiter URL', 'powerpro' ),
+	'label'             => esc_html__( 'Twitter URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Twitter Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 15,
@@ -1325,6 +1343,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_instagram_link',
 	'label'             => esc_html__( 'Instagram URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Instagram Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 20,
@@ -1334,6 +1353,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_pinterest_link',
 	'label'             => esc_html__( 'Pinterest URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Pinterest Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 25,
@@ -1343,6 +1363,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_behance_link',
 	'label'             => esc_html__( 'Behance URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Behance Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 30,
@@ -1352,6 +1373,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_gplus_link',
 	'label'             => esc_html__( 'Google Plus URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Google Plus Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 35,
@@ -1360,7 +1382,8 @@ Kirki::add_field( $config_id, array(
 
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_linkedin_link',
-	'label'             => esc_html__( 'Linked In URL', 'powerpro' ),
+	'label'             => esc_html__( 'LinkedIn URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter LinkedIn Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 40,
@@ -1370,6 +1393,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_youtube_link',
 	'label'             => esc_html__( 'Youtube URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Youtube Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 45,
@@ -1379,6 +1403,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_vimeo_link',
 	'label'             => esc_html__( 'Vimeo URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Vimeo Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 50,
@@ -1388,6 +1413,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_skype_link',
 	'label'             => esc_html__( 'Skype URL', 'powerpro' ),
+	'description' 		=> esc_html__( 'Enter Skype Link', 'powerpro' ),
 	'section'           => 'cx_social_profiles',
 	'type'              => 'url',
 	'priority'          => 55,
@@ -1401,6 +1427,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_footer_widget',
 	'label'       => esc_html__( 'Enable Widgetized Footer?', 'powerpro' ),
+	'description' => esc_html__( 'Enables widgetized footer layout', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_footer_section',
 	'default'     => 1,
@@ -1416,7 +1443,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'      => 'footer_layout_setting',
 	'label'         => esc_html__( 'Select Footer Layout', 'powerpro' ),
-	'description'   => esc_html__( 'Choose footer columns', 'powerpro' ),
+	'description'   => esc_html__( 'Choose footer layout columns', 'powerpro' ),
 	'type'          => 'radio-image',
 	'section'       => 'cx_footer_section',
 	'default'       => 'one',
@@ -1471,6 +1498,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'      => 'cx_footer_top_spacing',
 	'label'         => esc_html__( 'Footer Top Spacing', 'powerpro' ),
+	'description' 	=> esc_html__( 'Specify footer top spacing in px (Defualt: 80)', 'powerpro' ),
 	'section'       => 'cx_footer_section',
 	'type'          => 'slider',
 	'priority'      => 20,
@@ -1501,6 +1529,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'      => 'cx_footer_bottom_spacing',
 	'label'         => esc_html__( 'Footer Bottom Spacing', 'powerpro' ),
+	'description' 	=> esc_html__( 'Specify footer bottom spacing in px (Defualt: 80)', 'powerpro' ),
 	'section'       => 'cx_footer_section',
 	'type'          => 'slider',
 	'priority'      => 25,
@@ -1531,6 +1560,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_copyright',
 	'label'       => esc_html__( 'Enable Footer Copyright?', 'powerpro' ),
+	'description' => esc_html__( 'Enables copyright section in footer', 'powerpro' ),
 	'type'        => 'switch',
 	'section'     => 'cx_footer_copy_section',
 	'default'     => 1,
