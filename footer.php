@@ -43,53 +43,92 @@ if ( 'two' === $footer_layout ) {
 ?>
 		<!-- Start of Footer -->
 		<footer id="colophon">
-			<?php if ( $codexin_footer ) { ?>
-				<div class="footer-widgets-area">
-					<div class="container">
-						<div class="row">
-							<?php
-							for ( $i = 1; $i <= $column_count ; $i++ ) {
-								if ( 'one' === $footer_layout ) {
-									$footer_column = 3;
-								} elseif ( 1 === $i ) {
-									if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
-										$footer_column = 4;
-									}
-								} else {
-									if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
-										$footer_column = 2;
-									}
-								}
 
-								if ( ( 'one' !== $footer_layout ) && ( 4 === $i ) ) {
-									if ( 4 === $column_count ) {
-										$footer_column = 4;
-									}
-								}
-								echo '<div id="footer-col-' . esc_attr( $i ) . '" class="footer-column col-12 col-sm-12 col-md-6 col-lg-' . esc_attr( $footer_column ) . '">';
-									dynamic_sidebar( 'codexin-footer-col-' . esc_attr( $i ) );
-								echo '</div>';
-
-							}  // End for().
-							?>
-						</div>
-					</div>
-				</div> <!-- end of footer-widgets-area -->
-			<?php }  // End if(). ?>
-
-			<?php if ( $codexin_cpr ) { ?>
+			<?php
+			if ( ! class_exists( 'kirki' ) ) {
+			?>
 				<div class="footer-copyright">
 					<div class="container">
 						<div class="row">
 							<div class="col-12 col-sm-12 col-md-12">
-								<p class="copyright-legal">
-									<?php echo wp_kses_post( $copyright_text ); ?>
-								</p>
+								<div class="site-info text-center color-white">
+									<?php
+									$blog_info = get_bloginfo( 'name' );
+									if ( ! empty( $blog_info ) ) {
+									?>
+										<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
+									<?php
+									}
+									?>
+									<a href="<?php echo esc_url( esc_html__( 'https://wordpress.org/', 'powerpro' ) ); ?>" class="imprint">
+										<?php
+										/* translators: %s: WordPress. */
+										printf( esc_html__( 'Proudly powered by %s.', 'powerpro' ), 'WordPress' );
+										?>
+									</a>
+								</div><!-- end of site-info -->
 							</div>
 						</div>
 					</div>
 				</div> <!-- end of footer-copyright -->
-			<?php }  // End if(). ?>
+			<?php
+			} else {
+
+				if ( $codexin_footer ) {
+				?>
+					<div class="footer-widgets-area">
+						<div class="container">
+							<div class="row">
+								<?php
+								for ( $i = 1; $i <= $column_count ; $i++ ) {
+									if ( 'one' === $footer_layout ) {
+										$footer_column = 3;
+									} elseif ( 1 === $i ) {
+										if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
+											$footer_column = 4;
+										}
+									} else {
+										if ( ( 4 === $column_count ) || ( 5 === $column_count ) ) {
+											$footer_column = 2;
+										}
+									}
+
+									if ( ( 'one' !== $footer_layout ) && ( 4 === $i ) ) {
+										if ( 4 === $column_count ) {
+											$footer_column = 4;
+										}
+									}
+									echo '<div id="footer-col-' . esc_attr( $i ) . '" class="footer-column col-12 col-sm-12 col-md-6 col-lg-' . esc_attr( $footer_column ) . '">';
+										dynamic_sidebar( 'codexin-footer-col-' . esc_attr( $i ) );
+									echo '</div>';
+
+								}  // End for().
+								?>
+							</div>
+						</div>
+					</div> <!-- end of footer-widgets-area -->
+				<?php
+				}  // End if().
+				?>
+
+				<?php
+				if ( $codexin_cpr ) {
+				?>
+					<div class="footer-copyright">
+						<div class="container">
+							<div class="row">
+								<div class="col-12 col-sm-12 col-md-12">
+									<p class="copyright-legal">
+										<?php echo wp_kses_post( $copyright_text ); ?>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div> <!-- end of footer-copyright -->
+				<?php
+				}  // End if().
+			}  // End if().
+			?>
 		</footer>
 		<!-- End of Footer -->
 		
@@ -101,7 +140,8 @@ if ( 'two' === $footer_layout ) {
 			</div>
 			<!-- Go to Top Button finished-->
 		<?php
-		} // End if(). ?>
+		} // End if().
+		?>
 	</div>
 	<!-- End of Whole Site Wrapper -->
 
