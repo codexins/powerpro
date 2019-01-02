@@ -135,7 +135,7 @@ if ( ! function_exists( 'codexin_default_google_fonts' ) ) {
 			if ( $fonts ) {
 				$subsets   = apply_filters( 'codexin_default_google_fonts', 'latin' );
 				$fonts_url = add_query_arg( array(
-					'family' => implode( '|', $fonts ),
+					'family' => implode( '%7C', $fonts ),
 					'subset' => urlencode( $subsets ),
 				),  '//fonts.googleapis.com/css' );
 			}

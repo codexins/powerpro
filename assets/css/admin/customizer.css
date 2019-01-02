@@ -287,7 +287,7 @@
     vertical-align: middle;
     text-align: center;
     margin-right: 10px;
-    transition: color .1s ease-in 0;
+    transition: color .1s ease-in;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
