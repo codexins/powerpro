@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<article class="alert alert-warning">
+<article>
 	<h2><?php esc_html_e( 'Sorry, nothing found.', 'powerpro' ) ?></h2>
 	<p><?php esc_html_e( 'Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'powerpro' ) ?></p>
 	<?php get_search_form(); ?>

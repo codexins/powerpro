@@ -38,7 +38,7 @@
 
 #whole #page-title.page-title {
 	@include respond-to(mobile) {
-		padding-top: $cx-section-spacing-mob + 20px;
+		padding-top: $cx-section-spacing-mob - $cx-heading-margin-bottom;
 		padding-bottom: $cx-section-spacing-mob;
 	}
 }
