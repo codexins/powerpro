@@ -32,9 +32,6 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 			// Run after installation setup.
 			$this -> codexin_setup();
 
-			// Register actions.
-			$this -> codexin_actions();
-
 			// Loading admin related actions.
 			$this -> codexin_admin_actions();
 		}
@@ -56,17 +53,18 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 				'/admin/required-plugins.php',                      // Including required plugins to run framework.
 				'/admin/gutenberg-dynamic-css.php',                 // Including Gutenberg dynamic CSS.
 				'/frontend/breadcrumbs.php',                 		// Adding the function to show breadcrumbs.
+				'/frontend/template-functions.php',                 // Adding the template functions.
+				'/frontend/template-tags.php',                 		// Adding the custom template tags.
 				'/frontend/helpers.php',                       		// Adding the helper functions.
 				'/frontend/paginations.php',                      	// Adding the functions for various paginations.
 			);
 
 			// Requiring the framwork files.
 			foreach ( $codexin_includes as $file ) {
-				$filepath = locate_template( 'inc' . $file );
-				if ( ! $filepath ) {
-					trigger_error( sprintf( 'Error locating /inc%s for inclusion', esc_attr( $file ) ), E_USER_ERROR );
+				$filepath = get_theme_file_path( 'inc' . $file );
+				if ( $filepath ) {
+					require_once wp_normalize_path( $filepath );
 				}
-				require_once wp_normalize_path( $filepath );
 			}
 		}
 
@@ -210,6 +208,11 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 			add_theme_support( 'editor-styles' );
 
 			/**
+			 * Enqueue editor styles.
+			 */
+			add_editor_style( 'assets/css/admin/editor-style.css' );
+
+			/**
 			 * Gutenberg: Adding support for full and wide align images
 			 */
 			add_theme_support( 'align-wide' );
@@ -330,78 +333,6 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 		 */
 		public function codexin_content_width() {
 			$GLOBALS['content_width'] = apply_filters( 'codexin_content_width', 1110 );
-		}
-
-		/**
-		 * Add actions and filters in Codexin themes framework. All the actions will be hooked here.
-		 *
-		 * @since v1.0
-		 */
-		public function codexin_actions() {
-			/**
-			 * Providing Shortcode Support on text widget
-			 *
-			 * @uses add_filter()
-			 * @since v1.0
-			 */
-			add_filter( 'widget_text', 'do_shortcode' );
-
-			/**
-			 * Removing srcset from featured image
-			 *
-			 * @uses 	add_filter()
-			 * @since 	v1.0
-			 */
-			add_filter( 'max_srcset_image_width', function() {
-				return 1;
-			});
-
-			add_filter( 'post_thumbnail_html', 'codexin_remove_thumbnail_dimensions', 10, 3 );
-			if ( ! function_exists( 'codexin_remove_thumbnail_dimensions' ) ) {
-				/**
-				 * Removing width & height from featured image
-				 *
-				 * @param 	string  $html The HTML.
-				 * @param 	integer $post_id Post ID.
-				 * @param 	integer $post_image_id Image ID.
-				 * @return 	mixed
-				 * @uses 	add_filter()
-				 * @since 	v1.0
-				 */
-				function codexin_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-					$html = preg_replace( '/(width|height)=\"\d*\"\s/', '', $html );
-					return $html;
-				}
-			}
-
-			add_action( 'admin_init', 'codexin_editor_styles' );
-			if ( ! function_exists( 'codexin_editor_styles' ) ) {
-				/**
-				 * Apply theme's stylesheet to the visual editor.
-				 *
-				 * @uses 	add_action()
-				 * @uses 	add_editor_style() Links a stylesheet to visual editor
-				 * @since 	v1.0
-				 */
-				function codexin_editor_styles() {
-					add_editor_style( 'assets/css/admin/editor-style.css' );
-				}
-			}
-
-			add_action( 'wp_head', 'codexin_pingback_header' );
-			if ( ! function_exists( 'codexin_pingback_header' ) ) {
-				/**
-				 * Add a pingback url auto-discovery header for singularly identifiable articles.
-				 *
-				 * @uses 	add_action()
-				 * @since 	v1.0
-				 */
-				function codexin_pingback_header() {
-					if ( is_singular() && pings_open() ) {
-						printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
-					}
-				}
-			}
 		}
 
 		/**

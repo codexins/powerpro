@@ -111,6 +111,13 @@
 	.custom-logo-link + .site-title {
 		margin-top: 15px;
 	}
+
+	&.header-element-dark {
+		.site-title,
+		.site-description {
+			@extend %color-black;
+		}
+	}
 }
 
 #whole {
