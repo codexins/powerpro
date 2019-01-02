@@ -233,12 +233,6 @@ if ( ! function_exists( 'codexin_header_style' ) ) {
 	}
 }
 
-
-
-
-
-
-
 if ( ! function_exists( 'codexin_infinite_scroll_render' ) ) {
 	/**
 	 * Custom render function for Jetpack Infinite Scroll.

@@ -61,6 +61,9 @@ if ( ! function_exists( 'codexin_post_nav' ) ) {
 		$prev = ! empty( $prev ) ? $prev : esc_html__( 'Previous Post', 'powerpro' );
 		$next = ! empty( $next ) ? $next : esc_html__( 'Next Post', 'powerpro' );
 
+		$prev_link = get_previous_post_link( '%link', esc_html( $prev . ' &raquo;' ) );
+		$next_link = get_next_post_link( '%link', esc_html( '&laquo; ' . $next ) );
+
 		if ( ( 'button' === codexin_get_option( 'cx_post_pagination' ) ) ) {
 			$prev_link = get_previous_post_link( '%link', esc_html( $prev . ' &raquo;' ) );
 			$next_link = get_next_post_link( '%link', esc_html( '&laquo; ' . $next ) );

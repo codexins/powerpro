@@ -105,7 +105,7 @@ Kirki::add_field( $config_id, array(
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element'  => '.header .logo',
+			'element'  => '.header .logo img',
 			'property' => 'width',
 			'units'    => 'px',
 		),
