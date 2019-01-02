@@ -38,7 +38,7 @@
 		$toTop              = $( '#to-top' ),
 		$intelHeader        = $( '.header-top' ),
 		$fixedMenuSpace    	= $( '.fixed-header-space' ),
-		$footer             = $( '#colophon' );
+		$footer             = $( '#colophon' ),
 		$headerSearch		= $( '.header-search');
 
 	// Check if element exists.
