@@ -39,6 +39,7 @@
 		$intelHeader        = $( '.header-top' ),
 		$fixedMenuSpace    	= $( '.fixed-header-space' ),
 		$footer             = $( '#colophon' );
+		$headerSearch		= $( '.header-search');
 
 	// Check if element exists.
 	$.fn.elExists = function() {
@@ -143,28 +144,59 @@
 	 //    });
   	 	//  }
 
-  	 CODEXIN.searchComponentTrigger = function() {
-  	 	     if ($window.width() < 576) {
-  	 	     	$(".header-search").hide();
-			 	var searchTerm = $(".header-search").find('input[type="search"]').val();
-			 	if ( searchTerm.length > 0 ) {
-			 		$(".header-search").slideDown();
-			 	}
-			    $(".mobile-search-icon a").click(function(e) {
-			        e.preventDefault();
-			        $(".header-search").slideToggle();
-			        $(".header-search").find('input[type="search"]').focus();
-			    });
-		    }
-  	 	}
+  	CODEXIN.searchIconChange = function( status = 'search' ){
+		if ( status === 'search'){
+			$('.mobile-search-icon a i').removeClass('fa fa-search', '500');
+			$('.mobile-search-icon a i').addClass('fa fa-close', '500');
 
-  	 	CODEXIN.searchComponentTriggerOnResize = function() {
-  	 		if ($window.width() >= 576) {
-				$(".header-search").show();
-  	 		}	
-  	 	}
+		}else{
+			$('.mobile-search-icon a i').removeClass('fa fa-close', '500');
+			$('.mobile-search-icon a i').addClass('fa fa-search', '500');
+		}
+	}
 
+	CODEXIN.searchComponentTrigger = function() {
+	    if($window.width() < 576){
+			$headerSearch.hide();
+			CODEXIN.searchIconChange('close');
+		 	var searchTerm = $headerSearch.find('input[type="search"]').val();		 	
+		 	if ( searchTerm.length > 0 ) {
+		 		$headerSearch.slideDown();
+		 		CODEXIN.searchIconChange('search');
+	 		}
+			
+	    }
 
+	    $document.on('click', '.mobile-search-icon a', function( e ) {	    	
+	        e.preventDefault();
+	        $headerSearch.stop().slideToggle( function() {
+	        	var finalState = $(this).is(':hidden') ? 'close' : 'search';
+	        	CODEXIN.searchIconChange(finalState);
+	        });		        
+	    });
+		
+		
+	}
+
+ 	CODEXIN.searchComponentTriggerOnResize = function() {
+ 		if($window.width() < 576){
+ 			var searchTerm = $headerSearch.find('input[type="search"]').val();
+			$headerSearch.hide();
+			CODEXIN.searchIconChange('close');
+	 		if ( searchTerm.length > 0 ) {
+		 		$headerSearch.slideDown();
+		 		CODEXIN.searchIconChange('search');
+	 		}
+
+	 		return;
+ 		}
+
+ 		$headerSearch.show();
+		CODEXIN.searchIconChange('search');
+
+ 		
+
+ 	}
 	/************************************************************
 		s05 - Elements Spacing & Classes
 	*************************************************************/
@@ -380,10 +412,9 @@
 		s11 - Sticky nav
 	*************************************************************/
 
+
 	CODEXIN.stickyNavTrigger = function() {
 		$(".navigation-wrapper").sticky({ topSpacing: 0 });
-
-
 	};
 
 
@@ -407,12 +438,17 @@
 		CODEXIN.searchComponentTrigger();
 		CODEXIN.stickyNavTrigger();
 		
+		
 	});
 
 	// Window load and resize functions.
 	$window.on( 'load resize', function() {
 		// CODEXIN.ElementsSpacingClasses();
-		CODEXIN.searchComponentTriggerOnResize();
+		
+	});
+	$window.on( 'resize', function() {
+		// CODEXIN.ElementsSpacingClasses();
+		CODEXIN.searchComponentTriggerOnResize();		
 		
 	});
 
