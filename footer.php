@@ -133,6 +133,9 @@ if ( 'two' === $footer_layout ) {
 		<!-- End of Footer -->
 		
 		<?php
+		if ( ! class_exists( 'kirki' ) ) {
+			$to_top = true;
+		}
 		if ( $to_top ) { ?>
 			<!-- Go to Top Button at right bottom of the window screen -->
 			<div id="to-top">

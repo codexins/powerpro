@@ -18,28 +18,44 @@ $color_selectors = codexin_color_selectors();
  * Selective Refresh functions.
  */
 
-// Header Phone Number.
+/**
+ * Header Phone Number.
+ *
+ * @since   v1.0
+ */
 function codexin_partial_refresh_header_phone() {
 	echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_phone_number' ) ) . '</a>';
 }
 
-// Header Button.
+/**
+ * Header button.
+ *
+ * @since   v1.0
+ */
 function codexin_partial_refresh_header_button() {
 	echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_button' ) ) . '</a>';
 }
 
-// Blog Title Text.
+/**
+ * Blog Title Text.
+ *
+ * @since   v1.0
+ */
 function codexin_partial_refresh_blog_title() {
 	echo '<h1>' . wp_kses_post( codexin_get_option( 'cx_blog_title' ) ) . '</h1>';
 }
 
-// Footer Copyright Text.
+/**
+ * Footer Copyright Text.
+ *
+ * @since   v1.0
+ */
 function codexin_partial_refresh_footer_copyright() {
 	echo '<p class="copyright-legal">' . wp_kses_post( codexin_get_option( 'footer_copy_text' ) ) . '</p>';
 }
 
 /**
- * General Settings
+ * General Settings.
  */
 
 Kirki::add_field( $config_id, array(
@@ -161,18 +177,8 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'codexin_sanitize_number',
 ) );
 
-// Kirki::add_field( $config_id, array(
-// 	'settings'      => 'sticky_logo_setting',
-// 	'label'         => esc_html__( 'Sticky Logo', 'powerpro' ),
-// 	'description'   => esc_html__( 'Upload sticky logo', 'powerpro' ),
-// 	'type'          => 'image',
-// 	'section'       => 'title_tagline',
-// 	'priority'      => 53,
-// 	'transport'     => 'postMessage',
-// ) );
-
 /**
- * Typography Settings
+ * Typography Settings.
  */
 
 Kirki::add_field( $config_id, array(
@@ -504,7 +510,7 @@ Kirki::add_field( $config_id, array(
 ) );
 
 /**
- * Color Settings
+ * Color Settings.
  */
 
 Kirki::add_field( $config_id, array(
@@ -524,24 +530,6 @@ Kirki::add_field( $config_id, array(
 	),
 	'transport'         => 'auto',
 ) );
-
-// Kirki::add_field( $config_id, array(
-// 	'settings'          => 'cx_main_menu_color',
-// 	'label'             => esc_html__( 'Main Menu Color:', 'powerpro' ),
-// 	'description'       => esc_html__( 'Please Choose the Main Menu Color', 'powerpro' ),
-// 	'section'           => 'cx_color_scheme',
-// 	'type'              => 'color',
-// 	'priority'          => 20,
-// 	'default'           => '#fff',
-// 	'sanitize_callback' => 'codexin_sanitize_color',
-// 	'output'            => array(
-// 		array(
-// 			'element'  => '#main-nav li a',
-// 			'property' => 'color',
-// 		),
-// 	),
-// 	'transport'         => 'auto',
-// ) );
 
 Kirki::add_field( $config_id, array(
 	'settings'          => 'cx_primary_color',
@@ -704,7 +692,7 @@ Kirki::add_field( $config_id, array(
 ) );
 
 /**
- * Header Settings
+ * Header Settings.
  */
 
 Kirki::add_field( $config_id, array(
@@ -974,20 +962,6 @@ Kirki::add_field( $config_id, array(
 	'sanitize_callback' => 'esc_url_raw',
 ) );
 
-// Kirki::add_field( $config_id, array(
-// 	'type'        => 'switch',
-// 	'settings'    => 'cx_enable_fixed_header',
-// 	'label'       => esc_html__( 'Enable Fixed Header?', 'powerpro' ),
-// 	'section'     => 'cx_header_options',
-// 	'default'     => 1,
-// 	'priority'    => 110,
-// 	'choices'     => array(
-// 		'on'  => esc_html__( 'On', 'powerpro' ),
-// 		'off' => esc_html__( 'Off', 'powerpro' ),
-// 	),
-// 	'sanitize_callback' => 'codexin_sanitize_checkbox',
-// ) );
-
 Kirki::add_field( $config_id, array(
 	'settings' 		=> 'cx_page_title_position',
 	'label'         => esc_html__( 'Page Title Position', 'powerpro' ),
@@ -1103,7 +1077,7 @@ Kirki::add_field( $config_id, array(
 ) );
 
 /**
- * Blog Settings
+ * Blog Settings.
  */
 
 Kirki::add_field( $config_id, array(
@@ -1264,21 +1238,6 @@ if ( class_exists( 'Codexin_Core' ) ) {
 	) );
 }
 
-// Kirki::add_field( $config_id, array(
-// 	'settings'    => 'cx_enable_comments',
-// 	'label'       => esc_html__( 'Enable Comments?', 'powerpro' ),
-// 	'type'        => 'switch',
-// 	'section'     => 'cx_blog_single_section',
-// 	'default'     => 1,
-// 	'priority'    => 30,
-// 	'choices'     => array(
-// 		'on'  => esc_html__( 'On', 'powerpro' ),
-// 		'off' => esc_html__( 'Off', 'powerpro' ),
-// 	),
-// 	'transport'     => 'postMessage',
-// 	'sanitize_callback' => 'codexin_sanitize_checkbox',
-// ) );
-
 Kirki::add_field( $config_id, array(
 	'settings'    => 'cx_enable_post_nav',
 	'label'       => esc_html__( 'Enable Post Navigation?', 'powerpro' ),
@@ -1317,7 +1276,7 @@ Kirki::add_field( $config_id, array(
 ) );
 
 /**
- * Social Media Settings
+ * Social Media Settings.
  */
 
 Kirki::add_field( $config_id, array(
@@ -1421,7 +1380,7 @@ Kirki::add_field( $config_id, array(
 ) );
 
 /**
- * Footer Settings
+ * Footer Settings.
  */
 
 Kirki::add_field( $config_id, array(
@@ -1598,7 +1557,6 @@ Kirki::add_field( $config_id, array(
 			'value' => 1,
 		),
 	),
-	'sanitize_callback' => 'codexin_sanitize_color',
 ) );
 
 Kirki::add_field( $config_id, array(

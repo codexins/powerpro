@@ -118,18 +118,18 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 // Hooking the styles and scripts into wp_enqueue_scripts.
 add_action( 'wp_enqueue_scripts', 'codexin_framework_scripts' );
 
-if ( ! function_exists( 'codexin_remove_type_attribute' ) ) {
-	/**
-	 * Removing 'type' attribute from style & script tags.
-	 *
-	 * @param 	string $tag Tag for the enqueued script.
-	 * @param 	string $handle The script's registered handle.
-	 * @since 	v1.0
-	 */
-	function codexin_remove_type_attribute( $tag, $handle ) {
-	    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
-	}
-}
+// if ( ! function_exists( 'codexin_remove_type_attribute' ) ) {
+// 	/**
+// 	 * Removing 'type' attribute from style & script tags.
+// 	 *
+// 	 * @param 	string $tag Tag for the enqueued script.
+// 	 * @param 	string $handle The script's registered handle.
+// 	 * @since 	v1.0
+// 	 */
+// 	function codexin_remove_type_attribute( $tag, $handle ) {
+// 	    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+// 	}
+// }
 
-add_filter( 'style_loader_tag', 'codexin_remove_type_attribute', 10, 2 );
-add_filter( 'script_loader_tag', 'codexin_remove_type_attribute', 10, 2 );
+// add_filter( 'style_loader_tag', 'codexin_remove_type_attribute', 10, 2 );
+// add_filter( 'script_loader_tag', 'codexin_remove_type_attribute', 10, 2 );

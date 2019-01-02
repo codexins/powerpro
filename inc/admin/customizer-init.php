@@ -60,11 +60,10 @@ if ( ! function_exists( 'codexin_setup_kirki' ) ) {
 
 		// Requiring the customizer files.
 		foreach ( $codexin_includes as $file ) {
-			$filepath = locate_template( 'inc/admin/customizer' . $file );
-			if ( ! $filepath ) {
-				trigger_error( sprintf( 'Error locating /inc/admin/customizer%s for inclusion', esc_attr( $file ) ), E_USER_ERROR );
+			$filepath = get_theme_file_path( 'inc/admin/customizer' . $file );
+			if ( $filepath ) {
+				require_once wp_normalize_path( $filepath );
 			}
-			require_once wp_normalize_path( $filepath );
 		}
 
 		// Adding kirki configuration.

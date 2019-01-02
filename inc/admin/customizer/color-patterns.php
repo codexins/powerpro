@@ -340,4 +340,4 @@ if ( ! function_exists( 'codexin_color_selectors' ) ) {
 
 		return $selectors;
 	}
-}
+} // End if().

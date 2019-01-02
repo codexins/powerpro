@@ -57,7 +57,7 @@ if ( ! function_exists( 'codexin_widgets_init' ) ) {
 			'after_widget'  	=> '</div>',
 		) );
 
-		if( codexin_get_option( 'cx_enable_footer_widget' ) ) {
+		if ( codexin_get_option( 'cx_enable_footer_widget' ) ) {
 			for ( $i = 1; $i <= $widget_count ; $i++ ) {
 				register_sidebar( array(
 					/* translators: %s: column number */
