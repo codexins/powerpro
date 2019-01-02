@@ -104,6 +104,7 @@
 
 	.site-title,
 	.site-description {
+		white-space: initial;
 		@extend %mb0;
 		@extend %color-white;
 	}

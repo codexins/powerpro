@@ -20,22 +20,22 @@ $color_selectors = codexin_color_selectors();
 
 // Header Phone Number.
 function codexin_partial_refresh_header_phone() {
-    echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_phone_number' ) ) . '</a>';
+	echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_phone_number' ) ) . '</a>';
 }
 
 // Header Button.
 function codexin_partial_refresh_header_button() {
-    echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_button' ) ) . '</a>';
+	echo '<a class="default-btn white-scheme" href="#">' . wp_kses_post( codexin_get_option( 'cx_header_button' ) ) . '</a>';
 }
 
 // Blog Title Text.
 function codexin_partial_refresh_blog_title() {
-    echo '<h1>' . wp_kses_post( codexin_get_option( 'cx_blog_title' ) ) . '</h1>';
+	echo '<h1>' . wp_kses_post( codexin_get_option( 'cx_blog_title' ) ) . '</h1>';
 }
 
 // Footer Copyright Text.
 function codexin_partial_refresh_footer_copyright() {
-    echo '<p class="copyright-legal">' . wp_kses_post( codexin_get_option( 'footer_copy_text' ) ) . '</p>';
+	echo '<p class="copyright-legal">' . wp_kses_post( codexin_get_option( 'footer_copy_text' ) ) . '</p>';
 }
 
 /**
@@ -917,13 +917,13 @@ Kirki::add_field( $config_id, array(
 			'value' => 1,
 		),
 	),
-    'partial_refresh'   => array(
-        'cx_header_phone_number' => array(
-            'selector'            => 'header .header-right>a:first-child',
-            'container_inclusive' => true,
-            'render_callback'     => 'codexin_partial_refresh_header_phone',
-        ),
-    ),
+	'partial_refresh'   => array(
+		'cx_header_phone_number' => array(
+			'selector'            => 'header .header-right>a:first-child',
+			'container_inclusive' => true,
+			'render_callback'     => 'codexin_partial_refresh_header_phone',
+		),
+	),
 	'sanitize_callback' => 'codexin_sanitize_text',
 ) );
 
@@ -954,13 +954,13 @@ Kirki::add_field( $config_id, array(
 	'default'     	=> esc_html__( 'Get a Quote', 'powerpro' ),
 	'priority'    	=> 35,
 	'transport'     => 'postMessage',
-    'partial_refresh'   => array(
-        'cx_header_button' => array(
-            'selector'            => 'header .header-right>a:last-child',
-            'container_inclusive' => true,
-            'render_callback'     => 'codexin_partial_refresh_header_button',
-        ),
-    ),
+	'partial_refresh'   => array(
+		'cx_header_button' => array(
+			'selector'            => 'header .header-right>a:last-child',
+			'container_inclusive' => true,
+			'render_callback'     => 'codexin_partial_refresh_header_button',
+		),
+	),
 	'sanitize_callback' => 'codexin_sanitize_text',
 ) );
 
@@ -1115,13 +1115,13 @@ Kirki::add_field( $config_id, array(
 	'default'     	=> esc_html__( 'Blog', 'powerpro' ),
 	'priority'    	=> 10,
 	'transport'     => 'postMessage',
-    'partial_refresh'   => array(
-        'cx_header_button' => array(
-            'selector'            => '.home.blog .page-title h1',
-            'container_inclusive' => true,
-            'render_callback'     => 'codexin_partial_refresh_blog_title',
-        ),
-    ),
+	'partial_refresh'   => array(
+		'cx_header_button' => array(
+			'selector'            => '.home.blog .page-title h1',
+			'container_inclusive' => true,
+			'render_callback'     => 'codexin_partial_refresh_blog_title',
+		),
+	),
 	'sanitize_callback' => 'codexin_sanitize_text',
 ) );
 
@@ -1643,11 +1643,11 @@ Kirki::add_field( $config_id, array(
 		),
 	),
 	'transport'     => 'postMessage',
-    'partial_refresh'   => array(
-        'cx_header_button' => array(
-            'selector'            => '#colophon .copyright-legal',
-            'container_inclusive' => true,
-            'render_callback'     => 'codexin_partial_refresh_footer_copyright',
-        ),
-    ),
+	'partial_refresh'   => array(
+		'cx_header_button' => array(
+			'selector'            => '#colophon .copyright-legal',
+			'container_inclusive' => true,
+			'render_callback'     => 'codexin_partial_refresh_footer_copyright',
+		),
+	),
 ) );

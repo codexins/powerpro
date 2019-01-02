@@ -272,6 +272,9 @@ if ( ! function_exists( 'codexin_posts_footer' ) ) {
 		if ( ! is_single() ) {
 
 			// Read More button.
+			if ( ! class_exists( 'kirki' ) ) {
+				$read_more = true;
+			}
 			if ( $read_more ) {
 				?>				
 				<div class="read-more post-btn">
