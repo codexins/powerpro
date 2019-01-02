@@ -39,7 +39,8 @@
 		$intelHeader        = $( '.header-top' ),
 		$fixedMenuSpace    	= $( '.fixed-header-space' ),
 		$footer             = $( '#colophon' ),
-		$headerSearch		= $( '.header-search');
+		$headerSearch		= $( '.header-search'),
+		$body				= $( 'body' );
 
 	// Check if element exists.
 	$.fn.elExists = function() {
@@ -133,17 +134,7 @@
 	/************************************************************
 		s04 - Temp, will be shifted later
 	*************************************************************/
-	 // if ($window.width() < 576) {
-	 //    $(".mobile-search-icon a").click(function(e) {
-	 //        e.preventDefault();
-	 //        $(".header-search").fadeIn();
-	 //        $(".header-search").find('input[type="search"]').focus();
-	 //    });
-	 //    $('.header-search').on('focusout', function() {
-	 //        $(this).fadeOut();
-	 //    });
-  	 	//  }
-
+	
   	CODEXIN.searchIconChange = function( status = 'search' ){
 		if ( status === 'search'){
 			$('.mobile-search-icon a i').removeClass('fa fa-search', '500');
@@ -156,6 +147,9 @@
 	}
 
 	CODEXIN.searchComponentTrigger = function() {
+		if( false === $headerSearch.elExists()){
+			return;
+		}
 	    if($window.width() < 576){
 			$headerSearch.hide();
 			CODEXIN.searchIconChange('close');
@@ -179,6 +173,9 @@
 	}
 
  	CODEXIN.searchComponentTriggerOnResize = function() {
+ 		if( false === $headerSearch.elExists()){
+			return;
+		}
  		if($window.width() < 576){
  			var searchTerm = $headerSearch.find('input[type="search"]').val();
 			$headerSearch.hide();
@@ -414,7 +411,12 @@
 
 
 	CODEXIN.stickyNavTrigger = function() {
-		$(".navigation-wrapper").sticky({ topSpacing: 0 });
+		var topSpacing = 0;
+		if( $body.hasClass('admin-bar') ){
+			topSpacing = 32;
+		}
+
+		$(".navigation-wrapper").sticky({ topSpacing: topSpacing });
 	};
 
 
