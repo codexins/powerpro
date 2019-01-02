@@ -308,7 +308,8 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
     background: #42ad61;
 }
 
-.block-editor .edit-post-visual-editor .wp-block-button .wp-block-button__link {
+.block-editor .edit-post-visual-editor .wp-block-button .wp-block-button__link,
+.block-editor .edit-post-visual-editor .wp-block-file .wp-block-file__button {
     color: #fff;
 }
 
