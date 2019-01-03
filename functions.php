@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * PowerPro Theme only works in WordPress 4.7 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
-	require get_theme_file_path( '/inc/admin/back-compat.php' );
+	require get_template_directory() . '/inc/admin/back-compat.php';
 	return;
 }
 

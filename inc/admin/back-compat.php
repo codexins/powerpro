@@ -125,6 +125,6 @@ if ( ! function_exists( 'get_theme_file_path' ) ) {
 			$path = get_template_directory() . '/' . $file;
 		}
 
-		return apply_filters( 'theme_file_path', $url, $file );
+		return apply_filters( 'theme_file_path', $path, $file );
 	}
 }
