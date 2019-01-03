@@ -534,6 +534,10 @@ a.skip-link {
     max-width: unset;
 }
 
+figure.woocommerce-product-gallery__wrapper {
+    max-width:initial;
+}
+
 /* global notice */
 
 .browserupgrade {
@@ -700,5 +704,3 @@ a.skip-link {
 		z-index: 9990;
 	}
 }
-
-

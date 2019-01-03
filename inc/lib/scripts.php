@@ -27,7 +27,7 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		 */
 
 		// Bootstrap.
-		wp_enqueue_style( 'bootstrap', get_theme_file_uri( 'assets/css/bootstrap.min.css' ), array(), '4.1.3', 'all' );
+		wp_enqueue_style( 'bootstrap', get_theme_file_uri( 'assets/css/bootstrap.min.css' ), array(), '4.2.1', 'all' );
 
 		$typography_body = codexin_get_option( 'cx_body_font' );
 
@@ -72,10 +72,10 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		 */
 
 		// Popper JS.
-		wp_enqueue_script( 'popper', get_theme_file_uri( 'assets/js/popper.min.js' ), array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'popper', get_theme_file_uri( 'assets/js/popper.min.js' ), array( 'jquery' ), '1.14.6', true );
 
 		// Bootstrap.
-		wp_enqueue_script( 'bootstrap', get_theme_file_uri( 'assets/js/bootstrap.min.js' ), array( 'jquery' ), '4.1.3', true );
+		wp_enqueue_script( 'bootstrap', get_theme_file_uri( 'assets/js/bootstrap.min.js' ), array( 'jquery' ), '4.2.1', true );
 
 		// Modernizr.
 		wp_enqueue_script( 'modernizr-js', get_theme_file_uri( 'assets/js/modernizr-custom.min.js' ), array( 'jquery' ), '2.8.3', true );
