@@ -275,6 +275,10 @@ if ( ! function_exists( 'codexin_get_header_class' ) ) {
 			array_push( $header_classes, 'header-element-dark' );
 		}
 
+		if ( codexin_meta( 'codexin_disable_page_title' ) ) {
+			array_push( $header_classes, 'no-page-title' );
+		}
+
 		return implode( ' ', $header_classes );
 	}
 }
