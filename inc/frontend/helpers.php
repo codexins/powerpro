@@ -278,3 +278,40 @@ if ( ! function_exists( 'codexin_get_header_class' ) ) {
 		return implode( ' ', $header_classes );
 	}
 }
+
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+
+add_action('woocommerce_before_main_content', 'codexin_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'codexin_wrapper_end', 10);
+
+add_action( 'woocommerce_sidebar', 'codexin_woocommerce_get_sidebar', 10);
+
+function codexin_wrapper_start() {
+ echo '<div id="content" class="main-content-wrapper">';
+ echo '<div class="container">';
+ echo '<div class="row">';
+ echo '<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9">';
+}
+
+function codexin_wrapper_end() {
+ echo '</div>';
+
+}
+
+function codexin_woocommerce_get_sidebar() {
+echo '<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-3">';
+echo '<aside id="secondary" class="widget-area">';
+
+woocommerce_get_sidebar();
+
+echo '</aside>';
+echo '</div>';
+echo '</div>';
+echo '</div>';
+echo '</div>';
+}
