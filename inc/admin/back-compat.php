@@ -82,3 +82,49 @@ function powerpro_preview_error() {
 	}
 }
 add_action( 'template_redirect', 'powerpro_preview_error' );
+
+if ( ! function_exists( 'get_theme_file_uri' ) ) {
+	/**
+	 * Function for get_theme_file_uri() backward compatibility.
+	 *
+	 * @param   string $file The requested file to search for.
+	 * @return  string
+	 * @since   v1.0
+	 */
+	function get_theme_file_uri( $file = '' ) {
+		$file = ltrim( $file, '/' );
+
+		if ( empty( $file ) ) {
+			$url = get_stylesheet_directory_uri();
+		} elseif ( file_exists( get_stylesheet_directory() . '/' . $file ) ) {
+			$url = get_stylesheet_directory_uri() . '/' . $file;
+		} else {
+			$url = get_template_directory_uri() . '/' . $file;
+		}
+
+		return apply_filters( 'theme_file_uri', $url, $file );
+	}
+}
+
+if ( ! function_exists( 'get_theme_file_path' ) ) {
+	/**
+	 * Function for get_theme_file_path() backward compatibility.
+	 *
+	 * @param   string $file The requested file to search for.
+	 * @return  string
+	 * @since   v1.0
+	 */
+	function get_theme_file_path( $file = '' ) {
+		$file = ltrim( $file, '/' );
+
+		if ( empty( $file ) ) {
+			$path = get_stylesheet_directory();
+		} elseif ( file_exists( get_stylesheet_directory() . '/' . $file ) ) {
+			$path = get_stylesheet_directory() . '/' . $file;
+		} else {
+			$path = get_template_directory() . '/' . $file;
+		}
+
+		return apply_filters( 'theme_file_path', $url, $file );
+	}
+}
