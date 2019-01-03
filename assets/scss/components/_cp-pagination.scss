@@ -16,23 +16,45 @@
 		@extend %margin-0;
 		flex: 0 0 100%;
 		&.nav-next {
-			padding-right: 15px;
+			order:2;
+			text-align: right;
+			padding-left: 15px;
 		}
 
 		&.nav-previous {
-			text-align: right;
-			padding-left: 15px;
+			order:1;
+			text-align: left;
+			padding-right: 15px;
 		}
 
 		a {
 			line-height: 1.3;
 		}
 	}
-
 	.nav-next {
 		&.post-btn,
 		& + .post-btn {
 			flex: 0 0 50%;
+		}
+	}
+}
+
+
+.single {
+	.posts-nav,
+	.nav-links {
+		.post-btn {
+			&.nav-next {
+				order:1;
+				text-align: left;
+				padding-right: 15px;
+			}
+
+			&.nav-previous {
+				order:2;
+				text-align: right;
+				padding-left: 15px;
+			}
 		}
 	}
 }

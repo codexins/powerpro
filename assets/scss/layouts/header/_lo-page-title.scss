@@ -42,3 +42,16 @@
 		padding-bottom: $cx-section-spacing-mob;
 	}
 }
+
+header {
+	&.no-page-title {
+		padding-bottom: $cx-section-spacing - 22px;
+		@include respond-to(tablet) {
+			padding-bottom: $cx-section-spacing - $cx-heading-margin-bottom;
+		}
+		@include respond-to(mobile) {
+			padding-bottom: $cx-section-spacing-mob - $cx-heading-margin-bottom;
+		}
+
+	}
+}
