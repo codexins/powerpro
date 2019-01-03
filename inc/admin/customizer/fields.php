@@ -1108,9 +1108,9 @@ Kirki::add_field( $config_id, array(
 	'default'     	=> 'right',
 	'priority'    	=> 20,
 	'choices'       => array(
-		'no' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/1col.png',
-		'left' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cl.png',
-		'right' => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cr.png',
+		'no' 	=> get_theme_file_uri( 'assets/images/admin/1col.png' ),
+		'left' 	=> get_theme_file_uri( 'assets/images/admin/2cl.png' ),
+		'right' => get_theme_file_uri( 'assets/images/admin/2cr.png' ),
 	),
 ) );
 
@@ -1214,9 +1214,9 @@ Kirki::add_field( $config_id, array(
 	'default'     	=> 'right',
 	'priority'    	=> 10,
 	'choices'       => array(
-		'no' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/1col.png',
-		'left' 	=> trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cl.png',
-		'right' => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/2cr.png',
+		'no' 	=> get_theme_file_uri( 'assets/images/admin/1col.png' ),
+		'left' 	=> get_theme_file_uri( 'assets/images/admin/2cl.png' ),
+		'right' => get_theme_file_uri( 'assets/images/admin/2cr.png' ),
 	),
 ) );
 
@@ -1408,11 +1408,11 @@ Kirki::add_field( $config_id, array(
 	'default'       => 'one',
 	'priority'      => 11,
 	'choices'       => array(
-		'one'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-1.jpg',
-		'two'       => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-2.jpg',
-		'three'     => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-3.jpg',
-		'four'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-4.jpg',
-		'five'      => trailingslashit( get_template_directory_uri() ) . 'assets/images/admin/footer-5.jpg',
+		'one'       => get_theme_file_uri( 'assets/images/admin/footer-1.jpg' ),
+		'two'       => get_theme_file_uri( 'assets/images/admin/footer-2.jpg' ),
+		'three'     => get_theme_file_uri( 'assets/images/admin/footer-3.jpg' ),
+		'four'      => get_theme_file_uri( 'assets/images/admin/footer-4.jpg' ),
+		'five'      => get_theme_file_uri( 'assets/images/admin/footer-5.jpg' ),
 	),
 	'required' => array(
 		array(
