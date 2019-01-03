@@ -14,7 +14,7 @@
     > li {
     	float: none;
     	clear: both;
-    	flex: 0;
+    	//flex: 0 0 auto;
     	@extend %bgc-transparent;
 
     	> a {
