@@ -50,12 +50,6 @@ if ( ! function_exists( 'codexin_register_plugins' ) ) {
 			),
 
 			array(
-				'name'          => esc_html__( 'Meta Box', 'powerpro' ),
-				'slug'          => 'meta-box',
-				'required'      => true,
-			),
-
-			array(
 				'name'          => esc_html__( 'Elementor Page Builder', 'powerpro' ),
 				'slug'          => 'elementor',
 				'required'      => false,

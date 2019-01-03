@@ -35,7 +35,11 @@ add_action( 'after_switch_theme', 'codexin_switch_theme' );
  * @since v1.0
  */
 function codexin_upgrade_notice() {
-	$message = sprintf( esc_html__( 'PowerPro requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'powerpro' ), $GLOBALS['wp_version'] );
+	$message = sprintf(
+		/* translators: %s: wordpress version */
+		esc_html__( 'PowerPro requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'powerpro' ),
+		$GLOBALS['wp_version']
+	);
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
@@ -48,6 +52,7 @@ function codexin_upgrade_notice() {
 function powerpro_customizer_error() {
 	wp_die(
 		sprintf(
+			/* translators: %s: wordpress version */
 			esc_html__( 'PowerPro requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'powerpro' ),
 			$GLOBALS['wp_version']
 		),
@@ -61,13 +66,65 @@ add_action( 'load-customize.php', 'powerpro_customizer_error' );
 
 /**
  * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.7.
- * 
+ *
  * @global string $wp_version WordPress version.
  * @since v1.0
  */
 function powerpro_preview_error() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( esc_html__( 'Twenty Nineteen requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'powerpro' ), $GLOBALS['wp_version'] ) );
+		wp_die(
+			sprintf(
+				/* translators: %s: wordpress version */
+				esc_html__( 'PowerPro requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.','powerpro' ),
+				$GLOBALS['wp_version']
+			)
+		);
 	}
 }
 add_action( 'template_redirect', 'powerpro_preview_error' );
+
+if ( ! function_exists( 'get_theme_file_uri' ) ) {
+	/**
+	 * Function for get_theme_file_uri() backward compatibility.
+	 *
+	 * @param   string $file The requested file to search for.
+	 * @return  string
+	 * @since   v1.0
+	 */
+	function get_theme_file_uri( $file = '' ) {
+		$file = ltrim( $file, '/' );
+
+		if ( empty( $file ) ) {
+			$url = get_stylesheet_directory_uri();
+		} elseif ( file_exists( get_stylesheet_directory() . '/' . $file ) ) {
+			$url = get_stylesheet_directory_uri() . '/' . $file;
+		} else {
+			$url = get_template_directory_uri() . '/' . $file;
+		}
+
+		return apply_filters( 'theme_file_uri', $url, $file );
+	}
+}
+
+if ( ! function_exists( 'get_theme_file_path' ) ) {
+	/**
+	 * Function for get_theme_file_path() backward compatibility.
+	 *
+	 * @param   string $file The requested file to search for.
+	 * @return  string
+	 * @since   v1.0
+	 */
+	function get_theme_file_path( $file = '' ) {
+		$file = ltrim( $file, '/' );
+
+		if ( empty( $file ) ) {
+			$path = get_stylesheet_directory();
+		} elseif ( file_exists( get_stylesheet_directory() . '/' . $file ) ) {
+			$path = get_stylesheet_directory() . '/' . $file;
+		} else {
+			$path = get_template_directory() . '/' . $file;
+		}
+
+		return apply_filters( 'theme_file_path', $path, $file );
+	}
+}

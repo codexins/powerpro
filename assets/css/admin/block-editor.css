@@ -279,6 +279,7 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
 
 /* Theme CSS */
 
+.block-editor .edit-post-visual-editor .wp-block-code,
 .block-editor .edit-post-visual-editor .wp-block-preformatted,
 .block-editor .edit-post-visual-editor .wp-block-verse {
     padding: 30px;
@@ -290,11 +291,13 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
     border-width: 1px;
     border-style: solid;
     border-color: #ddd;
+    border-radius: 0;
     -webkit-box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
     box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.1);
     background: #f6f6f6;
 }
 
+.block-editor .edit-post-visual-editor .wp-block-code .editor-plain-text,
 .block-editor .edit-post-visual-editor .wp-block-preformatted pre,
 .block-editor .edit-post-visual-editor .wp-block-verse pre {
     margin-bottom: 0;
@@ -302,6 +305,7 @@ body.block-editor-page .is-sidebar-opened .edit-post-visual-editor .editor-block
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
     font-size: 100%;
     color: #212529;
+    background: transparent;
 }
 
 .edit-post-visual-editor .wp-block-button .wp-block-button__link {

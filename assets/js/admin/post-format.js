@@ -23,7 +23,7 @@ jQuery( document ).ready(function( $ ) {
 	$( ids ).hide();
 
 	$( window ).on( 'load', function() {
-		jQuery(document).on( 'change', '#post-formats-select input:radio[name=post_format]:checked, select[id*="post-format"]', function() {
+		jQuery( document ).on( 'change', '#post-formats-select input:radio[name=post_format]:checked, select[id*="post-format"]', function() {
 			var cxInputSelected = this.value;
 
 			// Hide during changing.

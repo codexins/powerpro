@@ -103,7 +103,7 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 			 * If you're building a theme based on powerpro, use a find and replace
 			 * to change 'powerpro' to the name of your theme in all the template files.
 			 */
-			load_theme_textdomain( 'powerpro', trailingslashit( get_template_directory() ) . 'languages' );
+			load_theme_textdomain( 'powerpro', get_theme_file_path( 'languages' ) );
 
 			/**
 			 * Add default posts and comments
@@ -357,7 +357,7 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 			global $post;
 			if ( 'post-new.php' === $hook || 'post.php' === $hook ) {
 				if ( 'post' === $post->post_type ) {
-					wp_enqueue_script( 'codexin-post-formats', trailingslashit( get_template_directory_uri() ) . 'assets/js/admin/post-format.js' );
+					wp_enqueue_script( 'codexin-post-formats', get_theme_file_uri( 'assets/js/admin/post-format.js' ) );
 				}
 			}
 		}
@@ -370,10 +370,10 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 		 */
 		public function codexin_gutenberg_scripts() {
 			wp_enqueue_style( 'codexin-fonts-url', codexin_default_google_fonts(), array(), null );
-			wp_enqueue_style( 'codexin-gutenberg-styles', trailingslashit( get_template_directory_uri() ) . '/assets/css/admin/gutenberg.css', false, '1.0', 'all' );
+			wp_enqueue_style( 'codexin-block-editor-styles', get_theme_file_uri( '/assets/css/admin/block-editor.css', array(), '1.0', 'all' ) );
 
 			// Add dynamic css to Gutenberg.
-			wp_add_inline_style( 'codexin-gutenberg-styles', codexin_gutenberg_dynamic_css() );
+			wp_add_inline_style( 'codexin-block-editor-styles', codexin_gutenberg_dynamic_css() );
 		}
 	}
 } // End if().

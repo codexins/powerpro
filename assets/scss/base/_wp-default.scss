@@ -117,6 +117,8 @@ ul {
 
 // Buttons
 .wp-block-button {
+    @extend %mb-full;
+
     &:not(.is-style-outline) {
         .wp-block-button__link {
             @extend %bgc-primary;
@@ -141,10 +143,10 @@ ul {
 }
 
 /* Block Gallery */
+.wp-block-cover,
 .wp-block-embed,
 .wp-block-image {
-    margin-top: $cx-heading-margin-bottom;
-    margin-bottom: $cx-heading-margin-bottom;
+    @extend %mb-full;
 }
 
 .wp-block-gallery:not(.alignwide):not(.alignfull) {
@@ -160,6 +162,8 @@ ul {
 }
 
 .wp-block-gallery {
+    @extend %mb-full;
+
     .blocks-gallery-item {
         @extend %pb0;
 
@@ -177,6 +181,7 @@ ul {
 .wp-block-latest-posts {
     margin-left: 0;
     list-style: none;
+    @extend %mb-full;
 
     > li {
         margin-bottom: 15px;
@@ -308,6 +313,7 @@ ul {
 .wp-block-columns {
     margin-left: -15px;
     margin-right: -15px;
+    @extend %mb-full;
 
     .wp-block-column {
         padding-left: 15px;
@@ -320,11 +326,16 @@ ul {
             @extend %mb0;
         }
     }
+
+    .wp-block-image {
+        @extend %mb0;
+    }
 }
 
 // Block Categories
 .wp-block-categories,
 .wp-block-archives {
+    @extend %mb-full;
     li {
         a {
             @extend %color-text;
@@ -600,7 +611,7 @@ ul {
 
 
 /**
- * WP Audio Player
+ * WP Audio/Video Player
  *
  */
 
@@ -621,8 +632,14 @@ ul {
 }
 
 .wp-block-audio {
+    @extend %mb-full;
+
     figcaption {
         @extend %color-text;
         font-size: 14px;
     }
+}
+
+.wp-block-video {
+    @extend %mb-full;
 }

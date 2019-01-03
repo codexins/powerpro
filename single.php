@@ -66,11 +66,11 @@ $pagination 		= codexin_get_option( 'cx_enable_post_nav' );
 					<?php
 					// Rendering Pagination.
 					if ( ! class_exists( 'kirki' ) ) {
+						$pagination = true;
+					}
+
+					if ( $pagination ) {
 						codexin_post_nav();
-					} else {
-						if ( $pagination ) {
-							codexin_post_nav();
-						}
 					}
 
 					// If comments are open or we have at least one comment, load up the comment template.

@@ -80,15 +80,15 @@ if ( ! function_exists( 'codexin_adjust_body_class' ) ) {
 add_filter( 'body_class', 'codexin_adjust_body_class' );
 
 if ( ! function_exists( 'codexin_excerpt_more' ) ) {
-    /**
-     * Replaces "[...]" (appended to automatically generated excerpts) with ...
-     *
-     * @param string $more Default Read More excerpt link.
-     * @return string Filtered Read More excerpt link.
-     */
-    function codexin_excerpt_more( $more ) {
-        return ' &hellip; ';
-    }
+	/**
+	 * Replaces "[...]" (appended to automatically generated excerpts) with ...
+	 *
+	 * @param string $more Default Read More excerpt link.
+	 * @return string Filtered Read More excerpt link.
+	 */
+	function codexin_excerpt_more( $more ) {
+		return ' &hellip; ';
+	}
 }
 add_filter( 'excerpt_more', 'codexin_excerpt_more' );
 

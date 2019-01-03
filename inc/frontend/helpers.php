@@ -54,52 +54,6 @@ if ( ! function_exists( 'codexin_meta' ) ) {
 	}
 }
 
-if ( ! function_exists( 'get_theme_file_uri' ) ) {
-	/**
-	 * Helper Function for get_theme_file_uri() backward compatibility.
-	 *
-	 * @param   string $file The requested file to search for.
-	 * @return  string
-	 * @since   v1.0
-	 */
-	function get_theme_file_uri( $file = '' ) {
-		$file = ltrim( $file, '/' );
-
-		if ( empty( $file ) ) {
-			$url = get_stylesheet_directory_uri();
-		} elseif ( file_exists( get_stylesheet_directory() . '/' . $file ) ) {
-			$url = get_stylesheet_directory_uri() . '/' . $file;
-		} else {
-			$url = get_template_directory_uri() . '/' . $file;
-		}
-
-		return apply_filters( 'theme_file_uri', $url, $file );
-	}
-}
-
-if ( ! function_exists( 'get_theme_file_path' ) ) {
-	/**
-	 * Helper Function for get_theme_file_path() backward compatibility.
-	 *
-	 * @param   string $file The requested file to search for.
-	 * @return  string
-	 * @since   v1.0
-	 */
-	function get_theme_file_path( $file = '' ) {
-		$file = ltrim( $file, '/' );
-
-	    if ( empty( $file ) ) {
-	        $path = get_stylesheet_directory();
-	    } elseif ( file_exists( get_stylesheet_directory() . '/' . $file ) ) {
-	        $path = get_stylesheet_directory() . '/' . $file;
-	    } else {
-	        $path = get_template_directory() . '/' . $file;
-	    }
-
-		return apply_filters( 'theme_file_path', $url, $file );
-	}
-}
-
 if ( ! function_exists( 'codexin_title_background' ) ) {
 	/**
 	 * Helper function to return page tile background url
@@ -127,9 +81,9 @@ if ( ! function_exists( 'codexin_default_google_fonts' ) ) {
 		$fonts_url = '';
 
 		/*
-	     * Translators: If there are characters in the language that are not supported
-	     * by chosen font(s), translate this to 'off'. Do not translate into your own language.
-	     */
+		 * Translators: If there are characters in the language that are not supported
+		 * by chosen font(s), translate this to 'off'. Do not translate into your own language.
+		 */
 		if ( 'off' !== esc_html_x( 'on', 'Google font: on or off', 'powerpro' ) ) {
 			$fonts = apply_filters( 'codexin_default_google_fonts', array( 'Source+Sans+Pro:400,400i,600,700', 'Oswald:400,500' ) );
 			if ( $fonts ) {
@@ -217,7 +171,7 @@ if ( ! function_exists( 'codexin_header_style' ) ) {
 				}
 			<?php
 			} else {
-				if ( ! empty( $$header_text_color  ) ) {
+				if ( ! empty( $$header_text_color ) ) {
 			?>
 				.site-title a,
 				.site-description {
@@ -231,7 +185,7 @@ if ( ! function_exists( 'codexin_header_style' ) ) {
 
 		<?php
 	}
-}
+} // End if().
 
 if ( ! function_exists( 'codexin_infinite_scroll_render' ) ) {
 	/**
@@ -283,16 +237,16 @@ if ( ! function_exists( 'codexin_header_socials' ) ) {
 		);
 
 		echo '<div class="header-social">';
-			foreach ( $social_array as $social_key => $social_value ) {
-				if ( ! empty( $social_value ) ) {
+		foreach ( $social_array as $social_key => $social_value ) {
+			if ( ! empty( $social_value ) ) {
 
-					$key = ( 'google_plus' === $social_key ) ? str_replace( '_', '-', $social_key ) : $social_key;
+				$key = ( 'google_plus' === $social_key ) ? str_replace( '_', '-', $social_key ) : $social_key;
 
-					echo '<a href="' . esc_url( $social_value ) . '" title="' . esc_attr( ucfirst( $key ) ) . '" target="_blank">';
-							echo '<i class="fa fa-' . esc_attr( $key ) . '"></i>';
-					echo '</a>';
-				}
+				echo '<a href="' . esc_url( $social_value ) . '" title="' . esc_attr( ucfirst( $key ) ) . '" target="_blank">';
+						echo '<i class="fa fa-' . esc_attr( $key ) . '"></i>';
+				echo '</a>';
 			}
+		}
 		echo '</div>';
 	}
 }
@@ -321,6 +275,6 @@ if ( ! function_exists( 'codexin_get_header_class' ) ) {
 			array_push( $header_classes, 'header-element-dark' );
 		}
 
-		return implode( " ", $header_classes );
+		return implode( ' ', $header_classes );
 	}
 }
