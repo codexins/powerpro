@@ -187,34 +187,7 @@ if ( ! function_exists( 'codexin_header_style' ) ) {
 	}
 } // End if().
 
-if ( ! function_exists( 'codexin_infinite_scroll_render' ) ) {
-	/**
-	 * Custom render function for Jetpack Infinite Scroll.
-	 *
-	 * @since   v1.0
-	 */
-	function codexin_infinite_scroll_render() {
-		while ( have_posts() ) {
-			the_post();
-			get_template_part( 'template-parts/post/content', get_post_format() );
-		}
-	}
-}
 
-if ( ! function_exists( 'codexin_jectpack_social_menu' ) ) {
-	/**
-	 * Render function for Jetpack Social Menu.
-	 *
-	 * @since   v1.0
-	 */
-	function codexin_jectpack_social_menu() {
-		if ( ! function_exists( 'jetpack_social_menu' ) ) {
-			return;
-		} else {
-			jetpack_social_menu();
-		}
-	}
-}
 
 if ( ! function_exists( 'codexin_header_socials' ) ) {
 	/**
@@ -281,32 +254,4 @@ if ( ! function_exists( 'codexin_get_header_class' ) ) {
 
 		return implode( ' ', $header_classes );
 	}
-}
-
-
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
-
-
-add_action('woocommerce_before_main_content', 'codexin_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'codexin_wrapper_end', 10);
-
-
-function codexin_wrapper_start() {
- echo '<div id="content" class="main-content-wrapper">';
- echo '<div class="container">';
- echo '<div class="row">';
- echo '<div class="col-12 col-sm-12 col-md-12">';
- echo '<main id="primary" class="site-main">';
-}
-
-function codexin_wrapper_end() {
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
-echo '</div>';
-
 }

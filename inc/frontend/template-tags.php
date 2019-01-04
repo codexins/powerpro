@@ -34,7 +34,9 @@ if ( ! function_exists( 'codexin_comment_function' ) ) {
 							<?php
 							echo get_avatar(
 								$comment,
-								$size = '90'
+								$size = '90',
+								$default = '',
+								$alt = sprintf( '%1$s %2$s', esc_html__( 'Avatar for', 'powerpro' ), get_comment_author() )
 							);
 							?>
 						</div> <!-- end of comment-author -->
@@ -197,7 +199,14 @@ if ( ! function_exists( 'codexin_posts_meta' ) ) {
 	?>
 		<div class="media meta-container">
 			<div class="author-media">
-				<?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?>
+				<?php
+				echo get_avatar(
+					get_the_author_meta( 'ID' ),
+					$size = '96',
+					$default = '',
+					$alt = sprintf( '%1$s %2$s', esc_html__( 'Avatar for', 'powerpro' ), get_the_author_meta('display_name') )
+				);
+				?>
 			</div>
 
 			<div class="meta-details media-body">

@@ -49,14 +49,13 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		wp_enqueue_style( 'jquery-superfish', get_theme_file_uri( 'assets/css/superfish.min.css' ), array(), '1.7.10', 'all' );
 
 		// Swiper Slider.
-		if ( ! wp_style_is( 'swiper', 'enqueued' ) ) {
-			wp_enqueue_style( 'swiper', get_theme_file_uri( 'assets/css/swiper.min.css' ), array(), '4.4.2', 'all' );
-		}
+		wp_enqueue_style( 'swiper', get_theme_file_uri( 'assets/css/swiper.min.css' ), array(), '4.4.2', 'all' );
 
 		// Photoswipe.
-		if ( ! wp_style_is( 'photoswipe', 'enqueued' ) ) {
-			wp_enqueue_style( 'photoswipe', get_theme_file_uri( 'assets/css/photoswipe.min.css' ), array(), '4.1.2', 'all' );
-		}
+		wp_enqueue_style( 'photoswipe', get_theme_file_uri( 'assets/css/photoswipe.min.css' ), array(), '4.1.2', 'all' );
+
+		// Photoswipe default skin.
+		wp_enqueue_style( 'photoswipe-default-skin', get_theme_file_uri( 'assets/css/photoswipe-default-skin.min.css' ), array(), '4.1.2', 'all' );
 
 		// Mobile Menu.
 		wp_enqueue_style( 'slide-push-menu', get_theme_file_uri( 'assets/css/mobile-menu.css' ), array(), '1.0', 'all' );
@@ -90,14 +89,16 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		wp_enqueue_script( 'jquery-superfish', get_theme_file_uri( 'assets/js/superfish.min.js' ), array( 'jquery' ), '1.7.10', true );
 
 		// Swiper Slider.
-		if ( ! wp_script_is( 'swiper', 'enqueued' ) ) {
-			wp_enqueue_script( 'swiper', get_theme_file_uri( 'assets/js/swiper.min.js' ), array( 'jquery' ), '4.4.2', true );
-		}
+		wp_enqueue_script( 'swiper', get_theme_file_uri( 'assets/js/swiper.min.js' ), array( 'jquery' ), '4.4.2', true );
 
 		// Photoswipe.
-		if ( ! wp_script_is( 'photoswipe', 'enqueued' ) ) {
-			wp_enqueue_script( 'photoswipe', get_theme_file_uri( 'assets/js/photoswipe.js' ), array( 'jquery' ), '4.1.2', true );
-		}
+		wp_enqueue_script( 'photoswipe', get_theme_file_uri( 'assets/js/photoswipe.min.js' ), array( 'jquery' ), '4.1.2', true );
+
+		// Photoswipe default ui.
+		wp_enqueue_script( 'photoswipe-ui-default', get_theme_file_uri( 'assets/js/photoswipe-ui-default.min.js' ), array( 'jquery' ), '4.1.2', true );
+
+		// Photoswipe trigger.
+		wp_enqueue_script( 'photoswipe-trigger', get_theme_file_uri( 'assets/js/photoswipe-trigger.js' ), array( 'jquery' ), '4.1.2', true );
 
 		// Mobile Menu.
 		wp_enqueue_script( 'slide-push-menu-js', get_theme_file_uri( 'assets/js/mobile-menu.min.js' ), array( 'jquery' ), '1.0', true );

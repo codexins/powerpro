@@ -57,6 +57,8 @@ if ( ! class_exists( 'Codexin_Framework' ) ) {
 				'/frontend/template-tags.php',                 		// Adding the custom template tags.
 				'/frontend/helpers.php',                       		// Adding the helper functions.
 				'/frontend/paginations.php',                      	// Adding the functions for various paginations.
+				'/frontend/jetpack.php',                      		// Jetpack Compatibility.
+				'/frontend/woocommerce.php',                      	// Woocommerce Compatibility.
 			);
 
 			// Requiring the framwork files.
