@@ -47,8 +47,8 @@ h6 {
     @extend %default-heading;
 }
 
-.fa,
-.ion {
+:not(.elementor-icon)>.fa,
+:not(.elementor-icon)>.ion {
     font-size: $cx-icon-font-size;
 }
 

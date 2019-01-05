@@ -248,7 +248,7 @@ if ( ! function_exists( 'codexin_get_header_class' ) ) {
 			array_push( $header_classes, 'header-element-dark' );
 		}
 
-		if ( codexin_meta( 'codexin_disable_page_title' ) ) {
+		if ( codexin_meta( 'codexin_disable_page_title' ) || is_page_template( 'page-templates/page-home.php' ) ) {
 			array_push( $header_classes, 'no-page-title' );
 		}
 
