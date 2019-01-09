@@ -38,16 +38,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! class_exists( 'kirki' ) ) {
 		$theme_pageloader = true;
 	}
-
-	if ( $theme_pageloader ) {
-	?>
-		<!-- Site Loader started-->
-		<div class="cx-pageloader">
-			<div class="cx-pageloader-inner"></div>
-		</div>
-		<!-- Site Loader Finished-->
-	<?php
-	} // End if().
 	?>
 
 	<!-- Start of Mobile Navigation -->
@@ -60,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div id="c-mask" class="c-mask"></div> <!-- Empty placeholder for Mobile Menu masking -->
 
 	<!-- Start of Whole Site Wrapper with mobile menu support -->
-	<div id="whole" class="whole-site-wrapper">
+	<div id="whole" class="whole-site-wrapper<?php echo ( $theme_pageloader ) ? esc_attr( ' animsition' ) : ''; ?>">
 
 		<?php
 		$page_header 			= ! empty( codexin_title_background() ) ? codexin_title_background() : '';

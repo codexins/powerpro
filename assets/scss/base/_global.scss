@@ -704,3 +704,30 @@ figure.woocommerce-product-gallery__wrapper {
 		z-index: 9990;
 	}
 }
+
+// .elementor-element {
+//     .powerpro-title.elementor-widget-heading {
+//         .elementor-heading-title {
+//             font-size: 80px;
+//             text-transform: capitalize;
+//             @extend %color-primary;
+//             span {
+//                 @extend %pos-r;
+//                 display: inline;
+//                 @extend %color-secondary;
+//                 transition: background-position 0.15s linear 0.1s, box-shadow 0.15s linear 0s;
+//                 background-image: linear-gradient(to bottom, #fff 0%, #FFF 50%, rgba($cx-secondary-color, 0.25) 50%, rgba($cx-secondary-color, 0.25) 85%, #fff 85%);
+//                 background-size: 0 100%;
+//                 background-repeat: no-repeat;
+//                 padding: 0 5px;
+//                 transition: 1s;
+//                 backface-visibility: hidden;
+//                 transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+
+//                 &.visible {
+//                     background-size: 100% 100%;
+//                 }
+//             }
+//         }
+//     }
+// }

@@ -22,6 +22,12 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 	 */
 	function codexin_framework_scripts() {
 
+		$theme_pageloader = codexin_get_option( 'cx_enable_pageloader' );
+
+		if ( ! class_exists( 'kirki' ) ) {
+			$theme_pageloader = true;
+		}
+
 		/**
 		 * Load the stylesheets
 		 */
@@ -44,6 +50,11 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 
 		// Animate CSS.
 		wp_enqueue_style( 'animate', get_theme_file_uri( 'assets/css/animate.min.css' ), array(), '3.7.0', 'all' );
+
+		// Animsition CSS.
+		if( $theme_pageloader ) {
+			wp_enqueue_style( 'animsition', get_theme_file_uri( 'assets/css/animsition.min.css' ), array(), '4.0.2', 'all' );
+		}
 
 		// Superfish Menu.
 		wp_enqueue_style( 'jquery-superfish', get_theme_file_uri( 'assets/css/superfish.min.css' ), array(), '1.7.10', 'all' );
@@ -87,6 +98,11 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 
 		// Superfish Menu.
 		wp_enqueue_script( 'jquery-superfish', get_theme_file_uri( 'assets/js/superfish.min.js' ), array( 'jquery' ), '1.7.10', true );
+
+		// Animsition JS.
+		if( $theme_pageloader ) {
+			wp_enqueue_script( 'animsition', get_theme_file_uri( 'assets/js/animsition.min.js' ), array( 'jquery' ), '4.0.2', true );
+		}
 
 		// Swiper Slider.
 		wp_enqueue_script( 'swiper', get_theme_file_uri( 'assets/js/swiper.min.js' ), array( 'jquery' ), '4.4.2', true );

@@ -36,6 +36,7 @@
 		$elCarousel         = $( '.element-carousel' ),
 		$testimonial        = $( '.testimonial-container' ),
 		$toTop              = $( '#to-top' ),
+		$pageloader         = $(".animsition"),
 		$intelHeader        = $( '.header-top' ),
 		$fixedMenuSpace    	= $( '.fixed-header-space' ),
 		$footer             = $( '#colophon' ),
@@ -46,6 +47,28 @@
 	$.fn.elExists = function() {
 		return this.length > 0;
 	};
+
+	// var $animation_elements = $('.powerpro-title span');
+
+	// function check_if_in_view() {
+	// 	var window_height = $window.height();
+	// 	var window_top_position = $window.scrollTop();
+	// 	var window_bottom_position = (window_top_position + window_height);
+
+	// 	$.each($animation_elements, function() {
+	// 		var $element = $(this);
+	// 		var element_height = $element.outerHeight();
+	// 		var element_top_position = $element.offset().top + 80;
+	// 		var element_bottom_position = (element_top_position + element_height);
+
+	// 		if ((element_bottom_position >= window_top_position) &&
+	// 		(element_top_position <= window_bottom_position)) {
+	// 		$element.addClass('visible');
+	// 		} else {
+	// 		$element.removeClass('visible');
+	// 		}
+	// 	});
+	// }
 
 	/************************************************************
 		s01 - Main Navigation Menu
@@ -190,10 +213,35 @@
 
  		$headerSearch.show();
 		CODEXIN.searchIconChange('search');
-
- 		
-
  	}
+
+    /************************************************************
+        s01 - Preloader
+    *************************************************************/
+
+    CODEXIN.preloader = function() {
+    	if ($pageloader.elExists()) {
+	        $pageloader.animsition({
+	            inClass: 'fade-in',
+	            outClass: 'fade-out',
+	            inDuration: 800,
+	            outDuration: 600,
+	            linkElement: 'a:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"]):not(.img)',
+	            loading: true,
+	            loadingParentElement: 'body',
+	            loadingClass: 'cx-pageloader',
+	            loadingInner: '<div class="cx-loader-inner"></div>',
+	            timeout: false,
+	            timeoutCountdown: 5000,
+	            onLoadEvent: true,
+	            browser: [ 'animation-duration', '-webkit-animation-duration'],
+	            overlay : false,
+	            overlayClass : 'animsition-overlay-slide',
+	            overlayParentElement : 'body',
+	            transition: function(url){ window.location.href = url; }
+	        });
+	    }
+    };
 	/************************************************************
 		s05 - Elements Spacing & Classes
 	*************************************************************/
@@ -436,6 +484,7 @@
 		CODEXIN.testimonialCarousel(),
 		CODEXIN.scrollToTop(),
 		CODEXIN.toolTips(),
+		CODEXIN.preloader(),
 		CODEXIN.ElementsSpacingClasses();
 		CODEXIN.searchComponentTrigger();
 		CODEXIN.stickyNavTrigger();
@@ -453,5 +502,9 @@
 		CODEXIN.searchComponentTriggerOnResize();		
 		
 	});
+
+	// $window.on( 'scroll resize', function() {
+	// 	check_if_in_view();
+	// });
 
 })( jQuery );
